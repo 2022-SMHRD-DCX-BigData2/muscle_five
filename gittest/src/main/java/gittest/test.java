@@ -7,7 +7,6 @@ public class test {
 		
 		
 		System.out.println("팀장 커밋!!");
-		
 	}
 
 }
