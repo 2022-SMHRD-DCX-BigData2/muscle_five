@@ -11,6 +11,7 @@ public class test {
 		System.out.println("허화평");
 		System.out.println("나도 한입");
 		System.out.println("난 두입");
+		System.out.println("나는 세입");
 	}
 
 }
