@@ -10,6 +10,7 @@ public class test {
 		System.out.println("내가 씀");
 		System.out.println("허화평");
 		System.out.println("나도 한입");
+		System.out.println("난 두입");
 	}
 
 }
