@@ -7,6 +7,9 @@ public class test {
 		
 		
 		System.out.println("팀장 커밋!!");
+		System.out.println("내가 씀");
+		System.out.println("허화평");
+		System.out.println("나도 한입");
 	}
 
 }
