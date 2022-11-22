@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Elements - Alpha by HTML5 UP</title>
+		<title>COMMUNITY</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -45,60 +45,99 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>Elements</h2>
-						<p>Just an assorted selection of elements.</p>
+						<h2>COMMUNITY</h2>
+						<p>헬창, 헬린이 소통의 공간</p>
 					</header>
 					<div class="row">
 						<div class="col-12">
 
-							<!-- Text -->
-								<section class="box">
-									<h3>Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
+							<div id="wrap">
 
-									<hr />
-
-									<header>
-										<h3>Heading with a Subtitle</h3>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-									<header>
-										<h4>Heading with a Subtitle</h4>
-										<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-									</header>
-									<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-
-									<hr />
-
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-
-									<hr />
-
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-
-									<h4>Preformatted</h4>
-									<pre>i = 0;
-
-	while (!deck.isInOrder()) {
-	    print 'Iteration ' + i;
-	    deck.shuffle();
-	    i++;
-	}
-
-	print 'It took ' + i + ' iterations to sort the deck.';
-	</pre>
-								</section>
-
+								<!-- 게시판 만들기 -->
+								<!-- 글목록 위 부분-->
+								<br>
+								
+								<div id="topForm" align="right">
+									<c:if test="${sessionScope.sessionID!=null}">
+										<input type="button" value="글쓰기" onclick="writeForm()">
+									</c:if>
+								</div>
+						
+								<!-- 게시글 목록 부분 -->
+								<br>
+								<div id="board">
+									<table id="bList" width="800" border="3" bordercolor="lightgray">
+										<tr heigh="30"  align="center">
+											<td>글번호</td>
+											<td>제목</td>
+											<td>작성자</td>
+											<td>작성일</td>
+											<td>조회수</td>
+										</tr>
+										<c:forEach var="board" items="${requestScope.list}">
+											<tr align="right">
+												<td>${community.com_num}</td>
+												<td><a
+													href="BoardDetailAction.bo?num=${community.com_num}&pageNum=${pageNum}">${community.com_title}
+												</a></td>
+												<td><a href="#"> ${community.user_num} </a></td>
+												<td>${community.com_date}</td>
+												<td>${community.com_views}</td>
+											</tr>
+										</c:forEach>
+									</table>
+								</div>
+						
+								<!-- 페이지 넘버 부분 -->
+								<br>
+								<div id="pageForm"  align="center">
+									<c:if test="${startPage != 1}">
+										<a href='BoardListAction.bo?page=${startPage-1}'>[ 이전 ]</a>
+									</c:if>
+						
+									<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
+										<c:if test="${pageNum == spage}">
+						                	${pageNum}
+						            	</c:if>
+										<c:if test="${pageNum != spage}">
+											<a href='BoardListAction.bo?page=${pageNum}'>${pageNum}</a>
+										</c:if>
+									</c:forEach>
+									<c:if test="${endPage != maxPage }">
+										<a href='BoardListAction.bo?page=${endPage+1}'>[다음]</a>
+									</c:if>
+								</div>
+						
+								<!--  검색 부분 -->
+								<br>
+								<div id="searchForm" align="center">
+									<form>
+										<table>
+											<tr>
+												<td>
+													<select name="opt">
+														<option value="0">제목</option>
+														<option value="1">내용</option>
+														<option value="2">제목+내용</option>
+														<option value="3">글쓴이</option>
+													</select> 
+												</td>	
+												<td>
+													<input type="text" size="20" name="condition" /> 
+												</td>
+												<td>
+													<input type="submit" value="검색" />
+												</td>
+											</tr>
+										</table>
+									</form>
+								</div>
+							</div>
+						<!-- 게시판 끝!  -->
 						</div>
 					</div>
+					
+					
 					<div class="row">
 						<div class="col-12">
 
