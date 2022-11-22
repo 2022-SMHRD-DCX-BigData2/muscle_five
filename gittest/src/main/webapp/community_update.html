@@ -57,57 +57,75 @@
 						<h2>COMMUNITY</h2>
 						<p>헬창, 헬린이 소통의 공간</p>
 					</header>
+					
 					<div class="row">
 						<div class="col-12">
 						
-							    <div id="board">
-							        <table id="detailCommunity" width="800" border="3" bordercolor="lightgray">
-							        
+							 <br>
+						    <b><font size="6" color="gray">글 수정</font></b>
+						    <br>
+						s    
+						    <form method="post" action="CommunityUpdateAction.bo?page=${pageNum}" name="communityForm" 
+						            enctype="multipart/form-data">
+						 
+						   		<input type="hidden" name="community_num" value="${community.community_num}"/>
+						    	<input type="hidden" name="existing_file" value="${community.community_file}"/>
+						 
+							    <table width="700" border="3" bordercolor="lightgray" align="center">
+							        <tr>
+							            <td id="title">작성자</td>
+							            <td>${community.user_id}</td>
+							        </tr>
 							            <tr>
-							                <td id="title">작성일</td>
-							                <td>${community.com_date}</td>
-							            </tr>
-							            <tr>
-							                <td id="title">작성자</td>
-							                <td>${community.user_id}</td>
-							            </tr>
+							            <td id="title">
+							                제 목
+							            </td>
+							            <td>
+							                <input name="community_title" type="text" size="70" maxlength="100" 
+							                    value="${community.community_subject}"/>
+							            </td>        
+							        </tr>
+							        <tr>
+							            <td id="title">
+							                내 용
+							            </td>
+							            <td>
+							                <textarea name="community_content" cols="72" rows="20">
+							                    ${board.board_content}
+							                </textarea>            
+							            </td>        
+							        </tr>
+							                <!-- 답글이 아닐 경우에만 파일 첨부 가능하도록 처리 -->
+							        <c:if test="${community.community_parent==0}">    
 							            <tr>
 							                <td id="title">
-							                    제 목
+							                    기존 파일
 							                </td>
 							                <td>
-							                    ${community.com_title}
-							                </td>        
-							            </tr>
-							            <tr>
-							                <td id="title">
-							                    내 용
-							                </td>
-							                <td>
-							                    ${community.com_content}
-							                </td>        
+							                   ${community.community_file}
+							                </td>    
 							            </tr>
 							            <tr>
 							                <td id="title">
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <a href='FileDownloadAction.bo?file_name=${community.com_file}'>${community.com_file}</a>
+							                    <input type="file" name="community_file"/>
 							                </td>    
 							            </tr>
-							    
-							            <tr align="center" valign="middle">
-							                <td colspan="5">
-							                    <a href="community_update.html"><input type="button" value="수정" ></a>
-							                    <a href="#"><input type="button" value="삭제" ></a>
-							                    <a href="#"><input type="button" value="답글" ></a>  
-							                    <a href="community.html"><input type="button" value="목록" 
-							                        onclick="javascript:location.href='CommunityListAction.bo?page=${pageNum}'"></a>          
-							                </td>
-							            </tr>
-							        </table>
-							    </div>
-							</div>    			
+							        </c:if>
+							        
+							        <tr align="center" valign="middle">
+							            <td colspan="5">
+							                <a href="community_detail.html"><input type="reset" value="작성취소" ></a>
+							                <a href="community_detail.html"><input type="submit" value="수정" ></a>
+							                <a href="community.html"><input type="button" value="목록" onclick="changeView()" ></a>            
+							            </td>
+							        </tr>
+							    </table>    
+						    </form>
+    
+														
 						<!-- 게시판 끝!  -->
 						
 						</div>
