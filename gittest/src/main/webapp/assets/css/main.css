@@ -1485,6 +1485,9 @@
 				.row > * {
 					box-sizing: border-box;
 				}
+				
+				
+				
 
 				.row.gtr-uniform > * > :last-child {
 					margin-bottom: 0;
