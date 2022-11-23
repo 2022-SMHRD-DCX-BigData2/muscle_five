@@ -46,7 +46,7 @@
 	                input.id.focus();
 	                return false;
 	            }
-	            if(!input.password.value)
+	            if(!input.pw.value)
 	            {
 	                alert("비밀번호를 입력하세요");    
 	                input.pw.focus();

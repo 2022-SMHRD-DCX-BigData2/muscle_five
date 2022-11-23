@@ -39,18 +39,18 @@
 	        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 	        function checkValue()
 	        {
-	            if(!document.userInfo.id.value){
+	            if(!document.userinfo.id.value){
 	                alert("아이디를 입력하세요.");
 	                return false;
 	            }
 	            
-	            if(!document.userInfo.pw.value){
+	            if(!document.userinfo.pw.value){
 	                alert("비밀번호를 입력하세요.");
 	                return false;
 	            }
 	            
 	            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-	            if(document.userInfo.pw.value != document.userInfo.pwcheck.value ){
+	            if(document.userinfo.pw.value != document.userInfo.pwcheck.value ){
 	                alert("비밀번호를 동일하게 입력하세요.");
 	                return false;
 	            }
