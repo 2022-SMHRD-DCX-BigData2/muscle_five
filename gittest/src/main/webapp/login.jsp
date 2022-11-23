@@ -39,7 +39,7 @@
 		 // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 	        function checkValue()
 	        {
-	            input = eval("document.loginInfo");
+	            input = eval("document.logininfo");
 	            if(!input.id.value)
 	            {
 	                alert("아이디를 입력하세요");    
@@ -94,7 +94,7 @@
 						<div class="content-wrap n-tech">
 							<!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
 							<div id="wrap">
-						        <form action="../pro/loginPro.jsp" name="loginInfo" method="post" 
+						        <form action="loginPro.jsp" name="logininfo" method="post" 
 						                onsubmit="return checkValue()">
 						            <table>
 						                <tr>
