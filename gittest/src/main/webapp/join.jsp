@@ -121,14 +121,7 @@
 						                <tr>
 						                    <td id="title">비밀번호 확인</td>
 						                    <td>
-						                        <input type="password" name="password" maxlength="15">
-						                    </td>
-						                </tr>
-						                    
-						                <tr>
-						                    <td id="title">이름</td>
-						                    <td>
-						                        <input type="text" name="name" maxlength="40">
+						                        <input type="password" name="pw" maxlength="15">
 						                    </td>
 						                </tr>
 						                    
