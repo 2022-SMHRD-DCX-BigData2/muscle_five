@@ -45,11 +45,25 @@
 						    <%
 						    	request.setCharacterEncoding("UTF-8");
 						    
+						        // 세션에서 아이디를 가져와 Member에 세팅
 						    	HttpSession session = request.getSession();
-						        // 세션에서 아이디를 가져와 Member에 세팅한다.
-						        String id= (String)session.getAttribute("sessionID"); 
+						        Member loginMember = (Member) session.getAttribute("loginMember");
+								String id = loginMember.getId();
 						        member.setId(id);
-						    
+						    	
+						        // pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2 파라미터 수집
+						        String pw = request.getParameter("pw");
+						        String gender = request.getParameter("gender");
+						        String birth_yy = request.getParameter("birth_yy");
+						        String birth_mm = request.getParameter("birth_mm");
+						        String birth_dd = request.getParameter("birth_dd");
+						        String birth = birth_yy + birth_mm + birth_dd;
+						        String mail1 = request.getParameter("mail1");
+						        String mail2 = request.getParameter("mail2");
+						        String mail = mail1 + "@" + mail2;
+								
+						        Member update = new Member(pw, gender, birth, mail);
+						        
 						        // 수정할 회원정보를 담고있는 Member을 DAO로 전달하여 회원정보 수정을 한다.
 						        MemberDAO dao = MemberDAO.getInstance();
 						        dao.updateMember(member);
