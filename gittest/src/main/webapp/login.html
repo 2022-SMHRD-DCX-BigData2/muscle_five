@@ -53,7 +53,7 @@
 	            if(!input.password.value)
 	            {
 	                alert("비밀번호를 입력하세요");    
-	                input.password.focus();
+	                input.pw.focus();
 	                return false;
 	            }
 	        }
@@ -99,7 +99,7 @@
 						<div class="content-wrap n-tech">
 							<!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
 							<div id="wrap">
-						        <form action="../pro/LoginPro.jsp" name="loginInfo" method="post" 
+						        <form action="../pro/loginPro.jsp" name="loginInfo" method="post" 
 						                onsubmit="return checkValue()">
 						            <table>
 						                <tr>
@@ -108,7 +108,7 @@
 						                </tr>
 						                <tr>
 						                    <td>비밀번호</td>
-						                    <td><input type="password" name="password" maxlength="50"></td>
+						                    <td><input type="password" name="pw" maxlength="50"></td>
 						                </tr>
 						            </table>
 						            <br>

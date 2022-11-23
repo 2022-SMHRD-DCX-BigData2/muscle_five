@@ -48,13 +48,13 @@
 	                return false;
 	            }
 	            
-	            if(!document.userInfo.password.value){
+	            if(!document.userInfo.pw.value){
 	                alert("비밀번호를 입력하세요.");
 	                return false;
 	            }
 	            
 	            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-	            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+	            if(document.userInfo.pw.value != document.userInfo.pwcheck.value ){
 	                alert("비밀번호를 동일하게 입력하세요.");
 	                return false;
 	            }
@@ -119,7 +119,7 @@
 						                <tr>
 						                    <td id="title">비밀번호</td>
 						                    <td>
-						                        <input type="password" name="password" maxlength="15">
+						                        <input type="password" name="pw" maxlength="15">
 						                    </td>
 						                </tr>
 						                
