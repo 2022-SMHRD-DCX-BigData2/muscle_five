@@ -100,7 +100,7 @@
 				                    <td id="title">비밀번호</td>
 				                    <td>
 				                        <input type="password" name="pw" maxlength="50" 
-				                            value="<%=member.getPassword()%>">
+				                            value="<%=member.getPw()%>">
 				                    </td>
 				                </tr>
 				            </table>    
