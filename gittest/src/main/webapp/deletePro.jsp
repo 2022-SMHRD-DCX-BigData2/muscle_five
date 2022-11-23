@@ -36,11 +36,12 @@
 				</section>
 				
 				<%
-			        String id= (String)session.getAttribute("sessionID"); 
+					request.setCharacterEncoding("UTF-8");
 				
+			        String id= (String)session.getAttribute("sessionID"); 
 			        String pw = request.getParameter("pw");
 			        
-			        // 세션에서 아이디를, delete.jsp에서 입력받은 비밀번호를 가져온다.
+			        // 세션에서 아이디를, Delete.jsp에서 입력받은 비밀번호를 가져온다.
 			        // 가져온 결과를 가지고 회원정보를 삭제한다. - 삭제결과를 반환
 			        MemberDAO dao = MemberDAO.getInstance();
 			        int check = dao.deleteMember(id, pw);
