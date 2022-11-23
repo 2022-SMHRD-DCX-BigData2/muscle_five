@@ -67,7 +67,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.html">MusleFive</a> </h1>
+					<h1><a href="main.html">MusleFive</a></h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="#" class="button">Login</a></li>
@@ -135,8 +135,11 @@
 						                <tr>
 						                    <td id="title">성별</td>
 						                    <td>
-						                        <input type="checkbox" name="gender" value="남" checked>남
-						                        <input type="checkbox" name="gender" value="여" checked>여
+						                        <select name="gender">
+						                            <option>남</option>
+						                            <option>여</option>
+						                                          
+						                        </select>
 						                    </td>
 						                </tr>
 						                    
