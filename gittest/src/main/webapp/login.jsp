@@ -94,7 +94,7 @@
 						<div class="content-wrap n-tech">
 							<!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
 							<div id="wrap">
-						        <form action="../pro/loginPro.jsp" name="logininfo" method="post" 
+						        <form action="loginPro.jsp" name="logininfo" method="post" 
 						                onsubmit="return checkValue()">
 						            <table>
 						                <tr>

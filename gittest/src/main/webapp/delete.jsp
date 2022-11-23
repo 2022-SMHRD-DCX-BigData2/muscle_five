@@ -63,13 +63,13 @@
 						    <b><font size="6" color="gray">내 정보</font></b>
 						    <br><br>
 						 
-						    <form name="deleteform" method="post" action="main.jsp?contentPage=deletePro.jsp"
+						    <form name="delete" method="post" action="main.jsp?contentPage=deletePro.jsp"
 						        onsubmit="return checkValue()">
 						 
 						        <table>
 						            <tr>
 						                <td>비밀번호</td>
-						                <td><input type="password" name="password" maxlength="50"></td>
+						                <td><input type="password" name="pw" maxlength="50"></td>
 						            </tr>
 						        </table>
 						        

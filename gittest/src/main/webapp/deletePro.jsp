@@ -37,6 +37,7 @@
 				
 				<%
 			        String id= (String)session.getAttribute("sessionID"); 
+				
 			        String pw = request.getParameter("pw");
 			        
 			        // 세션에서 아이디를, delete.jsp에서 입력받은 비밀번호를 가져온다.

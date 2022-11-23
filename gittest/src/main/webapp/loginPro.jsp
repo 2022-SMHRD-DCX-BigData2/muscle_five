@@ -32,8 +32,9 @@
 	            HttpSession session = request.getSession();
 	            session.setAttribute("sessionID", loginMember);
 	            msg = "main.jsp";
-	            
-	        } else if(check == 0) {// 비밀번호가 틀릴 경우
+	     	}  
+        } else {
+        	if(check == 0) {// 비밀번호가 틀릴 경우
 	            msg = "login.jsp?msg=0";
 	        } else {   // 아이디가 틀릴 경우
 	            msg = "login.jsp?msg=-1";
