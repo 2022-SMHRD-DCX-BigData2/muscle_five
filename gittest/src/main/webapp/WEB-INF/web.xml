@@ -4,6 +4,17 @@
 
 
    <display-name>gittest</display-name>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>modyfyCon</display-name>
+   	<servlet-name>modyfyCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.modyfyCon</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   	<servlet-name>modyfyCon</servlet-name>
+   	<url-pattern>/modyfyCon</url-pattern>
+   </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
       <welcome-file>index.htm</welcome-file>

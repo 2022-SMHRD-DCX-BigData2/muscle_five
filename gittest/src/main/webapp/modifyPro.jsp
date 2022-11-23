@@ -60,9 +60,9 @@
 						        String birth = birth_yy + birth_mm + birth_dd;
 						        String mail1 = request.getParameter("mail1");
 						        String mail2 = request.getParameter("mail2");
-						        String mail = mail1 + "@" + mail2;
+						        String email = mail1 + "@" + mail2;
 								
-						        Member update = new Member(pw, gender, birth, mail);
+						        Member update = new Member(pw, gender, birth, email);
 						        
 						        // 수정할 회원정보를 담고있는 Member을 DAO로 전달하여 회원정보 수정을 한다.
 						        MemberDAO dao = MemberDAO.getInstance();
