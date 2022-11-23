@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>현재 회원정보 출력화면</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	<style type="text/css">
         table{
             margin-left:auto; 

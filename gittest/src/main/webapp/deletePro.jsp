@@ -23,7 +23,7 @@
         <b><font size="4" color="gray">회원정보가 삭제되었습니다.</font></b>
         <br><br><br>
     
-        <input type="button" value="확인" onclick="javascript:window.location='main.jsp'">
+        <input type="button" value="확인" onclick="location.href='main.jsp'">
     
     <%    
          // 비밀번호가 틀릴경우 - 삭제가 안되었을 경우
