@@ -7,11 +7,11 @@
 <title>회원탈퇴 화면</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		
     <style type="text/css">
         table{
             margin-left:auto; 
             margin-right:auto;
-            
         }
         
     </style>
@@ -32,11 +32,11 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.html">MusleFive</a></h1>
+					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.html" class="button">Login</a></li>
-							<li><a href="join.html" class="button">Sign Up</a></li>
+							<li><a href="login.jsp" class="button">Login</a></li>
+							<li><a href="join.jsp" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>

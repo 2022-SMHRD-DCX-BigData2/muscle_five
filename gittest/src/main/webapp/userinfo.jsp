@@ -19,9 +19,9 @@
             if(val == "-1"){
                 location.href="main.jsp";
             }else if(val == "0"){
-                location.href="main.jsp?contentPage=modify.jsp";
+                location.href="modify.jsp";
             }else if(val == "1"){
-                location.href="main.jsp?contentPage=delete.jsp";
+                location.href="delete.jsp";
             }
         }
         

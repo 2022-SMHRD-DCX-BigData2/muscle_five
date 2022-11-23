@@ -50,7 +50,7 @@
 	            }
 	            
 	            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-	            if(document.userinfo.pw.value != document.userInfo.pwcheck.value ){
+	            if(document.userinfo.pw.value != document.userinfo.pwcheck.value ){
 	                alert("비밀번호를 동일하게 입력하세요.");
 	                return false;
 	            }
@@ -67,7 +67,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.html">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="login.jsp" class="button">Login</a></li>

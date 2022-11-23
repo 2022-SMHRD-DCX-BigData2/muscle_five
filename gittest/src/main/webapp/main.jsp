@@ -56,7 +56,7 @@
 						        else // 로그인 했을 경우
 						        {
 						    %>
-							<h2><%=session.getAttribute("sessionID") %>님 로그인되었습니다.</h2>
+							<h3><%=session.getAttribute("sessionID") %>님 로그인되었습니다.</h3>
 						    <br><br>
 						    <input type="button" value="로그아웃" onclick="logoutPro()" />
 						    <%} %>

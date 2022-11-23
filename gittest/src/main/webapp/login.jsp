@@ -66,7 +66,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.html">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="#" class="button">Login</a></li>
