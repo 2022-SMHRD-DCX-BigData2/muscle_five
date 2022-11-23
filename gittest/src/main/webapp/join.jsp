@@ -100,7 +100,7 @@
 						        <br><br>
 						     	<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
         						<!-- 값(파라미터) 전송은 POST 방식으로, 전송할 페이지는 joinPro.jsp -->
-						        <form method="post" action="../pro/JoinPro.jsp" name="userInfo" 
+						        <form method="post" action="joinPro.jsp" name="userinfo" 
                 					onsubmit="return checkValue()">
 						            <table>
 						                <tr>
