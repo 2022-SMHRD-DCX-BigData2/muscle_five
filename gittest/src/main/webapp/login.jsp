@@ -70,7 +70,7 @@
 					<nav id="nav">
 						<ul>
 							<li><a href="#" class="button">Login</a></li>
-							<li><a href="#" class="button">Sign Up</a></li>
+							<li><a href="join.jsp" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
 				</header>

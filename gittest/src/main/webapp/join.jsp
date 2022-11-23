@@ -70,7 +70,7 @@
 					<h1><a href="main.html">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#" class="button">Login</a></li>
+							<li><a href="login.jsp" class="button">Login</a></li>
 							<li><a href="#" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
