@@ -11,9 +11,31 @@
    	<servlet-name>modyfyCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.modyfyCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>joinCon</display-name>
+   	<servlet-name>joinCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.joinCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>loginCon</display-name>
+   	<servlet-name>loginCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.loginCon</servlet-class>
+   </servlet>
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
    	<url-pattern>/modyfyCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>joinCon</servlet-name>
+   	<url-pattern>/joinCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>loginCon</servlet-name>
+   	<url-pattern>/loginCon</url-pattern>
    </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

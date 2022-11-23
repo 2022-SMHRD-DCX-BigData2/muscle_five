@@ -36,7 +36,7 @@
 		
 		<script type="text/javascript">
     
-	        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+	        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수 (유효성 검사)
 	        function checkValue()
 	        {
 	            if(!document.userinfo.id.value){
