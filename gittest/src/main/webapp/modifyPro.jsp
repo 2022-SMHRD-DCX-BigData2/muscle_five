@@ -24,6 +24,6 @@
     <br><br>
     <font size="5" color="gray">회원정보가 수정되었습니다.</font>
     <br><br>
-    <input type="button" value="메인으로" onclick="javascript:window.location='main.jsp'"/>
+    <input type="button" value="메인으로" onclick="location.href='main.jsp'"/>
 </body>
 </html>
