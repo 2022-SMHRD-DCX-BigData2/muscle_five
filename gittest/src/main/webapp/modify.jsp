@@ -22,13 +22,6 @@
             border:3px solid skyblue;
         }
         
-        td{
-            border:1px solid skyblue
-        }
-        
-        #title{
-            background-color:skyblue
-        }
     </style>
     
     <script type="text/javascript">
