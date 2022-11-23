@@ -70,7 +70,7 @@
 					<h1><a href="main.html">MusleFive</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#" class="button">Login</a></li>
+							<li><a href="login.jsp" class="button">Login</a></li>
 							<li><a href="#" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
@@ -138,7 +138,6 @@
 						                        <select name="gender">
 						                            <option>남</option>
 						                            <option>여</option>
-						                                          
 						                        </select>
 						                    </td>
 						                </tr>
@@ -165,7 +164,6 @@
 						                        <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4" >
 						                    </td>
 						                </tr>
-						                    
 						                <tr>
 						                    <td id="title">이메일</td>
 						                    <td>
@@ -201,7 +199,6 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
-
 		</div>
 
 		<!-- Scripts -->
