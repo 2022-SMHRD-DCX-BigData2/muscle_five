@@ -5,16 +5,16 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
-		insert into member values (#{email}, #{pw}, #{tel}, #{address})
+		insert into member values (#{id}, #{pw}, #{gender}, #{birth}, #{mail})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.domain.Member"
 	 resultType="com.smhrd.domain.Member">
-		select * from member where email=#{email} and pw=#{pw}
+		select * from member where id=#{id} and pw=#{pw}
 	</select>
 	
 	<update id="updateMember" parameterType="com.smhrd.domain.Member">
-		update member set pw=#{pw}, tel=#{tel}, address=#{address} where email=#{email}
+		update member set pw=#{pw}, gender=#{gender}, birth=#{birth}, mail=#{mail} where id=#{id}
 	</update>
 	
 	<select id="selectAll" resultType="com.smhrd.domain.Member">
@@ -22,6 +22,6 @@
 	</select>
 	
 	<delete id="deleteMember" parameterType="String">
-		delete from member where email=#{email}
+		delete from member where id=#{id}
 	</delete>
 </mapper>
