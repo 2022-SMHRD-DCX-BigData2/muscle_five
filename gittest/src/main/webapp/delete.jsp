@@ -19,7 +19,7 @@
     <script type="text/javascript">
         // 비밀번호 미입력시 경고창
         function checkValue(){
-            if(!document.delete.pw.value){
+            if(!document.deleteform.pw.value){
                 alert("비밀번호를 입력하지 않았습니다.");
                 return false;
             }
@@ -63,7 +63,7 @@
 						    <b><font size="6" color="gray">내 정보</font></b>
 						    <br><br>
 						 
-						    <form name="delete" method="post" action="main.jsp?contentPage=deletePro.jsp"
+						    <form name="deleteform" method="post" action="main.jsp?contentPage=deletePro.jsp"
 						        onsubmit="return checkValue()">
 						 
 						        <table>
