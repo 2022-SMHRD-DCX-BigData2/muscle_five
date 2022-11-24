@@ -39,7 +39,9 @@ public class modyfyCon extends HttpServlet {
         //String birth = birth_yy + birth_mm + birth_dd;
         String mail1 = request.getParameter("mail1");
         String mail2 = request.getParameter("mail2");
-        	  
+        System.out.println(mail1);
+        System.out.println(mail2);
+        System.out.println(id);
         //String email = mail1 + "@" + mail2;
 		
 		// 받아온 데이터를 Member 객체에 담아주기
