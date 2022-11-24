@@ -11,7 +11,7 @@ import com.smhrd.domain.Member;
 import com.smhrd.domain.MemberDAO;
 
 
-public class modyfyCon extends HttpServlet {
+public class modifyCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
