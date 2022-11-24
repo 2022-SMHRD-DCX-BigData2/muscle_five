@@ -24,17 +24,20 @@ public class modyfyCon extends HttpServlet {
 		// 세션에서 정보 가져오기
 		HttpSession session = request.getSession();
 		Member loginMember =  (Member) session.getAttribute("loginMember");
-		String email = loginMember.getId();
+		String id = loginMember.getId();
 		
 		// 1. 파라미터 수집
 		String pw = request.getParameter("pw");
         String[] gender = request.getParameterValues("gender");
+        	
         String birth_yy = request.getParameter("birth_yy");
         String[] birth_mm = request.getParameterValues("birth_mm");
+        	
         String birth_dd = request.getParameter("birth_dd");
         //String birth = birth_yy + birth_mm + birth_dd;
         String mail1 = request.getParameter("mail1");
         String[] mail2 = request.getParameterValues("mail2");
+        	  
         //String email = mail1 + "@" + mail2;
 		
 		// 받아온 데이터를 Member 객체에 담아주기
