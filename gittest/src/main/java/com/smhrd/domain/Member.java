@@ -6,15 +6,17 @@ public class Member {
 	
 	private String id;
 	private String pw;
-	private String gender;
+	private String[] gender;
 	private String birth_yy;
 	private String birth_mm;
-	private String birth_dd;
+	private String[] birth_dd;
 	private String mail;
 	private String mail1;
-	private String mail2;
+	private String[] mail2;
+	//private String mag;
 	
-	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail, String mail1, String mail2) {
+	
+	public Member(String id, String pw, String[] gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
 		
 		this.id = id;
 		this.pw = pw;
@@ -22,12 +24,23 @@ public class Member {
 		this.birth_yy = birth_yy;
 		this.birth_mm = birth_mm;
 		this.birth_dd = birth_dd;
-		this.mail = mail;
 		this.mail1 = mail1;
 		this.mail2 = mail2;
 	}
 
-	
+
+	public Member(String pw, String[] gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
+			
+		this.pw = pw;
+		this.gender = gender;
+		this.birth_yy = birth_yy;
+		this.birth_mm = birth_mm;
+		this.birth_dd = birth_dd;
+		this.mail1 = mail1;
+		this.mail2 = mail2;
+	}
+
+
 	public Member(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
@@ -38,7 +51,7 @@ public class Member {
 		this.id = id;
 	}
 
-
+	
 	public String getId() {
 		return id;
 	}
@@ -59,12 +72,12 @@ public class Member {
 	}
 
 
-	public String getGender() {
+	public String[] getGender() {
 		return gender;
 	}
 
 
-	public void setGender(String gender) {
+	public void setGender(String[] gender) {
 		this.gender = gender;
 	}
 
@@ -89,12 +102,12 @@ public class Member {
 	}
 
 
-	public String getBirth_dd() {
+	public String[] getBirth_dd() {
 		return birth_dd;
 	}
 
 
-	public void setBirth_dd(String birth_dd) {
+	public void setBirth_dd(String[] birth_dd) {
 		this.birth_dd = birth_dd;
 	}
 
@@ -119,12 +132,12 @@ public class Member {
 	}
 
 
-	public String getMail2() {
+	public String[] getMail2() {
 		return mail2;
 	}
 
 
-	public void setMail2(String mail2) {
+	public void setMail2(String[] mail2) {
 		this.mail2 = mail2;
 	}
 

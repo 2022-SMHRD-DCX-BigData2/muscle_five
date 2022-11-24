@@ -24,4 +24,10 @@
 	<delete id="deleteMember" parameterType="String">
 		delete from member where id=#{id}
 	</delete>
+	
+	<!--<select id="loginCheck" parameterType="com.smhrd.domain.Member"
+	 resultType="com.smhrd.domain.Member">
+		select pw from member where id=#{id}
+	</select>-->
+	
 </mapper>
