@@ -55,7 +55,10 @@
 									<li><a href="#">회원관리</a></li>
 								</c:if>
 								
+
 								<li><a href="LogoutCon" class="button">Log out</a></li>
+
+								<li><a href="LogoutCon" class="button">Logout</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 								
 							</c:otherwise>
@@ -69,13 +72,12 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>MusleFive</h2>
-					<p>환영합니다.</p>
+					<%if(loginMember != null){ %>
+					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-						<%if(loginMember != null){ %>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
-							<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 							<%} else {%>
 							<h1>로그인이 필요합니다.</h1>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
