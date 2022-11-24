@@ -171,8 +171,8 @@
 						                <tr>
 						                    <td id="title">이메일</td>
 						                    <td>
-						                        <input type="text" name="email_1" maxlength="30">@
-						                        <select name="email_2">
+						                        <input type="text" name="mail_1" maxlength="30">@
+						                        <select name="mail_2">
 						                            <option>naver.com</option>
 						                            <option>daum.net</option>
 						                            <option>gmail.com</option>

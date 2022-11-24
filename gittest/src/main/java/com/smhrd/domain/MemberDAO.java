@@ -17,7 +17,7 @@ public class MemberDAO {
 	    
 	        String year = member.getBirth_yy();
 	        String month = member.getBirth_mm();
-	        String[] day = member.getBirth_dd();
+	        String day = member.getBirth_dd();
 	        
 	        Date birth  = null;
 	        
