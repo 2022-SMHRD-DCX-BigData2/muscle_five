@@ -11,7 +11,7 @@ import com.smhrd.domain.Member;
 import com.smhrd.domain.MemberDAO;
 
 
-public class modyfyCon extends HttpServlet {
+public class modifyCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
@@ -23,12 +23,10 @@ public class modyfyCon extends HttpServlet {
 		// 어떤 사람의 회원정보를 수정할지 email을 가져와야함
 		// 세션에서 정보 가져오기
 		HttpSession session = request.getSession();
-		Member loginMember = (Member) session.getAttribute("loginMember");
+		Member loginMember =  (Member) session.getAttribute("loginMember");
 		String id = loginMember.getId();
 		
 		// 1. 파라미터 수집
-		
-		
 		String pw = request.getParameter("pw");
         String gender = request.getParameter("gender");
         	
@@ -43,7 +41,7 @@ public class modyfyCon extends HttpServlet {
         //String email = mail1 + "@" + mail2;
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member update = new Member(id, pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2);
+        Member update = new Member(pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2);
 		
 		// DAO에 일할 메소드 만들기
 		MemberDAO dao = new MemberDAO();
@@ -63,9 +61,7 @@ public class modyfyCon extends HttpServlet {
 		} else {
 			System.out.println("modifyCon : 회원정보 수정 실패..");
 			// 회원가입 실패하면 main.jsp로 이동.
-
-			response.sendRedirect("main.jsp");
-
+			response.sendRedirect("modify.jsp");
 		}
 	}
 
