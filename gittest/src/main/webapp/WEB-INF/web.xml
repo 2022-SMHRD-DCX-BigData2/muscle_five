@@ -7,13 +7,57 @@
    <servlet>
    	<description>
    	</description>
-   	<display-name>joincon</display-name>
-   	<servlet-name>joincon</servlet-name>
-   	<servlet-class>com.smhrd.controller.joincon</servlet-class>
+   	<display-name>modyfyCon</display-name>
+   	<servlet-name>modyfyCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.modyfyCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>joinCon</display-name>
+   	<servlet-name>joinCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.joinCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>loginCon</display-name>
+   	<servlet-name>loginCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.loginCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>logoutCon</display-name>
+   	<servlet-name>logoutCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.logoutCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>deleteCon</display-name>
+   	<servlet-name>deleteCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.deleteCon</servlet-class>
    </servlet>
    <servlet-mapping>
-   	<servlet-name>joincon</servlet-name>
-   	<url-pattern>/joincon</url-pattern>
+   	<servlet-name>modyfyCon</servlet-name>
+   	<url-pattern>/modyfyCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>joinCon</servlet-name>
+   	<url-pattern>/joinCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>loginCon</servlet-name>
+   	<url-pattern>/loginCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>logoutCon</servlet-name>
+   	<url-pattern>/logoutCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>deleteCon</servlet-name>
+   	<url-pattern>/deleteCon</url-pattern>
    </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

@@ -5,6 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입 처리</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
         #wrap{
             margin-left:auto; 
@@ -40,11 +43,11 @@
         
         // 성별의 경우 파라미터 이름이 둘다 gender로 동일하므로 배열로 받아야 된다.
         String[] gender = request.getParameterValues("gender");
-        String birthyy = request.getParameter("birth_yy");
+        String birth_yy = request.getParameter("birth_yy");
         
         // 생일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
-        String[] birthmm = request.getParameterValues("birth_mm");
-        String birthdd = request.getParameter("birth_dd");
+        String[] birth_mm = request.getParameterValues("birth_mm");
+        String birth_dd = request.getParameter("birth_dd");
         String email1 = request.getParameter("email_1");
         
         // 이메일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
@@ -95,13 +98,13 @@
             <tr>
                 <td id="title">생일</td>
                 <td>
-                <%=birthyy %>년 
+                <%=birth_yy %>년 
                 <%
                     // 배열로 넘겨받은 값을 처리하기 위해 for문 이용
-                    for(String mm : birthmm){
+                    for(String mm : birth_mm){
                         out.println(mm);
                     }        
-                %>월 <%=birthdd %>일
+                %>월 <%=birth_dd %>일
                 </td>
             </tr>
                     

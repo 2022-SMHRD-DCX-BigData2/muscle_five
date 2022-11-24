@@ -36,21 +36,21 @@
 		
 		<script type="text/javascript">
     
-	        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+	        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수 (유효성 검사)
 	        function checkValue()
 	        {
-	            if(!document.userInfo.id.value){
+	            if(!document.userinfo.id.value){
 	                alert("아이디를 입력하세요.");
 	                return false;
 	            }
 	            
-	            if(!document.userInfo.pw.value){
+	            if(!document.userinfo.pw.value){
 	                alert("비밀번호를 입력하세요.");
 	                return false;
 	            }
 	            
 	            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-	            if(document.userInfo.pw.value != document.userInfo.pwcheck.value ){
+	            if(document.userinfo.pw.value != document.userinfo.pwcheck.value ){
 	                alert("비밀번호를 동일하게 입력하세요.");
 	                return false;
 	            }
@@ -67,7 +67,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.html">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
 							<li><a href="login.jsp" class="button">Login</a></li>
@@ -100,7 +100,8 @@
 						        <br><br>
 						     	<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
         						<!-- 값(파라미터) 전송은 POST 방식으로, 전송할 페이지는 joinPro.jsp -->
-						        <form method="post" action="JoinPro.jsp" name="userInfo" 
+
+						        <form method="post" action="joinPro.jsp" name="userinfo" 
                 					onsubmit="return checkValue()">
 						            <table>
 						                <tr>
