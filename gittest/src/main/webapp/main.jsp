@@ -75,13 +75,17 @@
 						<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
 							<%} else {%>
+							<ul class="actions special">
 							<h1>로그인이 필요합니다.</h1>
+							<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
 						<%} %>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
-					</ul>
 				</section>
 
 			<!-- Main -->
