@@ -41,7 +41,7 @@ public class modifyCon extends HttpServlet {
         //String email = mail1 + "@" + mail2;
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member update = new Member(pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2);
+        Member update = new Member(id, pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2);
 		
 		// DAO에 일할 메소드 만들기
 		MemberDAO dao = new MemberDAO();
@@ -60,7 +60,7 @@ public class modifyCon extends HttpServlet {
 			// 실패했으면 -> 이동X
 		} else {
 			System.out.println("modifyCon : 회원정보 수정 실패..");
-			// 회원가입 실패하면 main.jsp로 이동.
+			// 회원정보 수정 실패하면 modify.jsp로 이동.
 			response.sendRedirect("modify.jsp");
 		}
 	}

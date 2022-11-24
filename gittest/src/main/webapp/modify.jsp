@@ -50,7 +50,7 @@
         
     </script>
 </head>
-<body onload="init()">
+<body class="landing is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
