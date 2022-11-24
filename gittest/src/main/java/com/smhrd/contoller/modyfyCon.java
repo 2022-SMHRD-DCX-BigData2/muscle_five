@@ -28,20 +28,20 @@ public class modyfyCon extends HttpServlet {
 		
 		// 1. 파라미터 수집
 		String pw = request.getParameter("pw");
-        String[] gender = request.getParameterValues("gender");
+        String gender = request.getParameter("gender");
         	
         String birth_yy = request.getParameter("birth_yy");
-        String[] birth_mm = request.getParameterValues("birth_mm");
+        String birth_mm = request.getParameter("birth_mm");
         	
         String birth_dd = request.getParameter("birth_dd");
         //String birth = birth_yy + birth_mm + birth_dd;
         String mail1 = request.getParameter("mail1");
-        String[] mail2 = request.getParameterValues("mail2");
+        String mail2 = request.getParameter("mail2");
         	  
         //String email = mail1 + "@" + mail2;
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member update = new Member(pw, gender, birth_yy, birth_dd, birth_mm, mail1, mail2);
+        Member update = new Member(pw, gender, birth_yy, birth_mm, birth_dd, mail1, mail2);
 		
 		// DAO에 일할 메소드 만들기
 		MemberDAO dao = new MemberDAO();
