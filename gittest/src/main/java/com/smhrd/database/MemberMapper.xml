@@ -5,7 +5,7 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
-		insert into member values (#{id}, #{pw}, #{gender}, #{birth}, #{mail})
+		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy},  #{birth_mm}, #{birth_dd},#{mail1}, #{mail2})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.domain.Member"
