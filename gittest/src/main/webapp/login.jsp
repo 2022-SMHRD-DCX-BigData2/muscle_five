@@ -65,7 +65,7 @@
 					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#" class="button">Login</a></li>
+							<li><a href="#" class="button">Log in</a></li>
 							<li><a href="join.jsp" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
