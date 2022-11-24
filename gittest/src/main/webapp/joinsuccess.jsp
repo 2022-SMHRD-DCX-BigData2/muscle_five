@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta charset="UTF-8">
@@ -62,9 +64,9 @@
 					<!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
 					<div id="wrap">
 						<nav id="Update"> <font size="8">회원가입 축하드립니다!</font>
-						<br>
+						<br><br>
 						아래의 정보를 확인하세요<br>
-						<br>
+						<br><br>
 						
 						<table>
 							<tr>

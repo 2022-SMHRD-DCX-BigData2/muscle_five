@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +13,20 @@ public class MemberDAO {
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	SqlSession sqlSession = sqlSessionFactory.openSession();
 	
+	 public Date stringToDate(Member member){
+	    
+	        String year = member.getBirth_yy();
+	        String month = member.getBirth_mm();
+	        String[] day = member.getBirth_dd();
+	        
+	        Date birth  = null;
+	        
+	        if(year != null && month != null && day != null)
+	            birth = Date.valueOf(year + "-" + month + "-" + day);
+	        
+	        return birth;
+	 }
+	 
 	// 회원가입 기능 구현
 	public int insertMember(Member joinMember) {
 		
