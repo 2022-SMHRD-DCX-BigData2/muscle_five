@@ -69,10 +69,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 				
@@ -83,7 +83,7 @@
 						<div class="content-wrap n-tech">
 						
 						<br><br>
-				        <b><font size="6" color="gray">회원정보 수정</font></b>
+				        <b><font size="6" color="gray">u회원정보 수정</font></b>
 				        <br><br><br>
 				        
 				        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
