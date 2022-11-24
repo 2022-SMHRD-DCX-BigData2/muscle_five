@@ -27,7 +27,7 @@ public class joinCon extends HttpServlet {
         String pw = request.getParameter("pw");
         
         // 성별의 경우, 파라미터 이름이 둘다 gender로 동일하므로 배열로 받아야 된다.
-        String[] gender = request.getParameterValues("gender");	
+        String gender = request.getParameter("gender");	
         String birth_yy = request.getParameter("birth_yy");
         
         // 생일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
@@ -40,7 +40,7 @@ public class joinCon extends HttpServlet {
         String[] mail2 = request.getParameterValues("mail2");
         	
         Member joinMember = new Member(id, pw, gender, birth_yy, birth_dd, birth_mm, mail1, mail2);
-        
+        	
         MemberDAO dao = new MemberDAO();
 		int cnt = dao.insertMember(joinMember);
 		
