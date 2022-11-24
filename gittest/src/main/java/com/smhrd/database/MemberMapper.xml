@@ -8,7 +8,7 @@
 		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy},  #{birth_mm}, #{birth_dd},#{mail1}, #{mail2})
 	</insert>
 	
-	<select id="selectMember" parameterType="com.smhrd.domain.Member"
+	<!-- <select id="selectMember" parameterType="com.smhrd.domain.Member"
 	 resultType="com.smhrd.domain.Member">
 		select * from member where id=#{id} and pw=#{pw}
 	</select>
@@ -23,7 +23,7 @@
 	
 	<delete id="deleteMember" parameterType="String">
 		delete from member where id=#{id}
-	</delete>
+	</delete> -->
 	
 	<!--<select id="loginCheck" parameterType="com.smhrd.domain.Member"
 	 resultType="com.smhrd.domain.Member">
