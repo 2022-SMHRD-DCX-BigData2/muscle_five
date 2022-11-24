@@ -56,9 +56,7 @@
 								</c:if>
 								
 
-								<li><a href="LogoutCon" class="button">Log out</a></li>
-
-								<li><a href="LogoutCon" class="button">Logout</a></li>
+								<li><a href="logoutCon" class="button">Log out</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 								
 							</c:otherwise>
