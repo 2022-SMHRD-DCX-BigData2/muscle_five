@@ -88,7 +88,7 @@
 				        
 				        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 				        <!-- 값(파라미터) 전송은 POST 방식 -->
-				        <form method="post" action="modyfiCon" 
+				        <form method="post" action="modyfyCon" 
 				                name="userinfo" onsubmit="return checkValue()">
 				                
 				            <table>
@@ -155,7 +155,7 @@
 				            </table>
 				            <br><br>
 				            <input type="button" value="취소" onclick="location.href='main.jsp'">
-				            <input type="submit" value="수정"/>  
+				            <input type="submit" value="수정">  
 				        </form>
 				        </div>
                		</section>

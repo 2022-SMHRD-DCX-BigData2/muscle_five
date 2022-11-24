@@ -27,16 +27,18 @@ public class modyfyCon extends HttpServlet {
 		String id = loginMember.getId();
 		
 		// 1. 파라미터 수집
+		
+		
 		String pw = request.getParameter("pw");
-        String[] gender = request.getParameterValues("gender");
+        String gender = request.getParameter("gender");
         	
         String birth_yy = request.getParameter("birth_yy");
-        String[] birth_mm = request.getParameterValues("birth_mm");
+        String birth_mm = request.getParameter("birth_mm");
         	
         String birth_dd = request.getParameter("birth_dd");
         //String birth = birth_yy + birth_mm + birth_dd;
         String mail1 = request.getParameter("mail1");
-        String[] mail2 = request.getParameterValues("mail2");
+        String mail2 = request.getParameter("mail2");
         	  
         //String email = mail1 + "@" + mail2;
 		
@@ -61,7 +63,7 @@ public class modyfyCon extends HttpServlet {
 		} else {
 			System.out.println("UpdateCon : 회원정보 수정 실패..");
 			// 회원가입 실패하면 main.jsp로 이동.
-			response.sendRedirect("update.jsp");
+			response.sendRedirect("main.jsp");
 		}
 	}
 
