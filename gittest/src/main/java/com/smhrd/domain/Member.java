@@ -6,7 +6,7 @@ public class Member {
 	
 	private String id;
 	private String pw;
-	private String[] gender;
+	private String gender;
 	private String birth_yy;
 	private String birth_mm;
 	private String[] birth_dd;
@@ -16,7 +16,7 @@ public class Member {
 	//private String mag;
 	
 	
-	public Member(String id, String pw, String[] gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
+	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
 		
 		this.id = id;
 		this.pw = pw;
@@ -29,7 +29,7 @@ public class Member {
 	}
 
 
-	public Member(String pw, String[] gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
+	public Member(String pw, String gender, String birth_yy, String birth_mm, String[] birth_dd, String mail1, String[] mail2) {
 			
 		this.pw = pw;
 		this.gender = gender;
@@ -72,12 +72,12 @@ public class Member {
 	}
 
 
-	public String[] getGender() {
+	public String getGender() {
 		return gender;
 	}
 
 
-	public void setGender(String[] gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -120,7 +120,6 @@ public class Member {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
-
 
 	public String getMail1() {
 		return mail1;
