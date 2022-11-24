@@ -4,6 +4,17 @@
 
 
    <display-name>gittest</display-name>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>joincon</display-name>
+   	<servlet-name>joincon</servlet-name>
+   	<servlet-class>com.smhrd.controller.joincon</servlet-class>
+   </servlet>
+   <servlet-mapping>
+   	<servlet-name>joincon</servlet-name>
+   	<url-pattern>/joincon</url-pattern>
+   </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
       <welcome-file>index.htm</welcome-file>

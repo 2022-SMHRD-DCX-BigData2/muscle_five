@@ -32,13 +32,47 @@
 					<header>
 						<h2>인바디 측정 장소</h2>
 						<p></p>
+						
+						<select onchange="categoryChange(this)">
+							    <option>도/특별시/광역시 선택</option>
+							    <option value="a">전라남도</option>
+							    <option value="b">전라북도</option>
+							    <option value="c">서울</option>
+						</select>
+							 
+						<select id="city">
+						<option>시/군/구 선택</option>
+						</select>
+							 
+						<script>
+							    function categoryChange(e) {
+							    var good_a = ["순천", "여수", "목포", "해남"];
+							    var good_b = ["전주", "익산", "군산", "임실"];
+							    var good_c = ["강동구","강남구","강서구","강북구"];
+							    var target = document.getElementById("city");
+							 
+							    if(e.value == "a") var d = good_a;
+							    else if(e.value == "b") var d = good_b;
+							    else if(e.value == "c") var d = good_c;
+							 
+							    target.options.length = 0;
+							 
+							    for (x in d) {
+							        var opt = document.createElement("option");
+							        opt.value = d[x];
+							        opt.innerHTML = d[x];
+							        target.appendChild(opt);
+							    }  
+							}
+						</script>
+						
 					</header>
 					<div class="box">
 						<span class="image featured"><img src="images/pic01.jpg" alt="" /></span>
-						
-						
 					</div>
 				</section>
+				
+					
 
 			<!-- Footer -->
 				<footer id="footer">
