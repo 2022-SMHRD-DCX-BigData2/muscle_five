@@ -65,7 +65,7 @@
 	        }
 	        
 	        // 취소 버튼 클릭시 '로그인 화면'으로 이동
-	        function goLogin() {
+	        function gojoin() {
 	            location.href="login.jsp";
 	        }
     </script>
