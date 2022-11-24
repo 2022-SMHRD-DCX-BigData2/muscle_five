@@ -1,21 +1,18 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>muslefive</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-
-		<script type="text/javascript">
-	        
-	        // 로그아웃 담당 jsp로 이동
-	        function logoutPro(){
-	            location.href="./logoutPro.jsp";
-	        }
-	        
-	    </script>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
 		#divrow{
@@ -32,7 +29,6 @@
 			
 			height : 200px;
 		
-		
 		}
 		
 		</style>
@@ -46,20 +42,26 @@
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
-						
-							<%
-						        if(session.getAttribute("sessionID") == null) {// 로그인이 안되었을 때
-						          // 로그인 화면으로 이동
-						            response.sendRedirect("login.jsp");
-						        } else {// 로그인 했을 경우
-						    %>
-							<h3><%=session.getAttribute("sessionID") %>님 로그인되었습니다.</h3>
-						    <br><br>
-						    <input type="button" value="로그아웃" onclick="logoutPro()" />
-						    <%} %>
-						    
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="#">회원관리</a></li>
+								</c:if>
+								
+								<li><a href="LogoutCon">Log out</a></li>
+								<li><a href="modify.jsp">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
+							
 						</ul>
 					</nav>
 				</header>
@@ -69,10 +71,17 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<%if(loginMember != null){ %>
+							<li><a href="routin.jsp" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
+							<%} else {%>
+							<h1>로그인이 필요합니다.</h1>
+							<li><a href="routin.jsp" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+						<%} %>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 

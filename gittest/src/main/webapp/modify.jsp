@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"  isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-	<%
+	<%-- <%
         String id = session.getAttribute("sessionID").toString();
     
         MemberDAO dao = MemberDAO.getInstance();
-        Member memberBean = dao.getUserInfo(id);
-    %>
+        Member member = dao.getUserInfo(id);
+    %> --%>
  
     <title>회원정보 수정화면</title>
     
@@ -19,27 +19,27 @@
         table{
             margin-left:auto; 
             margin-right:auto;
-            border:3px solid skyblue;
         }
         
     </style>
     
     <script type="text/javascript">
     
-        function init(){
-            setComboValue("<%=member.getMail2()%>");
+        /* function init(){
+            setComboValue("${loginMember.mail2}");
         }
  
         function setComboValue(val) {
             var selectMail = document.getElementById('mail2'); // select 아이디를 가져온다.
             for (i = 0, j = selectMail.length; i < j; i++) { // select 하단 option 수만큼 반복문 돌린다.
-                if (selectMail.options[i].value == val) { // 입력된값과 option의 value가 같은지 비교
+                if (selectMail.options[i].value == val) { // 입력된 값과 option의 value가 같은지 비교
                 	selectMail.options[i].selected = true; // 같은경우라면 체크되도록 한다.
                     break;
                 }
             }
         }
-        
+         */
+         
         // 비밀번호 입력여부 체크
         function checkValue() {
             if(!document.userinfo.pw.value){
@@ -88,19 +88,19 @@
 				        
 				        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 				        <!-- 값(파라미터) 전송은 POST 방식 -->
-				        <form method="post" action="main.jsp?contentPage=modifyPro.jsp" 
+				        <form method="post" action="modyfiCon" 
 				                name="userinfo" onsubmit="return checkValue()">
 				                
 				            <table>
 				                <tr>
 				                    <td id="title">아이디</td>
-				                    <td id="title"><%=member.getId() %></td>
+				                    <td id="title">${loginMember.id}</td>
 				                </tr>
 				                <tr>
 				                    <td id="title">비밀번호</td>
 				                    <td>
 				                        <input type="password" name="pw" maxlength="50" 
-				                            value="<%=member.getPw()%>">
+				                            value="${loginMember.pw}">
 				                    </td>
 				                </tr>
 				            </table>    
@@ -108,22 +108,41 @@
 				            <table>
 				                <tr>
 				                    <td id="title">성별</td>
-				                    <td><%=member.getGender()%></td>
+				                    <td>
+				                    	<select name="gender">
+						                     <option value="${loginMember.gender}"> 남 </option>
+						                     <option value="${loginMember.gender}"> 여 </option>
+						               	</select>
+						            </td>
 				                </tr>
 				                    
 				                <tr>
 				                    <td id="title">생일</td>
 				                    <td>
-				                        <%=member.getBirthyy() %>년 
-				                        <%=member.getBirthmm() %>월 
-				                        <%=member.getBirthdd() %>일
+				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_dd}" placeholder="년(4자)" size="6" >
+				                        <select name="birth_mm">
+						                    <option value="${loginMember.birth_mm}">월</option>
+						                    <option value="01" >1</option>
+						                    <option value="02" >2</option>
+						                   	<option value="03" >3</option>
+						                    <option value="04" >4</option>
+						                    <option value="05" >5</option>
+						                    <option value="06" >6</option>
+						                    <option value="07" >7</option>
+						                    <option value="08" >8</option>
+						                    <option value="09" >9</option>
+						                    <option value="10" >10</option>
+						                    <option value="11" >11</option>
+						                    <option value="12" >12</option>
+						                </select>
+				                        <input type="text" name="birth_dd" maxlength="2" value="${loginMember.birth_dd}" placeholder="일" size="4" >
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <td id="title">이메일</td>
 				                    <td>
 				                        <input type="text" name="mail1" maxlength="50" 
-				                            value="<%=member.getMail1() %>">
+				                            value="${loginMember.mail1}">
 				                        @
 				                        <select name="mail2" id="mail2">
 				                            <option value="naver.com">naver.com</option>

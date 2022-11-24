@@ -1,3 +1,4 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -56,7 +57,14 @@
 	            }
 	        }
 	        
-	        // 취소 버튼 클릭시 로그인 화면으로 이동
+	        function checkJoin(){
+	        	if(document.userinfo !=null){
+	        		alert("회원가입에 성공하였습니다.");
+	                return false;
+	        	}
+	        }
+	        
+	        // 취소 버튼 클릭시 '로그인 화면'으로 이동
 	        function goLogin() {
 	            location.href="login.jsp";
 	        }
@@ -100,7 +108,7 @@
 						        <br><br>
 						     	<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
         						<!-- 값(파라미터) 전송은 POST 방식으로, 전송할 페이지는 joinPro.jsp -->
-						        <form method="post" action="joinPro.jsp" name="userinfo" 
+						        <form method="post" action="joinCon" name="userinfo" 
                 					onsubmit="return checkValue()">
 						            <table>
 						                <tr>
@@ -121,7 +129,7 @@
 						                <tr>
 						                    <td id="title">비밀번호 확인</td>
 						                    <td>
-						                        <input type="password" name="pw" maxlength="15">
+						                        <input type="password" name="pwcheck" maxlength="15">
 						                    </td>
 						                </tr>
 						                    
@@ -172,8 +180,8 @@
 						                </tr>
 						            </table>
 						            <br>
-						            <a href="login.jsp"><input type="submit" value="가입하기"/></a>
-						            <a href="main.html"><input type="button" value="취소"></a>
+						            <a href="login.jsp"><input type="submit" value="가입하기" onsubmit="gologin()"/></a>
+						            <a href="login.jsp"><input type="button" value="취소" onclick="goJoin()"></a>
 						        </form>
 						    </div>
                			</div>

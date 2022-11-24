@@ -1,6 +1,5 @@
 package com.smhrd.domain;
 
-import java.sql.ResultSet;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -139,13 +138,13 @@ public class MemberDAO {
 	} // 회원전체검색 끝!!
 	
 	// 관리자-회원삭제 기능구현
-	public int deleteMember(String email) {
+	public int deleteMember(String id) {
 		
 		int cnt = 0;
 		
 		try {
 			// 					mapper.xml의 id값
-			cnt = sqlSession.delete("deleteMember", email);
+			cnt = sqlSession.delete("deleteMember", id);
 			
 			// 만약에 내가 원하는 일을 했으면 DB에 반영
 			if (cnt > 0) {
@@ -167,6 +166,42 @@ public class MemberDAO {
 		return cnt;
 		
 	} // 회원삭제 끝
+
+//	public int loginCheck(String id, String pw) {
+
+//		String dbpw = ""; // db에서 꺼낸 비밀번호를 담을 변수
+//	    int x = -1;
+		
+//		try {
+			// 					mapper.xml의 id값
+			// x = sqlSession.selectOne("logincheck", logincheck);
+//			x = sqlSession.selectOne("logincheck", loginCheck(id, pw));
+			
+			// 만약에 내가 원하는 일을 했으면 DB에 반영
+//			if (rs.next()) {
+//				dbpw = rs.getString("pw"); // 비번을 변수에 넣는다.
+				 
+//               if (dbpw.equals(pw)) 
+//                    x = 1; // 넘겨받은 비번과 꺼내온 비번 비교. 같으면 인증성공
+//                else                  
+//                    x = 0; // DB의 비밀번호와 입력받은 비밀번호 다름, 인증실패
+				
+//			} else {
+//				x = -1; // 해당 아이디가 없을 경우
+				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
+//				sqlSession.rollback();
+//			}
+			
+//		} catch (Exception e) {
+			// TODO: handle exception
+//			e.printStackTrace();
+//		} finally {
+			// 빌렸던 Connection 객체를 반납
+//			sqlSession.close();
+//		}
+		
+//		return x;
+//	}
 
 	
 }
