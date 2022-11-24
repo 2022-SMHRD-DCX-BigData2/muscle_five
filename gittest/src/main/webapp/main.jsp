@@ -15,6 +15,10 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+		#main_id{
+			color : rgb(255,255,255) ;
+		}
+		
 		#divrow{
 			margin : auto;
 
@@ -55,7 +59,7 @@
 									<li><a href="#">회원관리</a></li>
 								</c:if>
 								
-								<li><a href="LogoutCon" class="button">Logout</a></li>
+								<li><a href="logoutCon" class="button">Logout</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 								
 							</c:otherwise>
@@ -70,7 +74,7 @@
 				<section id="banner">
 					<h2>MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
+					<h1 id="main_id"><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
@@ -78,7 +82,7 @@
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
 							<%} else {%>
-							<h1>로그인이 필요합니다.</h1>
+							<h1 id="main_id">로그인이 필요합니다.</h1>
 							<ul class="actions special">
 							<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="routin.jsp" class="button ">routin</a></li>
