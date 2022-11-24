@@ -1,6 +1,7 @@
 package com.smhrd.contoller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -18,8 +19,10 @@ public class joinCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+
 		// 한글 깨짐을 방지하기 위한 인코딩 처리
         request.setCharacterEncoding("UTF-8"); 
+        
     
         // getParameter()를 이용해 넘겨진 파라미터 값을 얻어올 수 있다.
         // 파라미터 값을 얻을때 name= 에 지정해둔 값과 동일한 값을 인자로 지정해야 된다.
@@ -31,13 +34,15 @@ public class joinCon extends HttpServlet {
         String birth_yy = request.getParameter("birth_yy");
         
         // 생일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
-        String[] birth_mm = request.getParameterValues("birth_mm");
+        String birth_mm = request.getParameter("birth_mm");
         	
         String birth_dd = request.getParameter("birth_dd");
-        String mail1 = request.getParameter("mail1");
+        String mail1 = request.getParameter("email_1");
         
         // 이메일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
-        String[] mail2 = request.getParameterValues("mail2");
+        String mail2 = request.getParameter("email_2");
+        
+        		
         	
         Member joinMember = new Member(id, pw, gender, birth_yy, birth_dd, birth_mm, mail1, mail2);
         	
@@ -49,7 +54,7 @@ public class joinCon extends HttpServlet {
 			// 회원가입 성공하면 joinSuccess.jsp로 이동.
 	        
 			// response.sendRedirect("joinSuccess.jsp");
-			RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("joinsuccess.jsp");
 			request.setAttribute("joinid", id);
 			rd.forward(request, response);
 			
