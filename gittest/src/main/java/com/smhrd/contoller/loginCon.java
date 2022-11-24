@@ -18,7 +18,7 @@ public class loginCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTP-8"); 
+		request.setCharacterEncoding("UTF-8"); 
         
         // 로그인 화면에 입력된 아이디, 비밀번호 가져오기
         String id = request.getParameter("id");
