@@ -17,7 +17,7 @@ public class modyfyCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("[UpdateCon]");
+		System.out.println("[modifyCon]");
 		
 		request.setCharacterEncoding("UTF-8");
 		// 어떤 사람의 회원정보를 수정할지 email을 가져와야함
@@ -50,7 +50,7 @@ public class modyfyCon extends HttpServlet {
 		// DAO의 명령 후 처리
 		// 성공했으면(cnt>0) -> 성공페이지로 이동!
 		if(cnt > 0) {
-			System.out.println("UpdateCon : 회원정보 수정 성공!");
+			System.out.println("modifyCon : 회원정보 수정 성공!");
 			// 세션에 저장되어있는 정보가 수정되기 이전의 로그인 정보이기 때믄에
 			// 같은 이름으로 덮어쓰기 해야한다.
 			session.setAttribute("loginMember", update);
@@ -59,9 +59,9 @@ public class modyfyCon extends HttpServlet {
 			
 			// 실패했으면 -> 이동X
 		} else {
-			System.out.println("UpdateCon : 회원정보 수정 실패..");
+			System.out.println("modifyCon : 회원정보 수정 실패..");
 			// 회원가입 실패하면 main.jsp로 이동.
-			response.sendRedirect("update.jsp");
+			response.sendRedirect("modify.jsp");
 		}
 	}
 
