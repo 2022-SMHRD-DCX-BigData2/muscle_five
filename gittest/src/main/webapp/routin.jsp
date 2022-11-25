@@ -1,3 +1,11 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -13,34 +21,15 @@
 
 		<style>
 					
-			
-			#calendar{
-			margin : 150px;
-			}
-			#routin{
 		
-			}
-			#muscle{
-			margin : 150px;
-			
-			}		
-			#next {
-			margin-right : 150px;
-			}
-			#prev {
-			margin-left : 150px;
-			}
 			#btn_group button{
-				
-				border: none;
+				border: 1px solid skyblue;
 				background-color: rgba(0,0,0,0);
-				color : gray;
+				color : skyblue;
 				padding : 5px;
-				border-radius:10px; 
-				font-size: 14px;
 			}
-			#btn_group button:hover{
-				color:skyblue;
+			#btn_group button:hober{
+				color:white;
 				backrtound-color: skyblue;
 			}
 		</style>
@@ -50,11 +39,30 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.jsp">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
-						<ul>	
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						<ul class="links">
+						<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="#">회원관리</a></li>
+								</c:if>
+								
+
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
+							
 						</ul>
 					</nav>
 				</header>
@@ -62,13 +70,23 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>MusleFive</h2>
-					<p>환영합니다.</p>
+					<%if(loginMember != null){ %>
+					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
-					</ul>
+								<li><a href="routin.html" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+							<%} else {%>
+							<h1>로그인이 필요합니다.</h1>
+							<ul class="actions special">
+							<li><a href="main.jsp" class="button ">main</a></li>
+							<li><a href="routin.html" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+						<%} %>
 				</section>
 				       
                   
@@ -87,15 +105,9 @@
                       </div>
 						</header>
 						
-<<<<<<< HEAD
-					
-					<div class="row" id="muscle">
-						<div class="col-6">
-=======
 					<form action="compositionCon">
 					<div class="row">
 						<div class="col-4 col-12-narrower">
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 							<section class="box special">
 								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
 								<h3>채성분 입력</h3>
@@ -107,7 +119,14 @@
 						</div>
 						</form>
 						
-						<div class="col-6 " id="routin">
+						<div class="col-4 col-12-narrower">
+							<section class="box special">
+								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
+							</section>
+						</div>
+						
+						<div class="col-4 col-12-narrower">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
 								<h3>추천운동부분입니다!!!!!</h3>
@@ -115,20 +134,13 @@
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
 								<div id="btn_group">
-								<button align="right" id="next">이전</button>
-								<button align="right" id="prev">다음</button>
+								<button align="left" id="prev">prev</button>
+								<button align="right" id="next">next</button>
 								</div>
 							</section>
 						</div>
 					</div>
 
-
-					<div class="col-4 col-12-narrower" id="calendar">
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
-							</section>
-					</div>
 
 			<!-- CTA -->
 				<section id="cta">

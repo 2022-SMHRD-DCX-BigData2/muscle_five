@@ -37,10 +37,10 @@ public class joinCon extends HttpServlet {
         String birth_mm = request.getParameter("birth_mm");
         	
         String birth_dd = request.getParameter("birth_dd");
-        String mail1 = request.getParameter("email_1");
+        String mail1 = request.getParameter("mail_1");
         
         // 이메일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
-        String mail2 = request.getParameter("email_2");
+        String mail2 = request.getParameter("mail_2");
         
         		
         	
