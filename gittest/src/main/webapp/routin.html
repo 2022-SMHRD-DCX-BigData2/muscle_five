@@ -13,15 +13,30 @@
 
 		<style>
 					
-		
-			#btn_group button{
-				border: 1px solid skyblue;
-				background-color: rgba(0,0,0,0);
-				color : skyblue;
-				padding : 5px;
+			
+			#calendar{
+			margin : 150px;
 			}
-			#btn_group button:hober{
-				color:white;
+			#muscle{
+			margin : 150px;
+			}		
+			#next {
+			margin-right : 150px;
+			}
+			#prev {
+			margin-left : 150px;
+			}
+			#btn_group button{
+				
+				border: none;
+				background-color: rgba(0,0,0,0);
+				color : gray;
+				padding : 5px;
+				border-radius:10px; 
+				font-size: 14px;
+			}
+			#btn_group button:hover{
+				color:skyblue;
 				backrtound-color: skyblue;
 			}
 		</style>
@@ -68,7 +83,8 @@
                       </div>
 						</header>
 						
-					
+
+					<form action="compositionCon">
 					<div class="row">
 						<div class="col-4 col-12-narrower">
 							<section class="box special">
@@ -80,15 +96,9 @@
 								<input type="submit" value="제출">
 							</section>
 						</div>
+						</form>
 						
-						<div class="col-4 col-12-narrower">
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
-							</section>
-						</div>
-						
-						<div class="col-4 col-12-narrower">
+						<div class="col-6 " id="routin">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
 								<h3>추천운동부분입니다!!!!!</h3>
@@ -96,13 +106,20 @@
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
 								<div id="btn_group">
-								<button align="left" id="prev">prev</button>
-								<button align="right" id="next">next</button>
+								<button align="right" id="next">이전</button>
+								<button align="right" id="prev">다음</button>
 								</div>
 							</section>
 						</div>
 					</div>
 
+
+					<div class="col-4 col-12-narrower" id="calendar">
+							<section class="box special">
+								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
+							</section>
+					</div>
 
 			<!-- CTA -->
 				<section id="cta">
