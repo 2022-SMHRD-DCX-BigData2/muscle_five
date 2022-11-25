@@ -20,6 +20,10 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+			.routinImg{
+				height:100px;	
+			}
+		
 			#btn-good button{
 			border: none;
 			background-color: rgba(0,0,0,0);
@@ -134,7 +138,7 @@
 						<div class="col-6 ">
 							<form action="compositionCon">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+								<span class="image featured"><img class="routinImg" src="images/pic02.jpg" alt="" /></span>
 								<h3 id="font">채성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
@@ -148,7 +152,7 @@
 						
 						<div class="col-6" id="routin">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<span class="image featured"><img class="routinImg" src="images/pic03.jpg" alt="" /></span>
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
 								<div><pre>팔굽혀펴기 max : </pre></div><br>
 								<pre>턱걸이 max : </pre><br>
