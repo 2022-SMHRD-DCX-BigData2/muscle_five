@@ -20,16 +20,29 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+			#btn-good button{
+			border: none;
+			background-color: rgba(0,0,0,0);
+			color : gray;
+			font-size:20px;
+			}
+			#btn-good {
+			margin-right : 400px;
+			 }
+			
+			#font{
+			color : rgb(0,0,0);
+			}
 			#calendar{
-			margin : 150px;
+			margin : 180px;
 			}		
 			#muscle{
 			margin : 150px;
 			}		
-			#next {
+			#prev {
 			margin-right : 150px;
 			}
-			#prev {
+			#next {
 			margin-left : 150px;
 			}
 			#btn_group button{
@@ -37,6 +50,7 @@
 				background-color: rgba(0,0,0,0);
 				color : gray;
 				padding : 5px;
+				font-size:20px; padding:20px 20px
 			}
 			#btn_group button:hover{
 				color:skyblue;
@@ -121,7 +135,7 @@
 							<form action="compositionCon">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>채성분 입력</h3>
+								<h3 id="font">채성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
@@ -135,17 +149,17 @@
 						<div class="col-6" id="routin">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>추천운동부분입니다!!!!!</h3>
-								<pre>팔굽혀펴기 max : </pre>
+								<h3 id="font">추천운동부분입니다!!!!!</h3>
+								<div><pre>팔굽혀펴기 max : </pre></div>
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
+								<div id="btn-good">
 								<button id='like1'>👍</button><span id='span1'>0</span>
-								<div id="btn_group">
-								<button align="left" id="prev">prev</button>
-								<button align="right" id="next">next</button>
 								</div>
-								
-								
+								<div id="btn_group">
+								<button  id="prev">prev</button>
+								<button  id="next">next</button>
+								</div>
 							</section>
 						</div>
 					</div>
@@ -153,7 +167,7 @@
 						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
+								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
 						</div>
 

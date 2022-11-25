@@ -15,6 +15,9 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+		#font{
+		color : rgb(0,0,0);
+		}
 		#like{
 			font-size :20px;
 		}
@@ -112,7 +115,7 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2>What is Body Composition?</h2>
+							<h2 id="font">What is Body Composition?</h2>
 							<div class="content-wrap n-tech">
                
                 <div class="content">
@@ -179,13 +182,11 @@
 						<div class="col-12">
 							<section class="box special" >
 								<span class="image featured"></span>
-								<h3>추천 운동 랭킹</h3>
+								<h3 id="font">추천 운동 랭킹</h3>
 								<div id="btn_group">
-								<pre>운동루틴1 👍 : 0</pre>
-								<pre>운동루틴2 👍 : 0</pre>
-								<pre>운동루틴3 👍 : 0</pre>
-								<pre>운동루틴2   <button >좋아요</button></pre>
-								<pre>운동루틴3   <button>좋아요</button></pre>	
+								<pre>운동루틴1  : 0</pre>
+								<pre>운동루틴2  : 0</pre>
+								<pre>운동루틴3  : 0</pre>
 								</div>						
 							</section>
 						</div>
