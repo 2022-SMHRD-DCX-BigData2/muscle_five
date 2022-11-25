@@ -150,9 +150,9 @@
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
-								<div><pre>팔굽혀펴기 max : </pre></div>
-								<pre>턱걸이 max : </pre>
-								<pre>이것저것 max : </pre>
+								<div><pre>팔굽혀펴기 max : </pre></div><br>
+								<pre>턱걸이 max : </pre><br>
+								<pre>이것저것 max : </pre><br><br>
 								<div id="btn-good">
 								<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
