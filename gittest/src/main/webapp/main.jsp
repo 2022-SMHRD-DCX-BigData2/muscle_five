@@ -15,42 +15,21 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-		#font{
-		color : rgb(0,0,0);
-		}
-		#like{
-			font-size :20px;
-		}
-		#rank{
-			margin : none;
-		}
-		#main_id{
-			color : rgb(255,255,255) ;
-		}
 		#divrow{
 			margin : auto;
+
 			height: 600px;
+
 			width: 500px;
 		}
+				
 		.inbodyimg{
+			
 			width : 200px;
+			
 			height : 200px;
+		
 		}
-		#btn_group button{
-				
-				border: none;
-				background-color: rgba(0,0,0,0);
-				color : gray;
-				padding : 5px;
-				border-radius:10px; 
-				font-size: 14px;
-				
-				
-			}
-		#btn_group button:hover{
-				color:skyblue;
-				backrtound-color: skyblue;
-			}
 		
 		</style>
 </head>
@@ -73,11 +52,10 @@
 							<c:otherwise>
 							
 								<c:if test="${loginMember.id eq 'admin'}">
-									<li><a href="#">회원관리</a></li>
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
 								</c:if>
 								
-
-								<li><a href="logoutCon" class="button">Logout</a></li>
+								<li><a href="logoutCon" class="button">Log out</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 								
 							</c:otherwise>
@@ -92,21 +70,21 @@
 				<section id="banner">
 					<h2>MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1 id="main_id"><%= loginMember.getId()%>님 환영합니다~~</h1>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-								<li><a href="routin.jsp" class="button ">routin</a></li>
-							<li><a href="community.jsp" class="button ">community</a></li>
-							<li><a href="generic.jsp" class="button ">Map</a></li>
-							</ul>
-							<%} else {%>
-							<h1 id="main_id">로그인이 필요합니다.</h1>
-							<ul class="actions special">
-							<li><a href="main.jsp" class="button ">main</a></li>
-							<li><a href="routin.jsp" class="button ">routin</a></li>
-							<li><a href="community.jsp" class="button ">community</a></li>
-							<li><a href="generic.jsp" class="button ">Map</a></li>
-							</ul>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					</ul>
+					<%} else {%>
+					<h1>로그인이 필요합니다.</h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					<ul>
 						<%} %>
 				</section>
 
@@ -115,7 +93,7 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2 id="font">What is Body Composition?</h2>
+							<h2>What is Body Composition?</h2>
 							<div class="content-wrap n-tech">
                
                 <div class="content">
@@ -175,22 +153,24 @@
 						
 					</section>
 
-							
-											
 					
-					
-						<div class="col-12">
-							<section class="box special" >
-								<span class="image featured"></span>
-								<h3 id="font">추천 운동 랭킹</h3>
-								<div id="btn_group">
-								<pre>운동루틴1  : 0</pre>
-								<pre>운동루틴2  : 0</pre>
-								<pre>운동루틴3  : 0</pre>
-								</div>						
+					<div class="row" id="divrow">
+						<div class="row2">
+
+
+
+							<section class="box special">
+								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+								<h3>추천 운동 랭킹</h3>
+								<pre>운동루틴1   <button>좋아요</button></pre>
+								<pre>운동루틴2   <button>좋아요</button></pre>
+								<pre>운동루틴3   <button>좋아요</button></pre>							
 							</section>
+
 						</div>
-					
+						
+					</div>
+
 				</section>
 
 			<!-- CTA -->
@@ -218,6 +198,7 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
+
 		</div>
 
 		<!-- Scripts -->
@@ -228,6 +209,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			
+	
 </body>
 </html>

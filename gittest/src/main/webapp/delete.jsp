@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.smhrd.domain.MemberDAO" %>    
+<%@ page import="com.smhrd.domain.Member" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
@@ -16,21 +18,7 @@
         }
         
     </style>
-    	<%-- <%
-			request.setCharacterEncoding("UTF-8");
-				
-    		HttpSession session = request.getSession();
-    		Member loginMember =  (Member) session.getAttribute("loginMember");
-			String pw = request.getParameter("pw");
-			        
-			// 세션에서 아이디를, Delete.jsp에서 입력받은 비밀번호를 가져온다.
-			// 가져온 결과를 가지고 회원정보를 삭제한다. - 삭제결과를 반환
-			MemberDAO dao = new MemberDAO();
-			int check = dao.deleteMember(id, pw);
-			        
-			if(check == 1){
-			            session.invalidate(); // 삭제했다면 세션정보를 삭제한다.
-		%> --%>
+    	
     <script type="text/javascript">
         // 비밀번호 미입력시 경고창
         function checkValue(){
@@ -38,12 +26,12 @@
                 alert("비밀번호를 입력하지 않았습니다.");
                 return false;
             }
-            if(document.deleteform.pw.value){
-                alert("비밀번호가 맞지 않습니다.");
-                history.go(-1);
-                return false;
-            }
-            
+            //if(document.deleteform.pw.value){
+            //    if(){
+            //    	alert("비밀번호가 맞지 않습니다.");
+            //        history.go(-1);
+            //    }
+            //}
         }
     </script>
     
@@ -67,10 +55,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 				
@@ -84,7 +72,7 @@
 						    <b><font size="6" color="gray">내 정보</font></b>
 						    <br><br>
 						 
-						    <form name="deleteform" method="post" action="deleteCon.jsp"
+						    <form name="deleteform" method="post" action="deleteUserCon"
 						        onsubmit="return checkValue()">
 						 
 						        <table>
@@ -95,8 +83,10 @@
 						        </table>
 						        
 						        <br> 
+						        
 						        <a href = "main.jsp"><input type="button" value="취소"></a>
 						        <input type="submit" value="탈퇴" onsubmit="return checkpwValue()"/> 
+						        
 						    </form>
 						    
 						</div>
