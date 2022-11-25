@@ -40,10 +40,10 @@
 	</insert>
 	
 	
-	<!--<select id="loginCheck" parameterType="com.smhrd.domain.Member"
+	<!-- <select id="loginCheck" parameterType="com.smhrd.domain.Member"
 
 	 resultType="com.smhrd.domain.Member">
 		select * from member where id=#{id}
-	</select>
+	</select> -->
 	
 </mapper>
