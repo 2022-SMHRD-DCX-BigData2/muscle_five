@@ -23,6 +23,13 @@
 			.routinImg{
 				height:100px;	
 			}
+			
+			.pad{
+				padding:0%;
+				border: 1px solid gray;
+				width: 650px;
+				background: gray; 
+			}
 		
 			#btn-good button{
 			border: none;
@@ -143,6 +150,7 @@
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
+								<br>
 								<input type="submit" value="제출">
 							</section>
 							</form>
@@ -154,6 +162,7 @@
 							<section class="box special">
 								<span class="image featured"><img class="routinImg" src="images/pic03.jpg" alt="" /></span>
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
+								<br>
 								<div><pre>팔굽혀펴기 max : </pre></div><br>
 								<pre>턱걸이 max : </pre><br>
 								<pre>이것저것 max : </pre><br><br>
