@@ -21,28 +21,34 @@
 <body>
 	<div id="wrap">
 	<br>
-	<h2 align="center">아이디 중복확인</h2>
+	<h2 align="center"><font size="6" color ="black" >[아이디 중복확인]</font></h2>
 	<form action="idCheck" method="post" name="userinfo">
 	 	<table align="center">
 	 		<tr>
-	 		<td><font size="3" color="gray">아이디<input type="text" name="id" value="${id}"></font></td>
-			<td><input type="submit" value="중복 확인"></td>
+	 			<td><font size="5" color="gray">아이디</font></td>
+	 		</tr>	
+	 		<tr>
+	 			<td><input type="text" name="id" value="${id}"></td>
+				<td><input type="submit" value="중복 확인"></td>
 			</tr>
+	
 			<br>
+		
 			<tr>
-			<td>
-			<c:if test="${result == 1}">
-				<script type="text/javascript">
-					opener.document.userinfo.id.value]="";
-				</script>
-				<font size="2" color="gray">${id}는 이미 사용 중인 아이디 입니다.</font>
-			</c:if>
-			<c:if test="${result == -1}">
-				<font size="2" color="gray">${id}는 사용 가능한 아이디 입니다.</font>
-			</td>	
-				<td><input type="button" value="사용허기" class="cancel" onclick="idok()"></td>
-			</c:if>
+				<td>
+				<c:if test="${result == 1}">
+					<script type="text/javascript">
+						opener.document.userinfo.id.value]="";
+					</script>
+					<font size="2" color="gray">${id}는 이미 사용 중인 아이디 입니다.</font>
+				</c:if>
+				<c:if test="${result == -1}">
+					<font size="2" color="gray">${id}는 사용 가능한 아이디 입니다.</font>
+				</td>	
+					<td><input type="button" value="사용허기" class="cancel" onclick="idok()"></td>
+				</c:if>
 			<tr>
+			
 		</table>
 	</form>
 	</div>
