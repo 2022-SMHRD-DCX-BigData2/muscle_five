@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.smhrd.domain.MemberDAO" %>    
+<%@ page import="com.smhrd.domain.Member" %> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +22,7 @@
         }
         
     </style>
-    
+    	
     <script type="text/javascript">
         // 비밀번호 미입력시 경고창
         function checkValue(){
@@ -23,6 +30,12 @@
                 alert("비밀번호를 입력하지 않았습니다.");
                 return false;
             }
+            //if(document.deleteform.pw.value){
+            //    if(){
+            //    	alert("비밀번호가 맞지 않습니다.");
+            //        history.go(-1);
+            //    }
+            //}
         }
     </script>
     
@@ -46,10 +59,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 				
@@ -63,7 +76,7 @@
 						    <b><font size="6" color="gray">내 정보</font></b>
 						    <br><br>
 						 
-						    <form name="deleteform" method="post" action="main.jsp?contentPage=deletePro.jsp"
+						    <form name="deleteform" method="post" action="deleteUserCon"
 						        onsubmit="return checkValue()">
 						 
 						        <table>
@@ -74,9 +87,12 @@
 						        </table>
 						        
 						        <br> 
-						        <input type="button" value="취소" onclick="location.href='main.jsp'">
-						        <input type="submit" value="탈퇴" /> 
+						        
+						        <a href = "main.jsp"><input type="button" value="취소"></a>
+						        <input type="submit" value="탈퇴" onsubmit="return checkpwValue()"/> 
+						        
 						    </form>
+						    
 						</div>
                		</section>
 				</section>

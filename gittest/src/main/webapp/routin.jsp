@@ -1,3 +1,11 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -12,28 +20,61 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-					
-			
-			#calendar{
-			margin : 150px;
+			#insta{
+			width : 50px;
+			height : 50px;
 			}
-			#muscle{
-			margin : 150px;
+			
+			#big-box{
+			border : solid 1px;
+			border-color : white;
+			padding : 2em;
+			border-shaow : 5px;
+			}
+			#box{
+			border : none;
+			padding : 0px;
+			width : auto;
+			margin-left :auto;
+			border-radius : 0px;
+			
+			}
+						
+
+		
+			}
+			#btn-good button{
+			border: none;
+			background-color: rgba(0,0,0,0);
+			color : gray;
+			font-size:20px;
+			}
+			#btn-good {
+			margin-right : 400px;
+			 }
+			
+			#font{
+			color : rgb(0,0,0);
+			}
+			#calendar{
+			margin : 180px;
 			}		
-			#next {
+			#muscle{
+			margin : 100px;
+			
+			}		
+			#prev {
 			margin-right : 150px;
 			}
-			#prev {
+			#next {
 			margin-left : 150px;
 			}
 			#btn_group button{
-				
 				border: none;
 				background-color: rgba(0,0,0,0);
 				color : gray;
 				padding : 5px;
-				border-radius:10px; 
-				font-size: 14px;
+				font-size:20px; padding:20px 20px
 			}
 			#btn_group button:hover{
 				color:skyblue;
@@ -46,11 +87,30 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.jsp">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
-						<ul>	
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						<ul class="links">
+						<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="#">회원관리</a></li>
+								</c:if>
+								
+
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
+							
 						</ul>
 					</nav>
 				</header>
@@ -58,13 +118,23 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>MusleFive</h2>
-					<p>환영합니다.</p>
+					<%if(loginMember != null){ %>
+					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
-					</ul>
+								<li><a href="#" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+							<%} else {%>
+							<h1>로그인이 필요합니다.</h1>
+							<ul class="actions special">
+							<li><a href="main.jsp" class="button ">main</a></li>
+							<li><a href="#" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+						<%} %>
 				</section>
 				       
                   
@@ -83,43 +153,53 @@
                       </div>
 						</header>
 						
-
-					<form action="compositionCon">
-					<div class="row">
-						<div class="col-4 col-12-narrower">
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
-								<h3>채성분 입력</h3>
+					
+					<div class="row" id="muscle">
+						<div class="col-6 ">
+							<form action="compositionCon">
+							<section class="box special" >
+								<h3 id="font">채성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
+								<br>
 								<input type="submit" value="제출">
 							</section>
+							</form>
 						</div>
-						</form>
 						
-						<div class="col-6 " id="routin">
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h3>추천운동부분입니다!!!!!</h3>
+						
+						
+						<div class="col-6" id="routin">
+							<section class="box special" id="big-box">
+								<div align="left">
+									<img id="insta" src="인스타사진2.png">MuscleFive
+								</div>
+								<pre id="box">
+								<h3 id="font">추천운동부분입니다!!!!!</h3>
+
 								<pre>팔굽혀펴기 max : </pre>
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
+								</pre>
+
+								<div id="btn-good">
+								<button id='like1'>👍</button><span id='span1'>0</span>
+								</div>
 								<div id="btn_group">
-								<button align="right" id="next">이전</button>
-								<button align="right" id="prev">다음</button>
+								<button  id="prev">prev</button>
+								<button  id="next">next</button>
 								</div>
 							</section>
 						</div>
 					</div>
 
-
-					<div class="col-4 col-12-narrower" id="calendar">
+						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
+								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
-					</div>
+						</div>
 
 			<!-- CTA -->
 				<section id="cta">
@@ -153,6 +233,20 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).on('click', '#like1', function() {
+					let like = Number($('#span1').text())
+					$('#span1').text(like + 1)
+					$(this).text('👎')
+					$(this).attr('id', 'dislike1')
+				})
+		
+				$(document).on('click', '#dislike1', function() {
+					$('#span1').text('0')
+					$(this).text('👍')
+					$(this).attr('id', 'like1')
+				})
+			</script>
 
 	</body>
 </html>

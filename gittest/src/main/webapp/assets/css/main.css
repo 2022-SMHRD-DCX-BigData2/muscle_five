@@ -145,7 +145,7 @@
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		color: #646464;
+		color: #f5f5f5;
 		font-weight: 300;
 		line-height: 1em;
 		margin: 0 0 0.5em 0;
@@ -2257,7 +2257,7 @@
 		border-radius: 6px;
 		box-shadow: 0 2px 0 0 #e5e5e5;
 		margin: 0 0 2em 0;
-		padding: 3em;
+		padding: 2em;
 	}
 
 		.box > :last-child {
@@ -3166,7 +3166,7 @@
 	#banner {
 		background-attachment: scroll,							fixed;
 		background-color: #666;
-		background-image: url("images/overlay.png"), url("../../images/banner.jpg");
+		background-image: url("images/overlay.png"), url("https://images.unsplash.com/photo-1574680096145-d05b474e2155?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
 		background-position: top left,						center center;
 		background-repeat: repeat,							no-repeat;
 		background-size: auto,							cover;
@@ -3306,8 +3306,8 @@
 /* CTA */
 
 	#cta {
-		background: #e89980;
-		color: #f9e6df;
+		background: #444;
+		color: #fff;
 		padding: 3.5em 0 4em 0;
 		text-align: center;
 	}

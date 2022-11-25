@@ -12,18 +12,13 @@
 		
 		#divrow{
 			margin : auto;
-
 			height: 600px;
-
 			width: 500px;
 		}
 				
 		.inbodyimg{
-			
 			width : 200px;
-			
 			height : 200px;
-		
 		}
 		
 		#wrap{
@@ -36,6 +31,7 @@
 		</style>
 		
 		<script type="text/javascript">
+		
 		 // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 	        function checkValue()
 	        {
@@ -69,7 +65,7 @@
 					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#" class="button">Login</a></li>
+							<li><a href="#" class="button">Log in</a></li>
 							<li><a href="join.jsp" class="button">Sign Up</a></li>
 						</ul>
 					</nav>
@@ -80,10 +76,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 
@@ -94,7 +90,7 @@
 						<div class="content-wrap n-tech">
 							<!-- 왼쪽, 오른쪽 바깥여백을 auto로 주면 중앙정렬된다.  -->
 							<div id="wrap">
-						        <form action="loginPro.jsp" name="logininfo" method="post" 
+						        <form action="loginCon" name="logininfo" method="post" 
 						                onsubmit="return checkValue()">
 						            <table>
 						                <tr>
@@ -110,22 +106,22 @@
 						            <input type="submit" value="로그인"/>
 						            <a href="join.jsp"><input type="button" value="회원가입" onclick="goJoin()" /></a>
 						        </form>
-						      	<% 
+						      	<%--
 						            // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
 						            // LoginPro.jsp에서 로그인 처리 결과에 따른 메시지를 보낸다.
-						            String msg=request.getParameter("msg");
+						            String msg = request.getParameter("msg");
 						            
-						            if(msg!=null && msg.equals("0")) 
+						            if(msg != null && msg.equals("0")) 
 						            {
 						                out.println("<br>");
 						                out.println("비밀번호를 확인해 주세요.");
 						            }
-						            else if(msg!=null && msg.equals("-1"))
+						            else if(msg != null && msg.equals("-1"))
 						            {    
 						                out.println("<br>");
 						                out.println("아이디를 확인해 주세요.");
 						            }
-						        %>    
+						      	--%> 
 						     </div> 
                			</div>
                		</section>

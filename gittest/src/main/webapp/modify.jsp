@@ -1,17 +1,23 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	<%
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<%-- <%
         String id = session.getAttribute("sessionID").toString();
     
         MemberDAO dao = MemberDAO.getInstance();
-        Member memberBean = dao.getUserInfo(id);
-    %>
+        Member member = dao.getUserInfo(id);
+    %> --%>
  
     <title>회원정보 수정화면</title>
     
@@ -19,27 +25,27 @@
         table{
             margin-left:auto; 
             margin-right:auto;
-            border:3px solid skyblue;
         }
         
     </style>
     
     <script type="text/javascript">
     
-        function init(){
-            setComboValue("<%=member.getMail2()%>");
+        /* function init(){
+            setComboValue("${loginMember.mail2}");
         }
  
         function setComboValue(val) {
             var selectMail = document.getElementById('mail2'); // select 아이디를 가져온다.
             for (i = 0, j = selectMail.length; i < j; i++) { // select 하단 option 수만큼 반복문 돌린다.
-                if (selectMail.options[i].value == val) { // 입력된값과 option의 value가 같은지 비교
+                if (selectMail.options[i].value == val) { // 입력된 값과 option의 value가 같은지 비교
                 	selectMail.options[i].selected = true; // 같은경우라면 체크되도록 한다.
                     break;
                 }
             }
         }
-        
+         */
+         
         // 비밀번호 입력여부 체크
         function checkValue() {
             if(!document.userinfo.pw.value){
@@ -50,7 +56,7 @@
         
     </script>
 </head>
-<body onload="init()">
+<body class="landing is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -58,8 +64,28 @@
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						
+		                    <%if(!loginMember.getId().equals("admin")){ %>
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="#" class="button">개인정보수정</a></li>
+							<%}else{%>
+								<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="#" class="button">개인정보수정</a></li>
+							<%} %>
+								<!-- <c:if test="${loginMember.id ne 'admin'}">
+									<li><a href="logoutCon" class="button">Log out</a></li>
+									<li><a href="#" class="button">개인정보수정</a></li>
+								</c:if>
+								
+								<c:if test="${loginMember.id eq 'admin'}">
+							
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+									<li><a href="logoutCon" class="button">Log out</a></li>
+									<li><a href="#" class="button">개인정보수정</a></li>
+								loginMember.getId() != "admin"
+								</c:if> --> 
+								
 						</ul>
 					</nav>
 				</header>
@@ -69,10 +95,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 				
@@ -88,19 +114,19 @@
 				        
 				        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
 				        <!-- 값(파라미터) 전송은 POST 방식 -->
-				        <form method="post" action="main.jsp?contentPage=modifyPro.jsp" 
-				                name="userinfo" onsubmit="return checkValue()">
-				                
+
+				        <form method="post" action="modyfyCon" >
+		                
 				            <table>
 				                <tr>
 				                    <td id="title">아이디</td>
-				                    <td id="title"><%=member.getId() %></td>
+				                    <td id="title">${loginMember.id}</td>
 				                </tr>
 				                <tr>
 				                    <td id="title">비밀번호</td>
 				                    <td>
 				                        <input type="password" name="pw" maxlength="50" 
-				                            value="<%=member.getPw()%>">
+				                            value="${loginMember.pw}">
 				                    </td>
 				                </tr>
 				            </table>    
@@ -108,22 +134,41 @@
 				            <table>
 				                <tr>
 				                    <td id="title">성별</td>
-				                    <td><%=member.getGender()%></td>
+				                    <td>
+				                    	<select name="gender">
+						                     <option value="${loginMember.gender}"> 남 </option>
+						                     <option value="${loginMember.gender}"> 여 </option>
+						               	</select>
+						            </td>
 				                </tr>
 				                    
 				                <tr>
 				                    <td id="title">생일</td>
 				                    <td>
-				                        <%=member.getBirthyy() %>년 
-				                        <%=member.getBirthmm() %>월 
-				                        <%=member.getBirthdd() %>일
+				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_yy}" placeholder="년(4자)" size="6" >
+				                        <select name="birth_mm">
+						                    <option value="${loginMember.birth_mm}">월</option>
+						                    <option value="01" >1</option>
+						                    <option value="02" >2</option>
+						                   	<option value="03" >3</option>
+						                    <option value="04" >4</option>
+						                    <option value="05" >5</option>
+						                    <option value="06" >6</option>
+						                    <option value="07" >7</option>
+						                    <option value="08" >8</option>
+						                    <option value="09" >9</option>
+						                    <option value="10" >10</option>
+						                    <option value="11" >11</option>
+						                    <option value="12" >12</option>
+						                </select>
+				                        <input type="text" name="birth_dd" maxlength="2" value="${loginMember.birth_dd}" placeholder="일" size="4" >
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <td id="title">이메일</td>
 				                    <td>
 				                        <input type="text" name="mail1" maxlength="50" 
-				                            value="<%=member.getMail1() %>">
+				                            value="${loginMember.mail1}">
 				                        @
 				                        <select name="mail2" id="mail2">
 				                            <option value="naver.com">naver.com</option>
@@ -136,7 +181,9 @@
 				            </table>
 				            <br><br>
 				            <input type="button" value="취소" onclick="location.href='main.jsp'">
-				            <input type="submit" value="수정"/>  
+				            <input type="submit" value="수정">
+				            <br><br><br>
+				            <a href="delete.jsp" class="button alt small">회원 탈퇴</a>
 				        </form>
 				        </div>
                		</section>
