@@ -15,25 +15,39 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+		#like{
+			font-size :20px;
+		}
+		#rank{
+			margin : none;
+		}
 		#main_id{
 			color : rgb(255,255,255) ;
 		}
-		
 		#divrow{
 			margin : auto;
-
 			height: 600px;
-
 			width: 500px;
 		}
-				
 		.inbodyimg{
-			
 			width : 200px;
-			
 			height : 200px;
-		
 		}
+		#btn_group button{
+				
+				border: none;
+				background-color: rgba(0,0,0,0);
+				color : gray;
+				padding : 5px;
+				border-radius:10px; 
+				font-size: 14px;
+				
+				
+			}
+		#btn_group button:hover{
+				color:skyblue;
+				backrtound-color: skyblue;
+			}
 		
 		</style>
 </head>
@@ -59,6 +73,7 @@
 									<li><a href="#">회원관리</a></li>
 								</c:if>
 								
+
 								<li><a href="logoutCon" class="button">Logout</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 								
@@ -77,7 +92,7 @@
 					<h1 id="main_id"><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-							<li><a href="routin.jsp" class="button ">routin</a></li>
+								<li><a href="routin.jsp" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
@@ -157,24 +172,24 @@
 						
 					</section>
 
+							
+											
 					
-					<div class="row" id="divrow">
-						<div class="row2">
-
-
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+					
+						<div class="col-12">
+							<section class="box special" >
+								<span class="image featured"></span>
 								<h3>추천 운동 랭킹</h3>
-								<pre>운동루틴1   <button>좋아요</button></pre>
-								<pre>운동루틴2   <button>좋아요</button></pre>
-								<pre>운동루틴3   <button>좋아요</button></pre>							
+								<div id="btn_group">
+								<pre>운동루틴1 <button id='like1'  >👍</button>  <span id='span1'>0</span></pre>
+								<pre>운동루틴2 <button id='like2'  >👍</button>  <span id='span2'>0</span></pre>
+								<pre>운동루틴3 <button id='like3'  >👍</button>  <span id='span3'>0</span></pre>
+								<pre>운동루틴2   <button >좋아요</button></pre>
+								<pre>운동루틴3   <button>좋아요</button></pre>	
+								</div>						
 							</section>
-
 						</div>
-						
-					</div>
-
+					
 				</section>
 
 			<!-- CTA -->
@@ -202,7 +217,6 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
-
 		</div>
 
 		<!-- Scripts -->
@@ -213,6 +227,38 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-	
+			<script>
+									$(document).on('click', '#like1', function(){
+							            let like = Number($('#span1').text())
+							            $('#span1').text(like +  1)
+							            $(this).text('👎')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'dislike1')
+							        })
+							        
+							        
+							        $(document).on('click', '#like2', function(){
+							            let like = Number($('#span2').text())
+							            $('#span2').text(like +  1)
+							            $(this).text('👎')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'dislike2')
+							        })
+							        
+		
+							        $(document).on('click', '#dislike1', function(){
+							            $('#span1').text('0')
+							            $(this).text('👍')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'like1')
+							        })
+							        
+							        $(document).on('click', '#dislike2', function(){
+							            $('#span2').text('0')
+							            $(this).text('👍')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'like2')
+							        })
+			 </script>
 </body>
 </html>
