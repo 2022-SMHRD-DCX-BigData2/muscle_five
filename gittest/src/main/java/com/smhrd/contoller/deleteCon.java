@@ -34,7 +34,7 @@ public class deleteCon extends HttpServlet {
 			System.out.println("DeleteCon : 회원 삭제 실패..");
 		}
 		// 다시 select.jsp로 이동.
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("userinfo.jsp");
 	}
 
 }

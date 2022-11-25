@@ -46,14 +46,39 @@
 	                return false;
 	            }
 	            
+	            if(form.reid.value != "idCheck"){
+	                alert("아이디 중복체크를 해주세요.");
+	                return false;
+	            }
+	            
 	            if(!document.userinfo.pw.value){
 	                alert("비밀번호를 입력하세요.");
 	                return false;
 	            }
 	            
 	            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-	            if(document.userinfo.pw.value != document.userinfo.pwcheck.value ){
+	            if(document.userinfo.pw.value != document.userinfo.pwcheck.value){
 	                alert("비밀번호를 동일하게 입력하세요.");
+	                return false;
+	            }
+	            
+	            if(!form.birth_yy.value){
+	                alert("년도를 입력하세요.");
+	                return false;
+	            }
+	            
+	            if(form.birth_mm.value == "00"){
+	                alert("월을 선택하세요.");
+	                return false;
+	            }
+	            
+	            if(!form.birth_dd.value){
+	                alert("날짜를 입력하세요.");
+	                return false;
+	            }
+	            
+	            if(!form.mail_1.value){
+	                alert("메일 주소를 입력하세요.");
 	                return false;
 	            }
 	        }
@@ -69,6 +94,19 @@
 	        function gojoin() {
 	            location.href="login.jsp";
 	        }
+	        
+	        // 아이디 중복체크 화면open
+	        function idCheck(){
+	        	if (!document.userinfo.id.value){
+	        		 alert("아이디를 입력하세요.");
+	        		 document.userinfo.id.focus();
+	        		 return
+	        	}
+	        	//idcheck.jsp는 idCheck 서블릿으로 요첨함.
+	        	var url = "idcheck.jsp?id=" + document.userinfo.id.value;
+	            window.open(url, "_blank_1", "width = 500, height = 300, resizable = no, scrollbars = no"); 
+	        }
+	 
     </script>
 </head>
 <body class="landing is-preload">
@@ -90,10 +128,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 				</section>
 
@@ -110,28 +148,28 @@
 						     	<!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
         						<!-- 값(파라미터) 전송은 POST 방식으로, 전송할 페이지는 joinPro.jsp -->
 
-						        <form method="post" action="joinCon" name="userinfo" 
-									onsubmit="return checkValue()">
+						        <form action="joinCon" method="post" name="userinfo" onsubmit="return checkValue()">
 						            <table>
 						                <tr>
 						                    <td id="title">아이디</td>
 						                    <td>
-						                        <input type="text" name="id" maxlength="20">
-						                        <input type="button" value="중복확인" >    
+						                        <input type="text" name="id" maxlength="50">
+                       							<input type="button" value="중복확인" onclick="idCheck()">  
+                       							<input type="hidden" name="reid" size="20" value="중목 확인 안함" >  
 						                    </td>
 						                </tr>
 						                        
 						                <tr>
 						                    <td id="title">비밀번호</td>
 						                    <td>
-						                        <input type="password" name="pw" maxlength="15">
+						                        <input type="password" name="pw" maxlength="20">
 						                    </td>
 						                </tr>
 						                
 						                <tr>
 						                    <td id="title">비밀번호 확인</td>
 						                    <td>
-						                        <input type="password" name="pwcheck" maxlength="15">
+						                        <input type="password" name="pwcheck" maxlength="20">
 						                    </td>
 						                </tr>
 						                    
@@ -182,7 +220,7 @@
 						                </tr>
 						            </table>
 						            <br>
-						            <a href="login.jsp"><input type="submit" value="가입하기" onsubmit="gologin()"/></a>
+						            <a href="login.jsp"><input type="submit" value="가입하기"/></a>
 						            <a href="login.jsp"><input type="button" value="취소" onclick="goJoin()"></a>
 						        </form>
 						    </div>

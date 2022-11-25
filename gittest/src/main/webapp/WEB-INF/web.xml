@@ -39,6 +39,20 @@
    	<servlet-name>deleteCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.deleteCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>MemberIdCheck</display-name>
+   	<servlet-name>MemberIdCheck</servlet-name>
+   	<servlet-class>com.smhrd.contoller.MemberIdCheck</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>deleteUserCon</display-name>
+   	<servlet-name>deleteUserCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.deleteUserCon</servlet-class>
+   </servlet>
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
    	<url-pattern>/modyfyCon</url-pattern>
@@ -58,6 +72,14 @@
    <servlet-mapping>
    	<servlet-name>deleteCon</servlet-name>
    	<url-pattern>/deleteCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>MemberIdCheck</servlet-name>
+   	<url-pattern>/MemberIdCheck</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>deleteUserCon</servlet-name>
+   	<url-pattern>/deleteUserCon</url-pattern>
    </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
