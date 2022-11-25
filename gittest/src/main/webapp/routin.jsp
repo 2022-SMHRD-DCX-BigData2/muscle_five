@@ -20,10 +20,29 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-			.routinImg{
-				height:100px;	
+			#insta{
+			width : 50px;
+			height : 50px;
 			}
+			#big-box{
+			border : solid 1px;
+			border-color : white;
+			padding : 2em;
+			border-shaow : 5px;
+			}
+			#box{
+			border : none;
+			padding : 0px;
+			width : auto;
+			margin-left :auto;
+			border-radius : 0px;
+			
+			}
+			#user-name{
+			font-size : 20px;
+			height : 0px;
 		
+			}
 			#btn-good button{
 			border: none;
 			background-color: rgba(0,0,0,0);
@@ -41,7 +60,8 @@
 			margin : 180px;
 			}		
 			#muscle{
-			margin : 150px;
+			margin : 100px;
+			
 			}		
 			#prev {
 			margin-right : 150px;
@@ -137,8 +157,7 @@
 					<div class="row" id="muscle">
 						<div class="col-6 ">
 							<form action="compositionCon">
-							<section class="box special">
-								<span class="image featured"><img class="routinImg" src="images/pic02.jpg" alt="" /></span>
+							<section class="box special" >
 								<h3 id="font">채성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
@@ -151,12 +170,15 @@
 						
 						
 						<div class="col-6" id="routin">
-							<section class="box special">
-								<span class="image featured"><img class="routinImg" src="images/pic03.jpg" alt="" /></span>
+							<section class="box special" id="big-box">
+								<img id="insta" src="인스타사진2.png"><span style="display:inline-block; height:20px; width:100px;" align="center" id="user-name">MuscleFive</span>
+								
+								<pre id="box">
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
-								<div><pre>팔굽혀펴기 max : </pre></div><br>
-								<pre>턱걸이 max : </pre><br>
-								<pre>이것저것 max : </pre><br><br>
+								<pre>팔굽혀펴기 max : </pre>
+								<pre>턱걸이 max : </pre>
+								<pre>이것저것 max : </pre>
+								</pre>
 								<div id="btn-good">
 								<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
