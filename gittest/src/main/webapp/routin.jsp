@@ -20,11 +20,14 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+			
 			#insta{
 			width : 50px;
 			height : 50px;
 			}
-<<<<<<< HEAD
+			#s-box{
+			padding : 2em;
+			}
 			#big-box{
 			border : solid 1px;
 			border-color : white;
@@ -42,15 +45,8 @@
 			#user-name{
 			font-size : 20px;
 			height : 0px;
-=======
-			
-			.pad{
-				padding:0%;
-				border: 1px solid gray;
-				width: 650px;
-				background: gray; 
-			}
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
+			text-align : top;
+
 		
 			}
 			#btn-good button{
@@ -182,21 +178,16 @@
 						
 						<div class="col-6" id="routin">
 							<section class="box special" id="big-box">
-								<img id="insta" src="인스타사진2.png"><span style="display:inline-block; height:20px; width:100px;" align="center" id="user-name">MuscleFive</span>
-								
+								<div id="insta_main" align="left"><img id="insta" src="인스타사진2.png"> <span style="display:inline-block; height:20px; width:100px;"  id="user-name">MuscleFive</span>
+								</div>
 								<pre id="box">
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
-<<<<<<< HEAD
+								<div id="s-box">
 								<pre>팔굽혀펴기 max : </pre>
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
+								</div>
 								</pre>
-=======
-								<br>
-								<div><pre>팔굽혀펴기 max : </pre></div><br>
-								<pre>턱걸이 max : </pre><br>
-								<pre>이것저것 max : </pre><br><br>
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 								<div id="btn-good">
 								<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
