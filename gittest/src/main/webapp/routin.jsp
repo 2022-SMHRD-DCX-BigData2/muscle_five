@@ -115,9 +115,10 @@
                       </div>
 						</header>
 						
-					<form action="compositionCon">
+					
 					<div class="row" id="muscle">
 						<div class="col-6 ">
+							<form action="compositionCon">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
 								<h3>채성분 입력</h3>
@@ -126,8 +127,9 @@
 								<pre>체지방량<input type="text" name="fat"></pre>
 								<input type="submit" value="제출">
 							</section>
+							</form>
 						</div>
-						</form>
+						
 						
 						
 						<div class="col-6" id="routin">
@@ -137,6 +139,7 @@
 								<pre>팔굽혀펴기 max : </pre>
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
+								<button id='like1'>👍</button><span id='span1'>0</span>
 								<div id="btn_group">
 								<button align="left" id="prev">prev</button>
 								<button align="right" id="next">next</button>
@@ -186,6 +189,20 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				$(document).on('click', '#like1', function() {
+					let like = Number($('#span1').text())
+					$('#span1').text(like + 1)
+					$(this).text('👎')
+					$(this).attr('id', 'dislike1')
+				})
+		
+				$(document).on('click', '#dislike1', function() {
+					$('#span1').text('0')
+					$(this).text('👍')
+					$(this).attr('id', 'like1')
+				})
+			</script>
 
 	</body>
 </html>

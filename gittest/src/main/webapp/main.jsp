@@ -181,9 +181,9 @@
 								<span class="image featured"></span>
 								<h3>추천 운동 랭킹</h3>
 								<div id="btn_group">
-								<pre>운동루틴1 <button id='like1'  >👍</button>  <span id='span1'>0</span></pre>
-								<pre>운동루틴2 <button id='like2'  >👍</button>  <span id='span2'>0</span></pre>
-								<pre>운동루틴3 <button id='like3'  >👍</button>  <span id='span3'>0</span></pre>
+								<pre>운동루틴1 👍 : 0</pre>
+								<pre>운동루틴2 👍 : 0</pre>
+								<pre>운동루틴3 👍 : 0</pre>
 								<pre>운동루틴2   <button >좋아요</button></pre>
 								<pre>운동루틴3   <button>좋아요</button></pre>	
 								</div>						
@@ -227,49 +227,6 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script>
-									$(document).on('click', '#like1', function(){
-							            let like = Number($('#span1').text())
-							            $('#span1').text(like +  1)
-							            $(this).text('👎')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'dislike1')
-							        })
-							        $(document).on('click', '#like2', function(){
-							            let like = Number($('#span2').text())
-							            $('#span2').text(like +  1)
-							            $(this).text('👎')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'dislike2')
-							        })
-							        $(document).on('click', '#like3', function(){
-							            let like = Number($('#span3').text())
-							            $('#span3').text(like +  1)
-							            $(this).text('👎')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'dislike3')
-							        })
-							        
-		
-							        $(document).on('click', '#dislike1', function(){
-							            $('#span1').text('0')
-							            $(this).text('👍')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'like1')
-							        })
-							        
-							        $(document).on('click', '#dislike2', function(){
-							            $('#span2').text('0')
-							            $(this).text('👍')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'like2')
-							        })
-							        $(document).on('click', '#dislike3', function(){
-							            $('#span3').text('0')
-							            $(this).text('👍')
-							            $(this).removeAttr('id')
-							            $(this).attr('id', 'like3')
-							        })
-			 </script>
+			
 </body>
 </html>

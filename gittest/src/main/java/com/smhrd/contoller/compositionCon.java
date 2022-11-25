@@ -41,7 +41,7 @@ public class compositionCon extends HttpServlet {
 			// 회원가입 성공하면 joinSuccess.jsp로 이동.
 	        
 			// response.sendRedirect("joinSuccess.jsp");
-			RequestDispatcher rd = request.getRequestDispatcher("routin.html");
+			RequestDispatcher rd = request.getRequestDispatcher("routin.jsp");
 			rd.forward(request, response);
 			
 			// 실패했으면 -> 이동X
