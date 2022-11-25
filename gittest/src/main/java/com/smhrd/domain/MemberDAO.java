@@ -181,7 +181,7 @@ public class MemberDAO {
 		return cnt;
 		
 	} // 회원삭제 끝
-
+//
 
 	// 개인(일반회원) - 회원 탈퇴
 	public int deleteUser(String id, String pw) {
