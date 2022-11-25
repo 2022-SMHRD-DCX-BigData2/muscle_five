@@ -21,14 +21,14 @@
 		select * from member
 	</select>
 	
-	<delete id="deleteMember" parameterType="String">
-		delete from member where id=#{id}
-	</delete>
-	
-
-	<delete id="deleteUser" parameterType="String">
+	<delete id="deleteUser" parameterType="com.smhrd.domain.Member">
 		delete from member where id=#{id} and pw=#{pw}
 	</delete>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from member where id=#{id} and pw=#{pw}
+	</delete>
+	
 	
 	<select id="confirmid" parameterType="com.smhrd.domain.Member"
 	 resultType="com.smhrd.domain.Member">
