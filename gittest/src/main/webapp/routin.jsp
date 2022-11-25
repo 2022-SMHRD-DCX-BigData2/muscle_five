@@ -24,6 +24,7 @@
 			width : 50px;
 			height : 50px;
 			}
+<<<<<<< HEAD
 			#big-box{
 			border : solid 1px;
 			border-color : white;
@@ -41,6 +42,15 @@
 			#user-name{
 			font-size : 20px;
 			height : 0px;
+=======
+			
+			.pad{
+				padding:0%;
+				border: 1px solid gray;
+				width: 650px;
+				background: gray; 
+			}
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 		
 			}
 			#btn-good button{
@@ -162,6 +172,7 @@
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
+								<br>
 								<input type="submit" value="제출">
 							</section>
 							</form>
@@ -175,10 +186,17 @@
 								
 								<pre id="box">
 								<h3 id="font">추천운동부분입니다!!!!!</h3>
+<<<<<<< HEAD
 								<pre>팔굽혀펴기 max : </pre>
 								<pre>턱걸이 max : </pre>
 								<pre>이것저것 max : </pre>
 								</pre>
+=======
+								<br>
+								<div><pre>팔굽혀펴기 max : </pre></div><br>
+								<pre>턱걸이 max : </pre><br>
+								<pre>이것저것 max : </pre><br><br>
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 								<div id="btn-good">
 								<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
