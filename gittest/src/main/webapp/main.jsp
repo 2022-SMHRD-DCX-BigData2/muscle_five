@@ -235,14 +235,19 @@
 							            $(this).removeAttr('id')
 							            $(this).attr('id', 'dislike1')
 							        })
-							        
-							        
 							        $(document).on('click', '#like2', function(){
 							            let like = Number($('#span2').text())
 							            $('#span2').text(like +  1)
 							            $(this).text('👎')
 							            $(this).removeAttr('id')
 							            $(this).attr('id', 'dislike2')
+							        })
+							        $(document).on('click', '#like3', function(){
+							            let like = Number($('#span3').text())
+							            $('#span3').text(like +  1)
+							            $(this).text('👎')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'dislike3')
 							        })
 							        
 		
@@ -258,6 +263,12 @@
 							            $(this).text('👍')
 							            $(this).removeAttr('id')
 							            $(this).attr('id', 'like2')
+							        })
+							        $(document).on('click', '#dislike3', function(){
+							            $('#span3').text('0')
+							            $(this).text('👍')
+							            $(this).removeAttr('id')
+							            $(this).attr('id', 'like3')
 							        })
 			 </script>
 </body>

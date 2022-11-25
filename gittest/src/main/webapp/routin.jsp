@@ -20,16 +20,26 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-					
-		
+			#calendar{
+			margin : 150px;
+			}		
+			#muscle{
+			margin : 150px;
+			}		
+			#next {
+			margin-right : 150px;
+			}
+			#prev {
+			margin-left : 150px;
+			}
 			#btn_group button{
-				border: 1px solid skyblue;
+				border: none;
 				background-color: rgba(0,0,0,0);
-				color : skyblue;
+				color : gray;
 				padding : 5px;
 			}
-			#btn_group button:hober{
-				color:white;
+			#btn_group button:hover{
+				color:skyblue;
 				backrtound-color: skyblue;
 			}
 		</style>
@@ -106,8 +116,8 @@
 						</header>
 						
 					<form action="compositionCon">
-					<div class="row">
-						<div class="col-4 col-12-narrower">
+					<div class="row" id="muscle">
+						<div class="col-6 ">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
 								<h3>채성분 입력</h3>
@@ -119,14 +129,8 @@
 						</div>
 						</form>
 						
-						<div class="col-4 col-12-narrower">
-							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
-								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
-							</section>
-						</div>
 						
-						<div class="col-4 col-12-narrower">
+						<div class="col-6" id="routin">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
 								<h3>추천운동부분입니다!!!!!</h3>
@@ -137,10 +141,18 @@
 								<button align="left" id="prev">prev</button>
 								<button align="right" id="next">next</button>
 								</div>
+								
+								
 							</section>
 						</div>
 					</div>
 
+						<div class="col-4 col-12-narrower" id="calendar">
+							<section class="box special">
+								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<h1>캘린더부분입니다!!!!!!!!!!!!</h1>
+							</section>
+						</div>
 
 			<!-- CTA -->
 				<section id="cta">
