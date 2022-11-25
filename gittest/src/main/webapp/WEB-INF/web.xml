@@ -39,6 +39,13 @@
    	<servlet-name>deleteCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.deleteCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>compositionCon</display-name>
+   	<servlet-name>compositionCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.compositionCon</servlet-class>
+   </servlet>
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
    	<url-pattern>/modyfyCon</url-pattern>
@@ -58,6 +65,10 @@
    <servlet-mapping>
    	<servlet-name>deleteCon</servlet-name>
    	<url-pattern>/deleteCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>compositionCon</servlet-name>
+   	<url-pattern>/compositionCon</url-pattern>
    </servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

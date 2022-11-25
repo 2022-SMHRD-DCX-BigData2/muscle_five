@@ -1,3 +1,11 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <!DOCTYPE HTML>
 <!--
 	Alpha by HTML5 UP
@@ -31,11 +39,30 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.jsp">MusleFive</a> </h1>
+					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
-						<ul>	
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						<ul class="links">
+						<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="#">회원관리</a></li>
+								</c:if>
+								
+
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
+							
 						</ul>
 					</nav>
 				</header>
@@ -43,13 +70,23 @@
 			<!-- Banner -->
 				<section id="banner">
 					<h2>MusleFive</h2>
-					<p>환영합니다.</p>
+					<%if(loginMember != null){ %>
+					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
-						<li><a href="main.html" class="button ">main</a></li>
-						<li><a href="routin.html" class="button ">routin</a></li>
-						<li><a href="community.html" class="button ">community</a></li>
-						<li><a href="generic.html" class="button ">Map</a></li>
-					</ul>
+						<li><a href="main.jsp" class="button ">main</a></li>
+								<li><a href="routin.html" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+							<%} else {%>
+							<h1>로그인이 필요합니다.</h1>
+							<ul class="actions special">
+							<li><a href="main.jsp" class="button ">main</a></li>
+							<li><a href="routin.html" class="button ">routin</a></li>
+							<li><a href="community.jsp" class="button ">community</a></li>
+							<li><a href="generic.jsp" class="button ">Map</a></li>
+							</ul>
+						<%} %>
 				</section>
 				       
                   
