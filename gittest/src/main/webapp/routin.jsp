@@ -122,7 +122,7 @@
 					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
-								<li><a href="routin.html" class="button ">routin</a></li>
+								<li><a href="#" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
@@ -130,7 +130,7 @@
 							<h1>로그인이 필요합니다.</h1>
 							<ul class="actions special">
 							<li><a href="main.jsp" class="button ">main</a></li>
-							<li><a href="routin.html" class="button ">routin</a></li>
+							<li><a href="#" class="button ">routin</a></li>
 							<li><a href="community.jsp" class="button ">community</a></li>
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
