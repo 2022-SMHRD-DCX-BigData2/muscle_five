@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.smhrd.domain.Member;
 import com.smhrd.domain.MemberDAO;
 
 
@@ -17,27 +18,22 @@ public class idCheck extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+			System.out.println("중복체크");
 			request.setCharacterEncoding("UTF-8");
-		//
-	        String id = request.getParameter("id");
+	        String userId = request.getParameter("inputId");
+
 
 	        MemberDAO dao =  new MemberDAO();
-	        int result = dao.confirmid(id);
+	        int result = dao.confirmid(userId);
 	        
-	        request.setAttribute("id", id);
 	        request.setAttribute("result", result);
+	        request.setAttribute("checkedId", userId);
+	        System.out.println(userId);
 	        
-	        if(result > 0) {
-				System.out.println("idCheck Controller : 아이디 중복확인 성공!");
-				RequestDispatcher rd = request.getRequestDispatcher("idcheck.jsp");
-				rd.forward(request, response);
-	        }
-	        else {
-				System.out.println("idCheck Controller : 아이디 중복확인 실패..");
-				// 회원가입 실패하면 join.jsp로 이동.
-				response.sendRedirect("join.jsp");
-			}
-	        
+			RequestDispatcher rd = request.getRequestDispatcher("idcheck.jsp");
+			rd.forward(request, response);
+
+	       
 	}
 	
 }

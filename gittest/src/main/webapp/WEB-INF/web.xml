@@ -54,9 +54,9 @@
    <servlet>
    	<description>
    	</description>
-   	<display-name>MemberIdCheck</display-name>
-   	<servlet-name>MemberIdCheck</servlet-name>
-   	<servlet-class>com.smhrd.contoller.MemberIdCheck</servlet-class>
+   	<display-name>idCheck</display-name>
+   	<servlet-name>idCheck</servlet-name>
+   	<servlet-class>com.smhrd.contoller.idCheck</servlet-class>
    </servlet>
    <servlet>
    	<description>
@@ -94,8 +94,8 @@
    	<url-pattern>/deleteCon</url-pattern>
    </servlet-mapping>
    <servlet-mapping>
-   	<servlet-name>MemberIdCheck</servlet-name>
-   	<url-pattern>/MemberIdCheck</url-pattern>
+   	<servlet-name>idCheck</servlet-name>
+   	<url-pattern>/idCheck</url-pattern>
    </servlet-mapping>
    <servlet-mapping>
    	<servlet-name>deleteUserCon</servlet-name>

@@ -102,10 +102,14 @@
 	        		 document.userinfo.id.focus();
 	        		 return
 	        	}
+	        	var id = document.userinfo.id.value
 	        	//idcheck.jsp는 idCheck 서블릿으로 요첨함.
-	        	var url = "idcheck.jsp?id=" + document.userinfo.id.value;
+	        	var url = "idcheck.jsp?id=" + id;
 	            window.open(url, "_blank_1", "width = 500, height = 300, resizable = no, scrollbars = no"); 
+
 	        }
+	        
+	       
 	 
     </script>
 </head>
@@ -155,7 +159,7 @@
 						                    <td>
 						                        <input type="text" name="id" maxlength="50">
                        							<input type="button" value="중복확인" onclick="idCheck()">  
-                       							<input type="hidden" name="reid" size="20" value="중목 확인 안함" >  
+                       							<input type="hidden" name="reid" size="20" value="idUncheck">  
 						                    </td>
 						                </tr>
 						                        
