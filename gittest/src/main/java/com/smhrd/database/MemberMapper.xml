@@ -30,14 +30,15 @@
 	</delete>
 	
 	
-	<select id="confirmid" parameterType="com.smhrd.domain.Member"
-	 resultType="com.smhrd.domain.Member">
-		select * from member where id=#{id}
+	<select id="confirmid" parameterType="String" resultType="int">
+		select count(*) from member where id=#{id}
 	</select>
 
 	<insert id="insertCom" parameterType="com.smhrd.domain.compositionMember">
 		insert into body_composition values (#{id}, #{weight}, #{muscle}, #{fat})
 	</insert>
+	
+
 	
 	
 	<!-- <select id="loginCheck" parameterType="com.smhrd.domain.Member"

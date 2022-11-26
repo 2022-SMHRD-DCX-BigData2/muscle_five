@@ -239,6 +239,29 @@ public class MemberDAO {
 		return cnt;
 		
 	}
+	
+	public int confirmid(String id) {
+			
+			int cnt = 0;
+			
+			try {
+				cnt = sqlSession.selectOne("confirmid", id);
+				
+				if (cnt > 0) {
+					cnt = 1;			
+				} else {
+					cnt = 0;
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return	cnt;
+		}
+	
 //	public int loginCheck(String id, String pw) {
 
 //		String dbpw = ""; // db에서 꺼낸 비밀번호를 담을 변수
