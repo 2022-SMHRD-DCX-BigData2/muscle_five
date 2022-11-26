@@ -36,6 +36,7 @@
 <body onload="idValue();">
 	<div id="wrap">
 	<br>
+<<<<<<< HEAD
 	<h2 align="center">아이디 중복확인</h2>
 		<form action="idCheck" method="post" name="userinfo">
 	 		<table align="center">
@@ -67,9 +68,6 @@
 				</tr>
 				</form>
 				
-				
-			
-		
 		</table>
 	</div>
 	
