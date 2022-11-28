@@ -78,7 +78,7 @@
 				<!-- Menu -->
 					<nav id="Update">
 						<form action="usergradeCon" method="post">
-							<input tyoe="hidden" name="" value="updategraade">
+							<input tyoe="hidden" name="grade" value="updategraade">
 							<input tyoe="hidden" name="id" value="<%=loginMember.getId()%>">
 							<table>
 								<col width='50'><col width='100'>
@@ -92,6 +92,7 @@
 										<select name="grade">
 											<option value="준회원" <%=loginMember.getGrade().equals("준회원")? "selected":""%>>준회원</option>
 											<option value="특별회원" <%=loginMember.getGrade().equals("특별회원")? "selected":""%>>특별회원</option>
+											<option value="관리자" <%=loginMember.getGrade().equals("관리자")? "selected":""%>>관리자</option>
 										</select>	
 									</td>
 								</tr>

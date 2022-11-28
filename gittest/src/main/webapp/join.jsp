@@ -215,10 +215,10 @@
 						                    <td>
 						                        <input type="text" name="mail_1" maxlength="30">@
 						                        <select name="mail_2">
-						                            <option>naver.com</option>
-						                            <option>daum.net</option>
-						                            <option>gmail.com</option>
-						                            <option>nate.com</option>                        
+						                            <option value="naver.com">naver.com</option>
+						                            <option value="daum.net">daum.net</option>
+						                            <option value="gmail.com">gmail.com</option>
+						                            <option value="nate.com">nate.com</option>                        
 						                        </select>
 						                    </td>
 						                    <td><input type="hidden" name="grade" value="준회원"></td>

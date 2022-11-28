@@ -102,7 +102,7 @@
 								<td><%=m.getGender() %></td>
 								<td><%=m.getMail1() + '@' +  m.getMail2()%></td>
 								<td><%=m.getGrade() %></td>
-								<td><a href="usergrade.jsp?id=<%= m.getGrade() %>" class="button special small">등급 변경</a></td>
+								<td><a href="usergrade.jsp?grade=<%= m.getGrade() %>" class="button special small">등급 변경</a></td>
 								<td><a href="deleteCon?id=<%= m.getId() %>" class="button special small">회원 삭제</a></td>
 							</tr>
 							<%} %>
@@ -115,7 +115,7 @@
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-	f"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
