@@ -26,24 +26,20 @@
 			height : 50px;
 			
 			}
-			#s-box{
-			width : 450px;
-			height : auto;
-			margin : auto;
-			}
-
-			#big-box{
-			border : solid 1px;
-			border-color : white;
-			padding : 2em;
-			}
+			
 			#box{
-			border : none;
+			border : 0;
 			padding : 0px;
 			width : auto;
 			margin-left :auto;
 			border-radius : 0px;
-			overflow :hidden;
+			box-shadow : unset;
+			}
+			#big-box{
+			border : solid 1px;
+			border-color : white;
+			padding : 2em;
+			margin:0;
 			}
 			#user-name{
 			font-size : 20px;
@@ -62,12 +58,13 @@
 			
 			#font{
 			color : rgb(0,0,0);
+			font-size:30px;
 			}
 			#calendar{
 			margin : 180px;
 			}		
 			#muscle{
-			margin : 100px;
+			margin : 150px;
 			
 			}		
 			#prev {
@@ -163,7 +160,6 @@
 					
 					<div class="row" id="muscle">
 						<div class="col-6 ">
-							<form action="compositionCon">
 							<section class="box special" >
 								<h3 id="font">체성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
@@ -172,23 +168,20 @@
 								<br>
 								<input type="submit" value="제출">
 							</section>
-							</form>
 						</div>
 						
 						
 						<div class="col-6" >
-							<section class="box special" id="big-box">
+							<section class="box special" id="big-box" style ="backgorund-color:white">
 								<div id="insta_main" align="left">
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name">MuscleFive</span>
 								</div><br>
-								<pre id="box">
+								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
 									<h3 id="font">추천운동부분입니다!!!!!</h3>
-									<div id="s-box">
 										<pre>팔굽혀펴기 max : </pre>
 										<pre>턱걸이 max : </pre>
 										<pre>이것저것 max : </pre>
-									</div>
-								</pre>
+								</div>
 								<div id="btn-good">
 									<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
@@ -202,7 +195,7 @@
 
 						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<span class="image featured"><img src="images/pic03.jpg" alt="" class="imgClass"></span>
 								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
 						</div>
