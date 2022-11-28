@@ -28,7 +28,9 @@
 			width : 200px;
 			
 			height : 200px;
-		
+		}
+		#font{
+			color : rgb(255,255,255);
 		}
 		
 		</style>
@@ -78,7 +80,7 @@
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 					<%} else {%>
-					<h1>로그인이 필요합니다.</h1>
+					<h1 ><font color="white">로그인이 필요합니다.</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
@@ -93,7 +95,7 @@
 
 					<section class="box special">
 						<header class="major">
-							<h2>What is Body Composition?</h2>
+							<h2> What is Body Composition?</h2>
 							<div class="content-wrap n-tech">
                
                 <div class="content">

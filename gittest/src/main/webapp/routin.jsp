@@ -125,7 +125,7 @@
 				<section id="banner">
 					<h2>MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 								<li><a href="#" class="button ">routin</a></li>
@@ -133,7 +133,7 @@
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
 							<%} else {%>
-							<h1>로그인이 필요합니다.</h1>
+							<h1><font color="white">로그인이 필요합니다.</font></h1>
 							<ul class="actions special">
 							<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="#" class="button ">routin</a></li>
