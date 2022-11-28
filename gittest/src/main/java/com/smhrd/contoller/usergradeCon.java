@@ -46,7 +46,7 @@ public class usergradeCon extends HttpServlet {
 			
 			// 실패했으면 -> 이동X
 		} else {
-			System.out.println("modifyCon : 회원등급 수정 실패..");
+			System.out.println("usergradeCon : 회원등급 수정 실패..");
 			// 회원가입 실패하면 main.jsp로 이동.
 
 			response.sendRedirect("updategrade.jsp");
