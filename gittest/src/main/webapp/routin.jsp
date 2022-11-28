@@ -20,61 +20,65 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+			
 			#insta{
 			width : 50px;
 			height : 50px;
 			}
 			
-			#big-box{
-			border : solid 1px;
-			border-color : white;
-			padding : 2em;
-			border-shaow : 5px;
-			}
 			#box{
-			border : none;
+			border : 0;
 			padding : 0px;
 			width : auto;
 			margin-left :auto;
 			border-radius : 0px;
-			
+			box-shadow : unset;
 			}
-						
-
-		
+			#big-box{
+			border : solid 1px;
+			border-color : white;
+			padding : 2em;
+			margin:0;
+			}
+			#user-name{
+			font-size : 20px;
+			height : 0px;
+			font-weight : 400;
 			}
 			#btn-good button{
 			border: none;
 			background-color: rgba(0,0,0,0);
-			color : gray;
-			font-size:20px;
+			color : red;
+			font-size:25px;
 			}
 			#btn-good {
 			margin-right : 400px;
 			 }
+			 
 			
 			#font{
 			color : rgb(0,0,0);
+			font-size:30px;
 			}
 			#calendar{
 			margin : 180px;
 			}		
 			#muscle{
-			margin : 100px;
+			margin : 150px;
 			
 			}		
 			#prev {
-			margin-right : 150px;
+			margin-right : auto;
 			}
 			#next {
-			margin-left : 150px;
+			margin-left : auto;
 			}
 			#btn_group button{
 				border: none;
 				background-color: rgba(0,0,0,0);
 				color : gray;
 				padding : 5px;
-				font-size:20px; padding:20px 20px
+				font-size:20px; 
 			}
 			#btn_group button:hover{
 				color:skyblue;
@@ -119,7 +123,7 @@
 				<section id="banner">
 					<h2>MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><%= loginMember.getId()%>님 환영합니다~~</h1>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 								<li><a href="#" class="button ">routin</a></li>
@@ -127,7 +131,7 @@
 							<li><a href="generic.jsp" class="button ">Map</a></li>
 							</ul>
 							<%} else {%>
-							<h1>로그인이 필요합니다.</h1>
+							<h1><font color="white">로그인이 필요합니다.</font></h1>
 							<ul class="actions special">
 							<li><a href="main.jsp" class="button ">main</a></li>
 							<li><a href="#" class="button ">routin</a></li>
@@ -154,41 +158,36 @@
 						</header>
 						
 					
-					<div class="row" id="muscle">
+					<div class="row" id="muscle" style="height:750px;">
 						<div class="col-6 ">
-							<form action="compositionCon">
 							<section class="box special" >
-								<h3 id="font">채성분 입력</h3>
+								<h3 id="font">체성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
 								<br>
 								<input type="submit" value="제출">
 							</section>
-							</form>
 						</div>
 						
 						
-						
-						<div class="col-6" id="routin">
-							<section class="box special" id="big-box">
-								<div align="left">
-									<img id="insta" src="인스타사진2.png">MuscleFive
+						<div class="col-6" >
+							<section class="box special" id="big-box" style ="backgorund-color:white">
+								<div id="insta_main" align="left">
+									<img id="insta" src="인스타사진2.png"> <span   id="user-name"> MuscleFive</span>
+								</div><br>
+								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
+									<h3 id="font">추천운동부분입니다!!!!!</h3>
+										<pre>팔굽혀펴기 max : </pre>
+										<pre>턱걸이 max : </pre>
+										<pre>이것저것 max : </pre>
 								</div>
-								<pre id="box">
-								<h3 id="font">추천운동부분입니다!!!!!</h3>
-
-								<pre>팔굽혀펴기 max : </pre>
-								<pre>턱걸이 max : </pre>
-								<pre>이것저것 max : </pre>
-								</pre>
-
 								<div id="btn-good">
-								<button id='like1'>👍</button><span id='span1'>0</span>
-								</div>
-								<div id="btn_group">
-								<button  id="prev">prev</button>
-								<button  id="next">next</button>
+									<button id='like1' style="float:left">🤍</button>
+								</div><br><br>
+								<div id="btn_group" style="display:flex">
+									<button  id="prev">prev</button>
+									<button  id="next">next</button>
 								</div>
 							</section>
 						</div>
@@ -196,7 +195,7 @@
 
 						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<span class="image featured"><img src="images/pic03.jpg" ></span>
 								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
 						</div>
@@ -237,13 +236,13 @@
 				$(document).on('click', '#like1', function() {
 					let like = Number($('#span1').text())
 					$('#span1').text(like + 1)
-					$(this).text('👎')
+					$(this).text('❤')
 					$(this).attr('id', 'dislike1')
 				})
 		
 				$(document).on('click', '#dislike1', function() {
 					$('#span1').text('0')
-					$(this).text('👍')
+					$(this).text('🤍')
 					$(this).attr('id', 'like1')
 				})
 			</script>

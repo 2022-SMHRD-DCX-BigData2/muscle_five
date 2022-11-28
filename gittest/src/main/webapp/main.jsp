@@ -15,26 +15,16 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-		#divrow{
-			margin : auto;
-
-			height: 600px;
-
-			width: 500px;
-		}
-				
 		.inbodyimg{
-			
 			width : 200px;
-			
 			height : 200px;
-		
 		}
-		
+		#font{
+			color : rgb(255,255,255);
+		}
 		</style>
 </head>
 <body class="landing is-preload">
-
 	<div id="page-wrapper">
 	
 			<!-- Header -->
@@ -43,25 +33,19 @@
 					<nav id="nav">
 						<ul class="links">
 						<c:choose>
-				
 							<c:when test="${empty loginMember}">
 								<li><a href="login.jsp" class="button">Log in</a></li>
 								<li><a href="join.jsp" class="button">Sign up</a></li>
 							</c:when>
 							
 							<c:otherwise>
-							
 								<c:if test="${loginMember.id eq 'admin'}">
 									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
 								</c:if>
-								
 								<li><a href="logoutCon" class="button">Log out</a></li>
 								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
-								
 							</c:otherwise>
-							
 						</c:choose>
-							
 						</ul>
 					</nav>
 				</header>
@@ -74,15 +58,15 @@
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 					<%} else {%>
-					<h1>로그인이 필요합니다.</h1>
+					<h1 ><font color="white">로그인이 필요합니다.</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					<ul>
 						<%} %>
@@ -90,18 +74,15 @@
 
 			<!-- Main -->
 				<section id="main" class="container">
-
 					<section class="box special">
 						<header class="major">
-							<h2>What is Body Composition?</h2>
+							<h2> What is Body Composition?</h2>
 							<div class="content-wrap n-tech">
-               
                 <div class="content">
                     <div class="n-tech-what">
                        <div class="inner wow fadeInDown delay-02s">
-                          
                           <p align="left"> 체성분이란 인체를 구성하고 있는 성분을 말합니다. <br>인체의 구성성분을 분류하는 방법은 아래 이미지와 같이 여러 가지 방식이 있습니다.<br>인바디는 이 중 분자적개념(Molecular)을 이용하여<br> 체수분, 단백질, 무기질, 체지방의 네 가지 체성분을 정량적으로 제공합니다.<br>
-이러한 구성 성분의 비율은 성별과 나이, 개개인의 특성에 따라 차이를 보이며 건강과 밀접한 관련이 있습니다. <br>영양상태에 문제가 없는지, 몸이 부어 있지는 않은지, <br class="pc-view">신체가 균형있게 발달하고 있는지 등 체성분분석을 통해 몸의 상태를 정확하게 파악할 수 있습니다. </p>
+이러한 구성 성분의 비율은 성별과 나이, 개개인의 특성에 따라 차이를 보이며 건강과 밀접한 관련이 있습니다. <br>영양상태에 문제가 없는지, 몸이 부어 있지는 않은지, <br >신체가 균형있게 발달하고 있는지 등 체성분분석을 통해 몸의 상태를 정확하게 파악할 수 있습니다. </p>
                        </div>
                        	
                        <br>
@@ -139,49 +120,34 @@
                      <div class="section">
                          <div class="inner txt-cnt wow fadeInUp delay-1s">
                             <img src="#" alt="">
+                     	 </div>
                      </div>
-                      </div>
                    
                       <div class="section nav-mk pt-0">
                          <div class="inner">
                             <ul class="thumb-list">
-                           
                             </ul>
-                     </div>
+                    	 </div>
                       </div>
 						</header>
-						
 					</section>
 
-					
-					<div class="row" id="divrow">
-						<div class="row2">
-
-
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="col-12" >
+							<section class="box special "  alt="">
+								<span class="image featured"><img src="images/pic02.jpg"  id="img2"/></span>
 								<h3>추천 운동 랭킹</h3>
-								<pre>운동루틴1   <button>좋아요</button></pre>
-								<pre>운동루틴2   <button>좋아요</button></pre>
-								<pre>운동루틴3   <button>좋아요</button></pre>							
+								<pre>운동루틴1  :  </pre>
+								<pre>운동루틴2  :  </pre>
+								<pre>운동루틴3  : </pre>							
 							</section>
-
-						</div>
-						
 					</div>
-
 				</section>
 
 			<!-- CTA -->
 				<section id="cta">
-
-
-
 					<p>팀 옴므파탈 제공</p>
 					<p>tel : 062-655-3506</p>
 					<p>주소 : 전라남도 순천시 중앙로 260</p>
-
 				</section>
 
 			<!-- Footer -->
@@ -198,7 +164,6 @@
 						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 					</ul>
 				</footer>
-
 		</div>
 
 		<!-- Scripts -->

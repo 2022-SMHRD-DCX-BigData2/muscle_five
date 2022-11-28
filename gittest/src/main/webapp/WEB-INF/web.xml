@@ -61,6 +61,34 @@
    	<servlet-name>compositionCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.compositionCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>BoardCon</display-name>
+   	<servlet-name>BoardCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BoardCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>BoardWriteCon</display-name>
+   	<servlet-name>BoardWriteCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BoardWriteCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>BaordDetailCon</display-name>
+   	<servlet-name>BaordDetailCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BaordDetailCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>BoardUpdateCon</display-name>
+   	<servlet-name>BoardUpdateCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BoardUpdateCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -94,6 +122,22 @@
    	<servlet-name>compositionCon</servlet-name>
    	<url-pattern>/compositionCon</url-pattern>
 	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BoardCon</servlet-name>
+   		<url-pattern>/BoardCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BoardWriteCon</servlet-name>
+   		<url-pattern>/BoardWriteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BaordDetailCon</servlet-name>
+   		<url-pattern>/BaordDetailCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BoardUpdateCon</servlet-name>
+   		<url-pattern>/BoardUpdateCon</url-pattern>
+   	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
       <welcome-file>index.htm</welcome-file>
