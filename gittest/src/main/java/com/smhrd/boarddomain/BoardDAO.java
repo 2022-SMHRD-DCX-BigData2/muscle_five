@@ -154,7 +154,7 @@ public class BoardDAO {
         	 
         	//StringBuffer sql = new StringBuffer();
  			// 					mapper.xml의 id값
-        	 DBoard = sqlSession.selectOne("opt", board_num);
+        	 DBoard = sqlSession.selectOne("selectOneBoardByNum", board_num);
  			
  			// 만약에 내가 원하는 일을 했으면 DB에 반영
  			if (DBoard != null) {
