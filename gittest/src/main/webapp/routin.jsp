@@ -26,13 +26,15 @@
 			height : 50px;
 			}
 			#s-box{
-			padding : 2em;
+			width : 450px;
+			height : auto;
+			margin : auto;
 			}
+
 			#big-box{
 			border : solid 1px;
 			border-color : white;
 			padding : 2em;
-			border-shaow : 5px;
 			}
 			#box{
 			border : none;
@@ -40,14 +42,12 @@
 			width : auto;
 			margin-left :auto;
 			border-radius : 0px;
-			
+			overflow :hidden;
 			}
 			#user-name{
 			font-size : 20px;
 			height : 0px;
 			text-align : top;
-
-		
 			}
 			#btn-good button{
 			border: none;
@@ -175,25 +175,25 @@
 						</div>
 						
 						
-						
-						<div class="col-6" id="routin">
+						<div class="col-6" >
 							<section class="box special" id="big-box">
-								<div id="insta_main" align="left"><img id="insta" src="인스타사진2.png"> <span style="display:inline-block; height:20px; width:100px;"  id="user-name">MuscleFive</span>
+								<div id="insta_main" align="left">
+									<img id="insta" src="인스타사진2.png"> <span   id="user-name">MuscleFive</span>
 								</div>
 								<pre id="box">
-								<h3 id="font">추천운동부분입니다!!!!!</h3>
-								<div id="s-box">
-								<pre>팔굽혀펴기 max : </pre>
-								<pre>턱걸이 max : </pre>
-								<pre>이것저것 max : </pre>
-								</div>
+									<h3 id="font">추천운동부분입니다!!!!!</h3>
+									<div id="s-box">
+										<pre>팔굽혀펴기 max : </pre>
+										<pre>턱걸이 max : </pre>
+										<pre>이것저것 max : </pre>
+									</div>
 								</pre>
 								<div id="btn-good">
-								<button id='like1'>👍</button><span id='span1'>0</span>
+									<button id='like1'>👍</button><span id='span1'>0</span>
 								</div>
 								<div id="btn_group">
-								<button  id="prev">prev</button>
-								<button  id="next">next</button>
+									<button  id="prev">prev</button>
+									<button  id="next">next</button>
 								</div>
 							</section>
 						</div>

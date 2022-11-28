@@ -1,11 +1,17 @@
+<%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"  isELIgnored="false"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
 	<%-- <%
         String id = session.getAttribute("sessionID").toString();
     
@@ -58,8 +64,28 @@
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						
+		                    <%if(!loginMember.getId().equals("admin")){ %>
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="#" class="button">개인정보수정</a></li>
+							<%}else{%>
+								<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="#" class="button">개인정보수정</a></li>
+							<%} %>
+								<!-- <c:if test="${loginMember.id ne 'admin'}">
+									<li><a href="logoutCon" class="button">Log out</a></li>
+									<li><a href="#" class="button">개인정보수정</a></li>
+								</c:if>
+								
+								<c:if test="${loginMember.id eq 'admin'}">
+							
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+									<li><a href="logoutCon" class="button">Log out</a></li>
+									<li><a href="#" class="button">개인정보수정</a></li>
+								loginMember.getId() != "admin"
+								</c:if> --> 
+								
 						</ul>
 					</nav>
 				</header>
@@ -83,7 +109,7 @@
 						<div class="content-wrap n-tech">
 						
 						<br><br>
-				        <b><font size="6" color="gray">u회원정보 수정</font></b>
+				        <b><font size="6" color="gray">회원정보 수정</font></b>
 				        <br><br><br>
 				        
 				        <!-- 입력한 값을 전송하기 위해 form 태그를 사용한다 -->
@@ -119,7 +145,7 @@
 				                <tr>
 				                    <td id="title">생일</td>
 				                    <td>
-				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_dd}" placeholder="년(4자)" size="6" >
+				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_yy}" placeholder="년(4자)" size="6" >
 				                        <select name="birth_mm">
 						                    <option value="${loginMember.birth_mm}">월</option>
 						                    <option value="01" >1</option>
@@ -155,7 +181,9 @@
 				            </table>
 				            <br><br>
 				            <input type="button" value="취소" onclick="location.href='main.jsp'">
-				            <input type="submit" value="수정">  
+				            <input type="submit" value="수정">
+				            <br><br><br>
+				            <a href="delete.jsp" class="button alt small">회원 탈퇴</a>
 				        </form>
 				        </div>
                		</section>

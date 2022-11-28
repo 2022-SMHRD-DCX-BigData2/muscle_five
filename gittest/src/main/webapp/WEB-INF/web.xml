@@ -42,10 +42,25 @@
    <servlet>
    	<description>
    	</description>
+   	<display-name>MemberIdCheck</display-name>
+   	<servlet-name>MemberIdCheck</servlet-name>
+   	<servlet-class>com.smhrd.contoller.MemberIdCheck</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>deleteUserCon</display-name>
+   	<servlet-name>deleteUserCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.deleteUserCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
    	<display-name>compositionCon</display-name>
    	<servlet-name>compositionCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.compositionCon</servlet-class>
    </servlet>
+   
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
    	<url-pattern>/modyfyCon</url-pattern>
@@ -67,9 +82,17 @@
    	<url-pattern>/deleteCon</url-pattern>
    </servlet-mapping>
    <servlet-mapping>
+   	<servlet-name>MemberIdCheck</servlet-name>
+   	<url-pattern>/MemberIdCheck</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>deleteUserCon</servlet-name>
+   	<url-pattern>/deleteUserCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
    	<servlet-name>compositionCon</servlet-name>
    	<url-pattern>/compositionCon</url-pattern>
-   </servlet-mapping>
+	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
       <welcome-file>index.htm</welcome-file>
