@@ -77,9 +77,16 @@
    <servlet>
    	<description>
    	</description>
-   	<display-name>BoardwriteCon</display-name>
-   	<servlet-name>BoardwriteCon</servlet-name>
-   	<servlet-class>com.smhrd.boardcontroller.BoardwriteCon</servlet-class>
+   	<display-name>BaordDetailCon</display-name>
+   	<servlet-name>BaordDetailCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BaordDetailCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>BoardUpdateCon</display-name>
+   	<servlet-name>BoardUpdateCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BoardUpdateCon</servlet-class>
    </servlet>
    
    <servlet-mapping>
@@ -123,8 +130,12 @@
    		<url-pattern>/BoardWriteCon</url-pattern>
    	</servlet-mapping>
    	<servlet-mapping>
-   		<servlet-name>BoardwriteCon</servlet-name>
-   		<url-pattern>/BoardwriteCon</url-pattern>
+   		<servlet-name>BaordDetailCon</servlet-name>
+   		<url-pattern>/BaordDetailCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BoardUpdateCon</servlet-name>
+   		<url-pattern>/BoardUpdateCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

@@ -4,6 +4,9 @@
 <%@ page import="com.smhrd.domain.Member"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -49,7 +52,29 @@
 						</ul>
 					</nav>
 				</header>
-
+	
+				<!-- Banner -->
+				<section id="banner">
+					<h2>MusleFive</h2>
+					<%if(loginMember != null){ %>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					</ul>
+					<%} else {%>
+					<h1>로그인이 필요합니다.</h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					<ul>
+						<%} %>
+				</section>
+				
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
@@ -64,12 +89,12 @@
 						   	</div>
 						   	<br>
 						    
-						    <form method="post" action="boardwriteCon" name="BoardWirte" enctype="multipart/form-data">
+						    <form method="post" action="BoardWriteCon" name="BoardWirte" enctype="multipart/form-data">
 							    <input type="hidden" name="board_id" value="${sessionScope.sessionID}">
 								    <table width="700" border="3" bordercolor="lightgray" align="center">
 								        <tr>
 								            <td id="title">작성자</td>
-								            <td>${sessionScope.sessionID}</td>
+								            <td>${loginMember.id}</td>
 								        </tr>
 								            <tr>
 								            <td id="title">

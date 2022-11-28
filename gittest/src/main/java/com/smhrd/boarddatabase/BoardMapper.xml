@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.smhrd.database.BoardMapper">
+
+	<!-- <select id="getSeq" parameterType="com.smhrd.domain.Member_board"
+	 resultType="com.smhrd.domain.Member_board">
+		select board_num.nextval from dual 
+	</select>-->
+
+	<insert id="boardInsert" parameterType="com.smhrd.boarddomain.Member_Board">
+		insert into member_board values (#{board_seq.nextval}, #{board_id}, #{board_title}, #{board_content}, #{board_file})
+	</insert>
+
+	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board order by board_num desc
+	</select>
+
+	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">
+		update member_board set board_count=#{board_count+1} where board_num=#{board_num}
+	</update>
+	
+	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
+	 resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board where board_id=#{board_id} and board_num=#{board_num}
+	</select>
+	
+	<select id="selectOneBoardByNum" parameterType="com.smhrd.boarddomain.Member_Board"
+	 resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board where board_num=#{board_num}
+	</select>
+	
+	<update id="updateBoard" parameterType="com.smhrd.boarddomain.Member_Board">
+		update member_board set board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file} where board_num=#{board_num}
+	</update>
+	
+	<delete id="deleteBoard" parameterType="String">
+		delete from member where board_num=#{board_num}
+	</delete>
+	
+	<!-- <insert id="insertMember" parameterType="com.smhrd.domain.Member">
+		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy}, #{birth_mm}, #{birth_dd}, #{mail1}, #{mail2})
+	</insert>
+	
+	<select id="selectMember" parameterType="com.smhrd.domain.Member"
+	 resultType="com.smhrd.domain.Member">
+		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
+	<update id="updateMember" parameterType="com.smhrd.domain.Member">
+		update member set pw=#{pw}, gender=#{gender}, birth_yy=#{birth_yy}, birth_mm=#{birth_mm}, birth_dd=#{birth_dd}, mail1=#{mail1}, mail2=#{mail2} where id=#{id}
+	</update>
+	
+	<select id="selectAll" resultType="com.smhrd.domain.Member">
+		select * from member
+	</select>
+	
+	<delete id="deleteUser" parameterType="com.smhrd.domain.Member">
+		delete from member where id=#{id} and pw=#{pw}
+	</delete>
+	
+	<delete id="deleteMember" parameterType="String">
+		delete from member where id=#{id} and pw=#{pw}
+	</delete>
+	
+	
+	<select id="confirmid" parameterType="String" resultType="int">
+		select count(*) from member where id=#{id}
+	</select>
+
+	<insert id="insertCom" parameterType="com.smhrd.domain.compositionMember">
+		insert into body_composition values (#{id}, #{weight}, #{muscle}, #{fat})
+	</insert> -->
+	
+
+	
+	
+	<!-- <select id="loginCheck" parameterType="com.smhrd.domain.Member"
+
+	 resultType="com.smhrd.domain.Member">
+		select * from member where id=#{id}
+	</select> -->
+	
+</mapper>

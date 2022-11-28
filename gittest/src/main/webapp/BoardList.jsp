@@ -2,14 +2,48 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ page import="com.smhrd.domain.Member"%>
+<%@ page import="com.smhrd.boarddomain.Member_Board"%>
+<%@ page import="com.smhrd.boarddomain.BoardDAO"%>
+<%@ page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+
+	Member_Board Board = (Member_Board)session.getAttribute("Board");
+
+	BoardDAO dao = new BoardDAO();
+	List<Member_Board> BoardList = dao.BoardselectAll();
+%>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
-<title>게시판 목록</title>
+<title>게시판 목록</title>	
+	<style type="text/css">
+        #wrap {
+            width: 800px;
+            margin: 0 auto 0 auto;
+        }
+        #topForm{
+            text-align :right;
+        }
+        #board, #pageForm, #searchForm{
+            text-align :center;
+        }
+        
+        #bList{
+            text-align :center;
+        }
+    </style>
+    
+    <script type="text/javascript">
+        function writeForm(){
+            location.href="BoardWriteForm.bo";
+        }
+    </script>
+
 </head>
 <body class="is-preload">
 	<div id="page-wrapper">
@@ -41,7 +75,29 @@
 						</ul>
 					</nav>
 				</header>
-
+	
+			<!-- Banner -->
+				<section id="banner">
+					<h2>MusleFive</h2>
+					<%if(loginMember != null){ %>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					</ul>
+					<%} else {%>
+					<h1>로그인이 필요합니다.</h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="routin.jsp" class="button ">routin</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					<ul>
+						<%} %>
+				</section>
+	
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
@@ -57,7 +113,7 @@
 								<br>
 								
 								<div id="topForm" align="right">
-									<c:if test="${sessionScope.sessionID!=null}">
+									<c:if test="${loginMember.id != null}">
 										<a href="BoardWrite.jsp"><input type="button" value="글쓰기" onclick="writeForm()"></a>
 									</c:if>
 								</div>
@@ -73,7 +129,18 @@
 											<td>작성일</td>
 											<td>조회수</td>
 										</tr>
-										<c:forEach var="board" items="${requestScope.list}">
+										
+										<%for(Member_Board b : BoardList ){ %>
+										<tr  align="center">
+											<td><%=b.getBoard_num() %></td>
+											<td><a href="BoardDetailCon?num=${Board.board_num}"><%=b.getBoard_title() %></a></td>
+											<td><%=b.getBoard_id() %></td>
+											<td><%=b.getBoard_date() %></td>
+											<td><%=b.getBoard_count() %></td>
+										</tr>
+										<%} %>
+										
+										<!--<c:forEach var="board" items="${requestScope.list}">
 											<tr align="right">
 												<td>${board.board_num}</td>
 												<td><a href="BoardDetail.jsp">${board.board_title}</a></td>
@@ -81,7 +148,8 @@
 												<td>${board.board_date}</td>
 												<td>${board.board_views}</td>
 											</tr>
-										</c:forEach>
+										</c:forEach>-->
+										
 									</table>
 								</div>
 						
@@ -113,10 +181,10 @@
 											<tr>
 												<td>
 													<select name="opt">
-														<option value="0">제목</option>
-														<option value="1">내용</option>
-														<option value="2">제목+내용</option>
-														<option value="3">글쓴이</option>
+														<option value="1">제목</option>
+														<option value="2">내용</option>
+														<option value="3">제목+내용</option>
+														<option value="4">글쓴이</option>
 													</select> 
 												</td>	
 												<td>

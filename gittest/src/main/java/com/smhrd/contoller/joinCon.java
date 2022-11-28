@@ -19,7 +19,8 @@ public class joinCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-
+		request.setCharacterEncoding("UTF-8");
+		
 		// 한글 깨짐을 방지하기 위한 인코딩 처리
         request.setCharacterEncoding("UTF-8"); 
         

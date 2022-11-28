@@ -18,7 +18,7 @@ public class SqlSessionManager {
 		
 		try {
 			
-			String resource = "com/smhrd/database/config.xml";
+			String resource = "com/smhrd/boarddatabase/config.xml";
 			InputStream inputStream;
 			inputStream = Resources.getResourceAsStream(resource);
 			
