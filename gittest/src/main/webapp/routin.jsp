@@ -196,7 +196,7 @@
 
 						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" /></span>
+								<span class="image featured"><img src="images/pic03.jpg" alt="" class="imgClass"></span>
 								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
 						</div>

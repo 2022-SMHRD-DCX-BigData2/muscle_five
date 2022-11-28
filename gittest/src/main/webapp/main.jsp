@@ -160,7 +160,9 @@
 
 
 							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+								
+								<span class="image featured"><img src="images/pic02.jpg" alt=""></span>
+								
 								<h3>추천 운동 랭킹</h3>
 								<pre>운동루틴1   <button>좋아요</button></pre>
 								<pre>운동루틴2   <button>좋아요</button></pre>
