@@ -42,7 +42,7 @@
 	<div id="wrap">
 	<br>
 
-	<h2 align="center">아이디 중복확인</h2>
+	<h2 align="center"><font size='6' color='black'>[아이디 중복확인]</font></h2>
 		<form action="idCheck" method="post" name="userinfo">
 	 		<table align="center">
 	 			<tr>

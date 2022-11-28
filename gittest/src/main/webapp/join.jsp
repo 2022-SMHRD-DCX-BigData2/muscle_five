@@ -221,6 +221,7 @@
 						                            <option>nate.com</option>                        
 						                        </select>
 						                    </td>
+						                    <td><input type="hidden" name="grade" value="준회원"></td>
 						                </tr>
 						            </table>
 						            <br>

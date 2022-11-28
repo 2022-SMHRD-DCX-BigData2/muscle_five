@@ -41,10 +41,11 @@ public class joinCon extends HttpServlet {
         
         // 이메일의 경우 <select>로 되어 있는데 파라미터 값을 받을 시 배열형태로 넘겨 받는다.
         String mail2 = request.getParameter("mail_2");
+        String grade = request.getParameter("grade");
         
         		
         	
-        Member joinMember = new Member(id, pw, gender, birth_yy, birth_dd, birth_mm, mail1, mail2);
+        Member joinMember = new Member(id, pw, gender, birth_yy, birth_dd, birth_mm, mail1, mail2, grade);
         	
         MemberDAO dao = new MemberDAO();
 		int cnt = dao.insertMember(joinMember);
