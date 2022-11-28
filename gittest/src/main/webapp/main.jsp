@@ -15,13 +15,8 @@
 	<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-		#divrow{
-			margin : auto;
-
-			height: 600px;
-
-			width: 500px;
-		}
+		
+		
 				
 		.inbodyimg{
 			
@@ -149,28 +144,20 @@
                             <ul class="thumb-list">
                            
                             </ul>
-                     </div>
+                    	 </div>
                       </div>
 						</header>
 						
 					</section>
 
-					
-					<div class="row" id="divrow">
-						<div class="row2">
-
-
-
-							<section class="box special">
-								<span class="image featured"><img src="images/pic02.jpg" alt="" /></span>
+					<div class="col-12" >
+							<section class="box special features"  alt="">
+								<span class="image featured"><img src="images/pic02.jpg"  id="img2"/></span>
 								<h3>추천 운동 랭킹</h3>
-								<pre>운동루틴1   <button>좋아요</button></pre>
-								<pre>운동루틴2   <button>좋아요</button></pre>
-								<pre>운동루틴3   <button>좋아요</button></pre>							
+								<pre>운동루틴1  :  </pre>
+								<pre>운동루틴2  :  </pre>
+								<pre>운동루틴3  : </pre>							
 							</section>
-
-						</div>
-						
 					</div>
 
 				</section>

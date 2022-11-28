@@ -24,6 +24,7 @@
 			#insta{
 			width : 50px;
 			height : 50px;
+			
 			}
 			#s-box{
 			width : 450px;
@@ -47,7 +48,7 @@
 			#user-name{
 			font-size : 20px;
 			height : 0px;
-			text-align : top;
+			font-weight : 400;
 			}
 			#btn-good button{
 			border: none;
@@ -164,7 +165,7 @@
 						<div class="col-6 ">
 							<form action="compositionCon">
 							<section class="box special" >
-								<h3 id="font">채성분 입력</h3>
+								<h3 id="font">체성분 입력</h3>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
@@ -179,7 +180,7 @@
 							<section class="box special" id="big-box">
 								<div id="insta_main" align="left">
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name">MuscleFive</span>
-								</div>
+								</div><br>
 								<pre id="box">
 									<h3 id="font">추천운동부분입니다!!!!!</h3>
 									<div id="s-box">
