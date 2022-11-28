@@ -24,7 +24,6 @@
 			#insta{
 			width : 50px;
 			height : 50px;
-			
 			}
 			
 			#box{
@@ -49,12 +48,13 @@
 			#btn-good button{
 			border: none;
 			background-color: rgba(0,0,0,0);
-			color : gray;
-			font-size:20px;
+			color : red;
+			font-size:25px;
 			}
 			#btn-good {
 			margin-right : 400px;
 			 }
+			 
 			
 			#font{
 			color : rgb(0,0,0);
@@ -68,17 +68,17 @@
 			
 			}		
 			#prev {
-			margin-right : 150px;
+			margin-right : auto;
 			}
 			#next {
-			margin-left : 150px;
+			margin-left : auto;
 			}
 			#btn_group button{
 				border: none;
 				background-color: rgba(0,0,0,0);
 				color : gray;
 				padding : 5px;
-				font-size:20px; padding:20px 20px
+				font-size:20px; 
 			}
 			#btn_group button:hover{
 				color:skyblue;
@@ -158,7 +158,7 @@
 						</header>
 						
 					
-					<div class="row" id="muscle">
+					<div class="row" id="muscle" style="height:750px;">
 						<div class="col-6 ">
 							<section class="box special" >
 								<h3 id="font">체성분 입력</h3>
@@ -174,7 +174,7 @@
 						<div class="col-6" >
 							<section class="box special" id="big-box" style ="backgorund-color:white">
 								<div id="insta_main" align="left">
-									<img id="insta" src="인스타사진2.png"> <span   id="user-name">MuscleFive</span>
+									<img id="insta" src="인스타사진2.png"> <span   id="user-name"> MuscleFive</span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
 									<h3 id="font">추천운동부분입니다!!!!!</h3>
@@ -183,9 +183,9 @@
 										<pre>이것저것 max : </pre>
 								</div>
 								<div id="btn-good">
-									<button id='like1'>👍</button><span id='span1'>0</span>
-								</div>
-								<div id="btn_group">
+									<button id='like1' style="float:left">🤍</button>
+								</div><br><br>
+								<div id="btn_group" style="display:flex">
 									<button  id="prev">prev</button>
 									<button  id="next">next</button>
 								</div>
@@ -195,7 +195,7 @@
 
 						<div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
-								<span class="image featured"><img src="images/pic03.jpg" alt="" class="imgClass"></span>
+								<span class="image featured"><img src="images/pic03.jpg" ></span>
 								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
 							</section>
 						</div>
@@ -236,13 +236,13 @@
 				$(document).on('click', '#like1', function() {
 					let like = Number($('#span1').text())
 					$('#span1').text(like + 1)
-					$(this).text('👎')
+					$(this).text('❤')
 					$(this).attr('id', 'dislike1')
 				})
 		
 				$(document).on('click', '#dislike1', function() {
 					$('#span1').text('0')
-					$(this).text('👍')
+					$(this).text('🤍')
 					$(this).attr('id', 'like1')
 				})
 			</script>
