@@ -1,12 +1,15 @@
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ page import="com.smhrd.boarddomain.Member_Board"%>
 <%@ page import="com.smhrd.domain.Member"%>
-<%@page import="com.smhrd.boarddomain.BoardDAO"%>
+<%@ page import="com.smhrd.boarddomain.Member_Board"%>
+<%@ page import="com.smhrd.boarddomain.BoardDAO"%>
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%
+Member_Board Board = (Member_Board)session.getAttribute("Board");
+%>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -181,7 +184,7 @@
 							            <tr align="center" valign="middle">
 							                <td colspan="5">
 							                	<c:if test="${loginMemer.id !=null}">
-								                   	<c:if test="${loginMember.id == board.board_id}">
+								                   	<c:if test="${loginMember.id == Board.board_id}">
 								                        <a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
 								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a> 
 								                    </c:if>
@@ -221,7 +224,7 @@
 							                    <div id="btn" style="text-align:center;">
 							                        <a href="#">[답변]</a><br>
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->    
-							                    <c:if test="${comment.comment_id == sessionScope.sessionID}">
+							                    <c:if test="${comment.comment_id == loginMember.id}">
 							                        <a href="#">[수정]</a><br>    
 							                        <a href="#">[삭제]</a>
 							                    </c:if>        
@@ -235,8 +238,8 @@
 							            <c:if test="${sessionScope.sessionID !=null}">
 							            <tr bgcolor="#F5F5F5">
 							            <form id="writeCommentForm">
-							                <input type="hidden" name="comment_community" value="${community.community_num}">
-							                <input type="hidden" name="comment_id" value="${sessionScope.sessionID}">
+							                <input type="hidden" name="comment_board" value="${Board.board_num}">
+							                <input type="hidden" name="comment_id" value="${loginMember.idD}">
 							                <!-- 아이디-->
 							                <td width="150">
 							                    <div>
