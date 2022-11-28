@@ -22,6 +22,7 @@ public class usergradeCon extends HttpServlet {
 		// 세션에서 정보 가져오기
 		HttpSession session = request.getSession();
 		Member loginMember = (Member) session.getAttribute("loginMember");
+		
 		String id = loginMember.getId();
 		
 		// 1. 파라미터 수집

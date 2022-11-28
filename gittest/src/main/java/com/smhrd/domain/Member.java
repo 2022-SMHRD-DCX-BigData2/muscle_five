@@ -18,7 +18,6 @@ public class Member {
 	
 
 
-
 	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2, String grade) {
 			
 		this.pw = pw;
@@ -46,32 +45,7 @@ public class Member {
 		this.mail2 = mail2;
 		this.grade = grade;
 	}
-
 	
-	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail,
-			String mail1, String mail2) {
-		
-		this.id = id;
-		this.pw = pw;
-		this.gender = gender;
-		this.birth_yy = birth_yy;
-		this.birth_mm = birth_mm;
-		this.birth_dd = birth_dd;
-		this.mail = mail;
-		this.mail1 = mail1;
-		this.mail2 = mail2;
-	}
-
-
-	public String getGrade() {
-		return grade;
-	}
-
-
-	public void setGrade(String grade) {
-		this.grade = grade;
-	}
-
 
 	public Member(String id, String pw) {
 		this.id = id;
@@ -171,6 +145,16 @@ public class Member {
 	public void setMail2(String mail2) {
 		this.mail2 = mail2;
 	}
+	
+	public String getGrade() {
+		return grade;
+	}
+	
+	
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
 
 
 	
