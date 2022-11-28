@@ -181,20 +181,18 @@ public class MemberDAO {
 		return cnt;
 		
 	} // 회원삭제 끝
-
-
-	// 개인(일반회원) - 회원 탈퇴
-	public int deleteUser(String id, String pw) {
+	
+	public int deleteUserMember(Member deletemember) {
 		
 		int cnt = 0;
 		
 		try {
 			// 					mapper.xml의 id값
-			cnt = sqlSession.delete("deleteUser");
+			cnt = sqlSession.delete("deleteMember", deletemember);
 			
 			// 만약에 내가 원하는 일을 했으면 DB에 반영
 			if (cnt > 0) {
-				System.out.println("DAO : 회원 탈퇴 성공!!");
+				System.out.println("DAO : 회원삭제 성공!!");
 				sqlSession.commit();
 			} else {
 				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
@@ -211,39 +209,6 @@ public class MemberDAO {
 		
 		return cnt;
 	}
-	
-	// 회원가입 아이디 중복 체크
-	public int confirmid(String id) {
-		
-		int result = 0;
-		
-		try {
-			// 					mapper.xml의 id값
-			result = sqlSession.selectOne("confirmid", id);
-			
-			// 만약에 내가 원하는 일을 했으면 DB에 반영
-			if (result > 0) {
-				System.out.println("DAO : 아이디 중복채크 성공!!");
-				sqlSession.commit();
-			} else {
-				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
-				sqlSession.rollback();
-			}
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		} finally {
-			// 빌렸던 Connection 객체를 반납
-			sqlSession.close();
-		}
-		
-		return result;
-	}//아이디 중복 체크 끝
-
-	
-	
-	// 로그인 아이디, 비번 일치 여부 확인
 
 	
 	public int insertCom(compositionMember joinMember) {
@@ -274,7 +239,29 @@ public class MemberDAO {
 		return cnt;
 		
 	}
-
+	
+	public int confirmid(String id) {
+			
+			int cnt = 0;
+			
+			try {
+				cnt = sqlSession.selectOne("confirmid", id);
+				
+				if (cnt > 0) {
+					cnt = 1;			
+				} else {
+					cnt = 0;
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return	cnt;
+		}
+	
 //	public int loginCheck(String id, String pw) {
 
 //		String dbpw = ""; // db에서 꺼낸 비밀번호를 담을 변수
@@ -307,9 +294,9 @@ public class MemberDAO {
 			// 빌렸던 Connection 객체를 반납
 //			sqlSession.close();
 //		}
+		
 //		return x;
-	
-//	}//로그인 아이디, 비번 일치 여부 확인 끝!
+//	}
 
 	
 }

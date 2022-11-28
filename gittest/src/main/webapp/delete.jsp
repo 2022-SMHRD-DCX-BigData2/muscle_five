@@ -3,6 +3,10 @@
 <%@ page import="com.smhrd.domain.MemberDAO" %>    
 <%@ page import="com.smhrd.domain.Member" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+
+%>
 <!DOCTYPE html>
 <html>
 <head>

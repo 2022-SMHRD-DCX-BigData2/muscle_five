@@ -16,6 +16,7 @@ public class Member {
 	//private String mag;
 	
 	
+	
 	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2) {
 		
 		this.id = id;
