@@ -23,11 +23,16 @@
 
 		}
 		
-		function closeWindow(){
+		function clickClose(){
 			opener.document.userinfo.id.value = document.getElementById('inputId').value;
 			window.open('','_self').close();
-			window.close();
 			self.close();
+			window.close();
+			window.opener = window.location.href;
+			window.open('about:blank','_self').close();
+			window.open('location', '_self', '');
+
+
 			// 종료가 안돼.......
 		}
 	   
@@ -36,7 +41,7 @@
 <body onload="idValue();">
 	<div id="wrap">
 	<br>
-<<<<<<< HEAD
+
 	<h2 align="center">아이디 중복확인</h2>
 		<form action="idCheck" method="post" name="userinfo">
 	 		<table align="center">
@@ -58,7 +63,7 @@
 							} else{
 						%>
 						 사용 가능한 아이디 입니다.
-						 <td><input type="button" value="사용하기" onclick="closeWindow()" id="closeWindow"></td>
+						 <td><input type="button" value="사용하기" onclick="clickClose();" id="closeWindow"></td>
 						 
 						<% 
 								}				
