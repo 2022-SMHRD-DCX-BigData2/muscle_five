@@ -13,7 +13,7 @@
 	Member_Board Board = (Member_Board)session.getAttribute("Board");
 
 	BoardDAO dao = new BoardDAO();
-	List<Member_Board> BoardList = dao.BoardselectAll();
+	List<Member_Board> board_list = dao.BoardselectAll();
 %>
 <html>
 <head>
@@ -130,7 +130,7 @@
 											<td>조회수</td>
 										</tr>
 										
-										<%for(Member_Board b : BoardList ){ %>
+										<%for(Member_Board b : board_list ){ %>
 										<tr  align="center">
 											<td><%=b.getBoard_num() %></td>
 											<td><a href="BoardDetailCon?num=${Board.board_num}"><%=b.getBoard_title() %></a></td>

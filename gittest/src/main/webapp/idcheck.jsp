@@ -42,12 +42,12 @@
 	<div id="wrap">
 	<br>
 
-	<h2 align="center">아이디 중복확인</h2>
+	<h2 align="center"><font size='6' color='black'>[아이디 중복확인]</font></h2>
 		<form action="idCheck" method="post" name="userinfo">
 	 		<table align="center">
 	 			<tr>
-	 			<td><font size="3" color="gray">아이디<input type="text" name="inputId" id="inputId"></font></td>
-				<td><input type="submit" value="중복 확인"></td>
+	 				<td><font size="3" color="gray">아이디<input type="text" name="inputId" id="inputId"></font></td>
+					<td><input type="submit" value="중복 확인"></td>
 				</tr>
 		
 				<br>

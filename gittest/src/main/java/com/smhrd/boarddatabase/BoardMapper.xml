@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="com.smhrd.database.BoardMapper">
+<mapper namespace="com.smhrd.boarddatabase.BoardMapper">
 
 	<!-- <select id="getSeq" parameterType="com.smhrd.domain.Member_board"
 	 resultType="com.smhrd.domain.Member_board">
@@ -11,11 +11,11 @@
 	</select>-->
 
 	<insert id="boardInsert" parameterType="com.smhrd.boarddomain.Member_Board">
-		insert into member_board values (#{board_seq.nextval}, #{board_id}, #{board_title}, #{board_content}, #{board_file})
+		insert into member_board(board_num, board_id, board_title, board_content, board_file) values (COM_SEQ.nextval, #{board_id}, #{board_title}, #{board_content}, #{board_file})
 	</insert>
 
 	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board order by board_num desc
+		select * from member_board order by board_num 
 	</select>
 
 	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">

@@ -5,7 +5,7 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
-		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy}, #{birth_mm}, #{birth_dd}, #{mail1}, #{mail2})
+		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy}, #{birth_mm}, #{birth_dd}, #{mail1}, #{mail2}, NUM_SEQ.nextval, #{grade})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.domain.Member"
@@ -17,12 +17,21 @@
 		update member set pw=#{pw}, gender=#{gender}, birth_yy=#{birth_yy}, birth_mm=#{birth_mm}, birth_dd=#{birth_dd}, mail1=#{mail1}, mail2=#{mail2} where id=#{id}
 	</update>
 	
+	<update id="updateGrade" parameterType="com.smhrd.domain.Member">
+		update member set grade=#{grade} where id=#{id}
+	</update>
+	
 	<select id="selectAll" resultType="com.smhrd.domain.Member">
 		select * from member
 	</select>
 	
+	<select id="selectOne" parameterType="com.smhrd.domain.Member"
+	 resultType="com.smhrd.domain.Member">
+		select * from member where id=#{id}
+	</select>
+	
 	<delete id="deleteUser" parameterType="com.smhrd.domain.Member">
-		delete from member where id=#{id} and pw=#{pw}
+		delete from member where id=#{id}
 	</delete>
 	
 	<delete id="deleteMember" parameterType="String">

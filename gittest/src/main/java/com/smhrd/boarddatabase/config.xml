@@ -18,6 +18,6 @@
     </environment>
   </environments>
   <mappers>
-    <mapper resource="com/smhrd/database/BoardMapper.xml"/>
+    <mapper resource="com/smhrd/boarddatabase/BoardMapper.xml"/>
   </mappers>
 </configuration>

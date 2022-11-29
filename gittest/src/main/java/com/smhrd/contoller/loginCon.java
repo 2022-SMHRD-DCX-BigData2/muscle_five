@@ -23,6 +23,8 @@ public class loginCon extends HttpServlet {
         // 로그인 화면에 입력된 아이디, 비밀번호 가져오기
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
+        System.out.println("id : "+id);
+        System.out.println("pw : "+pw);
         
     	// Member 객체에 담아주기
         Member joinMember = new Member(id,pw);
