@@ -25,8 +25,13 @@
 		select * from member
 	</select>
 	
+	<select id="selectOne" parameterType="com.smhrd.domain.Member"
+	 resultType="com.smhrd.domain.Member">
+		select * from member where id=#{id} and pw=#{pw}
+	</select>
+	
 	<delete id="deleteUser" parameterType="com.smhrd.domain.Member">
-		delete from member where id=#{id} and pw=#{pw}
+		delete from member where id=#{id}
 	</delete>
 	
 	<delete id="deleteMember" parameterType="String">
