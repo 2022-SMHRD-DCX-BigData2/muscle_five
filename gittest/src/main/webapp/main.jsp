@@ -62,7 +62,7 @@
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 					<%} else {%>
-					<h1 ><font color="white">로그인이 필요합니다.</font></h1>
+					<h1 style="margin : 0 0 1em;"><font color="white">로그인이 필요합니다.</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>

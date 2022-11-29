@@ -45,11 +45,11 @@
     </script>
 
 </head>
-<body class="is-preload">
+<body class="landing is-preload">
 	<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
+				<header id="header" class="alt">
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul>
@@ -78,7 +78,7 @@
 	
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<%if(loginMember != null){ %>
 					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
@@ -88,7 +88,7 @@
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
 					<%} else {%>
-					<h1>로그인이 필요합니다.</h1>
+					<h1 style="color:white;">로그인이 필요합니다.</h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
@@ -101,8 +101,8 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2>COMMUNITY</h2>
-						<p>헬창, 헬린이 소통의 공간</p>
+						<h2 style="color:white;">COMMUNITY</h2>
+						<p style="color:white;">헬창, 헬린이 소통의 공간</p>
 					</header>
 					<div class="row">
 						<div class="col-12">
