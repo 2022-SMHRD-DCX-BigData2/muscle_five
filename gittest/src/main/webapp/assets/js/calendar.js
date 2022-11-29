@@ -32,7 +32,7 @@
 	    			// title 값이 있을때, 화면에 calendar.addEvent() json형식으로 일정을 추가
 	        		if (title) {
 						
-						console.log("새로운이벤트 id : " + createEventId());
+						// console.log("새로운이벤트 id : " + createEventId());
 	            		
 	            		// 달력에 보여줄 이벤트 생성
 	            		var eventView = calendar.addEvent({
@@ -71,7 +71,7 @@
 	     		// 일정 있는 곳을 클릭했을 때
 	      		eventClick: function(arg) {
 	      			
-	    			console.log("#등록된 일정 클릭# : " + arg.event);
+	    			console.log("#등록된 일정 클릭#");
 	    	
 	        		if (confirm("일정을 삭제 하시겠습니까?")) {
 	          			arg.event.remove();
@@ -170,7 +170,7 @@
 					"json" : JSON.stringify(updateData)
 				},
 				success : function(res){
-					console.log(res);
+					console.log("update()")
 					
 				},
 				error : function(){
@@ -192,7 +192,7 @@
 					"json" : delData
 				},
 				success : function(res){
-					console.log(res);
+					console.log("del()")
 					
 				},
 				error : function(){
@@ -213,7 +213,7 @@
 		 		async: false, 
 		 		dataType: "json",
 		 		success: function(res) {
-			 		console.log(res);
+			 		console.log("createEventId()");
 			 		if (res == null) {
 						result = 1;
 					} else {
@@ -233,23 +233,23 @@
 		function getEvents(){
 			console.log("getEvents 실행");
 			var result;
-	    	  		// ajax 처리로 데이터를 로딩 시킨다.
-	    	  		$.ajax({
-	    		  
-	    		 		url: "CalendarViewCon",
-	    		 		type: "get",
-	    		 		async: false, 
-	    		 		dataType: "json",
-	    		 		success: function(res) {
-	    			 		console.log(res);
-	    			 		
-	    			 		result = res;
-				 		},
-				 		error : function(){
-					 		alert("Ajax 통신 실패");
-				 		}
-	    	  		});
-	    	  		
+	  		// ajax 처리로 데이터를 로딩 시킨다.
+	  		$.ajax({
+		  
+		 		url: "CalendarViewCon",
+		 		type: "get",
+		 		async: false, 
+		 		dataType: "json",
+		 		success: function(res) {
+					
+					console.log("getEvent()");			 					 		
+			 		result = res;
+		 		},
+		 		error : function(){
+			 		alert("Ajax 통신 실패");
+		 		}
+	  		});
+	    	
 	    	return result;
 	    	
 	     } // getEvents 끝
