@@ -154,37 +154,28 @@
 							        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
 							        
 							        <div>
-							        	<pre>
-							            	<p id="title" align="left">
-							                    <%=board_list.getBoard_title()%>
-							                </p>
-							                
-							                <pre id="title">작성일 : <%=board_list.getBoard_date()%></pre>
-							        
-							            
-							                <td id="title">작성자</td>
-							                <td><%=board_list.getBoard_id()%></td>
-							            </tr>
-							            <tr>
-							                       
-							            </tr>
-							            <tr>
-							                <td id="title">
-							                    내 용
-							                </td>
-							                <td>
-							                    <%=board_list.getBoard_content()%>
-							                </td>        
-							            </tr>
-							            <tr>
-							                <td id="title">
-							                    첨부파일
-							                </td>
-							                <td>
-							                    <img src="../image/<%=board_list.getBoard_file()%>" >
-							                    C:/image/<%=board_list.getBoard_file()%>
-							                </td>    
-							            </tr>
+							        	<pre >
+								                <h2><%=board_list.getBoard_title()%></h2>
+								                <td id="title">작성자</td>
+								                <td><%=board_list.getBoard_id()%></td>
+								                <p>작성일 : <%=board_list.getBoard_date()%></p>
+								            <tr>
+								                <td id="title">
+								                    내 용
+								                </td>
+								                <td>
+								                    <%=board_list.getBoard_content()%>
+								                </td>        
+								            </tr>
+								            <tr>
+								                <td id="title">
+								                    첨부파일
+								                </td>
+								                <td>
+								                    <img src="../image/<%=board_list.getBoard_file()%>" >
+								                    C:/image/<%=board_list.getBoard_file()%>
+								                </td>    
+								            </tr>
 							            </pre>
 							          </div>
 							    
