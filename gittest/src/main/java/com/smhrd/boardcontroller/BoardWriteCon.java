@@ -58,6 +58,8 @@ public class BoardWriteCon extends HttpServlet {
         if (f != null) {
         	System.out.println("크기 : " + f.length()+"바이트");
         	System.out.println("<br/>");
+        }else {
+        	board_file = "";
         }
              
         
