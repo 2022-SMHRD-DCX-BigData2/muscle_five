@@ -133,7 +133,7 @@
 										<%for(Member_Board b : board_list ){ %>
 										<tr  align="center">
 											<td><%=b.getBoard_num() %></td>
-											<td><a href="BoardDetailCon?num=${Board.board_num}"><%=b.getBoard_title() %></a></td>
+											<td><a href="BaordDetailCon?num=<%=b.getBoard_num()%>"><%=b.getBoard_title() %></a></td>
 											<td><%=b.getBoard_id() %></td>
 											<td><%=b.getBoard_date() %></td>
 											<td><%=b.getBoard_count() %></td>
