@@ -47,6 +47,7 @@ public class BoardWriteCon extends HttpServlet {
         String board_title = multi.getParameter("board_title");
         String board_content = multi.getParameter("board_content");
         String board_file = multi.getParameter("board_file");
+        System.out.println(board_file);
              
         
         Member_Board borderData = new Member_Board(board_num, board_id, board_title, board_content, board_file);

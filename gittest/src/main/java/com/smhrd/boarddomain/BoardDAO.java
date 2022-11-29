@@ -50,7 +50,7 @@ public class BoardDAO {
  		
  		try {
  			// 					mapper.xml의 id값
- 			result = sqlSession.insert("boardIinsert", board);
+ 			result = sqlSession.insert("boardInsert", board);
  			
  			// 만약에 내가 원하는 일을 했으면 DB에 반영
  			if (result > 0) {

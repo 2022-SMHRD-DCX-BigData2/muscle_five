@@ -30,6 +30,11 @@ public class Member {
 	}
 
 
+	public Member() {
+		super();
+	}
+
+
 	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2) {
 			
 		this.pw = pw;

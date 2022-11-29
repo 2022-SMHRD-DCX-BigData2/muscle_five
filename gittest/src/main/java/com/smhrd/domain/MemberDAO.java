@@ -61,6 +61,7 @@ public class MemberDAO {
 	public Member selectMember(Member login) {
 		
 		Member loginMember = null;
+		System.out.println("dao에서 id잘 가져오는지"+login.getId());
 		
 		try {
 			// 					mapper.xml의 id값
