@@ -61,7 +61,7 @@ public class MemberDAO {
 	public Member selectMember(Member login) {
 		
 		Member loginMember = null;
-		System.out.println("dao에서 id잘 가져오는지"+login.getId());
+		//System.out.println("dao에서 id잘 가져오는지"+login.getId());
 		
 		try {
 			// 					mapper.xml의 id값
@@ -165,7 +165,7 @@ public class MemberDAO {
 				
 				// 만약에 내가 원하는 일을 했으면 DB에 반영
 				if (userMember != null) {
-					System.out.println("DAO : 로그인 성공!!");
+					System.out.println("DAO : 회원 검색 성공!!");
 					sqlSession.commit();
 					
 				} else {
