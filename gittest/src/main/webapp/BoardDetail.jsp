@@ -8,7 +8,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	int board_num = (int)session.getAttribute("board_num");
+	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
 	BoardDAO dao = new BoardDAO();
 	
@@ -155,18 +155,18 @@
 							        
 							            <tr>
 							                <td id="title">작성일</td>
-							                <td><%-- <%=board_list.getBoard_date()%> --%></td>
+							                <td><%=board_list.getBoard_date()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">작성자</td>
-							                <td>${board.board_id}</td>
+							                <td><%=board_list.getBoard_id()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">
 							                    제 목
 							                </td>
 							                <td>
-							                    ${board.board_title}
+							                    <%=board_list.getBoard_title()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -174,7 +174,7 @@
 							                    내 용
 							                </td>
 							                <td>
-							                    ${board.board_content}
+							                    <%=board_list.getBoard_content()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -182,7 +182,8 @@
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <a href='FileDownloadCon?file_name=${board.board_file}'>${board.board_file}</a>
+							                    <img src="C:/image/<%=board_list.getBoard_file()%>">
+							                    C:/image/<%=board_list.getBoard_file()%>
 							                </td>    
 							            </tr>
 							    
