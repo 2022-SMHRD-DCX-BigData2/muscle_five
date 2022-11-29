@@ -31,6 +31,10 @@ public class Member_Board {
 		this.board_date = board_date;
 	}
 
+	public Member_Board() {
+		super();
+	}
+
 	public Member_Board(String board_id, String board_title, String board_content, String board_file) {
 		
 		this.board_id = board_id;
@@ -53,6 +57,12 @@ public class Member_Board {
 		this.board_num = board_num;
 	}
 	
+
+	public Member_Board(String board_id, String board_title, String board_content) {
+		this.board_id = board_id;
+		this.board_id = board_title;
+		this.board_id = board_content;
+	}
 
 	// getter, setter
 	public int getBoard_num() {

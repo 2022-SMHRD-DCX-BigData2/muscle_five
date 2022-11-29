@@ -1,5 +1,6 @@
 package com.smhrd.boardcontroller;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
 
@@ -21,35 +22,48 @@ public class BoardWriteCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		
+		String encType = "EUC-KR";
 		// 업로드 파일 사이즈
         int fileSize= 5*1024*1024;
         // 업로드될 폴더 경로
         String uploadPath = request.getServletContext().getRealPath("/UploadFolder");
  
         // 파일업로드 
-        MultipartRequest multi = new MultipartRequest(request, uploadPath, fileSize, "UTF-8", new DefaultFileRenamePolicy());
+        MultipartRequest multi = new MultipartRequest(request, uploadPath, fileSize, encType, new DefaultFileRenamePolicy());
  
         // 파일이름 가져오기
-        String fileName = "";
-        Enumeration<String> names = multi.getFileNames();
-            
-        if(names.hasMoreElements()){
-        
-        	String name = names.nextElement();
-            fileName = multi.getFilesystemName(name);
-        }
+//        String fileName = "";
+//        Enumeration<String> names = multi.getFileNames();
+//            
+//        if(names.hasMoreElements()){
+//        
+//        	String name = names.nextElement();
+//            fileName = multi.getFilesystemName(name);
+//        }
         
         BoardDAO dao = new BoardDAO();
         
-        int board_num = dao.getSeq();// 시퀀스값 가져와 세팅
         String board_id = multi.getParameter("board_id");
         String board_title = multi.getParameter("board_title");
-        String board_content = multi.getParameter("board_content");
-        String board_file = multi.getParameter("board_file");
+        String board_content = multi.getParameter("board_content");    
+        
+        String board_file = multi.getFilesystemName("board_file");
+        String original = multi.getOriginalFileName("board_file");
+        String type = multi.getContentType("board_file");
+        File f = multi.getFile("board_file");
+        
+        System.out.println("저장된 파일 이름 : " + board_file + "<br/>");
+        System.out.println("실제 파일 이름 : " + original + "<br/>");
+        System.out.println("파일 타입 : " + type + "<br/>");
+        if (f != null) {
+        	System.out.println("크기 : " + f.length()+"바이트");
+        	System.out.println("<br/>");
+        }else {
+        	board_file = "";
+        }
              
         
-        Member_Board borderData = new Member_Board(board_num, board_id, board_title, board_content, board_file);
+        Member_Board borderData = new Member_Board(board_id, board_title, board_content, board_file);
             
         
         int result = dao.boardInsert(borderData);
