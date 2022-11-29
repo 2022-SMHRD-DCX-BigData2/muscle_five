@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	Member loginMember = (Member)session.getAttribute("loginMember");
+	Member userMember = (Member)request.getAttribute("selectOne");
 %>
 <html>
 <head>
@@ -16,6 +16,9 @@
 	<style type="text/css">
 	
         table{	
+        
+       		width : 500px;
+       		
             margin-left:auto; 
             	
             margin-right:auto;
@@ -54,7 +57,7 @@
 					<h1><a href="main.jsp">MusleFive</a> </h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="#" class="button">회원관리</a></li>
+							<li><a href="userinfo.jsp" class="button">회원관리</a></li>
 							<li><a href="logoutCon" class="button">Log out</a></li>
 							<li><a href="modify.jsp" class="button">개인정보수정</a></li>
 						</ul>
@@ -78,27 +81,30 @@
 				<!-- Menu -->
 					<nav id="Update">
 						<form action="usergradeCon" method="post">
-							<input tyoe="hidden" name="grade" value="updategraade">
-							<input tyoe="hidden" name="id" value="<%=loginMember.getId()%>">
-							<table>
+							<input type="hidden" name="id" value="id">
+							<input type="hidden" name="grade" value="grade">
+							<table align="center">
 								<col width='50'><col width='100'>
+									<br>
+									<h2 align="center">[회원등급 변경]</h2>
+									<br>
 								<tr>
-									<td>아이디</td>
-									<td><%=loginMember.getId()%></td>
+									<td id="title">아이디</td>
+									<td id="title">${userMember.id}</td>
 								</tr>
 								<tr>
-									<td>회원등급</td>
-									<td>
+									<td id="title">회원등급</td>
+									<td id="title">
 										<select name="grade">
-											<option value="준회원" <%=loginMember.getGrade().equals("준회원")? "selected":""%>>준회원</option>
-											<option value="특별회원" <%=loginMember.getGrade().equals("특별회원")? "selected":""%>>특별회원</option>
-											<option value="관리자" <%=loginMember.getGrade().equals("관리자")? "selected":""%>>관리자</option>
+											<option value="준회원" >준회원</option>
+											<option value="특별회원" >특별회원</option>
+											<option value="관리자" >관리자</option>
 										</select>	
 									</td>
 								</tr>
 								<tr>
-									<td>
-										<input type="submit" value="변경하긴">
+									<td align="center">
+										<input type="submit" value="변경하기" class="button special small">
 									</td>
 								</tr>
 							</table>
