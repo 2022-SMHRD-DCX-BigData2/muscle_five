@@ -95,6 +95,41 @@
    	<servlet-name>usergradeCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.usergradeCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CalendarDeleteCon</display-name>
+   	<servlet-name>CalendarDeleteCon</servlet-name>
+   	<servlet-class>com.smhrd.calendarcontroller.CalendarDeleteCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CalendarInsertCon</display-name>
+   	<servlet-name>CalendarInsertCon</servlet-name>
+   	<servlet-class>com.smhrd.calendarcontroller.CalendarInsertCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CalendarLastIdCon</display-name>
+   	<servlet-name>CalendarLastIdCon</servlet-name>
+   	<servlet-class>com.smhrd.calendarcontroller.CalendarLastIdCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CalendarUpdateCon</display-name>
+   	<servlet-name>CalendarUpdateCon</servlet-name>
+   	<servlet-class>com.smhrd.calendarcontroller.CalendarUpdateCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CalendarViewCon</display-name>
+   	<servlet-name>CalendarViewCon</servlet-name>
+   	<servlet-class>com.smhrd.calendarcontroller.CalendarViewCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -147,6 +182,26 @@
    	<servlet-mapping>
    		<servlet-name>usergradeCon</servlet-name>
    		<url-pattern>/usergradeCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CalendarDeleteCon</servlet-name>
+   		<url-pattern>/CalendarDeleteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CalendarInsertCon</servlet-name>
+   		<url-pattern>/CalendarInsertCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CalendarLastIdCon</servlet-name>
+   		<url-pattern>/CalendarLastIdCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CalendarUpdateCon</servlet-name>
+   		<url-pattern>/CalendarUpdateCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CalendarViewCon</servlet-name>
+   		<url-pattern>/CalendarViewCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

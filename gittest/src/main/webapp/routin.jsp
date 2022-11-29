@@ -85,6 +85,13 @@
 				backrtound-color: skyblue;
 			}
 		</style>
+		<!--   // fullcalendar css -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+		<!--   // fullcalendar js -->
+		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+		<!--   //fullcalendar 언어 설정관련 script -->
+		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
 	</head>
 	<body class="landing is-preload">
 		<div id="page-wrapper">
@@ -197,6 +204,7 @@
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" ></span>
 								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
+								<div id='calendar'></div>
 							</section>
 						</div>
 
@@ -246,6 +254,8 @@
 					$(this).attr('id', 'like1')
 				})
 			</script>
+			<!-- 캘린더 스크립트 -->
+			<script src="calendar2.js">	</script>
 
 	</body>
 </html>

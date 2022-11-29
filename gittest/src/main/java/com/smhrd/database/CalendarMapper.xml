@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.smhrd.database.CalendarMapper">
+ 	<insert id="insertCalendar" parameterType="com.smhrd.calendardomain.Calendar">
+ 		insert into calendar values (
+ 		 <!-- cal_seq.nextval, -->
+ 		 #{id},
+ 		 #{title},
+ 		 #{allDay},
+ 		 #{start}, 
+ 		 #{end},
+ 		 #{startStr},
+ 		 #{endStr},
+ 		 #{backgroundColor},
+ 		 #{borderColor},
+ 		 #{textColor},
+ 		 'user1234'
+ 		 )
+ 	</insert>
+	
+	<select id="selectAll" resultType="com.smhrd.calendardomain.Calendar">
+		select * from calendar where member_id = 'user1234'
+	</select>
+	
+	<delete id="deleteCalendar" parameterType="String">
+		delete from calendar where calendar_id=#{id}
+	</delete>
+	
+	<update id="updateCalendar" parameterType="com.smhrd.calendardomain.Calendar">
+		update calendar set calendar_start=#{start},
+							calendar_end=#{end},
+							calendar_startStr=#{startStr},
+							calendar_endStr=#{endStr} 
+						where calendar_id=#{id}
+	</update>
+	<select id="selectLastId" resultType="String">
+		select max(calendar_id) from calendar
+	</select>
+
+	
+</mapper>
