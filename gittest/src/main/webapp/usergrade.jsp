@@ -81,20 +81,20 @@
 				<!-- Menu -->
 					<nav id="Update">
 						<form action="usergradeCon" method="post">
-							<input type="hidden" name="id" value="updategrade">
-							<input type="hidden" name="id" value="${userMember.id}%>">
+							<input type="hidden" name="id" value="id">
+							<input type="hidden" name="grade" value="grade">
 							<table align="center">
 								<col width='50'><col width='100'>
 									<br>
 									<h2 align="center">[회원등급 변경]</h2>
 									<br>
 								<tr>
-									<td>아이디</td>
-									<td><input name="id" value="<%= userMember.getId()%>"></td>
+									<td id="title">아이디</td>
+									<td id="title">${userMember.id}</td>
 								</tr>
 								<tr>
-									<td>회원등급</td>
-									<td>
+									<td id="title">회원등급</td>
+									<td id="title">
 										<select name="grade">
 											<option value="준회원" <%= userMember.getGrade().equals("준회원")?"selected":""%>>준회원</option>
 											<option value="특별회원" <%= userMember.getGrade().equals("특별회원")?"selected":""%>>특별회원</option>
@@ -104,7 +104,7 @@
 								</tr>
 								<tr>
 									<td align="center">
-										<input type="submit" value="변경하기">
+										<input type="submit" value="변경하기" class="button special small">
 									</td>
 								</tr>
 							</table>

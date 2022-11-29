@@ -14,6 +14,7 @@ public class Member {
 	private String mail1;
 	private String mail2;
 	private String grade;
+	private int id_num;
 	//private String mag;
 	
 
