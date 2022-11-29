@@ -7,9 +7,9 @@
 	      		
 	      		initialView : 'dayGridMonth', // 초기 로드 될때 보이는 캘린더 화면(기본 설정: 달)
 	      		headerToolbar: {
-	        		left: 'prev,next today',
-	        		center: 'title',
-	        		right: 'dayGridMonth,timeGridWeek,timeGridDay'
+	        		left: 'prev,next today', // 왼쪽 : 뒤로, 앞으로, 오늘 표시
+	        		center: 'title',		// 중간 : 날짜 표시
+	        		right: 'dayGridMonth,timeGridWeek,timeGridDay' // 오른쪽 : 월,주,일
 	      		},
 	      		titleFormat : function(date) {
 					return date.date.year + '년 ' + (parseInt(date.date.month) + 1) + '월';
@@ -26,14 +26,15 @@
 	      		// 이벤트명 : function(){} : 각 날짜에 대한 이벤트를 통해 처리할 내용..
 	  			// 달력을 선택 했을때
 	      		select: function(arg) {
-	    			
-	    			console.log(arg);
 	    	  
 	    			var title = prompt('입력할 일정:'); 
+	    			
 	    			// title 값이 있을때, 화면에 calendar.addEvent() json형식으로 일정을 추가
-	        
 	        		if (title) {
 						
+						console.log("새로운이벤트 id : " + createEventId());
+	            		
+	            		// 달력에 보여줄 이벤트 생성
 	            		var eventView = calendar.addEvent({
 							
 							id: createEventId(),
@@ -45,8 +46,6 @@
 	            			textColor: "",			// 일정 텍스트박스 글자색(없으면 기본색)
 	            			borderColor: ""			// 일정 텍스트박스 라인색(없으면 기본색)
 	          			})
-	        			
-	        			console.log("새로운이벤트 id : " + createEventId());
 	        			
 	          			// 저장할 데이터 변수
 	          			var saveData = [];
@@ -65,7 +64,6 @@
 						
 						// 데이터 저장 함수
 	          			save(saveData);
-	          		
 	        		}
 	        		calendar.unselect()
 	      		},
@@ -73,11 +71,9 @@
 	     		// 일정 있는 곳을 클릭했을 때
 	      		eventClick: function(arg) {
 	      			
-	    			console.log("#등록된 일정 클릭#");
-	    			console.log(arg.event);
-	    			console.log("제대로 리턴 되는지 데이터 보기 : " + getEvents());
+	    			console.log("#등록된 일정 클릭# : " + arg.event);
 	    	
-	        		if (confirm("일정을 삭제 하시겠습니까?" + arg.event.id)) {
+	        		if (confirm("일정을 삭제 하시겠습니까?")) {
 	          			arg.event.remove();
 	          			// console.log(arg.event.id);
 	          			del(arg.event.id);
@@ -99,17 +95,19 @@
 	            			'endStr': arg.event.endStr
 	  					}); // push 끝
 	  					
+	  					// 데이터 업데이트 함수
 	  					update(updateData);
 	    	 		} else {
 	    	 			arg.revert();
 	    	 		}
 	    	 	
 	      		},
+	      		
 	      		// 일정을 이동 했을 때
 	      		eventDrop: function(arg) {
 
 	      		    if (confirm("일정을 이동 하시겠습니까?")) {
-	      		   // 수정데이터 변수
+	      		   		// 수정데이터 변수
 	    	 			var updateData = [];
 	            		updateData.push({
 	            			'id': arg.event.id,
@@ -119,6 +117,7 @@
 	            			'endStr': arg.event.endStr
 	  					}); // push 끝
 	  					
+	  					// 데이터 업데이트 함수
 	  					update(updateData);
 
 	      		    } else {
@@ -126,6 +125,7 @@
 	      		    }
 	      		},
 	      		
+	      		// 캘린더에 뿌려줄 데이터 함수로 가져오기
 	      		events: getEvents()
 	      		
 	    	});
@@ -154,19 +154,10 @@
 				}
 			}); // ajax 끝
 			
+			// 데이터 다시 불러오기
 			getEvents();
-			
-			// calendarRefresh();
-				
 					
 		} // save()함수 끝!!
-		
-		
-		//function calendarRefresh(){
-		//	//기존 FullCalendar 삭제
-		//	$('#calendar').load(location.href + "#calendar");
-     	//	console.log("새로고침");
-     	//}
 		
 		// 수정할 일정을 보냄
 		function update(updateData){
@@ -238,7 +229,7 @@
 	  		
 		} // createEventId 함수 끝!!
 		
-		// DB로 부터 일정 데이터를 받아옴
+		// DB로 부터 일정 데이터를 받아오기
 		function getEvents(){
 			console.log("getEvents 실행");
 			var result;

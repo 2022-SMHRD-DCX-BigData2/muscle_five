@@ -13,7 +13,7 @@ public class CalendarDeleteCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("[delJson]");
+		System.err.println("[CalendarDeleteCon]");
 		// 값 가져오기 전에 인코딩
 		request.setCharacterEncoding("UTF-8");
 		

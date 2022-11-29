@@ -21,7 +21,7 @@
  		 )
  	</insert>
 	
-	<select id="selectAll" resultType="com.smhrd.calendardomain.Calendar">
+	<select id="selectAllCalendar" resultType="com.smhrd.calendardomain.Calendar">
 		select * from calendar where member_id = 'user1234'
 	</select>
 	
@@ -37,8 +37,7 @@
 						where calendar_id=#{id}
 	</update>
 	<select id="selectLastId" resultType="String">
-		select max(calendar_id) from calendar
+		select max(to_number(calendar_id)) from calendar
 	</select>
 
-	
 </mapper>

@@ -16,7 +16,7 @@ public class CalendarLastIdCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("[CalendarLastIdCon]");
+		System.err.println("[CalendarLastIdCon]");
 	
 		CalendarDAO dao = new CalendarDAO();
 		
@@ -32,8 +32,8 @@ public class CalendarLastIdCon extends HttpServlet {
 		// 보내는 통로 출력스트림 PrintWriter 객체 생성
 		PrintWriter out = response.getWriter();
 		
-		// 결과값을 보내는 out.print();
-		System.out.println(json);
+		// 달력으로 보내줄 마지막 ID 확인
+		System.out.println("달력으로 보내줄 마지막 ID 확인 : " + json);
 		
 		out.print(json);
 

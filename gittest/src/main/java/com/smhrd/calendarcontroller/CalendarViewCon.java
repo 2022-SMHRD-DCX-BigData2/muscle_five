@@ -38,7 +38,7 @@ public class CalendarViewCon extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		// 결과값을 보내는 out.print();
-		System.out.println("ajax로 보낼객체 확인 : " + json);
+		System.out.println("캘린더로 보내줄 Jon객체 확인 : " + json);
 		
 		// 전송
 		out.print(json);

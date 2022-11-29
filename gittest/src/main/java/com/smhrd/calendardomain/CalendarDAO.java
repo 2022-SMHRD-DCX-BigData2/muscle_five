@@ -56,7 +56,7 @@ public class CalendarDAO {
 		
 		try {
 			
-			calendarList = sqlSession.selectList("selectAll");
+			calendarList = sqlSession.selectList("selectAllCalendar");
 			
 			if(calendarList != null) {
 				System.out.println("CalendarDAO : 일정전체검색 성공");
@@ -157,7 +157,5 @@ public class CalendarDAO {
 		return cnt;
 
 	} // 캘린더 일정 수정 끝
-	
-
 	
 }

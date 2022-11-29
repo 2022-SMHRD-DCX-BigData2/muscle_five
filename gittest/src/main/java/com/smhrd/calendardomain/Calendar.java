@@ -24,6 +24,7 @@ public class Calendar {
 	//private String constraint;
 	//private String extendedProps;
 	//private String source;
+	
 	public Calendar(String id, String title, String allDay, String start, String end, String startStr, String endStr,
 			String backgroundColor, String borderColor, String textColor, String member_id) {
 		super();
@@ -39,6 +40,7 @@ public class Calendar {
 		this.textColor = textColor;
 		this.member_id = member_id;
 	}
+	
 	public Calendar(String title, String allDay, String start, String end, String startStr, String endStr,
 			String backgroundColor, String borderColor, String textColor, String member_id) {
 		super();
@@ -53,6 +55,7 @@ public class Calendar {
 		this.textColor = textColor;
 		this.member_id = member_id;
 	}
+	
 	public Calendar(String id, String start, String end, String startStr, String endStr) {
 		super();
 		this.id = id;
@@ -61,6 +64,7 @@ public class Calendar {
 		this.startStr = startStr;
 		this.endStr = endStr;
 	}
+	
 	public String getId() {
 		return id;
 	}
@@ -127,8 +131,6 @@ public class Calendar {
 	public void setMember_id(String member_id) {
 		this.member_id = member_id;
 	}
-	
-	
 
 	
 }

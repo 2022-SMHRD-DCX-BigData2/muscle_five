@@ -15,7 +15,7 @@ public class CalendarUpdateCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		System.out.println("[CalendarUpdateCon]");
+		System.err.println("[CalendarUpdateCon]");
 		// 값 가져오기 전에 인코딩
 		request.setCharacterEncoding("UTF-8");
 		
@@ -32,16 +32,9 @@ public class CalendarUpdateCon extends HttpServlet {
 		Calendar[] calendar = gson.fromJson(json, Calendar[].class);
 		Calendar updateCalendar = calendar[0];
 		
-		System.out.println(updateCalendar.getId());
-		System.out.println(updateCalendar.getStart());
-		System.out.println(updateCalendar.getEnd());
-		System.out.println(updateCalendar.getStartStr());
-		System.out.println(updateCalendar.getEndStr());
-		
 		
 		CalendarDAO dao = new CalendarDAO();
 		int cnt = dao.updateCalendar(updateCalendar);
-		
 		
 		
 		if (cnt > 0) {

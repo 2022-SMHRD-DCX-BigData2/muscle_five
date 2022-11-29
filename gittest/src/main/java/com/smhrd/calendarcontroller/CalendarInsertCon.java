@@ -25,7 +25,7 @@ public class CalendarInsertCon extends HttpServlet {
 		// getparameter해줌
 		String json = request.getParameter("json");
 
-		System.out.println("넘어온 json 데이터 확인 :" + json);
+		System.out.println("캘린더에서 넘어온 json 데이터 확인 :" + json);
 
 		// Gson 객체 생성
 		Gson gson = new Gson();
