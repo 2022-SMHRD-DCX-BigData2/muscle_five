@@ -23,11 +23,10 @@ public class usergradeCon extends HttpServlet {
 		// 어떤 사람의 회원정보를 수정할지 id을 가져와야함
 		// 세션에서 정보 가져오기
 		HttpSession session = request.getSession();
-		//Member loginMember = (Member) session.getAttribute("selectMember");
-		
-		String id = request.getParameter("id");
-		
+		//Member userMember = (Member) session.getAttribute("selectOne");
+	
 		// 1. 파라미터 수집
+		String id = request.getParameter("id");
 		String grade = request.getParameter("grade");
 		
 		// 받아온 데이터를 Member 객체에 담아주기

@@ -47,6 +47,11 @@ public class Member {
 	}
 	
 
+	public Member() {
+		super();
+	}
+
+
 	public Member(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
