@@ -22,7 +22,9 @@ public class BoardWriteCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String encType = "EUC-KR";
+		request.setCharacterEncoding("UTF-8");
+		
+		String encType = "UTF-8";
 		// 업로드 파일 사이즈
         int fileSize= 5*1024*1024;
         // 업로드될 폴더 경로

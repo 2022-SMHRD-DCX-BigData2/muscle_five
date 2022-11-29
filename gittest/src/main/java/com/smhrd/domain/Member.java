@@ -49,7 +49,6 @@ public class Member {
 
 
 	public Member() {
-		super();
 	}
 
 
@@ -62,11 +61,6 @@ public class Member {
 		this.birth_dd = birth_dd;
 		this.mail1 = mail1;
 		this.mail2 = mail2;
-	}
-
-
-	public Member() {
-		super();
 	}
 
 
