@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	Member userMember = (Member)request.getAttribute("userMember");
+	Member loginMember = (Member)request.getAttribute("loginMember");
 %>
 <html>
 <head>
@@ -17,7 +17,7 @@
 	
         table{	
         
-       		width : 800px;
+       		width : 1000px;
        		
             margin-left:auto; 
             	
@@ -80,8 +80,10 @@
 				<div id="wrapper">
 				<!-- Menu -->
 					<nav id="Update">
+					
 						<form action="usergradeCon" method="post">
 							<input type="hidden" name="id" value="id">
+							<input type="hidden" name="pw" value="pw">
 							<input type="hidden" name="grade" value="grade">
 							<table align="center">
 								<col width='50'><col width='100'>
@@ -89,23 +91,25 @@
 									<h2 align="center">[회원등급 변경]</h2>
 									<br>
 									
-								<tr>
+								<tr align="center">
 									<td id="title">아이디</td>
-									<td id="title">${userMember.id}</td>
+									<td id="title"><input name="id" value="<%=loginMember.getId() %>"></td>
 								</tr>
-								<tr>
+								<tr align="center">
 									<td id="title">회원등급</td>
 									<td id="title">
 										<select name="grade">
-											<option value="준회원" >준회원</option>
-											<option value="정회원" >정회원</option>
-											<option value="특별회원" >특별회원</option>
-											<option value="관리자" >관리자</option>
+											<option value="준회원" <%=loginMember.getGrade().equals("준회원")?"selected":"" %> >준회원</option>
+											<option value="정회원" <%=loginMember.getGrade().equals("정회원")?"selected":"" %> >정회원</option>
+											<option value="특별회원" <%=loginMember.getGrade().equals("특별회원")?"selected":"" %>>특별회원</option>
+											<option value="관리자" <%=loginMember.getGrade().equals("관리자")?"selected":"" %>>관리자</option>
 										</select>	
 									</td>
 								</tr>
-								<tr>
-									<input type="submit" value="변경하기" class="button special small">
+								<tr align="right">
+									<td colspqn="2">
+										<input type="submit" value="변경하기" class="button alt small">
+									</td>
 								</tr>
 								<!-- <tr>
 									<td align="right">
@@ -113,8 +117,8 @@
 									</td>
 								</tr> -->
 							</table>
-						
 						</form>
+						
 					</nav>		
 					<p align="center"><a href="userinfo.jsp" class="button next scrolly">되돌아가기</a></p>
 			</div>
