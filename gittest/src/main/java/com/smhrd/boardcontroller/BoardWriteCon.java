@@ -28,7 +28,7 @@ public class BoardWriteCon extends HttpServlet {
 		// 업로드 파일 사이즈
         int fileSize= 5*1024*1024;
         // 업로드될 폴더 경로
-        String uploadPath = request.getServletContext().getRealPath("/UploadFolder");
+        String uploadPath = "C:/image";
  
         // 파일업로드 
         MultipartRequest multi = new MultipartRequest(request, uploadPath, fileSize, encType, new DefaultFileRenamePolicy());
