@@ -24,9 +24,7 @@ public class BaordDetailCon extends HttpServlet {
 		HttpSession session = request.getSession();
 		session.setAttribute("board_num", board_num);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("BoardDetail.jsp");
-		
-		rd.forward(request, response);
+		response.sendRedirect("BoardDetail.jsp");
 	}
 
 }
