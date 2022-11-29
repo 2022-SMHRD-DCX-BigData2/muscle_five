@@ -183,7 +183,6 @@
 							                </td>
 							                <td>
 							                    <img src="C:/image/<%=board_list.getBoard_file()%>">
-							                    C:/image/<%=board_list.getBoard_file()%>
 							                </td>    
 							            </tr>
 							    
