@@ -204,11 +204,14 @@
 						<!-- <div class="col-4 col-12-narrower" id="calendar">
 							<section class="box special">
 								<span class="image featured"><img src="images/pic03.jpg" ></span>
-								<h1 id="font">캘린더부분입니다!!!!!!!!!!!!</h1>
-								
+						
 							</section>
 						</div> -->
+						<div align="center">
+						<button onclick="window.open('calendar.jsp','window_name','location=no,status=no,scrollbars=yes');">원본달력</button>
+						</div>
 						<div id='calendar'></div>
+						
 
 			<!-- CTA -->
 				<section id="cta">
@@ -238,8 +241,6 @@
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
-			
-			<script src="https://code.jquery.com/jquery-3.6.1.js"></script>
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
@@ -259,7 +260,7 @@
 				})
 			</script>
 			<!-- 캘린더 스크립트 -->
-			<script src="calendar.js"></script>
+			<script src="assets/js/calendar.js"></script>
 
 	</body>
 </html>
