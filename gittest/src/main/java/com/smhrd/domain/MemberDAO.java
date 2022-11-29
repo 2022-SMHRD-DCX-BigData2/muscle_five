@@ -95,7 +95,7 @@ public class MemberDAO {
 		int cnt = 0;
 		
 		try {
-			// 					mapper.xml의 id값
+			System.out.println(update.getId());
 			cnt = sqlSession.update("updateMember", update);
 			
 			// 만약에 내가 원하는 일을 했으면 DB에 반영

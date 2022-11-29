@@ -24,7 +24,7 @@
 	
 	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board where board_id=#{board_id} and board_num=#{board_num}
+		select * from member_board where board_num=#{board_num}
 	</select>
 	
 	<select id="selectOneBoardByNum" parameterType="com.smhrd.boarddomain.Member_Board"
