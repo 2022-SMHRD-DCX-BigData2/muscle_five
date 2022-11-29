@@ -28,14 +28,16 @@ public class usergradeCon extends HttpServlet {
 		// 1. 파라미터 수집
 		String id = request.getParameter("id");
 		String grade = request.getParameter("grade");
+		System.out.println(id);
+		System.out.println(grade);
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member joinMember = new Member(id, grade);
+        Member userMember = new Member(id, grade);
 		
 		// DAO에 일할 메소드 만들기.
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.updateGrade(joinMember);
-		Member userMember = dao.selectMember(joinMember);
+		int cnt = dao.updateGrade(userMember);
+		//Member userMember = dao.selectMember(joinMember);
 		
 		// DAO의 명령 후 처리
 		// 성공했으면(cnt>0) -> 성공페이지로 이동!
@@ -46,6 +48,7 @@ public class usergradeCon extends HttpServlet {
 			session.setAttribute("selectOne", userMember);
 			RequestDispatcher rd = request.getRequestDispatcher("userinfo.jsp");
 			rd.forward(request, response);
+			response.sendRedirect("userinfo.jsp");
 			//response.sendRedirect("userinfo.jsp");
 			
 			// 실패했으면 -> 이동X

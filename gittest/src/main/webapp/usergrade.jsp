@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	Member userMember = (Member)request.getAttribute("selectOne");
+	Member userMember = (Member)request.getAttribute("userMember");
 %>
 <html>
 <head>
@@ -103,7 +103,9 @@
 											<option value="관리자" >관리자</option>
 										</select>	
 									</td>
-										<td><input type="submit" value="변경하기" class="button special small"></td>
+								</tr>
+								<tr>
+									<input type="submit" value="변경하기" class="button special small">
 								</tr>
 								<!-- <tr>
 									<td align="right">

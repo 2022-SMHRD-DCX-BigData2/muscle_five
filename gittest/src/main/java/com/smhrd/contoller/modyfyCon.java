@@ -28,7 +28,6 @@ public class modyfyCon extends HttpServlet {
 		
 		// 1. 파라미터 수집
 		
-		
 		String pw = request.getParameter("pw");
         String gender = request.getParameter("gender");
         	
@@ -59,7 +58,7 @@ public class modyfyCon extends HttpServlet {
 			// 같은 이름으로 덮어쓰기 해야한다.
 			session.setAttribute("loginMember", update);
 			
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("modify.jsp");
 			
 			// 실패했으면 -> 이동X
 		} else {

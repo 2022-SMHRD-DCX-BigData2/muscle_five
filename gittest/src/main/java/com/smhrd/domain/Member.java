@@ -19,17 +19,17 @@ public class Member {
 	
 
 
-	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2, String grade) {
+//	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2, String grade) {
 			
-		this.pw = pw;
-		this.gender = gender;
-		this.birth_yy = birth_yy;
-		this.birth_mm = birth_mm;
-		this.birth_dd = birth_dd;
-		this.mail1 = mail1;
-		this.mail2 = mail2;
-		this.grade = grade;
-	}
+//		this.pw = pw;
+//		this.gender = gender;
+//		this.birth_yy = birth_yy;
+//		this.birth_mm = birth_mm;
+//		this.birth_dd = birth_dd;
+//		this.mail1 = mail1;
+//		this.mail2 = mail2;
+//		this.grade = grade;
+//	}
 
 
 	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd,
@@ -47,8 +47,23 @@ public class Member {
 	}
 
 
-
 	public Member() {
+		super();
+	}
+
+
+
+	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd, 
+			String mail1, String mail2) {
+		super();
+		this.id = id;
+		this.pw = pw;
+		this.gender = gender;
+		this.birth_yy = birth_yy;
+		this.birth_mm = birth_mm;
+		this.birth_dd = birth_dd;
+		this.mail1 = mail1;
+		this.mail2 = mail2;
 	}
 
 
@@ -69,7 +84,6 @@ public class Member {
 		this.pw = pw;
 	}
 
-	
 	
 	public Member(String id, String pw, String grade) {
 		this.id = id;
