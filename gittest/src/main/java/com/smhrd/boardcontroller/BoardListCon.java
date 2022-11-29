@@ -19,7 +19,7 @@ public class BoardListCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		request.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("UTF-8");
 	    
 	    // 1. email,pw 파라미터 수집
 	    //int board_num = request.getParameter("board_num");

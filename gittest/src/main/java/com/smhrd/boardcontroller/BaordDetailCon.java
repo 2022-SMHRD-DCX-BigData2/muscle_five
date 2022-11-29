@@ -1,10 +1,13 @@
 package com.smhrd.boardcontroller;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class BaordDetailCon extends HttpServlet {
@@ -15,7 +18,15 @@ public class BaordDetailCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		int board_num = request.getIntHeader("board_num");
+		String board_num = request.getParameter("num");
+		System.out.println("board_num :" + board_num);
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("board_num", board_num);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("BoardDetail.jsp");
+		
+		rd.forward(request, response);
 	}
 
 }

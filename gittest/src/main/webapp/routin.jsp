@@ -20,7 +20,7 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
-			
+		
 			#insta{
 			width : 50px;
 			height : 50px;
@@ -167,11 +167,12 @@
 					
 					<div class="row" id="muscle" style="height:750px;">
 						<div class="col-6 ">
-							<section class="box special" >
-								<h3 id="font">체성분 입력</h3>
+							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>
 								<pre>체지방량<input type="text" name="fat"></pre>
+								<pre align="left" style="margin:0"><h4 style="margin:0">최근 기록</h4><br>체중 : 000 <br>골격근량 : 000 <br>체지방량 : 000</pre>
 								<br>
 								<input type="submit" value="제출">
 							</section>
@@ -181,18 +182,18 @@
 						<div class="col-6" >
 							<section class="box special" id="big-box" style ="backgorund-color:white">
 								<div id="insta_main" align="left">
-									<img id="insta" src="인스타사진2.png"> <span   id="user-name"> MuscleFive</span>
+									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> MuscleFive</span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
-									<h3 id="font">추천운동부분입니다!!!!!</h3>
-										<pre>팔굽혀펴기 max : </pre>
-										<pre>턱걸이 max : </pre>
+									<h3 id="font" style="margin : 0 0 0.5em;">추천운동부분입니다!!!!!</h3>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;">팔굽혀펴기 max : </pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;">턱걸이 max : </pre>
 										<pre>이것저것 max : </pre>
 								</div>
 								<div id="btn-good">
-									<button id='like1' style="float:left">🤍</button>
+									<button id='like1' style="float:left;">🤍</button>
 								</div><br><br>
-								<div id="btn_group" style="display:flex">
+								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button  id="prev">prev</button>
 									<button  id="next">next</button>
 								</div>

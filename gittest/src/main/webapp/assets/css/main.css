@@ -11,6 +11,42 @@
 
 /* Based on meyerweb.com/eric/tools/css/reset (v2.0 | 20110126 | License: public domain) */
 
+	@font-face {
+    font-family: 'JSArirang-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/JSArirang-RegularA1.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+	@font-face {
+    font-family: 'EBSHMJESaeronRA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/EBSHMJESaeronRA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+	
+	
+	@font-face {
+    font-family: 'SeoulHangangM';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/SeoulHangangM.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+	@font-face {
+    font-family: 'KBIZHanmaumMyungjo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/KBIZHanmaumMyungjo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
+	@font-face {
+    font-family: 'RIDIBatang';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+	}
+
 	html, body, div, span, applet, object,
 	iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 	pre, a, abbr, acronym, address, big, cite,
