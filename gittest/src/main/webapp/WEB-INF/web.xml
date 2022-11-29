@@ -88,6 +88,13 @@
    	<servlet-name>BoardUpdateCon</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.BoardUpdateCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>usergradeCon</display-name>
+   	<servlet-name>usergradeCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.usergradeCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -136,6 +143,10 @@
    	<servlet-mapping>
    		<servlet-name>BoardUpdateCon</servlet-name>
    		<url-pattern>/BoardUpdateCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>usergradeCon</servlet-name>
+   		<url-pattern>/usergradeCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

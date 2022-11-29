@@ -124,11 +124,10 @@ public class BoardDAO {
         	 // 만약에 내가 원하는 일을 했으면 DB에 반영
         	 if ( BoardList != null) {
       				System.out.println("DAO : 게시글 전체 목록 보기 성공!!");
-      				sqlSession.commit();
+
       				
       			} else {
-      				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
-      				sqlSession.rollback();
+
       			}
       		
       		} catch (Exception e) {
@@ -154,7 +153,7 @@ public class BoardDAO {
         	 
         	//StringBuffer sql = new StringBuffer();
  			// 					mapper.xml의 id값
-        	 DBoard = sqlSession.selectOne("opt", board_num);
+        	 DBoard = sqlSession.selectOne("selectOneBoardByNum", board_num);
  			
  			// 만약에 내가 원하는 일을 했으면 DB에 반영
  			if (DBoard != null) {

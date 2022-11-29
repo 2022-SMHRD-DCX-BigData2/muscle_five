@@ -26,10 +26,10 @@ public class BoardListCon extends HttpServlet {
 	    String board_id = request.getParameter("board_id");
 	    String board_title = request.getParameter("board_title");
 	    String board_content = request.getParameter("board_content");
-	    String board_file = request.getParameter("board_file");
+	    // String board_file = request.getParameter("board_file");
 	    
 	    // Member 객체에 담아주기  
-		Member_Board boardlist = new Member_Board(board_id, board_title, board_content, board_file);
+		Member_Board boardlist = new Member_Board(board_id, board_title, board_content);
 		//System.out.println(login.toString());
 		
 		// DAO 메소드 실행

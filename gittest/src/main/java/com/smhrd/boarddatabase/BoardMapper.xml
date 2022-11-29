@@ -11,11 +11,11 @@
 	</select>-->
 
 	<insert id="boardInsert" parameterType="com.smhrd.boarddomain.Member_Board">
-		insert into member_board('board_num', 'board_id', 'board_title', 'board_content', 'board_file') values (#{board_num}, #{board_id}, #{board_title}, #{board_content}, #{board_file})
+		insert into member_board(board_num, board_id, board_title, board_content, board_file) values (COM_SEQ.nextval, #{board_id}, #{board_title}, #{board_content}, #{board_file})
 	</insert>
 
 	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board order by board_num desc
+		select * from member_board
 	</select>
 
 	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">
