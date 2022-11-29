@@ -221,7 +221,7 @@
 						                            <option value="nate.com">nate.com</option>                        
 						                        </select>
 						                    </td>
-						                    <td><input type="hidden" name="grade" value="준회원"></td>
+						                    <td id="title"><input type="hidden" name="grade" value="준회원"></td>
 						                </tr>
 						            </table>
 						            <br>
