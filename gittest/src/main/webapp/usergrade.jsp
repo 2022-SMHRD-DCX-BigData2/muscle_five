@@ -17,7 +17,7 @@
 	
         table{	
         
-       		width : 500px;
+       		width : 800px;
        		
             margin-left:auto; 
             	
@@ -88,6 +88,7 @@
 									<br>
 									<h2 align="center">[회원등급 변경]</h2>
 									<br>
+									
 								<tr>
 									<td id="title">아이디</td>
 									<td id="title">${userMember.id}</td>
@@ -97,16 +98,18 @@
 									<td id="title">
 										<select name="grade">
 											<option value="준회원" >준회원</option>
+											<option value="정회원" >정회원</option>
 											<option value="특별회원" >특별회원</option>
 											<option value="관리자" >관리자</option>
 										</select>	
 									</td>
+										<td><input type="submit" value="변경하기" class="button special small"></td>
 								</tr>
-								<tr>
-									<td align="center">
+								<!-- <tr>
+									<td align="right">
 										<input type="submit" value="변경하기" class="button special small">
 									</td>
-								</tr>
+								</tr> -->
 							</table>
 						
 						</form>
