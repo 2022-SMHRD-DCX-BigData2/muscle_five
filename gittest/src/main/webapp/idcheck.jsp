@@ -46,8 +46,8 @@
 		<form action="idCheck" method="post" name="userinfo">
 	 		<table align="center">
 	 			<tr>
-	 			<td><font size="3" color="gray">아이디<input type="text" name="inputId" id="inputId"></font></td>
-				<td><input type="submit" value="중복 확인"></td>
+	 				<td><font size="3" color="gray">아이디<input type="text" name="inputId" id="inputId"></font></td>
+					<td><input type="submit" value="중복 확인"></td>
 				</tr>
 		
 				<br>

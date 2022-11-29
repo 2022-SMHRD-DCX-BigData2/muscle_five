@@ -45,7 +45,24 @@ public class Member {
 		this.mail2 = mail2;
 		this.grade = grade;
 	}
-	
+
+
+
+	public Member() {
+	}
+
+
+	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2) {
+			
+		this.pw = pw;
+		this.gender = gender;
+		this.birth_yy = birth_yy;
+		this.birth_mm = birth_mm;
+		this.birth_dd = birth_dd;
+		this.mail1 = mail1;
+		this.mail2 = mail2;
+	}
+
 
 	public Member(String id, String pw) {
 		this.id = id;
