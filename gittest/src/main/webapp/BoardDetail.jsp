@@ -8,6 +8,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
+
+	Member loginMember = (Member)session.getAttribute("loginMember");	
+
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
 	BoardDAO dao = new BoardDAO();
@@ -183,19 +186,26 @@
 							                </td>
 							                <td>
 							                    <img src="C:/image/<%=board_list.getBoard_file()%>">
+
 							                </td>    
 							            </tr>
 							    
 							            <tr align="center" valign="middle">
 							                <td colspan="5">
-							                	<c:if test="${loginMemer.id !=null}">
-								                   	<c:if test="${loginMember.id == Board.board_id}">
-								                        <a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
-								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a> 
-								                    </c:if>
-								                        <a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a> 
-								                </c:if>        
-								                   		<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>             
+							                <%if(loginMember.getId() != null){%>
+							                		<%if(loginMember.getId().equals(board_list.getBoard_id())){%>
+							                			<a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
+								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a>
+								                        <a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
+							                		<%} else{
+							                			%>
+							                			<a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
+							                	<% 
+							                			}
+							                		}
+							                	%>
+							                	<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>     
+								                   		             
 								            </td> <!-- javascript:location.href='BoardListAction.bo?page=${pageNum}' -->
 							            </tr>
 							        </table>
