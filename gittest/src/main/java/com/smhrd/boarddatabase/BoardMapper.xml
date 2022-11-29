@@ -15,7 +15,7 @@
 	</insert>
 
 	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board
+		select * from member_board order by board_num 
 	</select>
 
 	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">
