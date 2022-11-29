@@ -8,7 +8,12 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-Member_Board Board = (Member_Board)session.getAttribute("Board");
+	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
+	
+	BoardDAO dao = new BoardDAO();
+	
+	Member_Board board_list = dao.selectBoard(board_num);
+
 %>
 <html>
 <head>
@@ -17,7 +22,7 @@ Member_Board Board = (Member_Board)session.getAttribute("Board");
 <link rel="stylesheet" href="assets/css/main.css" />
 <title>게시글 상세보기</title>
 	<style type="text/css">
-
+		
 	        #wrap{
 	            width: 1300px;
 	            margin: 0 auto 0 auto;    
@@ -150,18 +155,18 @@ Member_Board Board = (Member_Board)session.getAttribute("Board");
 							        
 							            <tr>
 							                <td id="title">작성일</td>
-							                <td>${board.board_date}</td>
+							                <td><%=board_list.getBoard_date()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">작성자</td>
-							                <td>${board.board_id}</td>
+							                <td><%=board_list.getBoard_id()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">
 							                    제 목
 							                </td>
 							                <td>
-							                    ${board.board_title}
+							                    <%=board_list.getBoard_title()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -169,7 +174,7 @@ Member_Board Board = (Member_Board)session.getAttribute("Board");
 							                    내 용
 							                </td>
 							                <td>
-							                    ${board.board_content}
+							                    <%=board_list.getBoard_content()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -177,7 +182,8 @@ Member_Board Board = (Member_Board)session.getAttribute("Board");
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <a href='FileDownloadCon?file_name=${board.board_file}'>${board.board_file}</a>
+							                    <img src="C:/image/<%=board_list.getBoard_file()%>">
+							                    C:/image/<%=board_list.getBoard_file()%>
 							                </td>    
 							            </tr>
 							    
