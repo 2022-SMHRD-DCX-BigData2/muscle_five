@@ -96,9 +96,9 @@
 									<td id="title">회원등급</td>
 									<td id="title">
 										<select name="grade">
-											<option value="준회원" <%= userMember.getGrade().equals("준회원")?"selected":""%>>준회원</option>
-											<option value="특별회원" <%= userMember.getGrade().equals("특별회원")?"selected":""%>>특별회원</option>
-											<option value="관리자" <%= userMember.getGrade().equals("관리자")?"selected":""%>>관리자</option>
+											<option value="준회원" >준회원</option>
+											<option value="특별회원" >특별회원</option>
+											<option value="관리자" >관리자</option>
 										</select>	
 									</td>
 								</tr>

@@ -22,8 +22,8 @@ public class usergradeCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		// 어떤 사람의 회원정보를 수정할지 id을 가져와야함
 		// 세션에서 정보 가져오기
-		//HttpSession session = request.getSession();
-		//Member loginMember2 = (Member) session.getAttribute("seletOne");
+		HttpSession session = request.getSession();
+		//Member loginMember = (Member) session.getAttribute("selectMember");
 		
 		String id = request.getParameter("id");
 		
@@ -31,11 +31,12 @@ public class usergradeCon extends HttpServlet {
 		String grade = request.getParameter("grade");
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member updategrede = new Member(id, grade);
+        Member joinMember = new Member(id, grade);
 		
 		// DAO에 일할 메소드 만들기.
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.updateGrade(updategrede);
+		int cnt = dao.updateGrade(joinMember);
+		Member userMember = dao.selectMember(joinMember);
 		
 		// DAO의 명령 후 처리
 		// 성공했으면(cnt>0) -> 성공페이지로 이동!
@@ -43,7 +44,7 @@ public class usergradeCon extends HttpServlet {
 			System.out.println("usergradeCon : 회원등급 변경 성공!");
 			// 세션에 저장되어있는 정보가 수정되기 이전의 로그인 정보이기 때믄에
 			// 같은 이름으로 덮어쓰기 해야한다.
-			//session.setAttribute("seletOne", updategrede);
+			session.setAttribute("selectOne", userMember);
 			RequestDispatcher rd = request.getRequestDispatcher("userinfo.jsp");
 			rd.forward(request, response);
 			//response.sendRedirect("userinfo.jsp");

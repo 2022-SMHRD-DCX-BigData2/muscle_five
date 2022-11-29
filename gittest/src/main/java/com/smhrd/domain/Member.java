@@ -54,6 +54,13 @@ public class Member {
 
 	
 	
+	public Member(String id, String pw, String grade) {
+		this.id = id;
+		this.pw = pw;
+		this.grade = grade;
+	}
+
+
 	public Member(String id) {
 		this.id = id;
 	}
