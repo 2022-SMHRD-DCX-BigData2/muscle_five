@@ -1,25 +1,23 @@
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>    
-<%@page import="com.smhrd.domain.MemberDAO"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>   
 <%@ page import="com.smhrd.domain.Member"%>
-<%@page import="java.util.List"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
-	MemberDAO dao = new MemberDAO();
-	List<Member> memberList = dao.selectAll();
+	Member loginMember = (Member)session.getAttribute("loginMember");
 %>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>현재 회원정보 출력화면</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+<title>회원등급 변경 페이지</title>
 	<style type="text/css">
 	
-        table{
+        table{	
             margin-left:auto; 
-            
+            	
             margin-right:auto;
         }
         
@@ -47,9 +45,6 @@
         }
 		
     </style>
-    <script type="text/javascript">
-    
-    </script>
 </head>
 <body class="landing is-preload">
 	<div id="page-wrapper">
@@ -81,41 +76,43 @@
 				
 				<div id="wrapper">
 				<!-- Menu -->
-					<nav id="Update">	
-						<table>
-							<br>
-							<caption><h2>회원관리페이지</h2></caption>
-							<br>
-							<tr></tr>
-							<tr align="center">
-								<td><font size="6" color="black">[아이디]</font></td>
-								<td><font size="6" color="black">[성별]</font></td>
-								<td><font size="6" color="black">[이메일]</font></td>		
-								<td><font size="6" color="black">[회원등급]</font></td>		
-								<td><font size="6" color="black">[등급변경]</font></td>		
-								<td><font size="6" color="black">[회원관리]</font></td>					
-							</tr>
-							<!-- 2.모든 회원의 이메일(email),전화번호(tel),주소(address)를 출력하시오. -->
-							<%for(Member m : memberList ){ %>
-							<tr  align="center">
-								<td><%=m.getId() %></td>
-								<td><%=m.getGender() %></td>
-								<td><%=m.getMail1() + '@' +  m.getMail2()%></td>
-								<td><%=m.getGrade() %></td>
-								<td><a href="usergrade.jsp?grade=<%= m.getGrade() %>" class="button special small">등급 변경</a></td>
-								<td><a href="deleteCon?id=<%= m.getId() %>" class="button special small">회원 삭제</a></td>
-							</tr>
-							<%} %>
-						</table>
+					<nav id="Update">
+						<form action="usergradeCon" method="post">
+							<input tyoe="hidden" name="grade" value="updategraade">
+							<input tyoe="hidden" name="id" value="<%=loginMember.getId()%>">
+							<table>
+								<col width='50'><col width='100'>
+								<tr>
+									<td>아이디</td>
+									<td><%=loginMember.getId()%></td>
+								</tr>
+								<tr>
+									<td>회원등급</td>
+									<td>
+										<select name="grade">
+											<option value="준회원" <%=loginMember.getGrade().equals("준회원")? "selected":""%>>준회원</option>
+											<option value="특별회원" <%=loginMember.getGrade().equals("특별회원")? "selected":""%>>특별회원</option>
+											<option value="관리자" <%=loginMember.getGrade().equals("관리자")? "selected":""%>>관리자</option>
+										</select>	
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<input type="submit" value="변경하긴">
+									</td>
+								</tr>
+							</table>
+						
+						</form>
 					</nav>		
-					<p align="center"><a href="main.jsp" class="button next scrolly">되돌아가기</a></p>
+					<p align="center"><a href="userinfo.jsp" class="button next scrolly">되돌아가기</a></p>
 			</div>
 				
 			<!-- Footer -->
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-	f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
