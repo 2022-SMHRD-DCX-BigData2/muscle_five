@@ -75,7 +75,7 @@ public class BoardDAO {
 
  	
  	// 글 가져오기
- 	public Member_Board selectBoard(Member_Board board) {
+ 	public Member_Board selectBoard(int board) {
 		
 		Member_Board Board = null;
 		
