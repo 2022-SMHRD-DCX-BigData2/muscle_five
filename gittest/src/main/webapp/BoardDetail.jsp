@@ -1,3 +1,4 @@
+
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
@@ -15,7 +16,9 @@
 	
 	BoardDAO dao = new BoardDAO();
 	
-	Member_Board board_list = dao.selectBoard(board_num);
+	List<Member_Board> board_list = dao.selectBoard(board_num);
+	
+	
 
 %>
 <html>
@@ -60,13 +63,7 @@
 	                location.href='BoardReplyCon?num=${board.board_num}&page=${pageNum}';
 	        }
 	        
-	        function doAction(value)
-	        {
-	            if(value == 0) // 수정
-	                location.href="BoardUpdateCon?num=${board.board_num}&page=${pageNum}";
-	            else if(value == 1) // 삭제
-	                location.href="BoardDeleteCon?num=${board.board_num}";
-	        }
+	        
 	        
 	 
 	        var httpRequest = null;
@@ -155,21 +152,27 @@
 							<div id="wrap">
 							    <div id="community">
 							        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
-							        
+							        	
+							        	<%	
+							        	int board_cnt = 0;
+							        	for(Member_Board i: board_list){
+							        		
+							        		if(board_cnt==0){
+							        	%>
 							            <tr>
 							                <td id="title">작성일</td>
-							                <td><%=board_list.getBoard_date()%></td>
+							                <td><%=i.getBoard_date()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">작성자</td>
-							                <td><%=board_list.getBoard_id()%></td>
+							                <td><%=i.getBoard_id()%></td>
 							            </tr>
 							            <tr>
 							                <td id="title">
 							                    제 목
 							                </td>
 							                <td>
-							                    <%=board_list.getBoard_title()%>
+							                    <%=i.getBoard_title()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -177,7 +180,7 @@
 							                    내 용
 							                </td>
 							                <td>
-							                    <%=board_list.getBoard_content()%>
+							                    <%=i.getBoard_content()%>
 							                </td>        
 							            </tr>
 							            <tr>
@@ -185,21 +188,19 @@
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <img src="C:/image/<%=board_list.getBoard_file()%>">
+							                    <img src="C:/image/<%=i.getBoard_file()%>">
 
 							                </td>    
 							            </tr>
-							    
+							            
 							            <tr align="center" valign="middle">
 							                <td colspan="5">
 							                <%if(loginMember.getId() != null){%>
-							                		<%if(loginMember.getId().equals(board_list.getBoard_id())){%>
-							                			<a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
+							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
+							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
 								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a>
-								                        <a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
 							                		<%} else{
 							                			%>
-							                			<a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
 							                	<% 
 							                			}
 							                		}
@@ -210,72 +211,101 @@
 							            </tr>
 							        </table>
 							    </div>
+							            <%
+							        		}
+							        		board_cnt ++;
+							            } 
+							            %>
+							    
+							            
 							    
 							     <br><br>
     
 							    <!-- 댓글 부분 -->
 							    <div id="comment">
 							        <table border="1" bordercolor="lightgray">
-							    <!-- 댓글 목록 -->    
-							    <c:if test="${requestScope.commentList != null}">
-							        <c:forEach var="comment" items="${requestScope.commentList}">
-							        
-							            <tr>
+							    <!-- 댓글 목록 --> 
+							    	<%
+
+							    	for(Member_Board i : board_list){ 
+							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
+							    			
+							    	%>
+							    	
+							    		<tr>
 							                <!-- 아이디, 작성날짜 -->
 							                <td width="150">
 							                    <div>
-							                        ${user_comment.com_num}<br>
-							                        <font size="2" color="lightgray">${user_comment.com_date}</font>
+							                        <%=i.getUserNum()%><br>
+							                        <font size="2" color="lightgray"></font>
 							                    </div>
 							                </td>
 							                <!-- 본문내용 -->
 							                <td width="550">
 							                    <div class="text_wrapper">
-							                        ${user_comment.com_content}
+							                        <%=i.getUserComment() %>
 							                    </div>
 							                </td>
 							                <!-- 버튼 -->
 							                <td width="100">
 							                    <div id="btn" style="text-align:center;">
-							                        <a href="#">[답변]</a><br>
-							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->    
-							                    <c:if test="${comment.comment_id == loginMember.id}">
-							                        <a href="#">[수정]</a><br>    
-							                        <a href="#">[삭제]</a>
-							                    </c:if>        
+							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
+							                    <%if(i.getUserNum() == loginMember.getId_num()){%>
+							                    	<a href="#">[수정]</a><br>    
+							                        <a href="BoardDelete">[삭제]</a>
+							                    <%} %>    
 							                    </div>
 							                </td>
 							            </tr>
-							            
-							        </c:forEach>
-							    </c:if>
+							    		
+							    		<% 
+							    				}
+							    			}
+							    		%>
+
 							            <!-- 로그인 했을 경우만 댓글 작성가능 -->
-							            <c:if test="${sessionScope.sessionID !=null}">
-							            <tr bgcolor="#F5F5F5">
-							            <form id="writeCommentForm">
-							                <input type="hidden" name="comment_board" value="${Board.board_num}">
-							                <input type="hidden" name="comment_id" value="${loginMember.idD}">
-							                <!-- 아이디-->
-							                <td width="150">
-							                    <div>
-							                        ${sessionScope.sessionID}
-							                    </div>
-							                </td>
-							                <!-- 본문 작성-->
-							                <td width="550">
-							                    <div>
-							                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
-							                    </div>
-							                </td>
-							                <!-- 댓글 등록 버튼 -->
-							                <td width="100">
-							                    <div id="btn" style="text-align:center;">
-							                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
-							                    </div>
-							                </td>
-							            </form>
-							            </tr>
-							            </c:if>
+							            <%
+							            int comment_cnt = 0;
+							            if(loginMember != null){ 
+							            	if(comment_cnt == 0){
+							            		comment_cnt ++;
+							            		for(Member_Board i : board_list){	
+							            
+							            %>
+							            	
+								            <tr bgcolor="#F5F5F5">
+								            <form id="writeCommentForm">
+								                <input type="hidden" name="comment_board" value="<%=i.getBoard_num()%>">
+								                <input type="hidden" name="comment_id" value="<%=loginMember.getId()%>">
+								                <!-- 아이디-->
+								                <td width="150">
+								                    <div>
+								                        <%=loginMember.getId()%>
+								                    </div>
+								                </td>
+								                <!-- 본문 작성-->
+								                <td width="550">
+								                    <div>
+								                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+								                    </div>
+								                </td>
+								                <!-- 댓글 등록 버튼 -->
+								                <td width="100">
+								                    <div id="btn" style="text-align:center;">
+								                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
+								                    </div>
+								                </td>
+								            </form>
+								            </tr>
+							            <%
+							            	if(comment_cnt == 1){
+							            		break;
+							            	}
+							            		}							            
+							            	}
+							            } 
+							            %>
+							           
 							    
 							        </table>
 								</div>					    

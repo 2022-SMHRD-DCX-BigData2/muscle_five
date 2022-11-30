@@ -14,7 +14,26 @@ public class Member_Board {
 	private int board_seq;// 답변글 순서
 	private int board_count;
 	private Timestamp board_date;
+	private int id_num;
+	private String user_comment;
 	
+	public Member_Board(int board_num, String board_id, String board_title, String board_content, String board_file,
+			int board_re_ref, int board_re_lev, int board_seq, int board_count, Timestamp board_date, int id_num,
+			String user_comment) {
+		this.board_num = board_num;
+		this.board_id = board_id;
+		this.board_title = board_title;
+		this.board_content = board_content;
+		this.board_file = board_file;
+		this.board_re_ref = board_re_ref;
+		this.board_re_lev = board_re_lev;
+		this.board_seq = board_seq;
+		this.board_count = board_count;
+		this.board_date = board_date;
+		this.id_num = id_num;
+		this.user_comment = user_comment;
+	}
+
 	// 생성자
 	public Member_Board(int board_num, String board_id, String board_title, String board_content, String board_file,
 			int board_re_ref, int board_re_lev, int board_seq, int board_count, Timestamp board_date) {
@@ -30,6 +49,14 @@ public class Member_Board {
 		this.board_count = board_count;
 		this.board_date = board_date;
 	}
+
+	public Member_Board(int board_num, int id_num, String user_comment) {
+		this.board_num = board_num;
+		this.id_num = id_num;
+		this.user_comment = user_comment;
+	}
+
+
 
 	public Member_Board() {
 		super();
@@ -62,6 +89,13 @@ public class Member_Board {
 		this.board_id = board_id;
 		this.board_id = board_title;
 		this.board_id = board_content;
+	}
+
+	public Member_Board(int board_num, String board_title, String board_content, String board_file) {
+		this.board_num = board_num;
+		this.board_title = board_title;
+		this.board_content = board_content;
+		this.board_file = board_file;
 	}
 
 	// getter, setter
@@ -144,6 +178,23 @@ public class Member_Board {
 	public void setBoard_date(Timestamp board_date) {
 		this.board_date = board_date;
 	}
+
+	public int getUserNum() {
+		return id_num;
+	}
+
+	public void setUserNum(int id_num) {
+		this.id_num = id_num;
+	}
+
+	public String getUserComment() {
+		return user_comment;
+	}
+
+	public void setUserComment(String user_comment) {
+		this.user_comment = user_comment;
+	}
+	
 	
 	
 }
