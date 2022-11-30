@@ -143,10 +143,10 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-					
 						<h2>COMMUNITY</h2>
 						<p>헬창, 헬린이 소통의 공간</p>
 					</header>
+					
 					<div class="row">
 						<div class="col-12">
 							<div id="wrap">
@@ -154,14 +154,13 @@
 
 							        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
 							        	<div>
-							        	<pre style="line-height:0; background-color:white;">
+							        	
 							        	<%	
 							        	int board_cnt = 0;
 							        	for(Member_Board i: board_list){
-							        		
 							        		if(board_cnt==0){
 							        	%>
-							            <div>
+							           <div>
 							        	<pre style="line-height:0; background-color:white;">
 								                <h2 style="margin : 0; "><%=i.getBoard_title()%></h2>
 								                <div class="flex-container row"><img id="insta" src="인스타사진2.png" style="width:70px; heigh:45px;"><div class="flex-container column" style="padding : 0 0 0 1em;" ><h1 style="font-size: 18px"><%=i.getBoard_id()%></h1><%=i.getBoard_date()%></div></div>
@@ -171,6 +170,58 @@
 								                <hr>
 								                <h4 style="font-weight:500px;">댓글</h4>
 								                <p style="weight:400px;"><img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=i.getBoard_id()%></p>
+								                
+								                <p>
+								                <div > <%=i.getUserNum()%> <%=i.getUserComment() %></div>
+								                <div id="btn" style="text-align:center;" > 
+								                	<%if(i.getUserNum() == loginMember.getId_num()){%>
+							                    	<a href="#" >[수정]</a><a href="BoardDelete" style="clear:both;">[삭제]</a>
+							                    </div>
+							                    </p>
+							                    <hr>
+							                    <%} %>    
+							                    
+							                     <%
+							            int comment_cnt = 0;
+							            if(loginMember != null){ 
+							            	if(comment_cnt == 0){
+							            		comment_cnt ++;
+							            		for(Member_Board j : board_list){	
+							            
+							            %>
+							            	
+								            
+											<form id="writeCommentForm">
+								                <input type="hidden" name="comment_board" value="<%=j.getBoard_num()%>">
+								                <input type="hidden" name="comment_id" value="<%=loginMember.getId()%>">
+								                <!-- 아이디-->
+								                
+								                    <div>
+								                        <%=loginMember.getId()%>
+								                    </div>
+								                
+								                <!-- 본문 작성-->
+								                	
+								                    <div style="display:flex;">
+								                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+								                         <input type="submit" value="댓글등록">
+								                    </div>
+											 </form>
+								               
+								                <!-- 댓글 등록 버튼 -->
+								                   
+								               
+								       
+								            
+							            <%
+							            	if(comment_cnt == 1){
+							            		break;
+							            	}
+							            		}							            
+							            	}
+							            } 
+							            %>
+							                    </div>
 							            </pre>
 							         </div>
 							            
@@ -193,19 +244,14 @@
 							        </table>
 							        </div>
 							    </div>
-
 							            <%
 							        		}
 							        		board_cnt ++;
 							            } 
 							            %>
-							    
-							            
-							    
-
 							   </div>
 							 </div>
-							</div>    
+						</div>    
 
 							     <br><br>
     
@@ -214,10 +260,8 @@
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
 							    	<%
-
 							    	for(Member_Board i : board_list){ 
 							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
-							    			
 							    	%>
 							    	
 							    		<tr>
@@ -297,10 +341,7 @@
 							    
 							        </table>
 								</div>					    
-							</div>    			
-						</div>
-					</div>
-				</section>
+							</section>
 					
 
 			<!-- Footer -->
