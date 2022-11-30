@@ -27,13 +27,13 @@ public class usergradeCon extends HttpServlet {
 	
 		// 1. 파라미터 수집
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		//String pw = request.getParameter("pw");
 		String grade = request.getParameter("grade");
 		System.out.println(id);
 		System.out.println(grade);
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member loginMember = new Member(id, pw, grade);
+        Member loginMember = new Member(id, grade);
 		
 		// DAO에 일할 메소드 만들기.
 		MemberDAO dao = new MemberDAO();
@@ -52,7 +52,7 @@ public class usergradeCon extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("userinfo.jsp"); 
 			rd.forward(request, response);
 			 
-			//response.sendRedirect("userinfo.jsp");
+			response.sendRedirect("userinfo.jsp");
 			
 			// 실패했으면 -> 이동X
 		} else {
