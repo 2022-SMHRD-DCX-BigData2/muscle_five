@@ -64,15 +64,15 @@
 						} else {
 							alert("아이디 또는 비밀번호를 확인하세요.");
 						}
-					}
-
+					
 						// $(선택자).after  --> 선택자 다음에 코드를 추가
 						//$('hr').after(res);
 
 					},
 					error : function() {
 						alert("Ajax 통신 실패!!")
-					}    
+					}
+	        	});
 	            
 	        }
 		 
