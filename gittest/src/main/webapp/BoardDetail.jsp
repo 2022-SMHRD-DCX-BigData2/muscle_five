@@ -8,8 +8,9 @@
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%
 
+<%
+	
 	Member loginMember = (Member)session.getAttribute("loginMember");	
 
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
@@ -180,9 +181,8 @@
 							                <%if(loginMember.getId() != null){%>
 							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
 							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
-								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a>
-							                		<%} else{
-							                			%>
+								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제"></a>
+							                		<%} else{%>
 							                	<% 
 							                			}
 							                		}
@@ -214,7 +214,7 @@
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
 							    	<%
-
+									
 							    	for(Member_Board i : board_list){ 
 							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
 							    			
@@ -224,14 +224,14 @@
 							                <!-- 아이디, 작성날짜 -->
 							                <td width="150">
 							                    <div>
-							                        <%=i.getUserNum()%><br>
+							                        <p id="userNum"><%=i.getUserNum()%><p><br>
 							                        <font size="2" color="lightgray"></font>
 							                    </div>
 							                </td>
 							                <!-- 본문내용 -->
 							                <td width="550">
 							                    <div class="text_wrapper">
-							                        <%=i.getUserComment() %>
+							                        <p id="text_wrapper"><%=i.getUserComment()%><p>
 							                    </div>
 							                </td>
 							                <!-- 버튼 -->
@@ -239,8 +239,8 @@
 							                    <div id="btn" style="text-align:center;">
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 							                    <%if(i.getUserNum() == loginMember.getId_num()){%>
-							                    	<a href="#">[수정]</a><br>    
-							                        <a href="BoardDelete">[삭제]</a>
+							                    	<a onclick="modifyComment()" id="comment_modify">[수정]</a><br>
+							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>">[삭제]</a>
 							                    <%} %>    
 							                    </div>
 							                </td>
@@ -262,9 +262,10 @@
 							            %>
 							            	
 								            <tr bgcolor="#F5F5F5">
-								            <form id="writeCommentForm">
-								                <input type="hidden" name="comment_board" value="<%=i.getBoard_num()%>">
-								                <input type="hidden" name="comment_id" value="<%=loginMember.getId()%>">
+								            <form action="commentWriteCon" id="writeCommentForm">
+								                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
+								                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
+								                
 								                <!-- 아이디-->
 								                <td width="150">
 								                    <div>
@@ -274,13 +275,13 @@
 								                <!-- 본문 작성-->
 								                <td width="550">
 								                    <div>
-								                        <textarea name="comment_content" rows="4" cols="70" ></textarea>
+								                    	<input type="text" name="comment">               
 								                    </div>
 								                </td>
 								                <!-- 댓글 등록 버튼 -->
 								                <td width="100">
 								                    <div id="btn" style="text-align:center;">
-								                        <p><a href="#" onclick="writeCmt()">[댓글등록]</a></p>    
+								                        <p><input type="submit" value="[댓글등록]"></p>    
 								                    </div>
 								                </td>
 								            </form>
@@ -288,10 +289,11 @@
 							            <%
 							            	if(comment_cnt == 1){
 							            		break;
-							            	}
-							            		}							            
-							            	}
-							            } 
+							            				}
+							            			}							            
+							            		}
+							          	  	} 
+																	            
 							            %>
 							           
 							    
@@ -328,5 +330,42 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			function modifyComment(){
+				$.ajax({
+					url : "CommentUpdateCon",
+					type : "get",
+					data : {
+						"comment" : $("#text_wrapper").text(),
+						"userNum" : $("#userNum").text()
+						
+					},
+					success : function(res){
+						
+						let input = '';
+						input += "<form action='CommentUpdate'>"
+						input += "<input type='hidden' value='" + res.id_num + "'>"
+						input += "<input type='text' name='newComment' value='" + res.user_comment + "'>"
+						
+						
+						let modify = '';
+						modify += "<input type='submit' value='[수정완료]'>"
+						modify += "</form>"
+						
+						$(".text_wrapper").html(input);
+						$("#comment_modify").html(modify);
+						
+						
+					},
+					error : function(){
+						alert("Ajax 통신 실패했는데요")
+					}
+				});
+				
+				
+			}
+			
+			
+			</script>
 </body>
 </html>

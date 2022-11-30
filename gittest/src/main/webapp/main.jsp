@@ -34,7 +34,8 @@
 						<ul class="links">
 						<c:choose>
 							<c:when test="${empty loginMember}">
-								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="login.jsp" 
+								class="button">Log in</a></li>
 								<li><a href="join.jsp" class="button">Sign up</a></li>
 							</c:when>
 							
