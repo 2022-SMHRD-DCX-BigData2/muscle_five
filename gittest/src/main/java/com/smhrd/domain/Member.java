@@ -201,6 +201,14 @@ public class Member {
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
+
+	public int getId_num() {
+		return id_num;
+	}
+
+	public void setId_num(int id_num) {
+		this.id_num = id_num;
+	}
 	
 
 

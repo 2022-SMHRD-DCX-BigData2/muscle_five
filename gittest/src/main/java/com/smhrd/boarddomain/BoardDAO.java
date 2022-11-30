@@ -75,23 +75,21 @@ public class BoardDAO {
 
  	
  	// 글 가져오기
- 	public Member_Board selectBoard(int board) {
+ 	public List<Member_Board> selectBoard(int board) {
 		
-		Member_Board Board = null;
+		List<Member_Board> Board = null;
+		System.out.println("selectBoard 실행");
 		
 		try {
 			// 					mapper.xml의 id값
 			// cnt = sqlSession.insert("insertMember", joinMember);
-			Board = sqlSession.selectOne("selectBoard", board);
+			Board = sqlSession.selectList("selectBoard", board);
 			
-			// 만약에 내가 원하는 일을 했으면 DB에 반영
 			if (Board != null) {
-				System.out.println("DAO : 글 가져오기 성공!!");
-				sqlSession.commit();
+				System.out.println("DAO : 글 및 댓글 가져오기 성공!!");
 				
 			} else {
-				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
-				sqlSession.rollback();
+				System.out.println("DAO : 글 및 댓글 가져오기 실패!!");
 			}
 			
 		} catch (Exception e) {
@@ -265,5 +263,7 @@ public class BoardDAO {
  		return cnt;
  		
  	} // 게시글 삭제 끝
+     
+   
      
 }

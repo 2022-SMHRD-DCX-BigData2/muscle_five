@@ -6,6 +6,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	Member loginMember = (Member)session.getAttribute("loginMember");
+
+	String updateBoardNum = (String)session.getAttribute("updateBoardNum");	
 %>
 <html>
 <head>
@@ -88,7 +90,7 @@
 								<font size="6" color="gray">글쓰기</font>
 						   	</div>
 						   	<br>
-						    
+						    <%if(updateBoardNum == null){ %>
 						    <form method="post" action="BoardWriteCon" name="BoardWirte" enctype="multipart/form-data">
 							    <input type="hidden" name="board_id" value="${loginMember.id}">
 								    <table width="700" border="3" bordercolor="lightgray" align="center">
@@ -130,7 +132,50 @@
 								        </tr>
 								    </table>    
 							    </form>
-														
+							<%} else{%>	
+								<form method="post" action="updataCon" name="BoardWirte" enctype="multipart/form-data">
+							    <input type="hidden" name="board_id" value="${loginMember.id}">
+								    <table width="700" border="3" bordercolor="lightgray" align="center">
+								        <tr>
+								            <td id="title">작성자</td>
+								            <td>${loginMember.id}</td>
+								        </tr>
+								            <tr>
+								            <td id="title">
+								                제 목
+								            </td>
+								            <td>
+								                <input name="board_title" type="text" size="70" maxlength="100" value=""/>
+								            </td>        
+								        </tr>
+								        <tr>
+								            <td id="title">
+								                내 용
+								            </td>
+								            <td>
+								                <textarea name="board_content" cols="72" rows="20"></textarea>            
+								            </td>        
+								        </tr>
+								        <tr>
+								            <td id="title">
+								                파일첨부
+								            </td>
+								            <td>
+								                <input type="file" name="board_file">
+								            </td>    
+								        </tr>
+								 
+								        <tr align="center" valign="middle">
+								            <td colspan="5">
+								                <input type="reset" value="작성취소" >
+								                <input type="submit" value="수정" >
+								                <a href="BoardList.jsp"><input type="button" value="목록" ></a>           
+								            </td>
+								        </tr>
+								    </table>    
+							    </form>
+							
+							<%} %>							
 						<!-- 게시판 끝!  -->
 						
 						</div>

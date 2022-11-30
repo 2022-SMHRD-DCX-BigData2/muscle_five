@@ -3,6 +3,7 @@
 <web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd" id="WebApp_ID">
 
 
+
    <display-name>gittest</display-name>
    <servlet>
    	<description>
@@ -130,6 +131,13 @@
    	<servlet-name>CalendarViewCon</servlet-name>
    	<servlet-class>com.smhrd.calendarcontroller.CalendarViewCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>updataCon</display-name>
+   	<servlet-name>updataCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.updataCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -203,6 +211,10 @@
    		<servlet-name>CalendarViewCon</servlet-name>
    		<url-pattern>/CalendarViewCon</url-pattern>
    	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>updataCon</servlet-name>
+   		<url-pattern>/updataCon</url-pattern>
+   	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
       <welcome-file>index.htm</welcome-file>
@@ -218,3 +230,4 @@
 
 
 </web-app>
+

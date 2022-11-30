@@ -5,6 +5,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 public class BoardUpdateCon extends HttpServlet {
@@ -12,6 +13,12 @@ public class BoardUpdateCon extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String board_num = request.getParameter("num");
+		HttpSession session = request.getSession();
+		session.setAttribute("updateBoardNum", board_num);
+		
+		response.sendRedirect("BoardWrite.jsp");
 		
 	}
 

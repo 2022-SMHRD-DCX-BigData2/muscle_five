@@ -55,7 +55,6 @@
 			margin-right : 400px;
 			 }
 			 
-			
 			#font{
 			color : rgb(0,0,0);
 			font-size:30px;
@@ -86,7 +85,7 @@
 			}
 		</style>
 		<!--   // fullcalendar css  -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.css">
+		<link rel="stylesheet" href="assets/calendarcss/main.css" /> 
 		<!--   // fullcalendar js -->
 		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -165,7 +164,7 @@
 						</header>
 						
 					
-					<div class="row" id="muscle" style="height:750px;">
+					<div class="row" id="muscle" >
 						<div class="col-6 ">
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
@@ -186,13 +185,13 @@
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
 									<h3 id="font" style="margin : 0 0 0.5em;">추천운동부분입니다!!!!!</h3>
-										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;">팔굽혀펴기 max : </pre>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;">팔굽혀펴기 max : <pre>운동 알아보기</pre></pre>
 										<pre><img src="images/풀업3.png" style="width:150px; height:100px;">턱걸이 max : </pre>
 										<pre>이것저것 max : </pre>
 								</div>
 								<div id="btn-good">
 									<button id='like1' style="float:left;">🤍</button>
-								</div><br><br>
+								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button  id="prev">prev</button>
 									<button  id="next">next</button>
