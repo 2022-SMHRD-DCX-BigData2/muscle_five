@@ -1,6 +1,7 @@
 package com.smhrd.contoller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -32,18 +33,26 @@ public class loginCon extends HttpServlet {
         // DB에서 아이디, 비밀번호 확인
         MemberDAO dao =  new MemberDAO();
         Member loginMember = dao.selectMember(joinMember);
-        //int check = dao.loginCheck(id, pw);
+        
+        //int cnt = dao.loginconfirm(joinMember.getId(), joinMember.getPw());
         
         // URL 및 로그인 관련 전달 메시지
-        String msg = "";
+        //String msg = "";
         
         if(loginMember != null) {
-	        //if(check == 1) {  // 로그인 성공
-	            // 세션에 현재 아이디 세팅
 	            HttpSession session = request.getSession();
 	            session.setAttribute("loginMember", loginMember);
-	            msg = "main.jsp";
-	     	//}  
+	            //msg = "main.jsp";
+				/*
+				 * if(cnt == 1) { // 로그인 성공 session.setAttribute("id",joinMember.getId());
+				 * session.setAttribute("Member","yes"); response.sendRedirect("main.jsp"); }
+				 * else if(cnt == 0) { PrintWriter script = response.getWriter();
+				 * script.println("<script>alert('비밀번호 불일치');</script>");
+				 * script.println("<script>histoty.go(-1);</script>"); } else { PrintWriter
+				 * script = response.getWriter();
+				 * script.println("<script>alert('아이디가 존재하지 않음');</script>");
+				 * script.println("<script>histoty.go(-1);</script>"); }
+				 */
         } else {
         	//if(check == 0) {// 비밀번호가 틀릴 경우
 	        //    msg = "login.jsp?msg=0";

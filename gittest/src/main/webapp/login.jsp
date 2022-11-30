@@ -36,6 +36,7 @@
 	        function checkValue()
 	        {
 	            input = eval("document.logininfo");
+	            
 	            if(!input.id.value)
 	            {
 	                alert("아이디를 입력하세요");    
@@ -48,8 +49,34 @@
 	                input.pw.focus();
 	                return false;
 	            }
+	            
+	            
+	            $.ajax({
+					url : "loginCon",// 어디로 보낼지
+					type : "post",// 어떤식으로 보낼지	
+					data : {
+						id : $.trim($("#id").val()),
+						pw : $.trim($("#pw").val())
+					},
+					success : function(data) {
+						if (data.rs =="1"){
+							location.replace("main.jsp");
+						} else {
+							alert("아이디 또는 비밀번호를 확인하세요.");
+						}
+					}
+
+						// $(선택자).after  --> 선택자 다음에 코드를 추가
+						//$('hr').after(res);
+
+					},
+					error : function() {
+						alert("Ajax 통신 실패!!")
+					}    
+	            
 	        }
-	    
+		 
+		 	
 	        // 회원가입 버튼 클릭시 회원가입 화면으로 이동
 	        function goJoin() {
 	            location.href="join.jsp";
