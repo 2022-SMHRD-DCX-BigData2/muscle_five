@@ -1,7 +1,8 @@
 package com.smhrd.contoller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.smhrd.domain.Member;
 import com.smhrd.domain.MemberDAO;
 
@@ -36,12 +38,17 @@ public class loginCon extends HttpServlet {
         
         //int cnt = dao.loginconfirm(joinMember.getId(), joinMember.getPw());
         
+        Gson gson = new Gson();
+
+		Map<String, Object> data = new HashMap<String, Object>();
+				
         // URL 및 로그인 관련 전달 메시지
         //String msg = "";
         
         if(loginMember != null) {
 	            HttpSession session = request.getSession();
 	            session.setAttribute("loginMember", loginMember);
+	            data.put("rs","1");
 	            //msg = "main.jsp";
 				/*
 				 * if(cnt == 1) { // 로그인 성공 session.setAttribute("id",joinMember.getId());
@@ -60,10 +67,12 @@ public class loginCon extends HttpServlet {
 	        //    msg = "login.jsp?msg=-1";
 	        //}
         	System.out.println("로그인 실패...");
+        	data.put("rs","2");
         }
         // sendRedirect(String URL) : 해당 URL로 이동
         // URL뒤에 get방식 처럼 데이터를 전달가능
         response.sendRedirect("main.jsp");
+        response.getWriter().print(gson.toJson(data));
 	}
 
 }
