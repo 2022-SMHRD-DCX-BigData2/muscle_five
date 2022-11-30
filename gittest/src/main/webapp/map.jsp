@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>지도 화면</title>
+<title>지도</title>
 </head>
 <body>
 	<!-- 지도를 표시할 div 입니다 -->
