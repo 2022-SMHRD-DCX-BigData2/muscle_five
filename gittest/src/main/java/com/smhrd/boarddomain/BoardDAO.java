@@ -232,10 +232,33 @@ public class BoardDAO {
  		return cnt;
      }// 게시글 수정 끝!
      
+     public int updateComment(Member_Board update) {
+  		
+  		int cnt = 0;
+  		
+  		try {
+  			cnt = sqlSession.update("updateBoard", update);
+  			
+  			if (cnt > 0) {
+  				System.out.println("DAO : 댓글 수정 성공!!");
+  				sqlSession.commit();
+  			} else {
+  				sqlSession.rollback();
+  			}
+  			
+  		} catch (Exception e) {
+  			e.printStackTrace();
+  		} finally {
+  			sqlSession.close();
+  		}
+  		
+  		return cnt;
+      }
+     
      
      
      // 게시글 - 삭제 기능구현
-     public int deleteBoard(String board_num) {
+     public int deleteBoard(int board_num) {
  		
  		int cnt = 0;
  		
@@ -264,6 +287,58 @@ public class BoardDAO {
  		
  	} // 게시글 삭제 끝
      
+     public int deleteComment(String comment) {
+  		
+  		int cnt = 0;
+  		
+  		try {
+  			// 					mapper.xml의 id값
+  			cnt = sqlSession.delete("deleteComment", comment);
+  			
+  			// 만약에 내가 원하는 일을 했으면 DB에 반영
+  			if (cnt > 0) {
+  				System.out.println("DAO : 댓글 삭제 성공!!");
+  				sqlSession.commit();
+  			} else {
+  				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
+  				sqlSession.rollback();
+  			}
+  			
+  		} catch (Exception e) {
+  			// TODO: handle exception
+  			e.printStackTrace();
+  		} finally {
+  			// 빌렸던 Connection 객체를 반납
+  			sqlSession.close();
+  		}
+  		
+  		return cnt;
+  		
+  	} // 게시글 삭제 끝
    
+     
+     public int commentInsert(Member_Board comment) {
+  		
+  		int result = 0;
+  		
+  		try {
+  			result = sqlSession.insert("commentInsert", comment);
+  			
+  			if (result > 0) {
+  				System.out.println("DAO : 댓글쓰기 성공!!");
+  				sqlSession.commit();
+  			} else {
+  				sqlSession.rollback();
+  			}
+  			
+  		} catch (Exception e) {
+  			e.printStackTrace();
+  		} finally {
+  			sqlSession.close();
+  		}
+  		
+  		return result;
+  		
+  	}
      
 }

@@ -138,6 +138,41 @@
    	<servlet-name>updataCon</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.updataCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>boardDeleteCon</display-name>
+   	<servlet-name>boardDeleteCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.boardDeleteCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CommentUpdateCon</display-name>
+   	<servlet-name>CommentUpdateCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.CommentUpdateCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>commentDeleteCon</display-name>
+   	<servlet-name>commentDeleteCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.commentDeleteCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>commentWriteCon</display-name>
+   	<servlet-name>commentWriteCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.commentWriteCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>CommentUpdate</display-name>
+   	<servlet-name>CommentUpdate</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.CommentUpdate</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -214,6 +249,26 @@
    	<servlet-mapping>
    		<servlet-name>updataCon</servlet-name>
    		<url-pattern>/updataCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>boardDeleteCon</servlet-name>
+   		<url-pattern>/boardDeleteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CommentUpdateCon</servlet-name>
+   		<url-pattern>/CommentUpdateCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>commentDeleteCon</servlet-name>
+   		<url-pattern>/commentDeleteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>commentWriteCon</servlet-name>
+   		<url-pattern>/commentWriteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>CommentUpdate</servlet-name>
+   		<url-pattern>/CommentUpdate</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
