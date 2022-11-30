@@ -61,6 +61,7 @@ public class MemberDAO {
 	public Member selectMember(Member login) {
 		
 		Member loginMember = null;
+		
 		//System.out.println("dao에서 id잘 가져오는지"+login.getId());
 		
 		try {
@@ -307,63 +308,65 @@ public class MemberDAO {
 		
 	}
 	
+	
+	// 회원가입 시 아이디 중복체크
 	public int confirmid(String id) {
 			
-			int cnt = 0;
+		int cnt = 0;
 			
-			try {
-				cnt = sqlSession.selectOne("confirmid", id);
+		try {
+			cnt = sqlSession.selectOne("confirmid", id);
 				
-				if (cnt > 0) {
-					cnt = 1;			
+			if (cnt > 0) {
+				cnt = 1;			
+			} else {
+				cnt = 0;
+			}
+				
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+			
+		return	cnt;
+	}// 아이디 중복체크 끝
+	
+	
+	
+	
+	
+	// 로그인 시 가입된 아이디, 비번 정보와 일치하는지 여부 
+	public int loginconfirm(String id, String pw) {
+		
+		String dbpw = "";
+		int cnt = -1;
+		
+		try {
+			cnt = sqlSession.selectOne("loginconfirm", id);
+			
+			if (cnt > -1) {
+				if (dbpw.equals(pw)) {
+					cnt = 1;
+					System.out.println("비밀번호 일치");
 				} else {
 					cnt = 0;
-				}
-				
-			} catch (Exception e) {
-				e.printStackTrace();
-			} finally {
-				sqlSession.close();
+					System.out.println("비밀번호 불일치");
+				}					
+			} else {
+				cnt = -1;
+				System.out.println("존재하는 아이디 없음");
 			}
 			
-			return	cnt;
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
 		}
+		
+		return	cnt;
+	}//
+
 	
-//	public int loginCheck(String id, String pw) {
-
-//		String dbpw = ""; // db에서 꺼낸 비밀번호를 담을 변수
-//	    int x = -1;
-		
-//		try {
-			// 					mapper.xml의 id값
-			// x = sqlSession.selectOne("logincheck", logincheck);
-//			x = sqlSession.selectOne("logincheck", loginCheck(id, pw));
-			
-			// 만약에 내가 원하는 일을 했으면 DB에 반영
-//			if (rs.next()) {
-//				dbpw = rs.getString("pw"); // 비번을 변수에 넣음!
-				 
-//               if (dbpw.equals(pw)) 
-//                    x = 1; // 넘겨 받은 비번과 꺼내온 비번 비교. --> 같으면 인증 성공
-//                else                  
-//                    x = 0; // DB의 비밀번호와 입력받은 비밀번호 다름, --> 인증 실패
-				
-//			} else {
-//				x = -1; // 해당 아이디가 없을 경우
-				// 만약에 원하는 일을 못하면 다시 원래대로 돌려주기
-//				sqlSession.rollback();
-//			}
-			
-//		} catch (Exception e) {
-			// TODO: handle exception
-//			e.printStackTrace();
-//		} finally {
-			// 빌렸던 Connection 객체를 반납
-//			sqlSession.close();
-//		}
-		
-//		return x;
-//	}
-
 	
 }
