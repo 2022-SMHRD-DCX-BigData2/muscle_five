@@ -191,7 +191,7 @@
 								</div>
 								<div id="btn-good">
 									<button id='like1' style="float:left;">🤍</button>
-								</div><br><br>
+								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button  id="prev">prev</button>
 									<button  id="next">next</button>

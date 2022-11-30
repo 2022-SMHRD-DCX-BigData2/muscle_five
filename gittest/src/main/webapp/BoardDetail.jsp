@@ -8,6 +8,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
+
+	Member loginMember = (Member)session.getAttribute("loginMember");	
+
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
 	BoardDAO dao = new BoardDAO();
@@ -24,7 +27,7 @@
 	<style type="text/css">
 		
 	        #wrap{
-	            width: 1300px;
+	            width: 1000px;
 	            margin: 0 auto 0 auto;    
 	        }
 	    
@@ -36,8 +39,9 @@
 	            height : 16;
 	            font-family :'돋움';
 	            font-size : 12;
-	            text-align :center;
+	            text-align :left;
 	            background-color: #F7F7F7;
+	           
 	        }
 	        
 	        #btn{
@@ -148,52 +152,44 @@
 					</header>
 					<div class="row">
 						<div class="col-12">
-						
 							<div id="wrap">
 							    <div id="community">
-							        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
-							        
-							        <div>
-							        	<pre >
-								                <h2><%=board_list.getBoard_title()%></h2>
-								                <td id="title">작성자</td>
-								                <td><%=board_list.getBoard_id()%></td>
-								                <p>작성일 : <%=board_list.getBoard_date()%></p>
-								            <tr>
-								                <td id="title">
-								                    내 용
-								                </td>
-								                <td>
-								                    <%=board_list.getBoard_content()%>
-								                </td>        
-								            </tr>
-								            <tr>
-								                <td id="title">
-								                    첨부파일
-								                </td>
-								                <td>
-								                    <img src="../image/<%=board_list.getBoard_file()%>" >
-								                    C:/image/<%=board_list.getBoard_file()%>
-								                </td>    
-								            </tr>
+							        <table id="detailBoard" width="10" border="3" bordercolor="lightgray">
+							        <div >
+							        	<pre style="line-height:0; background-color:white;">
+								                <h2 style="margin : 0; "><%=board_list.getBoard_title()%></h2>
+								                <div class="flex-container row"><img id="insta" src="인스타사진2.png" style="width:70px; heigh:45px;"><div class="flex-container column" style="padding : 0 0 0 1em;" ><h1 style="font-size: 18px"><%=board_list.getBoard_id()%></h1><%=board_list.getBoard_date()%></div></div>
+								              	<hr>
+								               	<p style="font-weight:200px; font-size: 17px; color:black"><%=board_list.getBoard_content()%></p>     
+								                <p style="margin : 0 0 6em;">첨부파일<img src="../image/<%=board_list.getBoard_file()%>" > C:/image/<%=board_list.getBoard_file()%></p>
+								                <hr>
+								                <h4 style="font-weight:500px;">댓글</h4>
+								                <p style="weight:400px;"><img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=board_list.getBoard_id()%></p>
 							            </pre>
-							          </div>
-							    
+							         </div>
+							         
 							            <tr align="center" valign="middle">
 							                <td colspan="5">
-							                	<c:if test="${loginMemer.id !=null}">
-								                   	<c:if test="${loginMember.id == Board.board_id}">
-								                        <a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
-								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a> 
-								                    </c:if>
-								                        <a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a> 
-								                </c:if>        
-								                   		<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>             
+							                <%if(loginMember.getId() != null){%>
+							                		<%if(loginMember.getId().equals(board_list.getBoard_id())){%>
+							                			<a href="BoardUpdate.jsp"><input type="button" value="수정" onclick="doAction(0)"></a> 
+								                        <a href="#"><input type="button" value="삭제" onclick="doAction(1)"></a>
+								                        <a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
+							                		<%} else{
+							                			%>
+							                			<a href="#"><input type="button" value="답글" onclick="changeView(1)" ></a>
+							                	<% 
+							                			}
+							                		}
+							                	%>
+							                	<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>     
 								            </td> <!-- javascript:location.href='BoardListAction.bo?page=${pageNum}' -->
 							            </tr>
 							        </table>
 							    </div>
-							    
+							   </div>
+							 </div>
+							</div>    
 							     <br><br>
     
 							    <!-- 댓글 부분 -->
