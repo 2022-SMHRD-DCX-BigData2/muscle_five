@@ -237,7 +237,7 @@ public class BoardDAO {
   		int cnt = 0;
   		
   		try {
-  			cnt = sqlSession.update("updateBoard", update);
+  			cnt = sqlSession.update("updateComment", update);
   			
   			if (cnt > 0) {
   				System.out.println("DAO : 댓글 수정 성공!!");

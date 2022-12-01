@@ -4,6 +4,7 @@ import java.sql.Timestamp;
 
 public class Member_Board {
 	
+	private String id;
 	private int board_num;
 	private String board_id;
 	private String board_title;
@@ -216,6 +217,20 @@ public class Member_Board {
 	public void setUserComment(String user_comment) {
 		this.user_comment = user_comment;
 	}
+
+
+
+	public String getId() {
+		return id;
+	}
+
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+	
+	
 	
 	
 	

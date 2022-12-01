@@ -24,7 +24,7 @@
 	
 	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board left outer join user_comment  on (member_board.board_num = user_comment.board_num) where member_board.board_num = #{board_num}
+		select * from member_board, user_comment, member where member_board.board_num = user_comment.board_num and user_comment.id_num = member.id_num and member_board.board_num = #{board_num}
 	</select>
 	
 	<select id="selectOneBoardByNum" parameterType="com.smhrd.boarddomain.Member_Board"
@@ -42,7 +42,7 @@
 	
 	
 	<update id="updateComment" parameterType="com.smhrd.boarddomain.Member_Board">
-		update user_comment set board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file} where board_num=#{board_num}
+		update user_comment set user_comment = #{user_comment} where id_num = #{id_num}
 	</update>
 	
 	

@@ -224,12 +224,12 @@
 							                <!-- 아이디, 작성날짜 -->
 							                <td width="150">
 							                    <div>
-							                        <p id="userNum"><%=i.getUserNum()%><p><br>
+							                        <p id="userNum"><%=i.getId()%><p><br>
 							                        <font size="2" color="lightgray"></font>
 							                    </div>
 							                </td>
 							                <!-- 본문내용 -->
-							                <td width="550">
+							                <td width="550" id="fromTD">
 							                    <div class="text_wrapper">
 							                        <p id="text_wrapper"><%=i.getUserComment()%><p>
 							                    </div>
@@ -340,20 +340,29 @@
 						"userNum" : $("#userNum").text()
 						
 					},
+					dataType : "json",
 					success : function(res){
+						
+						let modify = '';
+						$("#btn").html(modify);
 						
 						let input = '';
 						input += "<form action='CommentUpdate'>"
-						input += "<input type='hidden' value='" + res.id_num + "'>"
-						input += "<input type='text' name='newComment' value='" + res.user_comment + "'>"
-						
-						
-						let modify = '';
-						modify += "<input type='submit' value='[수정완료]'>"
-						modify += "</form>"
-						
-						$(".text_wrapper").html(input);
-						$("#comment_modify").html(modify);
+						input += "<div class='text_wrapper'>"
+						input += "<p id='text_wrapper'>"
+						input += "<input type='hidden' name='userNum' value='" + res.id_num + "'>"
+						input += "<input type='text' name='newComment' value='" + res.user_comment + "'><p>"
+						input += "</div>"
+						input += "</td>"
+						input += "<td width='100'>"
+						input += "<div id='btn' style='text-align:center;'>"
+						input += "<input type='submit' value='[수정완료]'>"
+						input += "</div>"
+						input += "</form>"
+						/* modify += "<a href='CommentUpdate?num=" + res.id_num + "&comment=" + res.user_comment + "'>[수정완료]</a>" */
+						$("#fromTD").html(input);
+					
+	                  
 						
 						
 					},
