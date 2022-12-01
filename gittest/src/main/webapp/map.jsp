@@ -31,7 +31,7 @@
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
         
-     
+     	
         
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
@@ -189,7 +189,8 @@
         },
         {
             title: '100세건강생활지원센터', address: '전라북도 익산시 목천로 326'
-        },{
+        },
+        {
             title: '서부건강생활지원센터', address: '전라북도 군산시 설림5길 83'
         },
         {
@@ -1132,6 +1133,7 @@
                 infowindow.close(marker);
             });
 
+        // 아래와 같이 할 수 있습니다.
         // if (marker) {
         //         marker.addListener('click', function() {
         //             //중심 위치를 클릭된 마커의 위치로 변경
@@ -1154,7 +1156,7 @@
     }
         
         
-        
+       	
         
     </script>
 </body>
