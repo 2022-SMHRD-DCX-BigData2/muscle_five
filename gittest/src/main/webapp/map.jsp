@@ -20,7 +20,6 @@
         
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-        
         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
         var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -32,6 +31,7 @@
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
         
+     
         
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
@@ -1152,6 +1152,8 @@
         // LatLngBounds 객체에 추가된 좌표들을 기준으로 지도의 범위를 재설정합니다
         // 이때 지도의 중심좌표와 레벨이 변경될 수 있습니다
     }
+        
+        
         
         
     </script>
