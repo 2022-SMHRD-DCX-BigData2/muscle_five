@@ -341,12 +341,12 @@ public class BoardDAO {
   		
   	}
      
-     public List<Member_Board> searchTitle(String content) {
+     public List<Member_Board> searchTitle(String condition) {
    		
    		List<Member_Board> result = null;
    		
    		try {
-   			result = sqlSession.selectList("searchTitle", content);
+   			result = sqlSession.selectList("searchTitle", condition);
    			
    			if (result != null) {
    				System.out.println("DAO : 제목찾기 성공!!");

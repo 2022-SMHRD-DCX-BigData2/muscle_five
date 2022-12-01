@@ -22,6 +22,13 @@
 		pageNum = (String) session.getAttribute("page");
 	}
 	
+	List<Member_Board> wantTitle = null;
+	List<Member_Board> wantContent = null;
+	List<Member_Board> wantId = null;
+	if(session.getAttribute("contentCommunity") != null){
+		
+	}
+	
 	
 	
 

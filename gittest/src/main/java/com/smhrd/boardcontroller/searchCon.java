@@ -3,10 +3,12 @@ package com.smhrd.boardcontroller;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.boarddomain.BoardDAO;
 import com.smhrd.boarddomain.Member_Board;
@@ -18,18 +20,23 @@ public class searchCon extends HttpServlet {
 	
 		request.setCharacterEncoding("UTF-8");
 		
-		String wantSearch = request.getParameter("opt");
-		String content = request.getParameter("condition");
+		String wantContent = request.getParameter("opt");
+		String condition = request.getParameter("condition");
 		BoardDAO dao = new BoardDAO();
+		System.out.println("wantSearch : " + wantContent);
+		System.out.println("content : " + condition);
 		
+		HttpSession session = request.getSession();
 		
-		if(wantSearch.equals("제목")) {
-			List<Member_Board> title = dao.searchTitle(content);
+		if(wantContent.equals("1")) {
+			List<Member_Board> title = dao.searchTitle(condition);
 			if(title != null) {
-				System.out.println("타이틀 가져오기 대성공ㅎㅎ...");
+				System.out.println("con : 제목찾기 성공");
+				RequestDispatcher rd = request.getRequestDispatcher("BoardList.jsp");
+				rd.forward(request, response);
 				
 			}
-		} else if(wantSearch.equals("내용")) {
+		} else if(wantContent.equals("2")) {
 			/* int cnt = dao.searchContent(content); */
 		} else {
 			/* int cnt = dao.searchWriter(content); */
