@@ -17,6 +17,14 @@ public class Member_Board {
 	private int id_num;
 	private String user_comment;
 	
+	public Member_Board(int id_num, String user_comment) {
+	
+		this.id_num = id_num;
+		this.user_comment = user_comment;
+	}
+
+	
+	
 	public Member_Board(int board_num, String board_id, String board_title, String board_content, String board_file,
 			int board_re_ref, int board_re_lev, int board_seq, int board_count, Timestamp board_date, int id_num,
 			String user_comment) {
@@ -52,6 +60,20 @@ public class Member_Board {
 
 	public Member_Board(int board_num, int id_num, String user_comment) {
 		this.board_num = board_num;
+		this.id_num = id_num;
+		this.user_comment = user_comment;
+	}
+	
+	public Member_Board(String user_comment, int id_num, int board_num) {
+		this.user_comment = user_comment;
+		this.id_num = id_num;
+		this.board_num = board_num;	
+	}
+	
+
+
+
+	public Member_Board( String user_comment, int id_num) {
 		this.id_num = id_num;
 		this.user_comment = user_comment;
 	}

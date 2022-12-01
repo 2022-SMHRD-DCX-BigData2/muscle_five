@@ -7,21 +7,20 @@
 <title>지도 화면</title>
 </head>
 <body>
-	    <!-- 지도를 표시할 div 입니다 -->
-    <div id="map" style="width: 850px;height:450px;"></div>
+	<!-- 지도를 표시할 div 입니다 -->
+    <div id="map" style="width: 880px;height:440px; margin:0 auto;"></div>
     
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
-                center: new kakao.maps.LatLng(34.950612, 127.487000), // 지도의 중심좌표
-                level: 8 // 지도의 확대 레벨
+                center: new kakao.maps.LatLng(34.946029, 127.515990), // 지도의 중심좌표
+                level: 7 // 지도의 확대 레벨
             };
         
         var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-
-
+        
         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
         var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -33,8 +32,7 @@
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
-
-
+        
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
     
@@ -152,7 +150,7 @@
         {
             title: '광영건강생활지원센터', address: '전라남도 광양시 금영로 127'
         },
-        // 전라북도
+        // 전북
         {
             title: '전주시보건소', address: '전라북도 전주시 완산구 전라감영로 33'
         },
@@ -197,7 +195,7 @@
         {
             title: '장계면건강생활지원센터', address: '전라북도 장수군 장계면 한들로 124'
         },
-        // 광주광역시
+        // 광주
         {
             title: '광주광역시 서구 보건소', address: '광주광역시 서구 경영로 33'
         },
@@ -237,7 +235,7 @@
         {
             title: '지원건강생활지원센터', address: '광주광역시 동구 지원로 31-9'
         },
-        // 경상남도
+        // 경남
         {
             title: '창원보건소', address: '경상남도 창원시 의창구 중앙대로 162번길 9'
         },
@@ -313,7 +311,7 @@
         {
             title: '삼천포건강생활지원센터', address: '경상남도 사천시 동금로 33'
         },
-        // 경상북도
+        // 경북
         {
             title: '포항시남구보건소', address: '경상북도 포항시 남구 동해안로 6119'
         },
@@ -389,7 +387,7 @@
         {
             title: '봉산면건강생활지원센터', address: '경상북도 김천시 봉산면 예지송정길 9'
         },
-        // 제주특별자치도
+        // 제주
         {
             title: '제주보건소', address: '제주특별자치도 제주시 연삼로 264'
         },
@@ -414,7 +412,7 @@
         {
             title: '화북건강생활지원센터', address: '제주특별자치도 제주시 동화로1길 45-22'
         },
-        // 대전광역시
+        // 대전
         {
             title: '동구보건소', address: '대전광역시 동구 동구청로 147'
         },
@@ -433,7 +431,7 @@
         {
             title: '대덕구남부건강생활지원센터', address: '대전광역시 대덕구 동춘당로 187'
         },
-        // 울산광역시
+        // 울산
         {
             title: '중구보건소', address: '울산광역시 중구 외솔큰길 225'
         },
@@ -452,7 +450,7 @@
         {
             title: '무거건강생활지원센터', address: '울산광역시 남구 대학로147번길 41-26'
         },
-        // 부산광역시
+        // 부산
         {
             title: '중구보건소', address: '부산광역시 중구 중구로 120'
         },
@@ -522,7 +520,7 @@
         {
             title: '개금2동건강생활지원센터', address: '부산광역시 부산진구 복지로 93'
         },
-        // 충청남도
+        // 충남
         {
             title: '동남구 보건소', address: '충청남도 천안시 동남구 버들로 34'
         },
@@ -589,7 +587,7 @@
         {
             title: '홍성군 건강생활지원센터', address: '충남 홍성군 홍북읍 신경리 1197'
         },
-        // 충청북도
+        // 충북
         {
             title: '서원 보건소', address: '충청북도 청주시 서원구 사직대로 227'
         },
@@ -632,7 +630,7 @@
         {
             title: '괴산군 보건소', address: '충청북도 괴산군 괴산읍 동진천길 43'
         },
-        // 대구광역시
+        // 대구
         {
             title: '대구광역시 북구보건소', address: '대구광역시 북구 성북로 49'
         },
@@ -663,7 +661,7 @@
         {
             title: '서구 건강생활지원센터', address: '대구광역시 서구 서대구로7길 46'
         },
-        // 세종특별자치시
+        // 세종
         {
             title: '세종특별자치시 보건소', address: '세종특별자치시 조치원읍 대첩로 32'
         },
@@ -671,7 +669,7 @@
         {
             title: '고운건강생활지원센터', address: '세종특별자치시 마음로 64'
         },
-        // 인천광역시
+        // 인천
         {
             title: '미추홀구 보건소', address: '인천광역시 미추홀구 주안서로 25'
         },
@@ -720,7 +718,7 @@
         {
             title: '열우물건강생활지원센터', address: '인천광역시 부평구 열우물로 103'
         },
-        // 강원도
+        // 강원
         {
             title: '원주시보건소', address: '강원도 원주시 원일로 139'
         },
@@ -802,7 +800,7 @@
         {
             title: '홍천보건소 건강생활지원센터', address: '강원도 홍천군 홍천읍 신장대로 5'
         },
-        // 경기도
+        // 경기
         {
             title: '광주시보건소', address: '경기도 광주시 파발로 194'
         },
@@ -1010,7 +1008,7 @@
         {
             title: '안산서부건강생활지원센터', address: '경기 안산시 단원구 신길중앙로 15 1층'
         },
-        // 서울특별시
+        // 서울
         {
             title: '구로구보건소', address: '서울 구로구 구로중앙로28길 66'
         },
@@ -1154,9 +1152,8 @@
         // LatLngBounds 객체에 추가된 좌표들을 기준으로 지도의 범위를 재설정합니다
         // 이때 지도의 중심좌표와 레벨이 변경될 수 있습니다
     }
-    
-    
-	                          
+        
+        
     </script>
 </body>
 </html>

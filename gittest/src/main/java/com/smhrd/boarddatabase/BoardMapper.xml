@@ -36,10 +36,24 @@
 		update member_board set board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file} where board_num=#{board_num}
 	</update>
 	
-	<delete id="deleteBoard" parameterType="String">
-		delete from member where board_num=#{board_num}
+	<delete id="deleteBoard" parameterType="int">
+		delete from member_board where board_num=#{board_num}
 	</delete>
 	
+	
+	<update id="updateComment" parameterType="com.smhrd.boarddomain.Member_Board">
+		update user_comment set board_title=#{board_title}, board_content=#{board_content}, board_file=#{board_file} where board_num=#{board_num}
+	</update>
+	
+	
+	<delete id="deleteComment" parameterType="String">
+		delete from user_comment where user_comment=#{user_comment}
+	</delete>
+	
+	
+	<insert id="commentInsert" parameterType="com.smhrd.boarddomain.Member_Board">
+		insert into user_comment(id_num, board_num, user_comment) values (#{id_num}, #{board_num}, #{user_comment})
+	</insert>
 	
 	
 </mapper>
