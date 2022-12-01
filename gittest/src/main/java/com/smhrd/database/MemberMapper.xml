@@ -43,6 +43,12 @@
 		select count(*) from member where id=#{id}
 	</select>
 
+	<select id="loginconfirm" parameterType="String" resultType="int">
+		select pw from member where id=#{id}
+	</select>
+	
+
+
 	<insert id="insertCom" parameterType="com.smhrd.domain.compositionMember">
 		insert into body_composition values (#{id}, #{weight}, #{muscle}, #{fat})
 	</insert>

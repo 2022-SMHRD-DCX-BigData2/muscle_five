@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>지도 화면</title>
+<title>지도</title>
 </head>
 <body>
 	<!-- 지도를 표시할 div 입니다 -->
-    <div id="map" style="width: 880px;height:440px; margin:0 auto;"></div>
+    <div id="map" style="width:850px; height:450px; margin:0 auto;"></div>
     
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
     <script>
@@ -31,7 +31,7 @@
         // 지도 확대 축소를 제어할 수 있는 줌 컨트롤을 생성합니다
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
-
+        
         
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
