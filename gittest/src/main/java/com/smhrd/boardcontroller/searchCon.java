@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.smhrd.boarddomain.BoardDAO;
 import com.smhrd.boarddomain.Member_Board;
@@ -22,11 +23,13 @@ public class searchCon extends HttpServlet {
 		String content = request.getParameter("condition");
 		BoardDAO dao = new BoardDAO();
 		
+		HttpSession session = request.getSession();
 		
 		if(wantSearch.equals("제목")) {
 			List<Member_Board> title = dao.searchTitle(content);
 			if(title != null) {
 				System.out.println("타이틀 가져오기 대성공ㅎㅎ...");
+				session.setAttribute("contentCommunity", title);
 				
 			}
 		} else if(wantSearch.equals("내용")) {

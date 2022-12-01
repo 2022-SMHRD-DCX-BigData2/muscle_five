@@ -24,6 +24,8 @@
 	
 	
 	
+	
+	
 
 	BoardDAO dao = new BoardDAO();
 	List<Member_Board> board_list = dao.BoardselectAll();
