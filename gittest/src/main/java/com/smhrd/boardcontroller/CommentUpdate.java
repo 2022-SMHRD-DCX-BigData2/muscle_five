@@ -17,7 +17,7 @@ public class CommentUpdate extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		String user_comment = request.getParameter("newComment");
 		System.out.println("수정댓글 : " + user_comment);
-		int id_num = Integer.parseInt(request.getParameter("userNum").toString());
+		int id_num = Integer.parseInt(request.getParameter("userNum"));
 		
 		System.out.println("회원번호 : " + id_num);
 		

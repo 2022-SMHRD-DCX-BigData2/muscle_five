@@ -12,6 +12,7 @@
 <%
 	
 	Member loginMember = (Member)session.getAttribute("loginMember");	
+	int loginIdNum = loginMember.getId_num();
 
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
@@ -201,7 +202,7 @@
 							            	
 											            <div align="left" ><img id="insta" src="인스타사진2.png" style="width:30px; height:30px;"><%=loginMember.getId()%></div>
 														<form action="commentWriteCon" id="writeCommentForm" >
-											                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
+											                <input type="hidden" name="userNum" id="loingUserNum" value="<%=loginMember.getId_num()%>">
 											                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
 											                <!-- 아이디-->
 											                <!-- 본문 작성-->
@@ -261,6 +262,7 @@
 							    	<%
 							    	for(Member_Board i : board_list){ 
 							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
+							    			
 							    	%>
 							    	
 							    		<tr>
@@ -372,12 +374,13 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
 			function modifyComment(){
+				var userNum = document.getElementById("loingUserNum").value;
 				$.ajax({
 					url : "CommentUpdateCon",
-					type : "get",
+					type : "post",
 					data : {
 						"comment" : $("#text_wrapper").text(),
-						"userNum" : $("input[name=userNum]").val()
+						"userNum" : userNum
 						
 					},
 					dataType : "json",
