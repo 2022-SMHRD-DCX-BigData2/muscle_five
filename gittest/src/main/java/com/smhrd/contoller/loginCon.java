@@ -1,8 +1,6 @@
 package com.smhrd.contoller;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.google.gson.Gson;
 import com.smhrd.domain.Member;
 import com.smhrd.domain.MemberDAO;
 
@@ -36,43 +33,24 @@ public class loginCon extends HttpServlet {
         MemberDAO dao =  new MemberDAO();
         Member loginMember = dao.selectMember(joinMember);
         
-        //int cnt = dao.loginconfirm(joinMember.getId(), joinMember.getPw());
-        
-        Gson gson = new Gson();
-
-		Map<String, Object> data = new HashMap<String, Object>();
-				
-        // URL 및 로그인 관련 전달 메시지
-        //String msg = "";
+        String msg = "";
         
         if(loginMember != null) {
-	            HttpSession session = request.getSession();
-	            session.setAttribute("loginMember", loginMember);
-	            data.put("rs","1");
-	            //msg = "main.jsp";
-				/*
-				 * if(cnt == 1) { // 로그인 성공 session.setAttribute("id",joinMember.getId());
-				 * session.setAttribute("Member","yes"); response.sendRedirect("main.jsp"); }
-				 * else if(cnt == 0) { PrintWriter script = response.getWriter();
-				 * script.println("<script>alert('비밀번호 불일치');</script>");
-				 * script.println("<script>histoty.go(-1);</script>"); } else { PrintWriter
-				 * script = response.getWriter();
-				 * script.println("<script>alert('아이디가 존재하지 않음');</script>");
-				 * script.println("<script>histoty.go(-1);</script>"); }
-				 */
+            HttpSession session = request.getSession();
+            session.setAttribute("loginMember", loginMember);
+            
+            // sendRedirect(String URL) : 해당 URL로 이동
+            // URL뒤에 get방식 처럼 데이터를 전달가능
+            response.sendRedirect("main.jsp");
+           
         } else {
-        	//if(check == 0) {// 비밀번호가 틀릴 경우
-	        //    msg = "login.jsp?msg=0";
-	        //} else {   // 아이디가 틀릴 경우
-	        //    msg = "login.jsp?msg=-1";
-	        //}
+        	
+        	msg = "faile";
         	System.out.println("로그인 실패...");
-        	data.put("rs","2");
+        	response.sendRedirect("login.jsp?msg="+msg);
+        	
         }
-        // sendRedirect(String URL) : 해당 URL로 이동
-        // URL뒤에 get방식 처럼 데이터를 전달가능
-        response.sendRedirect("main.jsp");
-        response.getWriter().print(gson.toJson(data));
+        
+        
 	}
-
 }

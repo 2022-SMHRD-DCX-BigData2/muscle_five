@@ -50,38 +50,19 @@
 	                return false;
 	            }
 	            
-	            
-	            $.ajax({
-					url : "loginCon",// 어디로 보낼지
-					type : "post",// 어떤식으로 보낼지	
-					data : {
-						id : $.trim($("#id").val()),
-						pw : $.trim($("#pw").val())
-					},
-					success : function(data) {
-						if (data.rs =="1"){
-							location.replace("main.jsp");
-						} else {
-							alert("아이디 또는 비밀번호를 확인하세요.");
-						}
-					
-						// $(선택자).after  --> 선택자 다음에 코드를 추가
-						//$('hr').after(res);
-
-					},
-					error : function() {
-						alert("Ajax 통신 실패!!")
-					}
-	        	});
-	            
 	        }
 		 
 		 	
 	        // 회원가입 버튼 클릭시 회원가입 화면으로 이동
 	        function goJoin() {
 	            location.href="join.jsp";
-	        }    
+	        }
 	        
+	        var msg = "<%=request.getParameter("msg")%>";
+	    	if(msg == "faile"){
+	    			alert("로그인 정보가 맞지 않습니다. 다시 확인해 주세요");
+	    	}
+	    		        
     	</script>
 </head>
 <body class="landing is-preload">
@@ -133,22 +114,7 @@
 						            <input type="submit" value="로그인"/>
 						            <a href="join.jsp"><input type="button" value="회원가입" onclick="goJoin()" /></a>
 						        </form>
-						      	<%--
-						            // 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
-						            // LoginPro.jsp에서 로그인 처리 결과에 따른 메시지를 보낸다.
-						            String msg = request.getParameter("msg");
-						            
-						            if(msg != null && msg.equals("0")) 
-						            {
-						                out.println("<br>");
-						                out.println("비밀번호를 확인해 주세요.");
-						            }
-						            else if(msg != null && msg.equals("-1"))
-						            {    
-						                out.println("<br>");
-						                out.println("아이디를 확인해 주세요.");
-						            }
-						      	--%> 
+						  
 						     </div> 
                			</div>
                		</section>
