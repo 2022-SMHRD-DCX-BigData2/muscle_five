@@ -16,6 +16,7 @@ public class BaordDetailCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		System.out.println("boardDetailCon접속 완료");
 		request.setCharacterEncoding("UTF-8");
 		
 		String board_num = request.getParameter("num");
@@ -23,6 +24,7 @@ public class BaordDetailCon extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		session.setAttribute("board_num", board_num);
+		
 		
 		response.sendRedirect("BoardDetail.jsp");
 	}

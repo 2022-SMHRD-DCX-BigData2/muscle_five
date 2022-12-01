@@ -145,7 +145,7 @@
 				<section id="main" class="container">
 					<header>
 						<h2>COMMUNITY</h2>
-						<p>헬창, 헬린이 소통의 공간</p>
+						<p>헬창, 헬린이 소통의 공간 </p>
 					</header>
 					
 					<div class="row">
