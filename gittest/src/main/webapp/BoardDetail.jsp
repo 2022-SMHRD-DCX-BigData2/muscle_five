@@ -182,7 +182,7 @@
 										        <p><div > <%=j.getUserComment() %></div></p>
 										        <div style="text-align:center; float : left"  class="text_wrapper" > 
 										        <%if(j.getUserNum() == loginMember.getId_num()){%>
-									            <a onclick="modifyComment()" id="comment_modify" ><button >수정</button></a>
+									            <a onclick="modifyComment()" id="comment_modify" ><input type="button" value="수정"></a>
 									            <a href="commentDeleteCon?comment=<%=i.getUserComment()%>"><input type="button" value="삭제"></a>
 									            </div>
 								               	</div>
@@ -254,7 +254,7 @@
 							
 							     <br><br>
     
-							    <%-- <!-- 댓글 부분 -->
+							     <!-- 댓글 부분 -->
 							    <div id="comment">
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
@@ -342,7 +342,7 @@
 							           
 							    
 							        </table>
-								</div> --%>					    
+								</div> 					    
 							</section>
 					
 
