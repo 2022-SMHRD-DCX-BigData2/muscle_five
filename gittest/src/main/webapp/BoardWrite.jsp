@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	Member loginMember = (Member)session.getAttribute("loginMember");
-
+	
 	String updateBoardNum = (String)session.getAttribute("updateBoardNum");	
 %>
 <html>
@@ -174,7 +174,10 @@
 								    </table>    
 							    </form>
 							
-							<%} %>							
+							<%
+							} 
+						    session.removeAttribute("updateBoardNum");
+							%>							
 						<!-- 게시판 끝!  -->
 						
 						</div>

@@ -17,6 +17,7 @@ public class Member_Board {
 	private Timestamp board_date;
 	private int id_num;
 	private String user_comment;
+	private String wantTitle;
 	
 	public Member_Board(int id_num, String user_comment) {
 	
@@ -228,6 +229,18 @@ public class Member_Board {
 
 	public void setId(String id) {
 		this.id = id;
+	}
+
+
+
+	public String getContent() {
+		return wantTitle;
+	}
+
+
+
+	public void setContent(String wantTitle) {
+		this.wantTitle = wantTitle;
 	}
 	
 	
