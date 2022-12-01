@@ -177,19 +177,20 @@
 							    					if(i.getUserNum() != 0 & i.getUserComment() != null){
 							    				%>
 									           
-										        <div  style="font-weight:bold;"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
+										        <div  style="font-weight:bold;" id="userNum"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
 										        <div >
 										        <p><div > <%=j.getUserComment() %></div></p>
-										        <div style="text-align:center; float : left" clear="both"  > 
+										        <div style="text-align:center; float : left"  class="text_wrapper" > 
 										        <%if(j.getUserNum() == loginMember.getId_num()){%>
-									            <a onclick="modifyComment()" id="comment_modify" >[수정]</a>
+									            <a onclick="modifyComment()" id="comment_modify" ><button >수정</button></a>
+									            <a href="commentDeleteCon?comment=<%=i.getUserComment()%>"><input type="button" value="삭제"></a>
 									            </div>
 								               	</div>
 								               	<% 
 							    					}
 							    				}
 							    				%>
-								                <hr>
+								                <div><hr></div>
 							                    <%} %>    
 							                    <%
 											            int comment_cnt = 0;
