@@ -253,7 +253,7 @@
 							
 							     <br><br>
     
-							    <%-- <!-- 댓글 부분 -->
+							    <!-- 댓글 부분 -->
 							    <div id="comment">
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
@@ -341,7 +341,7 @@
 							           
 							    
 							        </table>
-								</div> --%>					    
+								</div>				    
 							</section>
 					
 
@@ -377,7 +377,7 @@
 					type : "get",
 					data : {
 						"comment" : $("#text_wrapper").text(),
-						"userNum" : $("#userNum").text()
+						"userNum" : $("input[name=userNum]").val()
 						
 					},
 					dataType : "json",
