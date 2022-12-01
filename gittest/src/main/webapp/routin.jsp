@@ -110,7 +110,7 @@
 							<c:otherwise>
 							
 								<c:if test="${loginMember.id eq 'admin'}">
-									<li><a href="#">회원관리</a></li>
+									<li><a href="#" class="button">회원관리</a></li>
 								</c:if>
 								
 
