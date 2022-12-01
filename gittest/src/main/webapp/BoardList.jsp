@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
@@ -11,6 +12,18 @@
 	Member loginMember = (Member)session.getAttribute("loginMember");
 
 	Member_Board Board = (Member_Board)session.getAttribute("Board");
+	
+	String pageNum = null;
+	
+	if(session.getAttribute("page") == null){
+		session.setAttribute("page", "1");
+		pageNum = (String) session.getAttribute("page");
+	}else{
+		pageNum = (String) session.getAttribute("page");
+	}
+	
+	
+	
 
 	BoardDAO dao = new BoardDAO();
 	List<Member_Board> board_list = dao.BoardselectAll();
@@ -130,7 +143,13 @@
 											<td>조회수</td>
 										</tr>
 										
-										<%for(Member_Board b : board_list ){ %>
+										<%
+										int boardListCnt = 0;
+										int newPageNum = Integer.parseInt(pageNum);
+										for(Member_Board b : board_list ){ 
+											boardListCnt ++;
+											if(newPageNum == 1){	
+												if(boardListCnt <= 10){%>
 										<tr  align="center">
 											<td><%=b.getBoard_num() %></td>
 											<td><a href="BaordDetailCon?num=<%=b.getBoard_num()%>"><%=b.getBoard_title() %></a></td>
@@ -138,7 +157,30 @@
 											<td><%=b.getBoard_date() %></td>
 											<td><%=b.getBoard_count() %></td>
 										</tr>
-										<%} %>
+										<% }
+												
+											}else{
+												if((boardListCnt > (newPageNum - 1) * 10) && (boardListCnt <= newPageNum * 10)){%>
+													<tr align="center">
+														<td><%=b.getBoard_num() %></td>
+														<td><a href="BaordDetailCon?num=<%=b.getBoard_num()%>"><%=b.getBoard_title() %></a></td>
+														<td><%=b.getBoard_id() %></td>
+														<td><%=b.getBoard_date() %></td>
+														<td><%=b.getBoard_count() %></td>
+													</tr>
+												
+										
+										<%			
+													
+												} 
+											}
+										}
+										session.removeAttribute("page");
+										
+										
+										%>
+										
+										
 										
 										<!--<c:forEach var="board" items="${requestScope.list}">
 											<tr align="right">
@@ -156,34 +198,38 @@
 								<!-- 페이지 넘버 부분 -->
 								<br>
 								<div id="pageForm"  align="center">
-									<c:if test="${startPage != 1}">
-										<a href='BoardListCon?page=${startPage-1}'>[ 이전 ]</a>
-									</c:if>
-						
-									<c:forEach var="pageNum" begin="${startPage}" end="${endPage}">
-										<c:if test="${pageNum == spage}">
-						                	${pageNum}
-						            	</c:if>
-										<c:if test="${pageNum != spage}">
-											<a href='BoardListCon?page=${pageNum}'>${pageNum}</a>
-										</c:if>
-									</c:forEach>
-									<c:if test="${endPage != maxPage }">
-										<a href='BoardListCon?page=${endPage+1}'>[다음]</a>
-									</c:if>
+									<%
+									int communityCnt = 0;
+									for(Member_Board b : board_list ){
+										communityCnt ++;
+										}
+									
+									int pageCnt = communityCnt / 10;
+									if(pageCnt == 0){%>
+										<a href='BoardListCon?page=1'>[1]</a>
+									
+									
+									<%} else{ 
+										for(int i=0; i<=pageCnt; i++){%>
+											<a href='BoardListCon?page=<%=i+1%>'><%="[" + (i+1) + "]"%></a>
+												
+									
+									<%}}%>
+									
+									 
+									
 								</div>
 						
 								<!--  검색 부분 -->
 								<br>
 								<div id="searchForm" align="center">
-									<form>
+									<form action="searchCon">
 										<table>
 											<tr>
 												<td>
 													<select name="opt">
 														<option value="1">제목</option>
 														<option value="2">내용</option>
-														<option value="3">제목+내용</option>
 														<option value="4">글쓴이</option>
 													</select> 
 												</td>	

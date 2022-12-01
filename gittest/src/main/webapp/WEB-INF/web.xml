@@ -78,6 +78,13 @@
    <servlet>
    	<description>
    	</description>
+   	<display-name>BoardListCon</display-name>
+   	<servlet-name>BoardListCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.BoardListCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
    	<display-name>BaordDetailCon</display-name>
    	<servlet-name>BaordDetailCon</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.BaordDetailCon</servlet-class>
@@ -173,6 +180,13 @@
    	<servlet-name>CommentUpdate</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.CommentUpdate</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>searchCon</display-name>
+   	<servlet-name>searchCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.searchCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -213,6 +227,10 @@
    	<servlet-mapping>
    		<servlet-name>BoardWriteCon</servlet-name>
    		<url-pattern>/BoardWriteCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>BoardListCon</servlet-name>
+   		<url-pattern>/BoardListCon</url-pattern>
    	</servlet-mapping>
    	<servlet-mapping>
    		<servlet-name>BaordDetailCon</servlet-name>
@@ -269,6 +287,10 @@
    	<servlet-mapping>
    		<servlet-name>CommentUpdate</servlet-name>
    		<url-pattern>/CommentUpdate</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>searchCon</servlet-name>
+   		<url-pattern>/searchCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

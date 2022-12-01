@@ -341,4 +341,26 @@ public class BoardDAO {
   		
   	}
      
+     public List<Member_Board> searchTitle(String content) {
+   		
+   		List<Member_Board> result = null;
+   		
+   		try {
+   			result = sqlSession.selectList("searchTitle", content);
+   			
+   			if (result != null) {
+   				System.out.println("DAO : 제목찾기 성공!!");
+   			} else {
+   			}
+   			
+   		} catch (Exception e) {
+   			e.printStackTrace();
+   		} finally {
+   			sqlSession.close();
+   		}
+   		
+   		return result;
+   		
+   	}
+     
 }

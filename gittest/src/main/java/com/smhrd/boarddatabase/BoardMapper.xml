@@ -15,7 +15,7 @@
 	</insert>
 
 	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board order by board_num 
+		select * from member_board order by board_num desc
 	</select>
 
 	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">
@@ -54,6 +54,12 @@
 	<insert id="commentInsert" parameterType="com.smhrd.boarddomain.Member_Board">
 		insert into user_comment(id_num, board_num, user_comment) values (#{id_num}, #{board_num}, #{user_comment})
 	</insert>
+	
+	<select id="searchTitle" parameterType="String"
+	 resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board where board_title like '%#{content}%'
+	</select>
+	
 	
 	
 </mapper>
