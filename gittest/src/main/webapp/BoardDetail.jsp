@@ -53,6 +53,8 @@
 	            font-size : 14;
 	            text-align :center;
 	        }
+	        
+	      
  
     	</style>
     	
@@ -142,7 +144,7 @@
 				</header>
 
 			<!-- Main -->
-				<section id="main" class="container">
+				<section id="main" >
 					<header>
 						<h2>COMMUNITY</h2>
 						<p>헬창, 헬린이 소통의 공간 </p>
@@ -161,8 +163,8 @@
 							        	for(Member_Board i: board_list){
 							        		if(board_cnt==0){
 							        	%>
-								        	<div>
-								        	<pre style="line-height:0; background-color:white;">
+								        	<div >
+								        	<pre style="line-height:0; background-color:white; white-space: pre-wrap;" border="solid 1px;">
 									        	<h2 style="margin : 0; "><%=i.getBoard_title()%></h2>
 									            <div class="flex-container row"><img id="insta" src="인스타사진2.png" style="width:70px; heigh:45px;"><div class="flex-container column" style="padding : 0 0 0 1em;" ><h1 style="font-size: 18px"><%=i.getBoard_id()%></h1><%=i.getBoard_date()%></div></div>
 									            <hr>
@@ -174,15 +176,15 @@
 							    				for(Member_Board j : board_list){ 
 							    					if(i.getUserNum() != 0 & i.getUserComment() != null){
 							    				%>
-									            <p>
+									           
 										        <div  style="font-weight:bold;"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
-										        <p><div> <%=j.getUserComment() %></div></p>
-										        <div id="btn" style="text-align:center;" > 
+										        <div >
+										        <p><div > <%=j.getUserComment() %></div></p>
+										        <div style="text-align:center; float : left" clear="both"  > 
 										        <%if(j.getUserNum() == loginMember.getId_num()){%>
-									            <a onclick="modifyComment()" id="comment_modify">[수정]</a><br><a href="commentDeleteCon?comment=<%=i.getUserComment()%>">[삭제]</a>
-									            
+									            <a onclick="modifyComment()" id="comment_modify" >[수정]</a>
 									            </div>
-								               	</p>
+								               	</div>
 								               	<% 
 							    					}
 							    				}
@@ -197,9 +199,7 @@
 											            		for(Member_Board j : board_list){	
 							           			%>
 							            	
-											            <div align="left"  style="display:flex;">
-											                      <img id="insta" src="인스타사진2.png" style="width:30px; height:30px;float:left"><b><%=loginMember.getId()%></b>
-											            </div>
+											            <div align="left" ><img id="insta" src="인스타사진2.png" style="width:30px; height:30px;"><%=loginMember.getId()%></div>
 														<form action="commentWriteCon" id="writeCommentForm" >
 											                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
 											                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
