@@ -1,9 +1,12 @@
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" %>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ page import="com.smhrd.domain.Member"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<%
+	Member loginMember = (Member)session.getAttribute("loginMember");
+%><html>
 <head>
 <meta charset="UTF-8">
 <title>muslefive</title>
@@ -109,6 +112,10 @@
 
 	        }
 	        
+	        function gologin() {
+	            //location.href="login.jsp";
+	            alert("회원 전용입니다. 로그인 해주세요.");
+	        }
 	       
 	 
     </script>
@@ -129,14 +136,24 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
-					<p>환영합니다.</p>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
+					<%if(loginMember != null){ %>
+					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
 						<li><a href="generic.jsp" class="button ">Map</a></li>
 					</ul>
+					<%} else {%>
+					<h1 style="margin : 0 0 1em;"><font color="white">로그인이 필요합니다.</font></h1>
+					<ul class="actions special">
+						<li><a href="main.jsp" class="button ">main</a></li>
+						<li><a href="login.jsp" class="button " onclick="gologin()">routin</a></li>
+						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="generic.jsp" class="button ">Map</a></li>
+					<ul>
+						<%} %>
 				</section>
 
 			<!-- Main -->
