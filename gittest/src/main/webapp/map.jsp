@@ -5,12 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>지도</title>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
 </head>
 <body>
 	<!-- 지도를 표시할 div 입니다 -->
     <div id="map" style="width:850px; height:450px; margin:0 auto;"></div>
     
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
             mapOption = {
