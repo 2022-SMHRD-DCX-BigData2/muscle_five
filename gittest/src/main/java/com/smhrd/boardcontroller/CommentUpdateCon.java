@@ -35,7 +35,7 @@ public class CommentUpdateCon extends HttpServlet {
 
 				
 				out.print(json);
-	
+				System.out.println("잘 넘어가?");
 	
 	}
 

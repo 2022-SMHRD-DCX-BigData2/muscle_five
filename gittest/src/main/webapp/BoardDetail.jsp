@@ -12,6 +12,7 @@
 <%
 	
 	Member loginMember = (Member)session.getAttribute("loginMember");	
+	int loginIdNum = loginMember.getId_num();
 
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
@@ -53,7 +54,15 @@
 	            font-size : 14;
 	            text-align :center;
 	        }
-	        
+	        #btn-commend{
+	        color : black;
+	        background:white;
+	        }
+	        #btn-commend button:hover{
+				color:red;
+				background-color: skyblue;
+			}
+	     
 	      
  
     	</style>
@@ -177,20 +186,18 @@
 							    					if(i.getUserNum() != 0 & i.getUserComment() != null){
 							    				%>
 									           
-										        <div  style="font-weight:bold;"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
+										        <div  style="font-weight:bold;" id="userNum"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
 										        <div >
-										        <p><div > <%=j.getUserComment() %></div></p>
-										        <div style="text-align:center; float : left" clear="both"  > 
+										        <p><div> <%=j.getUserComment() %></div></p>
+										        <div style="text-align:right; "class="text_wrapper" > 
 										        <%if(j.getUserNum() == loginMember.getId_num()){%>
-									            <a onclick="modifyComment()" id="comment_modify" >[수정]</a>
+									            <a onclick="modifyComment()" id="comment_modify" ><input type="button" value="수정" style="font-size:10px;" id="btn-commend"></a><a href="commentDeleteCon?comment=<%=i.getUserComment()%>"><input type="button" value="삭제" style="font-size:10px;" id="btn-commend"></a>
+									            <%} %>
 									            </div>
+									            <hr>
 								               	</div>
-								               	<% 
-							    					}
-							    				}
-							    				%>
-								                <hr>
-							                    <%} %>    
+							                    <%}} %> 
+							                       
 							                    <%
 											            int comment_cnt = 0;
 											            if(loginMember != null){ 
@@ -201,7 +208,7 @@
 							            	
 											            <div align="left" ><img id="insta" src="인스타사진2.png" style="width:30px; height:30px;"><%=loginMember.getId()%></div>
 														<form action="commentWriteCon" id="writeCommentForm" >
-											                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
+											                <input type="hidden" name="userNum" id="loingUserNum" value="<%=loginMember.getId_num()%>">
 											                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
 											                <!-- 아이디-->
 											                <!-- 본문 작성-->
@@ -253,7 +260,7 @@
 							
 							     <br><br>
     
-							    <!-- 댓글 부분 -->
+
 							    <div id="comment">
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
@@ -261,6 +268,7 @@
 							    	<%
 							    	for(Member_Board i : board_list){ 
 							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
+							    			
 							    	%>
 							    	
 							    		<tr>
@@ -341,7 +349,8 @@
 							           
 							    
 							        </table>
-								</div>				    
+								</div> 					    
+
 							</section>
 					
 
@@ -372,12 +381,13 @@
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
 			function modifyComment(){
+				var userNum = document.getElementById("loingUserNum").value;
 				$.ajax({
 					url : "CommentUpdateCon",
-					type : "get",
+					type : "post",
 					data : {
 						"comment" : $("#text_wrapper").text(),
-						"userNum" : $("input[name=userNum]").val()
+						"userNum" : userNum
 						
 					},
 					dataType : "json",
