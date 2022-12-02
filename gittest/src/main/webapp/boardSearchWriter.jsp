@@ -21,8 +21,11 @@
 	}else{
 		pageNum = (String) session.getAttribute("page");
 	}
+	List<Member_Board> titleList = null;
 	
-	
+	if(session.getAttribute("titleList") != null){
+		titleList = (List<Member_Board>)session.getAttribute("titleList");
+	}
 	
 	
 	
@@ -153,7 +156,7 @@
 										<%
 										int boardListCnt = 0;
 										int newPageNum = Integer.parseInt(pageNum);
-										for(Member_Board b : board_list ){ 
+										for(Member_Board b : titleList){ 
 											boardListCnt ++;
 											if(newPageNum == 1){	
 												if(boardListCnt <= 10){%>
@@ -207,7 +210,7 @@
 								<div id="pageForm"  align="center">
 									<%
 									int communityCnt = 0;
-									for(Member_Board b : board_list ){
+									for(Member_Board b : titleList ){
 										communityCnt ++;
 										}
 									

@@ -340,12 +340,12 @@ public class BoardDAO {
   		
   	}
      
-     public List<Member_Board> searchTitle(String condition) {
+     public List<Member_Board> searchTitle(Member_Board searchContent) {
    		
    		List<Member_Board> result = null;
    		
    		try {
-   			result = sqlSession.selectList("searchTitle", condition);
+   			result = sqlSession.selectList("searchTitle", searchContent);
    			
    			if (result != null) {
    				System.out.println("DAO : 제목찾기 성공!!");
@@ -361,5 +361,49 @@ public class BoardDAO {
    		return result;
    		
    	}
+     
+     public List<Member_Board> searchContent(Member_Board searchContent) {
+    		
+    		List<Member_Board> result = null;
+    		
+    		try {
+    			result = sqlSession.selectList("searchContent", searchContent);
+    			
+    			if (result != null) {
+    				System.out.println("DAO : 제목찾기 성공!!");
+    			} else {
+    			}
+    			
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		} finally {
+    			sqlSession.close();
+    		}
+    		
+    		return result;
+    		
+    	}
+     
+     public List<Member_Board> searchWriter(Member_Board searchContent) {
+    		
+    		List<Member_Board> result = null;
+    		
+    		try {
+    			result = sqlSession.selectList("searchWriter", searchContent);
+    			
+    			if (result != null) {
+    				System.out.println("DAO : 제목찾기 성공!!");
+    			} else {
+    			}
+    			
+    		} catch (Exception e) {
+    			e.printStackTrace();
+    		} finally {
+    			sqlSession.close();
+    		}
+    		
+    		return result;
+    		
+    	}
      
 }
