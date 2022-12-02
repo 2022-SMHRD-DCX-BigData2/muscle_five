@@ -230,7 +230,7 @@
 								<!--  검색 부분 -->
 								<br>
 								<div id="searchForm" align="center">
-									<form action="searchCon">
+									<form action="searchCon" >
 										<table>
 											<tr>
 												<td>
@@ -252,6 +252,8 @@
 								</div>
 							</div>
 						<!-- 게시판 끝!  -->
+						
+						
 						
 						</div>
 					</div>
