@@ -406,4 +406,35 @@ public class BoardDAO {
     		
     	}
      
+     public int clickCnt(String board_id){
+         
+         int cnt = 0;
+         
+         
+         try {
+        	 
+        	 //StringBuffer sql = new StringBuffer();
+        	 
+        	 cnt = sqlSession.update("clickCnt", board_id);
+      			
+        	 // 만약에 내가 원하는 일을 했으면 DB에 반영
+        	 if (cnt > 0) {
+      				System.out.println("DAO : 조회수 상승!!");
+      				sqlSession.commit();
+      			} else {
+
+      			}
+      		
+      		} catch (Exception e) {
+      			// TODO: handle exception
+      			e.printStackTrace();
+      		} finally {
+      			// 빌렸던 Connection 객체를 반납
+      			sqlSession.close();
+      		}
+      		
+      		return cnt;
+
+     	}
+     
 }

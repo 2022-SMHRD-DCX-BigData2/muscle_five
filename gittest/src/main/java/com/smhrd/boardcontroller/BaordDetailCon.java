@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.boarddomain.BoardDAO;
+
 
 public class BaordDetailCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -18,8 +20,11 @@ public class BaordDetailCon extends HttpServlet {
 		
 		System.out.println("boardDetailCon접속 완료");
 		request.setCharacterEncoding("UTF-8");
-		
+		BoardDAO dao = new BoardDAO();
 		String board_num = request.getParameter("num");
+		int cnt = dao.clickCnt(board_num);
+		
+		
 		System.out.println("board_num :" + board_num);
 		
 		HttpSession session = request.getSession();
