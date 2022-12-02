@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>지도</title>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
 </head>
 <body>
 	<!-- 지도를 표시할 div 입니다 -->
     <div id="map" style="width:850px; height:450px; margin:0 auto;"></div>
+    
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
     
     <script>
         var mapContainer = document.getElementById('map'), // 지도를 표시할 div
@@ -18,7 +19,8 @@
                 level: 7 // 지도의 확대 레벨
             };
         
-        var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+     	// 지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption);
 
         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
         var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -31,14 +33,14 @@
         var zoomControl = new kakao.maps.ZoomControl();
         map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
         
-     	
-        
         // 주소-좌표 변환 객체를 생성합니다
         var geocoder = new kakao.maps.services.Geocoder();
+        
+        
     
         var positions = [
         // 보건소, 건강생활지원센터
-        // 전남
+        // 전라남도
         {
             title: '순천시 보건소', 
             address: '전남 순천시 중앙로 232',
@@ -1115,21 +1117,23 @@
                 content: '<div style="width:150px;text-align:center;padding:5px 0;">' + position.title + '</div>'
             });
 
-            // 마커에 mouseover 이벤트를 등록하고 마우스 오버 시 인포윈도우를 표시합니다
+         	// 마커에 마우스오버 이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'mouseover', function() {
+            	// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
                 infowindow.open(map, marker);
             });
 
-            // 마커에 mouseout 이벤트를 등록하고 마우스 아웃 시 인포윈도우를 닫습니다
+            // 마커에 마우스아웃 이벤트를 등록합니다
             kakao.maps.event.addListener(marker, 'mouseout', function() {
+            	// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
                 infowindow.close();
             });
 
-            // 마커에 click 이벤트를 등록하고 클릭 시 인포윈도우를 닫습니다
+            // 마커에 클릭 이벤트를 등록합니다
             kakao.maps.event.addListener(marker,'click', function() {
                 // 중심 위치를 클릭된 마커의 위치로 변경
                 map.setCenter(this.getPosition());
-                // 마커 클릭 시의 인포윈도우 닫기
+                // 마커 클릭 이벤트가 발생하면 인포윈도우를 제거합니다
                 infowindow.close(marker);
             });
 
