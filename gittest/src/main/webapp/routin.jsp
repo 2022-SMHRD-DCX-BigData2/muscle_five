@@ -175,6 +175,7 @@
 								<pre align="left" style="margin:0"><h4 style="margin:0">최근 기록</h4><br>체중 : 000 <br>골격근량 : 000 <br>체지방량 : 000</pre>
 								<br>
 								<input type="submit" value="제출">
+							</form>
 							</section>
 						</div>
 						
@@ -207,9 +208,7 @@
 						
 							</section>
 						</div> -->
-						<div align="center">
-						<button onclick="window.open('calendar.jsp','window_name','location=no,status=no,scrollbars=yes');">원본달력</button>
-						</div>
+						
 						<div id='calendar'></div>
 						
 
@@ -218,6 +217,7 @@
 					<p>팀 옴므파탈 제공</p>
 					<p>tel : 062-655-3506</p>
 					<p>주소 : 전라남도 순천시 중앙로 260</p>
+					
 				</section>
 
 			<!-- Footer -->
@@ -247,14 +247,11 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				$(document).on('click', '#like1', function() {
-					let like = Number($('#span1').text())
-					$('#span1').text(like + 1)
 					$(this).text('❤')
 					$(this).attr('id', 'dislike1')
 				})
 		
 				$(document).on('click', '#dislike1', function() {
-					$('#span1').text('0')
 					$(this).text('🤍')
 					$(this).attr('id', 'like1')
 				})
