@@ -207,9 +207,7 @@
 						
 							</section>
 						</div> -->
-						<div align="center">
-						<button onclick="window.open('calendar.jsp','window_name','location=no,status=no,scrollbars=yes');">원본달력</button>
-						</div>
+						
 						<div id='calendar'></div>
 						
 
