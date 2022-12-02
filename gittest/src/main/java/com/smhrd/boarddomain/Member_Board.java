@@ -18,7 +18,15 @@ public class Member_Board {
 	private int id_num;
 	private String user_comment;
 	private int com_num;
+	private String searchContent;
 	
+	
+	public Member_Board(String searchContent) {
+		this.searchContent = searchContent;
+	}
+
+
+
 	public Member_Board(int id_num, String user_comment) {
 	
 		this.id_num = id_num;
@@ -218,6 +226,7 @@ public class Member_Board {
 	public void setUserComment(String user_comment) {
 		this.user_comment = user_comment;
 	}
+	
 
 
 
@@ -254,9 +263,21 @@ public class Member_Board {
 	public void setId_num(int id_num) {
 		this.id_num = id_num;
 	}
-	
-	
 
+
+
+	public String getSearchContent() {
+		return searchContent;
+	}
+
+
+
+	public void setSearchContent(String searchContent) {
+		this.searchContent = searchContent;
+	}
+	
+	
+	
 
 
 	

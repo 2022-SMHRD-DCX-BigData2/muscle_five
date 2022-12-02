@@ -55,9 +55,19 @@
 		insert into user_comment(com_num, id_num, board_num, user_comment) values (comment_seq.nextval, #{id_num}, #{board_num}, #{user_comment})
 	</insert>
 	
-	<select id="searchTitle" parameterType="String"
+	<select id="searchTitle" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board where board_title like '%#{content}%'
+		select * from member_board where board_title like '%'||#{searchContent}||'%' order by board_num desc
+	</select>
+	
+	<select id="searchContent" parameterType="com.smhrd.boarddomain.Member_Board"
+	 resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board where board_content like '%'||#{searchContent}||'%' order by board_num desc
+	</select>
+	
+	<select id="searchWriter" parameterType="com.smhrd.boarddomain.Member_Board"
+	 resultType="com.smhrd.boarddomain.Member_Board">
+		select * from member_board where board_id like '%'||#{searchContent}||'%' order by board_num desc
 	</select>
 	
 	
