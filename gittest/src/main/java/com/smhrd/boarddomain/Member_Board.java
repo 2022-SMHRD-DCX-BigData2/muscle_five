@@ -17,7 +17,7 @@ public class Member_Board {
 	private Timestamp board_date;
 	private int id_num;
 	private String user_comment;
-	private String wantTitle;
+	private int com_num;
 	
 	public Member_Board(int id_num, String user_comment) {
 	
@@ -75,9 +75,9 @@ public class Member_Board {
 
 
 
-	public Member_Board( String user_comment, int id_num) {
-		this.id_num = id_num;
+	public Member_Board(String user_comment, int com_num) {
 		this.user_comment = user_comment;
+		this.com_num = com_num;
 	}
 
 
@@ -233,15 +233,34 @@ public class Member_Board {
 
 
 
-	public String getContent() {
-		return wantTitle;
+	public int getCom_num() {
+		return com_num;
 	}
 
 
 
-	public void setContent(String wantTitle) {
-		this.wantTitle = wantTitle;
+	public void setCom_num(int com_num) {
+		this.com_num = com_num;
 	}
+
+
+
+	public int getId_num() {
+		return id_num;
+	}
+
+
+
+	public void setId_num(int id_num) {
+		this.id_num = id_num;
+	}
+	
+	
+
+
+
+	
+	
 	
 	
 	
