@@ -51,6 +51,11 @@
 	            font-size : 14;
 	            text-align :center;
 	        }
+	        #chaneg_complete{
+	        background-color:#f7f7f7;
+	        color:#737373;
+	        }
+	      
  
     	</style>
     	
@@ -195,7 +200,8 @@
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <img src="C:/image/<%=i.getBoard_file()%>">
+							                    <img style="width:200; height:200;" src="/tomcatImg/<%=i.getBoard_file()%>">
+							         
 
 							                </td>    
 							            </tr>
@@ -261,9 +267,9 @@
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 							                    <%
 							                    if(i.getUserNum() == loginMember.getId_num()){%>
-							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify">[수정]</a>
+							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;"  >수정</a>
 							                    	<br>    
-							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>">[삭제]</a>
+							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>">삭제</a>
 							                    <%} %>    
 							                    </div>
 							                </td>
@@ -303,7 +309,7 @@
 								                <!-- 댓글 등록 버튼 -->
 								                <td width="100">
 								                    <div id="btn" style="text-align:center;">
-								                        <p><input type="submit" value="[댓글등록]"></p>    
+								                        <p><input type="submit" value="댓글등록"></p>    
 								                    </div>
 								                </td>
 								            </form>
@@ -375,7 +381,7 @@
 	                  input += "<input type='hidden' name='updateCommentNum' value='" + res.com_num + "'>"
 	                  input += "<input type='text' name='comment' value='" + res.user_comment + "'>"
 	                  input += "</div>"
-	               	  input += "<input type='submit' value='[수정완료]'>"
+	               	  input += "<input type='submit' value='수정완료' id='chaneg_complete'>"
 	               	  input += "</form>"
 	                  $("."+ res.com_num).html(input);
 	                 
