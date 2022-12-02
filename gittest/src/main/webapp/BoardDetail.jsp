@@ -8,11 +8,9 @@
 <%@page import="java.util.List"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
 <%
-	
+
 	Member loginMember = (Member)session.getAttribute("loginMember");	
-	int loginIdNum = loginMember.getId_num();
 
 	int board_num = Integer.parseInt(String.valueOf(session.getAttribute("board_num")));
 	
@@ -32,7 +30,7 @@
 	<style type="text/css">
 		
 	        #wrap{
-	            width: 1000px;
+	            width: 1300px;
 	            margin: 0 auto 0 auto;    
 	        }
 	    
@@ -44,9 +42,8 @@
 	            height : 16;
 	            font-family :'돋움';
 	            font-size : 12;
-	            text-align :left;
+	            text-align :center;
 	            background-color: #F7F7F7;
-	           
 	        }
 	        
 	        #btn{
@@ -54,16 +51,6 @@
 	            font-size : 14;
 	            text-align :center;
 	        }
-	        #btn-commend{
-	        color : black;
-	        background:white;
-	        }
-	        #btn-commend button:hover{
-				color:red;
-				background-color: skyblue;
-			}
-	     
-	      
  
     	</style>
     	
@@ -136,7 +123,14 @@
 	            }
 	        }
 	    
+	        
     </script>
+    
+			
+			
+         
+         
+
 </head>
 <body class="is-preload">
 	<div id="page-wrapper">
@@ -153,145 +147,123 @@
 				</header>
 
 			<!-- Main -->
-				<section id="main" >
+				<section id="main" class="container">
 					<header>
-						<h2>COMMUNITY</h2>
-						<p>헬창, 헬린이 소통의공간 </p>
-					</header>
 					
+						<h2>COMMUNITY</h2>
+						<p>헬창, 헬린이 소통의 공간</p>
+					</header>
 					<div class="row">
 						<div class="col-12">
+						
 							<div id="wrap">
 							    <div id="community">
-
-							        <table id="detailBoard" width="700" border="3" bordercolor="lightgray">
-							        	<div>
+							        <table id="detailBoard" width="800" border="3" bordercolor="lightgray">
 							        	
 							        	<%	
 							        	int board_cnt = 0;
 							        	for(Member_Board i: board_list){
+							        		
 							        		if(board_cnt==0){
 							        	%>
-								        	<div >
-								        	<pre style="line-height:0; background-color:white; white-space: pre-wrap;" border="solid 1px;">
-									        	<h2 style="margin : 0; "><%=i.getBoard_title()%></h2>
-									            <div class="flex-container row"><img id="insta" src="인스타사진2.png" style="width:70px; heigh:45px;"><div class="flex-container column" style="padding : 0 0 0 1em;" ><h1 style="font-size: 18px"><%=i.getBoard_id()%></h1><%=i.getBoard_date()%></div></div>
-									            <hr>
-									            <p style="font-weight:200px; font-size: 17px; color:black"><%=i.getBoard_content()%></p>     
-									            <p style="margin : 0 0 6em;">첨부파일<img src="../image/<%=i.getBoard_file()%>" > C:/image/<%=i.getBoard_file()%></p>
-									            <hr>
-									            <h4 style="font-weight:500px;">댓글</h4>
-									            <%
-							    				for(Member_Board j : board_list){ 
-							    					if(i.getUserNum() != 0 & i.getUserComment() != null){
-							    				%>
-									           
-										        <div  style="font-weight:bold;" id="userNum"> <img id="insta" src="인스타사진2.png" style="width:30px; heigh:30px;"><%=j.getId()%></div>
-										        <div >
-										        <p><div> <%=j.getUserComment() %></div></p>
-										        <div style="text-align:right; "class="text_wrapper" > 
-										        <%if(j.getUserNum() == loginMember.getId_num()){%>
-									            <a onclick="modifyComment()" id="comment_modify" ><input type="button" value="수정" style="font-size:10px;" id="btn-commend"></a><a href="commentDeleteCon?comment=<%=i.getUserComment()%>"><input type="button" value="삭제" style="font-size:10px;" id="btn-commend"></a>
-									            <%} %>
-									            </div>
-									            <hr>
-								               	</div>
-							                    <%}} %> 
-							                       
-							                    <%
-											            int comment_cnt = 0;
-											            if(loginMember != null){ 
-											            	if(comment_cnt == 0){
-											            		comment_cnt ++;
-											            		for(Member_Board j : board_list){	
-							           			%>
-							            	
-											            <div align="left" ><img id="insta" src="인스타사진2.png" style="width:30px; height:30px;"><%=loginMember.getId()%></div>
-														<form action="commentWriteCon" id="writeCommentForm" >
-											                <input type="hidden" name="userNum" id="loingUserNum" value="<%=loginMember.getId_num()%>">
-											                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
-											                <!-- 아이디-->
-											                <!-- 본문 작성-->
-											                    <div style="display:flex;">
-											                		<textarea name="comment" rows="4" cols="70"  type="text" ></textarea>
-											                         <input type="submit" value="댓글등록">
-											                    </div>
-														 </form>
-								               
-								                <!-- 댓글 등록 버튼 -->
-										            <%
-										            	if(comment_cnt == 1){
-										            		break;
-										            			}
-										            		}							            
-										            	}
-										            } 
-										            %>
-							            </pre>
-							         </div>
-							            
+							            <tr>
+							                <td id="title">작성일</td>
+							                <td><%=i.getBoard_date()%></td>
+							            </tr>
+							            <tr>
+							                <td id="title">작성자</td>
+							                <td><%=i.getBoard_id()%></td>
+							            </tr>
+							            <tr>
+							                <td id="title">
+							                    제 목
+							                </td>
+							                <td>
+							                    <%=i.getBoard_title()%>
+							                </td>        
+							            </tr>
+							            <tr>
+							                <td id="title">
+							                    내 용
+							                </td>
+							                <td>
+							                    <%=i.getBoard_content()%>
+							                </td>        
+							            </tr>
+							            <tr>
+							                <td id="title">
+							                    첨부파일
+							                </td>
+							                <td>
+							                    <img src="C:/image/<%=i.getBoard_file()%>">
 
+							                </td>    
+							            </tr>
+							            
 							            <tr align="center" valign="middle">
 							                <td colspan="5">
 							                <%if(loginMember.getId() != null){%>
 							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
 							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
-								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제"></a>
-							                		<%} else{%>
+								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제" onclick="doAction(1)"></a>
+							                		<%} else{
+							                			%>
 							                	<% 
 							                			}
 							                		}
 							                	%>
 							                	<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>     
-								            </td> <!-- javascript:location.href='BoardListAction.bo?page=${pageNum}' -->
+								                   		             
+								            </td>
 							            </tr>
 							        </table>
-							        </div>
 							    </div>
-
 							            <%
 							        		}
 							        		board_cnt ++;
 							            } 
 							            %>
-
-							   </div>
-							 </div>
-							
+							    
+							            
+							    
 							     <br><br>
     
-
+							    <!-- 댓글 부분 -->
 							    <div id="comment">
 							        <table border="1" bordercolor="lightgray">
 							    <!-- 댓글 목록 --> 
-							    
 							    	<%
+
 							    	for(Member_Board i : board_list){ 
 							    		if(i.getUserNum() != 0 & i.getUserComment() != null){
-							    			
+							    			int generalNum = i.getCom_num();
 							    	%>
 							    	
 							    		<tr>
 							                <!-- 아이디, 작성날짜 -->
-							                <td width="150">
+							                <td width="150" >
 							                    <div>
-							                        <p id="userNum"><%=i.getId()%><p><br>
+							                    	
+							                        <%=i.getId()%><br>
 							                        <font size="2" color="lightgray"></font>
 							                    </div>
 							                </td>
 							                <!-- 본문내용 -->
-							                <td width="550" id="fromTD">
+							                <td width="550" class="<%=i.getCom_num()%>">
 							                    <div class="text_wrapper">
-							                        <p id="text_wrapper"><%=i.getUserComment()%><p>
+							                    	<input id="<%="num" + generalNum%>" type="hidden" value="<%=i.getCom_num()%>">
+							                        <p id="<%="text" + generalNum%>"><%=i.getUserComment()%></p>
 							                    </div>
 							                </td>
 							                <!-- 버튼 -->
 							                <td width="100">
-							                    <div id="btn" style="text-align:center;">
+							                    <div id="btn" style="text-align:center;" class="<%="btn" + i.getCom_num()%>">
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
-							                    <%if(i.getUserNum() == loginMember.getId_num()){%>
-							                    	<a onclick="modifyComment()" id="comment_modify">[수정]</a><br>
-							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>">[삭제]</a>
+							                    <%
+							                    if(i.getUserNum() == loginMember.getId_num()){%>
+							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify">[수정]</a>
+							                    	<br>    
+							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>">[삭제]</a>
 							                    <%} %>    
 							                    </div>
 							                </td>
@@ -312,11 +284,10 @@
 							            
 							            %>
 							            	
-								            <tr bgcolor="#F5F5F5">
+								            <tr bgcolor="#F5F5F5" id="updateCom">
 								            <form action="commentWriteCon" id="writeCommentForm">
-								                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
 								                <input type="hidden" name="boardNum" value="<%=i.getBoard_num()%>">
-								                
+								                <input type="hidden" name="userNum" value="<%=loginMember.getId_num()%>">
 								                <!-- 아이디-->
 								                <td width="150">
 								                    <div>
@@ -326,7 +297,7 @@
 								                <!-- 본문 작성-->
 								                <td width="550">
 								                    <div>
-								                    	<input type="text" name="comment">               
+								                        <input type="text" name="comment">
 								                    </div>
 								                </td>
 								                <!-- 댓글 등록 버튼 -->
@@ -340,18 +311,19 @@
 							            <%
 							            	if(comment_cnt == 1){
 							            		break;
-							            				}
-							            			}							            
-							            		}
-							          	  	} 
-																	            
+							            	}
+							            		}							            
+							            	}
+							            } 
 							            %>
 							           
 							    
 							        </table>
-								</div> 					    
-
-							</section>
+								</div>					    
+							</div>    			
+						</div>
+					</div>
+				</section>
 					
 
 			<!-- Footer -->
@@ -380,51 +352,49 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
-			function modifyComment(){
-				var userNum = document.getElementById("loingUserNum").value;
-				$.ajax({
-					url : "CommentUpdateCon",
-					type : "post",
-					data : {
-						"comment" : $("#text_wrapper").text(),
-						"userNum" : userNum
-						
-					},
-					dataType : "json",
-					success : function(res){
-						
-						let modify = '';
-						$("#btn").html(modify);
-						
-						let input = '';
-						input += "<form action='CommentUpdate'>"
-						input += "<div class='text_wrapper'>"
-						input += "<p id='text_wrapper'>"
-						input += "<input type='hidden' name='userNum' value='" + res.id_num + "'>"
-						input += "<input type='text' name='newComment' value='" + res.user_comment + "'><p>"
-						input += "</div>"
-						input += "</td>"
-						input += "<td width='100'>"
-						input += "<div id='btn' style='text-align:center;'>"
-						input += "<input type='submit' value='[수정완료]'>"
-						input += "</div>"
-						input += "</form>"
-						/* modify += "<a href='CommentUpdate?num=" + res.id_num + "&comment=" + res.user_comment + "'>[수정완료]</a>" */
-						$("#fromTD").html(input);
-					
+			function modifyComment(generalNum){
+				var comNum = document.getElementById('num' + generalNum).value
+	            $.ajax({
+	               url : "CommentUpdateCon",
+	               type : "get",
+	               data : {
+	                  "comment" : $("#text" + generalNum).text(),
+	                  "comNum" : comNum
 	                  
-						
-						
-					},
-					error : function(){
-						alert("Ajax 통신 실패했는데요")
-					}
-				});
-				
-				
-			}
-			
-			
+	               },
+	               dataType : "json",
+	               success : function(res){
+	                  
+	                  console.log(res.com_num);
+	                  console.log(res.user_comment);
+
+	                  
+	                  var input = '';
+	                  input += "<form action='CommentUpdate' id='writeCommentForm'>"
+	                  input += "<div class='text_wrapper'>"
+	                  input += "<input type='hidden' name='updateCommentNum' value='" + res.com_num + "'>"
+	                  input += "<input type='text' name='comment' value='" + res.user_comment + "'>"
+	                  input += "</div>"
+	               	  input += "<input type='submit' value='[수정완료]'>"
+	               	  input += "</form>"
+	                  $("."+ res.com_num).html(input);
+	                 
+	               	  
+	               	  var modify = '';
+	                 
+	                  
+	                  $(".btn" + res.com_num).html(modify);
+	                  
+	               },
+	               error : function(){
+	                  alert("Ajax 통신 실패했는데요")
+	               }
+	            });
+	            
+	            
+	         }
 			</script>
+			
+			
 </body>
 </html>

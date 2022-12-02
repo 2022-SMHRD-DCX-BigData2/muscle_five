@@ -24,7 +24,7 @@
 	
 	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board, user_comment, member where member_board.board_num = user_comment.board_num(+) and user_comment.id_num = member.id_num(+) and member_board.board_num = #{board_num}
+		select * from member_board, user_comment, member where member_board.board_num = user_comment.board_num(+) and user_comment.id_num = member.id_num(+) and member_board.board_num = #{board_num} order by com_num desc
 	</select>
 	
 	<select id="selectOneBoardByNum" parameterType="com.smhrd.boarddomain.Member_Board"
@@ -41,18 +41,18 @@
 	</delete>
 	
 	
-	<update id="updateComment" parameterType="com.smhrd.boarddomain.Member_Board">
-		update user_comment set user_comment = #{user_comment} where id_num = #{id_num}
+	<update id="updatecomment" parameterType="com.smhrd.boarddomain.Member_Board">
+		update user_comment set user_comment = #{user_comment} where com_num = #{com_num}
 	</update>
 	
 	
-	<delete id="deleteComment" parameterType="String">
-		delete from user_comment where user_comment=#{user_comment}
+	<delete id="deleteComment" parameterType="int">
+		delete from user_comment where com_num = #{com_num}
 	</delete>
 	
 	
 	<insert id="commentInsert" parameterType="com.smhrd.boarddomain.Member_Board">
-		insert into user_comment(id_num, board_num, user_comment) values (#{id_num}, #{board_num}, #{user_comment})
+		insert into user_comment(com_num, id_num, board_num, user_comment) values (comment_seq.nextval, #{id_num}, #{board_num}, #{user_comment})
 	</insert>
 	
 	<select id="searchTitle" parameterType="String"

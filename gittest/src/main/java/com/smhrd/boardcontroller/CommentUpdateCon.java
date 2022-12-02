@@ -16,14 +16,14 @@ public class CommentUpdateCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+				
 				request.setCharacterEncoding("UTF-8");
 				String comment = request.getParameter("comment");
-				int userNum = Integer.parseInt(request.getParameter("userNum").toString());
+				int comNum = Integer.parseInt(request.getParameter("comNum").toString());
 				System.out.println("comment : " + comment);
-				System.out.println("userNum : " + userNum);
+				System.out.println("comNum : " + comNum);
 
-				Member_Board userAndComment = new Member_Board(comment, userNum);
+				Member_Board userAndComment = new Member_Board(comment, comNum);
 				
 				Gson gson = new Gson();
 				
@@ -35,7 +35,7 @@ public class CommentUpdateCon extends HttpServlet {
 
 				
 				out.print(json);
-				System.out.println("잘 넘어가?");
+				
 	
 	}
 

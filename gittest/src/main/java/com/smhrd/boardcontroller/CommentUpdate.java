@@ -13,15 +13,14 @@ public class CommentUpdate extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		System.out.println("회원댓글수정Con");
 		request.setCharacterEncoding("UTF-8");
-		String user_comment = request.getParameter("newComment");
-		System.out.println("수정댓글 : " + user_comment);
-		int id_num = Integer.parseInt(request.getParameter("userNum"));
+		String userComment = request.getParameter("comment");
+		System.out.println("수정댓글 : " + userComment);
+		int comNum = Integer.parseInt(request.getParameter("updateCommentNum").toString());
+		System.out.println("댓글번호 : " + comNum);
 		
-		System.out.println("회원번호 : " + id_num);
-		
-		Member_Board commentUpdate = new Member_Board(user_comment, id_num);
+		Member_Board commentUpdate = new Member_Board(userComment, comNum);
 		BoardDAO dao = new BoardDAO();
 		int cnt = dao.updateComment(commentUpdate);
 		

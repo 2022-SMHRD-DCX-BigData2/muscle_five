@@ -237,13 +237,12 @@ public class BoardDAO {
   		int cnt = 0;
   		
   		try {
-  			cnt = sqlSession.update("updateComment", update);
+  			cnt = sqlSession.update("updatecomment", update);
   			
   			if (cnt > 0) {
   				System.out.println("DAO : 댓글 수정 성공!!");
   				sqlSession.commit();
   			} else {
-  				sqlSession.rollback();
   			}
   			
   		} catch (Exception e) {
@@ -287,13 +286,13 @@ public class BoardDAO {
  		
  	} // 게시글 삭제 끝
      
-     public int deleteComment(String comment) {
+     public int deleteComment(int com_num) {
   		
   		int cnt = 0;
   		
   		try {
   			// 					mapper.xml의 id값
-  			cnt = sqlSession.delete("deleteComment", comment);
+  			cnt = sqlSession.delete("deleteComment", com_num);
   			
   			// 만약에 내가 원하는 일을 했으면 DB에 반영
   			if (cnt > 0) {
