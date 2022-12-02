@@ -187,6 +187,20 @@
    	<servlet-name>searchCon</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.searchCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>LocationAddressListCon</display-name>
+   	<servlet-name>LocationAddressListCon</servlet-name>
+   	<servlet-class>com.smhrd.locationcontroller.LocationAddressListCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>LocationCityListCon</display-name>
+   	<servlet-name>LocationCityListCon</servlet-name>
+   	<servlet-class>com.smhrd.locationcontroller.LocationCityListCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -291,6 +305,14 @@
    	<servlet-mapping>
    		<servlet-name>searchCon</servlet-name>
    		<url-pattern>/searchCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>LocationAddressListCon</servlet-name>
+   		<url-pattern>/LocationAddressListCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>LocationCityListCon</servlet-name>
+   		<url-pattern>/LocationCityListCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

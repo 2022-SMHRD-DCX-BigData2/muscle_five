@@ -20,5 +20,6 @@
   <mappers>
     <mapper resource="com/smhrd/database/MemberMapper.xml"/>
     <mapper resource="com/smhrd/database/CalendarMapper.xml"/>
+    <mapper resource="com/smhrd/database/LocationMapper.xml"/>
   </mappers>
 </configuration>

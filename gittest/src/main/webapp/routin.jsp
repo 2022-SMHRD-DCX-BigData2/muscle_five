@@ -167,6 +167,7 @@
 					<div class="row" id="muscle" >
 						<div class="col-6 ">
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+							<form action="compositionCon" method="post">
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<pre>체중<input type="text" name="weight"></pre>
 								<pre>골격근량<input type="text" name="muscle"></pre>

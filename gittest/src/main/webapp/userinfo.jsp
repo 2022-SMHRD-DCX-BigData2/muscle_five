@@ -93,6 +93,20 @@
          	
          	})
      	});
+    	
+    	
+    	function work() {
+	
+    		alert("삭제되었습니다.");
+    		/* var result = confirm("~ 하시겠습니까?");
+    		
+    		if(result == true) {
+    			alert("확인을 눌렀습니다.");
+    		} 
+    		else {
+    			alert("취소를 눌렀습니다.");
+    		} */
+    	}
     </script>
     
 </head>
@@ -147,7 +161,7 @@
 								<td><%=m.getGrade() %></td>														
 								<td class="grade"><button type="button" class="button small" 
 									data-toggle="modal" data-target="#myModal">변경</td>
-								<td><a href="deleteCon?id=<%= m.getId() %>" class="button alt small">회원 삭제</a></td>
+								<td><a href="deleteCon?id=<%= m.getId() %>"><button class="button alt small" onclick="work()" >회원 삭제</button></a></td>
 							</tr>
 							<%} %>
 						</table>
