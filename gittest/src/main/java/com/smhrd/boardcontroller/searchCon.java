@@ -31,8 +31,9 @@ public class searchCon extends HttpServlet {
 				  public ArrayList<Member_Board> searchTitle(String opt , String condition){//특정한 리스트를 받아서 반환
 			      ArrayList<Member_Board> list = new ArrayList<Member_Board>();
 			      String SQL ="select * from bbs WHERE "+opt.trim();
-			      ResultSet rs = null;
 			      
+			      ResultSet rs = null;
+			      Connection conn= null;
 			      
 			      
 			      try {
@@ -47,7 +48,7 @@ public class searchCon extends HttpServlet {
 			            bbs.setBoard_num(rs.getInt(1));
 			            bbs.setBoard_title(rs.getString(2));
 			            bbs.setBoard_id(rs.getString(3));
-			            bbs.setBoard_date(rs.getDate(4));
+			            bbs.setBoard_date(rs.getTimestamp(4));
 			            bbs.setBoard_num(rs.getInt(5));
 			            list.add(bbs);//list에 해당 인스턴스를 담는다.
 				         }         
