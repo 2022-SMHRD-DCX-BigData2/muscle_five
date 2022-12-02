@@ -197,25 +197,17 @@
 					            		}
 					            	});
 	
-					            	// 마커에 마우스오버 이벤트를 등록합니다
-					                kakao.maps.event.addListener(marker, 'mouseover', function() {
-					                	// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
-					                    infowindow.open(map, marker);
-					                });
+					            		// 마커에 마우스오버 이벤트를 등록합니다
+					              		kakao.maps.event.addListener(marker, 'mouseover', function() {
+					              		// 마커에 마우스오버 이벤트가 발생하면 인포윈도우를 마커위에 표시합니다
+					              		infowindow.open(map, marker);
+					              	});
 
-					                // 마커에 마우스아웃 이벤트를 등록합니다
-					                kakao.maps.event.addListener(marker, 'mouseout', function() {
-					                	// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
-					                    infowindow.close();
-					                });
-
-					                // 마커에 클릭 이벤트를 등록합니다
-					                kakao.maps.event.addListener(marker,'click', function() {
-					                    // 중심 위치를 클릭된 마커의 위치로 변경
-					                    map.setCenter(this.getPosition());
-					                    // 마커 클릭 이벤트가 발생하면 인포윈도우를 제거합니다
-					                    infowindow.close(marker);
-					                });
+					              		// 마커에 마우스아웃 이벤트를 등록합니다
+					              	kakao.maps.event.addListener(marker, 'mouseout', function() {
+					              	// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					              	infowindow.close();
+					              	});
 					            			
 					            	
 									
