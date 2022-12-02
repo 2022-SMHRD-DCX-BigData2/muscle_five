@@ -21,13 +21,8 @@
 	}else{
 		pageNum = (String) session.getAttribute("page");
 	}
-	
-	
-	
-	
-	
-
 	BoardDAO dao = new BoardDAO();
+
 	List<Member_Board> board_list = dao.BoardselectAll();
 %>
 <html>

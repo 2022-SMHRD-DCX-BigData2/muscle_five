@@ -70,6 +70,10 @@
 		select * from member_board where board_id like '%'||#{searchContent}||'%' order by board_num desc
 	</select>
 	
+	<update id="clickCnt" parameterType="String">
+		update member_board set board_count = board_count + 1 where board_num = #{board_id}
+	</update>
+	
 	
 	
 </mapper>
