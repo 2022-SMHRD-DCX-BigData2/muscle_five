@@ -19,21 +19,17 @@ public class deleteCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		// email 파라미터 수집
 		String id = request.getParameter("id");
+		System.out.println("id :" + id);
 		
-		// DAO에 일할 메소드 만들기
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.deleteMember(id);
+		int cnt = dao.deleteUser(id);
 				
-		// DAO의 명령 후 처리
-		// 성공했으면(cnt>0) -> 성공페이지로 이동!
 		if(cnt > 0) {
 			System.out.println("DeleteCon : 회원 삭제 성공!");
 		} else {
 			System.out.println("DeleteCon : 회원 삭제 실패..");
 		}
-		// 다시 select.jsp로 이동.
 		response.sendRedirect("userinfo.jsp");
 	}
 

@@ -81,7 +81,7 @@
 				<section id="main" class="container">
 					<header>
 						<h2>COMMUNITY</h2>
-						<p>헬창, 헬린이 소통의 공간</p>
+						<p>헬창, 헬린이 소통의 공간 </p>
 					</header>
 					<div class="row">
 						<div class="col-12">
@@ -93,6 +93,7 @@
 						    <%if(updateBoardNum == null){ %>
 						    <form method="post" action="BoardWriteCon" name="BoardWirte" enctype="multipart/form-data">
 							    <input type="hidden" name="board_id" value="${loginMember.id}">
+							    <input type="hidden" name="id_num" value=<%=loginMember.getId_num()%>>
 								    <table width="700" border="3" bordercolor="lightgray" align="center">
 								        <tr>
 								            <td id="title">작성자</td>

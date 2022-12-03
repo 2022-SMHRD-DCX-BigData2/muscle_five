@@ -12,7 +12,7 @@ public class Calendar {
 	private String backgroundColor; // 이벤트 배경색
 	private String borderColor; // 이벤트 박스 라인색
 	private String textColor; // 이벤트 글자색
-	private String member_id;
+	private String id_num;
 	//private int groupId;
 	//private String url;
 	//private String[] classNames;
@@ -26,7 +26,7 @@ public class Calendar {
 	//private String source;
 	
 	public Calendar(String id, String title, String allDay, String start, String end, String startStr, String endStr,
-			String backgroundColor, String borderColor, String textColor, String member_id) {
+			String backgroundColor, String borderColor, String textColor, String id_num) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -38,11 +38,11 @@ public class Calendar {
 		this.backgroundColor = backgroundColor;
 		this.borderColor = borderColor;
 		this.textColor = textColor;
-		this.member_id = member_id;
+		this.id_num = id_num;
 	}
 	
 	public Calendar(String title, String allDay, String start, String end, String startStr, String endStr,
-			String backgroundColor, String borderColor, String textColor, String member_id) {
+			String backgroundColor, String borderColor, String textColor, String id_num) {
 		super();
 		this.title = title;
 		this.allDay = allDay;
@@ -53,7 +53,7 @@ public class Calendar {
 		this.backgroundColor = backgroundColor;
 		this.borderColor = borderColor;
 		this.textColor = textColor;
-		this.member_id = member_id;
+		this.id_num = id_num;
 	}
 	
 	public Calendar(String id, String start, String end, String startStr, String endStr) {
@@ -125,11 +125,11 @@ public class Calendar {
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
 	}
-	public String getMember_id() {
-		return member_id;
+	public String getId_num() {
+		return id_num;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setId_num(String id_num) {
+		this.id_num = id_num;
 	}
 
 	

@@ -24,7 +24,7 @@ public class idCheck extends HttpServlet {
 
 
 	        MemberDAO dao =  new MemberDAO();
-	        int result = dao.confirmid(userId);
+	        int result = dao.confirmId(userId);
 	        
 	        request.setAttribute("result", result);
 	        request.setAttribute("checkedId", userId);

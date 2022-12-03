@@ -5,22 +5,14 @@
   
 <mapper namespace="com.smhrd.boarddatabase.BoardMapper">
 
-	<!-- <select id="getSeq" parameterType="com.smhrd.domain.Member_board"
-	 resultType="com.smhrd.domain.Member_board">
-		select board_num.nextval from dual 
-	</select>-->
-
+	
 	<insert id="boardInsert" parameterType="com.smhrd.boarddomain.Member_Board">
-		insert into member_board(board_num, board_id, board_title, board_content, board_file) values (COM_SEQ.nextval, #{board_id}, #{board_title}, #{board_content}, #{board_file})
+		insert into member_board(board_num, board_id, board_title, board_content, board_file, board_count, id_num) values (COM_SEQ.nextval, #{board_id}, #{board_title}, #{board_content}, #{board_file}, 0, #{id_num})
 	</insert>
 
 	<select id="BoardselectAll" resultType="com.smhrd.boarddomain.Member_Board">
 		select * from member_board order by board_num desc
 	</select>
-
-	<update id="updateBoardCount" parameterType="com.smhrd.boarddomain.Member_Board">
-		update member_board set board_count=#{board_count+1} where board_num=#{board_num}
-	</update>
 	
 	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">

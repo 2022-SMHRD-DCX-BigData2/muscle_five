@@ -113,9 +113,9 @@
 				                <tr>
 				                    <td id="title">생일</td>
 				                    <td>
-				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_yy}" placeholder="년(4자)" size="6" >
+				                        <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6" >
 				                        <select name="birth_mm">
-						                    <option value="${loginMember.birth_mm}">월</option>
+						                    <option>월</option>
 						                    <option value="01" >1</option>
 						                    <option value="02" >2</option>
 						                   	<option value="03" >3</option>
@@ -129,14 +129,13 @@
 						                    <option value="11" >11</option>
 						                    <option value="12" >12</option>
 						                </select>
-				                        <input type="text" name="birth_dd" maxlength="2" value="${loginMember.birth_dd}" placeholder="일" size="4" >
+				                        <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4" >
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <td id="title">이메일</td>
 				                    <td>
-				                        <input type="text" name="mail1" maxlength="50" 
-				                            value="${loginMember.mail1}">
+				                        <input type="text" name="mail1" maxlength="50">
 				                        @
 				                        <select name="mail2" id="mail2">
 				                            <option value="naver.com">naver.com</option>

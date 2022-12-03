@@ -157,7 +157,7 @@
 							<tr class="datarow" align="center">
 								<td class="id"><%=m.getId() %></td>
 								<td><%=m.getGender() %></td>
-								<td><%=m.getMail1() + '@' +  m.getMail2()%></td>
+								<td><%=m.getEmail()%></td>
 								<td><%=m.getGrade() %></td>														
 								<td class="grade"><button type="button" class="button small" 
 									data-toggle="modal" data-target="#myModal">변경</td>
