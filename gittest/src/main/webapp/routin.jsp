@@ -91,6 +91,11 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
 		<!--   //fullcalendar 언어 설정관련 script -->
 		<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/locales-all.js"></script>
+		<script type="text/javascript">
+			function gologin() {
+	            alert("회원 전용입니다. 로그인 해주세요.");
+	        }
+		</script>
 	</head>
 	<body class="landing is-preload">
 		<div id="page-wrapper">
@@ -127,24 +132,16 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
+					<h1><font color="white"><%=loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-								<li><a href="#" class="button ">routin</a></li>
-							<li><a href="community.jsp" class="button ">community</a></li>
-							<li><a href="generic.jsp" class="button ">Map</a></li>
-							</ul>
-							<%} else {%>
-							<h1><font color="white">로그인이 필요합니다.</font></h1>
-							<ul class="actions special">
-							<li><a href="main.jsp" class="button ">main</a></li>
-							<li><a href="#" class="button ">routin</a></li>
-							<li><a href="community.jsp" class="button ">community</a></li>
-							<li><a href="generic.jsp" class="button ">Map</a></li>
-							</ul>
-						<%} %>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
+					</ul>
+					<%} %>
 				</section>
 				       
                   

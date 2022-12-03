@@ -30,12 +30,6 @@
                 alert("비밀번호를 입력하지 않았습니다.");
                 return false;
             }
-            //if(document.deleteform.pw.value){
-            //    if(){
-            //    	alert("비밀번호가 맞지 않습니다.");
-            //        history.go(-1);
-            //    }
-            //}
         }
     </script>
     
@@ -48,8 +42,21 @@
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+						<c:choose>
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" 
+								class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+								</c:if>
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+							</c:otherwise>
+						</c:choose>
 						</ul>
 					</nav>
 				</header>
@@ -59,10 +66,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
 					</ul>
 				</section>
 				
