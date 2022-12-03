@@ -21,6 +21,8 @@
         
      	// 지도를 생성합니다
         var map = new kakao.maps.Map(mapContainer, mapOption);
+     	
+     	
 
         // 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
         var mapTypeControl = new kakao.maps.MapTypeControl();
@@ -44,77 +46,62 @@
         {
             title: '순천시 보건소', 
             address: '전남 순천시 중앙로 232',
-            category: '전남'
         },
         {
             title: '광양시 보건소', 
             address: '전남 광양시 인덕로 1100',
-            category: '전남'
         },
         {
             title: '여수시 보건소', 
             address: '전라남도 여수시 시청서4길 47',
-            category: '전남'
         },
         {
             title: '목포시 보건소', 
             address: '전라남도 목포시 원산로45번길 5',
-            category: '전남'
         },
         {
             title: '나주시 보건소', 
             address: '전라남도 나주시 풍물시장2길 57-32',
-            category: '전남'
         },
         {
             title: '담양군 보건소', 
             address: '전라남도 담양군 담양읍 완동길 10-11',
-            category: '전남'
         },
         {
             title: '고흥군 보건소', 
             address: '전라남도 고흥군 고흥읍 등암3길 5',
-            category: '전남'
         },
         {
             title: '보성군 보건소', 
             address: '전라남도 보성군 보성읍 송재로 153',
-            category: '전남'
         },
         {
             title: '화순군 보건소',
             address: '전라남도 화순군 화순읍 쌍충로 62',
-            category: '전남'
         },
         {
             title: '장흥군 보건소', 
             address: '전라남도 장흥군 장흥읍 흥성로 49',
-            category: '전남'
         },
         {
             title: '강진군 보건소', 
             address: '전라남도 강진군 강진읍 목리길 11',
-            category: '전남'
         },
         {
             title: '해남군 보건소', 
             address: '전라남도 해남군 해남읍 해남로 46',
-            category: '전남'
         },
         {
             title: '영암군 보건소', 
             address: '전라남도 영암군 영암읍 오리정길 39',
-            category: '전남'
         },
         {
             title: '무안군 보건소', 
             address: '전라남도 무안군 무안읍 무안로 530',
-            category: '전남'
         },
         {
             title: '함평군 보건소', 
             address: '전라남도 함평군 함평읍 중앙길 54-8',
-            category: '전남'
         },
         {
             title: '영광군 보건소', address: '전라남도 영광군 영광읍 신남로4길 17'
@@ -1110,7 +1097,7 @@
             marker.setMap(map); //추가한 코드
     
             // LatLngBounds 객체에 좌표를 추가합니다
-            bounds.extend(coords); //추가한 코드, 현재 코드에서 좌표정보는 point[i]가 아닌 coords이다.
+            bounds.extend(coords); // 추가한 코드, 현재 코드에서 좌표정보는 point[i]가 아닌 coords이다.
     
             // 인포윈도우로 장소에 대한 설명을 표시합니다
             var infowindow = new kakao.maps.InfoWindow({

@@ -2,7 +2,6 @@ package com.smhrd.boardcontroller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
