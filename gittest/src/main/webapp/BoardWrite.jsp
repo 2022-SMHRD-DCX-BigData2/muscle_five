@@ -57,22 +57,22 @@
 	
 				<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<%if(loginMember != null){ %>
 					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="BoardList.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
 					</ul>
 					<%} else {%>
-					<h1>로그인이 필요합니다.</h1>
+					<h1 style="margin : 0 0 1em;"><font color="white">로그인이 필요합니다.</font></h1>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="BoardList.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="login.jsp" class="button" onclick="gologin()">routin</a></li>
+						<li><a href="login.jsp" class="button" onclick="gologin()">community</a></li>
+						<li><a href="login.jsp" class="button" onclick="gologin()">Map</a></li>
 					<ul>
 						<%} %>
 				</section>
@@ -125,8 +125,10 @@
 								 
 								        <tr align="center" valign="middle">
 								            <td colspan="5">
+								            <%if(loginMember != null){ %>
 								                <input type="reset" value="작성취소" >
 								                <input type="submit" value="등록" >
+								            <%} %>
 								                <a href="BoardList.jsp"><input type="button" value="목록" ></a>           
 								            </td>
 								        </tr>
@@ -167,7 +169,9 @@
 								 
 								        <tr align="center" valign="middle">
 								            <td colspan="5">
+								            <%if(loginMember != null){ %>
 ㅌ								                <input type="submit" value="수정" >
+											<%} %>
 								                <a href="BoardList.jsp"><input type="button" value="목록" ></a>           
 								            </td>
 								        </tr>

@@ -30,6 +30,13 @@
         }
 		
 	</style>
+	
+	<script type="text/javascript">
+		function gologin() {
+	        alert("회원 전용입니다. 로그인 해주세요.");
+	    }
+	
+	</script>
 </head>
 <body class="landing is-preload">
 	<div  id="page-wrapper">
@@ -49,10 +56,10 @@
 			<h2>MusleFive</h2>
 			<p>환영합니다.</p>
 			<ul class="actions special">
-				<li><a href="main.jsp" class="button ">main</a></li>
-				<li><a href="routin.jsp" class="button ">routin</a></li>
-				<li><a href="community.jsp" class="button ">community</a></li>
-				<li><a href="generic.jsp" class="button ">Map</a></li>
+				<li><a href="main.jsp" class="button">main</a></li>
+				<li><a href="login.jsp" class="button" onclick="gologin()">routin</a></li>
+				<li><a href="login.jsp" class="button" onclick="gologin()">community</a></li>
+				<li><a href="login.jsp" class="button" onclick="gologin()">Map</a></li>
 			</ul>
 		</section>
 

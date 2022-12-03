@@ -12,12 +12,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<%-- <%
-        String id = session.getAttribute("sessionID").toString();
-    
-        MemberDAO dao = MemberDAO.getInstance();
-        Member member = dao.getUserInfo(id);
-    %> --%>
  
     <title>회원정보 수정화면</title>
     
@@ -31,20 +25,6 @@
     
     <script type="text/javascript">
     
-        /* function init(){
-            setComboValue("${loginMember.mail2}");
-        }
- 
-        function setComboValue(val) {
-            var selectMail = document.getElementById('mail2'); // select 아이디를 가져온다.
-            for (i = 0, j = selectMail.length; i < j; i++) { // select 하단 option 수만큼 반복문 돌린다.
-                if (selectMail.options[i].value == val) { // 입력된 값과 option의 value가 같은지 비교
-                	selectMail.options[i].selected = true; // 같은경우라면 체크되도록 한다.
-                    break;
-                }
-            }
-        }
-         */
          
         // 비밀번호 입력여부 체크
         function checkValue() {
@@ -73,18 +53,6 @@
 								<li><a href="logoutCon" class="button">Log out</a></li>
 								<li><a href="#" class="button">개인정보수정</a></li>
 							<%} %>
-								<!-- <c:if test="${loginMember.id ne 'admin'}">
-									<li><a href="logoutCon" class="button">Log out</a></li>
-									<li><a href="#" class="button">개인정보수정</a></li>
-								</c:if>
-								
-								<c:if test="${loginMember.id eq 'admin'}">
-							
-									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
-									<li><a href="logoutCon" class="button">Log out</a></li>
-									<li><a href="#" class="button">개인정보수정</a></li>
-								loginMember.getId() != "admin"
-								</c:if> --> 
 								
 						</ul>
 					</nav>
@@ -95,10 +63,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
 					</ul>
 				</section>
 				

@@ -141,12 +141,29 @@
 	<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
+				<header id="header" class="alt">
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+							<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+								</c:if>
+								
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
 						</ul>
 					</nav>
 				</header>
