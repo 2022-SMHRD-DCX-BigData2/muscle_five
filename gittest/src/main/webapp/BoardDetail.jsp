@@ -229,12 +229,12 @@
 							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
 							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
 								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제" onclick="doAction(1)"></a>
-							                		<%} else{
-							                			%>
-							                	<% 
-							                			}
-							                		}
-							                	%>
+							                		<%} else{%>
+							                			
+							                <%		  }
+							                			
+							                  }  %>
+							                	
 							                	<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>     
 								                   		             
 								            </td>
@@ -284,9 +284,9 @@
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 							                    <%
 							                    if(i.getUserNum() == loginMember.getId_num()){%>
-							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;"  >수정</a>
+							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;" class="button alt small" >수정</a>
 							                    	<br>    
-							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>">삭제</a>
+							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>"  class="button alt small">삭제</a>
 							                    <%} %>    
 							                    </div>
 							                </td>
