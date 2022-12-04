@@ -142,22 +142,19 @@
 								<br><br>		
 								
 								<!-- 지도 맵 표시 부분 -->
-								
 								<!-- 지도를 표시할 div 입니다 -->
 								<div id="map" style="width:850px; height:450px;"></div>
 								
-								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>
-								
+								<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=6f52ffd0c746ee592129221513282961&libraries=services"></script>	
 								<script>
 									var mapContainer = document.getElementById('map'), // 지도를 표시할 div
 					            		mapOption = {
 					                		center: new kakao.maps.LatLng(34.946029, 127.515990), // 지도의 중심좌표
-					                		level: 5 // 지도의 확대 레벨
+					                		level: 5, // 지도의 확대 레벨
 					            		};
-					        
-					     			// 지도를 생성합니다
-					        		var map = new kakao.maps.Map(mapContainer, mapOption);
-					     			
+					   				
+					        		var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다			        	
+				
 					        		// 일반 지도와 스카이뷰로 지도 타입을 전환할 수 있는 지도타입 컨트롤을 생성합니다
 					            	var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -173,7 +170,12 @@
 					            	var geocoder = new kakao.maps.services.Geocoder();
 					            	
 					            	// 주소로 좌표를 검색합니다
-					            	geocoder.addressSearch('전라남도 순천시 중앙로 232', function(result, status) {
+					            	
+					            	var mCity = "";
+						    		var city = "";
+					            	
+					            	
+					            	geocoder.addressSearch('', function(result, status) {
 					            		
 					            		// 정상적으로 검색이 완료됐으면
 					            		if (status === kakao.maps.services.Status.OK) {
@@ -184,18 +186,21 @@
 					            			var marker = new kakao.maps.Marker({
 					            				map: map, // 마커를 표시할 지도
 					            				position: coords
-					            			});
+					            			});					       
 					            			
 					            			// 인포윈도우로 장소에 대한 설명을 표시합니다
 					            			var infowindow = new kakao.maps.InfoWindow({
 					            				content: '<div style="width:150px;text-align:center;padding:6px 0;">장소입력</div>'
-					            			});
-					            			infowindow.open(map, marker);
+					            	        });
+					            	        infowindow.open(map, marker);
 					            			
 					            			// 지도의 중심을 결과값으로 받은 위치를 이동시킵니다
-					            			map.setCenter(coords);
+					            			if(index == 0){
+					            				map.setCenter(coords);
+					            			}
 					            		}
 					            	});
+					            	
 	
 					            		// 마커에 마우스오버 이벤트를 등록합니다
 					              		kakao.maps.event.addListener(marker, 'mouseover', function() {
@@ -204,9 +209,9 @@
 					              	});
 
 					              		// 마커에 마우스아웃 이벤트를 등록합니다
-					              	kakao.maps.event.addListener(marker, 'mouseout', function() {
-					              	// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
-					              	infowindow.close();
+					              		kakao.maps.event.addListener(marker, 'mouseout', function() {
+					              		// 마커에 마우스아웃 이벤트가 발생하면 인포윈도우를 제거합니다
+					              		infowindow.close();
 					              	});
 					            			
 					            	
