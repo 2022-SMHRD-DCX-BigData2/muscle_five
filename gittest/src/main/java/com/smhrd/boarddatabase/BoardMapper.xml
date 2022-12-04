@@ -46,7 +46,7 @@
 	<insert id="commentInsert" parameterType="com.smhrd.boarddomain.Member_Board">
 		insert into user_comment(com_num, id_num, board_num, user_comment) values (comment_seq.nextval, #{id_num}, #{board_num}, #{user_comment})
 	</insert>
-	
+		
 	<select id="searchTitle" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
 		select * from member_board where board_title like '%'||#{searchContent}||'%' order by board_num desc

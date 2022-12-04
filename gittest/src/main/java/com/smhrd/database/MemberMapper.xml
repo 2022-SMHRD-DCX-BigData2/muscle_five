@@ -5,7 +5,7 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
-		insert into user_info values (idnum_seq.nextval, #{id}, #{pw}, #{gender}, #{birth}, #{email}, 0, #{grade})
+		insert into user_info values (idnum_seq.nextval, #{id}, #{pw}, #{gender}, #{birth}, #{email}, #{grade})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.domain.Member"
@@ -39,7 +39,18 @@
 	</select>
 
 	<insert id="insertCom" parameterType="com.smhrd.domain.compositionMember">
-		insert into body_composition values (#{id}, #{weight}, #{muscle}, #{fat})
+		insert into body_composition(id_num, weight, muscle, fat, weeks, pushup, pullup, type) values (#{id_num}, #{weight}, #{muscle}, #{fat}, #{weeks}, #{pushup}, #{pullup}, #{type})
 	</insert>
+	
+	<select id="selectOneComposition" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select id_num, weight, muscle, fat, weeks, pushup, pullup, insertdate, first_exercise, second_exercise, third_exercise, fourth_exercise from (select * from body_composition b, exercise e where b.type = e.type order by insertdate desc) where id_num = #{id_num} and rownum = 1
+	</select>
+	
+	<update id="updateType" parameterType="com.smhrd.domain.Member">
+		update user_info set type = #{type} where id_num = #{id_num}
+	</update>
+	
+	
 	
 </mapper>

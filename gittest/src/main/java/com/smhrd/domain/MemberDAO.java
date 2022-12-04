@@ -233,7 +233,57 @@ public class MemberDAO {
 			return	cnt;
 		}
 		
-
+		
+		public compositionMember selectOneComposition(int id_num) {
+			
+			compositionMember loginMember = null;
+			System.out.println("selectOneComposition 접속 성공!!");
+			
+			
+			try {
+				loginMember = sqlSession.selectOne("selectOneComposition", id_num);
+				
+				if (loginMember != null) {
+					System.out.println("DAO : 성분 가져오기 성공!!");
+					
+				} else {
+					System.out.println("DAO : 성분 가져오기 실패");
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return loginMember;
+		}
+		
+		public int updateType(Member type) {
+			
+			int cnt = 0;
+			
+			try {
+				cnt = sqlSession.update("updateType", type);
+				
+				if (cnt > 0) {
+					System.out.println("DAO : 회원타입 업데이트 성공!!");
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return cnt;
+			
+			}
+		
+		
 	
 	
 }

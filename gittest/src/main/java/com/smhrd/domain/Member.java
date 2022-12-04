@@ -11,11 +11,9 @@ public class Member {
 	private String birth;
 	private String email;
 	private String grade;
-	private String type;
 	
 
-	public Member(int id_num, String id, String pw, String gender, String birth, String email, String grade,
-			String type) {
+	public Member(int id_num, String id, String pw, String gender, String birth, String email, String grade) {
 		this.id_num = id_num;
 		this.id = id;
 		this.pw = pw;
@@ -23,7 +21,6 @@ public class Member {
 		this.birth = birth;
 		this.email = email;
 		this.grade = grade;
-		this.type = type;
 	}
 	
 	public Member(String id, String pw, String gender, String birth, String email, String grade) {
@@ -131,14 +128,6 @@ public class Member {
 	}
 
 
-	public String getType() {
-		return type;
-	}
-
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	
 	

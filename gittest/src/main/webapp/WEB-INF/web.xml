@@ -201,6 +201,13 @@
    	<servlet-name>LocationCityListCon</servlet-name>
    	<servlet-class>com.smhrd.locationcontroller.LocationCityListCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>typeUpdateCon</display-name>
+   	<servlet-name>typeUpdateCon</servlet-name>
+   	<servlet-class>com.smhrd.boardcontroller.typeUpdateCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -313,6 +320,10 @@
    	<servlet-mapping>
    		<servlet-name>LocationCityListCon</servlet-name>
    		<url-pattern>/LocationCityListCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>typeUpdateCon</servlet-name>
+   		<url-pattern>/typeUpdateCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
