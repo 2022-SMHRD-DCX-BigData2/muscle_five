@@ -44,13 +44,22 @@
 	
 	<select id="selectOneComposition" parameterType="int"
 	 resultType="com.smhrd.domain.compositionMember">
-		select id_num, weight, muscle, fat, weeks, pushup, pullup, insertdate, first_exercise, second_exercise, third_exercise, fourth_exercise from (select * from body_composition b, exercise e where b.type = e.type order by insertdate desc) where id_num = #{id_num} and rownum = 1
+		select * from (select * from body_composition natural join exercise order by insertdate desc) where id_num = #{id_num} and rownum = 1
 	</select>
 	
-	<update id="updateType" parameterType="com.smhrd.domain.Member">
-		update user_info set type = #{type} where id_num = #{id_num}
+	<select id="selectExercise" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select * from exercise where type = #{type}
+	</select>
+	
+	<update id="updateType" parameterType="com.smhrd.domain.compositionMember">
+		update body_composition set type=#{type} where id_num = #{id_num}
 	</update>
 	
+	<select id="selectfridayExercise" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select ffirst_exercise, fsecond_exercise, fthird_exercise, ffourth.exercise from exercise where type = #{type}
+	</select>
 	
 	
 </mapper>

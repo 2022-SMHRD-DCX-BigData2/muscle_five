@@ -259,17 +259,19 @@ public class MemberDAO {
 			return loginMember;
 		}
 		
-		public int updateType(Member type) {
+		public int updateType(compositionMember typeIdNum) {
 			
 			int cnt = 0;
 			
 			try {
-				cnt = sqlSession.update("updateType", type);
+				cnt = sqlSession.update("updateType", typeIdNum);
 				
 				if (cnt > 0) {
-					System.out.println("DAO : 회원타입 업데이트 성공!!");
+					System.out.println("DAO : 업데이트 성공!!");
 					sqlSession.commit();
+					
 				} else {
+					System.out.println("실패...");
 					sqlSession.rollback();
 				}
 				
@@ -280,8 +282,58 @@ public class MemberDAO {
 			}
 			
 			return cnt;
+		}
+		
+		public compositionMember selectExercise(int type) {
 			
+			compositionMember loginMember = null;
+			
+			
+			try {
+				loginMember = sqlSession.selectOne("selectExercise", type);
+				
+				if (loginMember != null) {
+					System.out.println("DAO : 운동가져오기 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
 			}
+			
+			return loginMember;
+		}
+		
+		public compositionMember selectfridayExercise(int type) {
+			
+			compositionMember loginMember = null;
+			
+			
+			try {
+				loginMember = sqlSession.selectOne("selectfridayExercise", type);
+				
+				if (loginMember != null) {
+					System.out.println("DAO : 운동가져오기 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return loginMember;
+		}
+		
 		
 		
 	

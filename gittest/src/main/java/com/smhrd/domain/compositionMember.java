@@ -10,10 +10,18 @@ public class compositionMember {
 	private int pushup;
 	private int pullup;
 	private int type;
-	private String first_exercise;
-	private String second_exercise;
-	private String third_exercise;
-	private String fourth_exercise;
+	private String mfirst_exercise;
+	private String msecond_exercise;
+	private String mthird_exercise;
+	private String mfourth_exercise;
+	private String wfirst_exercise;
+	private String wsecond_exercise;
+	private String wthird_exercise;
+	private String wfourth_exercise;
+	private String ffirst_exercise;
+	private String fsecond_exercise;
+	private String fthird_exercise;
+	private String ffourth_exercise;
 	
 	
 	public compositionMember(int id_num, int weight, int muscle, int fat, int weeks, int pushup, int pullup, int type) {
@@ -27,9 +35,17 @@ public class compositionMember {
 		this.type = type;
 	}
 
+	
+	
+	
+	public compositionMember(int type, int id_num) {
+		this.id_num = id_num;
+		this.type = type;
+	}
 
-	
-	
+
+
+
 	public compositionMember() {
 		super();
 	}
@@ -123,58 +139,175 @@ public class compositionMember {
 
 
 
-	public String getFirst_exercise() {
-		return first_exercise;
+	public String getMfirst_exercise() {
+		return mfirst_exercise;
 	}
 
 
 
 
-	public void setFirst_exercise(String first_exercise) {
-		this.first_exercise = first_exercise;
+	public void setMfirst_exercise(String mfirst_exercise) {
+		this.mfirst_exercise = mfirst_exercise;
 	}
 
 
 
 
-	public String getSecond_exercise() {
-		return second_exercise;
+	public String getMsecond_exercise() {
+		return msecond_exercise;
 	}
 
 
 
 
-	public void setSecond_exercise(String second_exercise) {
-		this.second_exercise = second_exercise;
+	public void setMsecond_exercise(String msecond_exercise) {
+		this.msecond_exercise = msecond_exercise;
 	}
 
 
 
 
-	public String getThird_exercise() {
-		return third_exercise;
+	public String getMthird_exercise() {
+		return mthird_exercise;
 	}
 
 
 
 
-	public void setThird_exercise(String third_exercise) {
-		this.third_exercise = third_exercise;
+	public void setMthird_exercise(String mthird_exercise) {
+		this.mthird_exercise = mthird_exercise;
 	}
 
 
 
 
-	public String getFourth_exercise() {
-		return fourth_exercise;
+	public String getMfourth_exercise() {
+		return mfourth_exercise;
 	}
 
 
 
 
-	public void setFourth_exercise(String fourth_exercise) {
-		this.fourth_exercise = fourth_exercise;
+	public void setMfourth_exercise(String mfourth_exercise) {
+		this.mfourth_exercise = mfourth_exercise;
 	}
+
+
+
+
+	public String getWfirst_exercise() {
+		return wfirst_exercise;
+	}
+
+
+
+
+	public void setWfirst_exercise(String wfirst_exercise) {
+		this.wfirst_exercise = wfirst_exercise;
+	}
+
+
+
+
+	public String getWsecond_exercise() {
+		return wsecond_exercise;
+	}
+
+
+
+
+	public void setWsecond_exercise(String wsecond_exercise) {
+		this.wsecond_exercise = wsecond_exercise;
+	}
+
+
+
+
+	public String getWthird_exercise() {
+		return wthird_exercise;
+	}
+
+
+
+
+	public void setWthird_exercise(String wthird_exercise) {
+		this.wthird_exercise = wthird_exercise;
+	}
+
+
+
+
+	public String getWfourth_exercise() {
+		return wfourth_exercise;
+	}
+
+
+
+
+	public void setWfourth_exercise(String wfourth_exercise) {
+		this.wfourth_exercise = wfourth_exercise;
+	}
+
+
+
+
+	public String getFfirst_exercise() {
+		return ffirst_exercise;
+	}
+
+
+
+
+	public void setFfirst_exercise(String ffirst_exercise) {
+		this.ffirst_exercise = ffirst_exercise;
+	}
+
+
+
+
+	public String getFsecond_exercise() {
+		return fsecond_exercise;
+	}
+
+
+
+
+	public void setFsecond_exercise(String fsecond_exercise) {
+		this.fsecond_exercise = fsecond_exercise;
+	}
+
+
+
+
+	public String getFthird_exercise() {
+		return fthird_exercise;
+	}
+
+
+
+
+	public void setFthird_exercise(String fthird_exercise) {
+		this.fthird_exercise = fthird_exercise;
+	}
+
+
+
+
+	public String getFfourth_exercise() {
+		return ffourth_exercise;
+	}
+
+
+
+
+	public void setFfourth_exercise(String ffourth_exercise) {
+		this.ffourth_exercise = ffourth_exercise;
+	}
+
+
+
+
+	
 	
 	
 	

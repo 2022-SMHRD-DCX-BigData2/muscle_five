@@ -208,6 +208,48 @@
    	<servlet-name>typeUpdateCon</servlet-name>
    	<servlet-class>com.smhrd.boardcontroller.typeUpdateCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>prevExercise</display-name>
+   	<servlet-name>prevExercise</servlet-name>
+   	<servlet-class>com.smhrd.contoller.prevExercise</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>nextExercise</display-name>
+   	<servlet-name>nextExercise</servlet-name>
+   	<servlet-class>com.smhrd.contoller.nextExercise</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>mondsyExercise</display-name>
+   	<servlet-name>mondsyExercise</servlet-name>
+   	<servlet-class>com.smhrd.contoller.mondsyExercise</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>wednesdayExercise</display-name>
+   	<servlet-name>wednesdayExercise</servlet-name>
+   	<servlet-class>com.smhrd.contoller.wednesdayExercise</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>fridayExercise</display-name>
+   	<servlet-name>fridayExercise</servlet-name>
+   	<servlet-class>com.smhrd.contoller.fridayExercise</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>selelctDay</display-name>
+   	<servlet-name>selelctDay</servlet-name>
+   	<servlet-class>com.smhrd.contoller.selelctDay</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -324,6 +366,30 @@
    	<servlet-mapping>
    		<servlet-name>typeUpdateCon</servlet-name>
    		<url-pattern>/typeUpdateCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>prevExercise</servlet-name>
+   		<url-pattern>/prevExercise</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>nextExercise</servlet-name>
+   		<url-pattern>/nextExercise</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>mondsyExercise</servlet-name>
+   		<url-pattern>/mondsyExercise</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>wednesdayExercise</servlet-name>
+   		<url-pattern>/wednesdayExercise</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>fridayExercise</servlet-name>
+   		<url-pattern>/fridayExercise</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>selelctDay</servlet-name>
+   		<url-pattern>/selelctDay</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
