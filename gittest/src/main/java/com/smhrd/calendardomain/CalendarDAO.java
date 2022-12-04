@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
+import com.smhrd.domain.Member;
 
 public class CalendarDAO {
 	
@@ -48,7 +49,7 @@ public class CalendarDAO {
 	
 	
 	// 전체 일정 검색 기능
-	public List<Calendar> selectAll(){
+	public List<Calendar> selectAll(Member selectMember){
 		
 		System.out.println("[CalendarDAO : selectAll()]");
 		
@@ -56,7 +57,7 @@ public class CalendarDAO {
 		
 		try {
 			
-			calendarList = sqlSession.selectList("selectAllCalendar");
+			calendarList = sqlSession.selectList("selectAllCalendar", selectMember);
 			
 			if(calendarList != null) {
 				System.out.println("CalendarDAO : 일정전체검색 성공");

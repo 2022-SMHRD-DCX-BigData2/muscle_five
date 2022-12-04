@@ -254,7 +254,15 @@
 				})
 			</script>
 			<!-- 캘린더 스크립트 -->
-			<script src="assets/js/calendar.js"></script>
-
+			<c:choose>
+				
+				<c:when test="${empty loginMember}">
+					<script src="assets/js/calendarbasic.js"></script>		
+				</c:when>
+				<c:otherwise>
+					<script src="assets/js/calendar.js"></script>
+				</c:otherwise>
+	
+			</c:choose>
 	</body>
 </html>
