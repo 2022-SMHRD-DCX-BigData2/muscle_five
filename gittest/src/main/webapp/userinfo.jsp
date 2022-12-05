@@ -65,7 +65,6 @@
                 top: 10px;
                 right: 10px;
                 
-                
         }
 		
     </style>
@@ -73,9 +72,11 @@
     <script type="text/javascript">
     
     	// $('#myModal').modal(options)
-    	$(function grademodify(){
+    	function grademodify(){
          	
-         	$(".button small").click(function(){
+         	$(".buttonsmall").click(function(){
+         		
+         		$("div#myModal").fadeIn();
          		
          		var id = $(this).closest(".datarow").find(".id").text();
          		$("#formid").val(id);
@@ -86,12 +87,12 @@
          	})
          	
          	// 등급수정 전달 버튼 이벤트
-         	$(".button small").click(function(){
+         	$(".buttonsmall").click(function(){
          		
          		$("#updategradeBtn").submit();	
          	
          	})
-     	});
+     	};
     	
     	
     	function work() {
@@ -159,7 +160,7 @@
 								<td><%=m.getEmail()%></td>
 								<td><%=m.getGrade() %></td>														
 								<td class="grade"><button type="button" class="button small" 
-									data-toggle="modal" data-target="#myModal">변경</td>
+									data-toggle="modal" data-target="#myModal" onclick="grademodify()">변경</td>
 								<td><a href="deleteCon?id=<%= m.getId() %>"><button class="button alt small" onclick="work()" >회원 삭제</button></a></td>
 							</tr>
 							<%} %>
@@ -234,13 +235,15 @@
 			
 			<script>
 			
-		    	$(function(){ 
+			
+		    	/* $(function(){ 
 		    		
-		    		  $("button small#mymodal").click(function(){
-		    		    $("div#mymodal").fadeIn();
-		    		  });
-		    
+		    		  $("button#analysis").click(function(){
+		    		    $("div#analysis").fadeIn();
+		    		  }); */
 		   </script>
+		   
+		   
 				<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
       			<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 			
