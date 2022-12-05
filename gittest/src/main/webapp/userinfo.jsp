@@ -212,7 +212,7 @@
 								<label class="radio-inline">
 									<input type="radio" name="optradio" value="2" class="formgrade">정회원</label>
 								<label class="radio-inline">
-									<input type="radio" name="optradio" value="3" class="formgrade">튻별회원</label>
+									<input type="radio" name="optradio" value="3" class="formgrade">특별회원</label>
 								<label class="radio-inline">
 									<input type="radio" name="optradio" value="4" class="formgrade">관리자</label>
 							</div>
