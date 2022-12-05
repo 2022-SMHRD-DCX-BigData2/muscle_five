@@ -35,30 +35,14 @@
 	        height: 100%;
 	
 	        display: none;
+	        padding: 40px;
+	        
 	
-	        background-color: rgba(0, 0, 0, 0.4);
-	      	}
-	      	
-	      	
-			
-			.modal {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			
-			width: 400px;
-			height: 600px;
-			
-			padding: 40px;
-			
-			text-align: center;
-			
-			background-color: rgb(255, 255, 255);
+	        background-color: rgb(255, 255, 255);
 		 	border-radius: 10px;
 			box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-			
-			transform: translateX(-50%) translateY(-50%);
-			}
+	        transform: translate(65%,-350%);
+	      	}
 			
 			.analysis {
 	        position: relative;
@@ -291,8 +275,6 @@
 								    	이미지여도 좋고 글이어도 좋습니다.
 									</div>
 								</div>
-								
-								
 								
 							</section>
 								

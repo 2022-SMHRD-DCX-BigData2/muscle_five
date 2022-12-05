@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
@@ -32,6 +33,7 @@ public class BoardWriteCon extends HttpServlet {
         // 파일업로드 
         MultipartRequest multi = new MultipartRequest(request, uploadPath, fileSize, encType, new DefaultFileRenamePolicy());
  
+        HttpSession session = request.getSession();
         // 파일이름 가져오기
 //        String fileName = "";
 //        Enumeration<String> names = multi.getFileNames();
@@ -60,13 +62,18 @@ public class BoardWriteCon extends HttpServlet {
         if (f != null) {
         	System.out.println("크기 : " + f.length()+"바이트");
         	System.out.println("<br/>");
+        	
+        	// 파라메터 <HttpServletRequest>, <파일올라갈 위치>, <파일명>
+        	//commonService.fileInsert(request, (String)result.get("TABLENAME"), (String)result.get("FLE_NAM"));
+        	String path = session.getServletContext().getRealPath("/");
+        	
+        	System.out.println("■path:::"+path);
         }else {
         	board_file = "";
         }
              
-        
         Member_Board borderData = new Member_Board(board_id, board_title, board_content, board_file, id_num);
-            
+           
         
         int result = dao.boardInsert(borderData);
             
@@ -75,6 +82,7 @@ public class BoardWriteCon extends HttpServlet {
         	RequestDispatcher rd = request.getRequestDispatcher("BoardList.jsp");
 			request.setAttribute("board_id", board_id);
 			rd.forward(request, response);
+			
             
         } else {
             
