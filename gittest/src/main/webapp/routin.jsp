@@ -57,29 +57,13 @@
 	        background-color: rgba(0, 0, 0, 0.4);
 	      	}
 	      	
-	      	.analysis.show {
-			display: block;
+			.analysis{
+			border : none;
+			background-color: transparent;
+			box-shadow: unset;
+			color: #777;
+			bord
 			}
-			
-			.analysis_body {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			
-			width: 400px;
-			height: 600px;
-			
-			padding: 40px;
-			
-			text-align: center;
-			
-			background-color: rgb(255, 255, 255);
-		 	border-radius: 10px;
-			box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-			
-			transform: translateX(-50%) translateY(-50%);
-			}
-			
 			#insta{
 			width : 50px;
 			height : 50px;
@@ -269,8 +253,14 @@
 								</pre>
 								<!-- 모달관련 -->
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button id="analysis">분석</button>
-								
+								<button class="analysis" id="analysis">분석</button>
+								<div class="modal">
+								  <div class="modal_content" 
+								       title="클릭하면 창이 닫힙니다."  >
+								    여기에 모달창 내용을 적어줍니다.<br>
+								    이미지여도 좋고 글이어도 좋습니다.
+								  </div>
+								</div>
 								
 							</section>
 								
@@ -324,10 +314,10 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button id="pushup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise()%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise()%>">>운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise()%>">>운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise()%>">>운동 더보기</button></pre></pre>
 										</div>
 								</div>
 								<div id="btn-good">
@@ -605,7 +595,7 @@
 		    		    $("div#analysis").fadeIn();
 		    		  });
 		    		  
-		    		  $("button#pushup").click(function(){
+		    		  $("button#운동3-1").click(function(){
 			    		    $("div#pushup").fadeIn();
 			    		  });
 		    		  
