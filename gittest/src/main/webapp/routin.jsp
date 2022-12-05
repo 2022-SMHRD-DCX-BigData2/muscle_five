@@ -270,6 +270,7 @@
 								<div id="insta_main" align="left">
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
+
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
 									<h3 id="font" style="margin : 0 0 0.5em;">추천 운동</h3>
 										<pre><br><br></pre>
@@ -387,18 +388,7 @@
 				
 			</script>
 			<!-- 캘린더 스크립트 -->
-<<<<<<< HEAD
-			<c:choose>
-				
-				<c:when test="${empty loginMember}">
-					<script src="assets/js/calendarbasic.js"></script>		
-				</c:when>
-				<c:otherwise>
-					<script src="assets/js/calendar.js"></script>
-				</c:otherwise>
-	
-			</c:choose>
-=======
+
 			<script src="assets/js/calendar.js"></script>
 			<script type="text/javascript">
 			function insertCom(userNum){
@@ -590,6 +580,5 @@
 		    </script>
 			
 
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 	</body>
 </html>

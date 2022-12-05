@@ -34,7 +34,7 @@
     </script>
     
 </head>
-<body>
+<body class="landing is-preload">
 	<div id="page-wrapper">
 
 			<!-- Header -->
@@ -63,7 +63,7 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button">main</a></li>

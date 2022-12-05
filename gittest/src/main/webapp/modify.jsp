@@ -41,7 +41,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.jsp">MusleFive</a></h1>
+					<h1> <a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
 						
@@ -60,7 +60,7 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button">main</a></li>
