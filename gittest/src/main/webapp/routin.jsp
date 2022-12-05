@@ -387,6 +387,18 @@
 				
 			</script>
 			<!-- 캘린더 스크립트 -->
+<<<<<<< HEAD
+			<c:choose>
+				
+				<c:when test="${empty loginMember}">
+					<script src="assets/js/calendarbasic.js"></script>		
+				</c:when>
+				<c:otherwise>
+					<script src="assets/js/calendar.js"></script>
+				</c:otherwise>
+	
+			</c:choose>
+=======
 			<script src="assets/js/calendar.js"></script>
 			<script type="text/javascript">
 			function insertCom(userNum){
@@ -578,5 +590,6 @@
 		    </script>
 			
 
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 	</body>
 </html>

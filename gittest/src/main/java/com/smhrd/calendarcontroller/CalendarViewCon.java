@@ -8,10 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
 import com.smhrd.calendardomain.Calendar;
 import com.smhrd.calendardomain.CalendarDAO;
+import com.smhrd.domain.Member;
 
 public class CalendarViewCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -21,8 +23,14 @@ public class CalendarViewCon extends HttpServlet {
 		System.err.println("[CalendarViewCon]");
 		
 		CalendarDAO dao = new CalendarDAO();
-				
-		List<Calendar> calendarList = dao.selectAll();
+		
+		HttpSession session = request.getSession();
+		Member loginMember = (Member) session.getAttribute("loginMember");
+		
+		System.out.println(loginMember.getId_num());
+		
+		
+		List<Calendar> calendarList = dao.selectAll(loginMember);
 		
 		// Gson 객체 생성
 		Gson gson = new Gson();
@@ -43,7 +51,10 @@ public class CalendarViewCon extends HttpServlet {
 		// 전송
 		out.print(json);
 
-
+			
+		
+		
+				
 	}
 
 }
