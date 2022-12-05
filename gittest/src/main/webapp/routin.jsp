@@ -662,6 +662,14 @@
 			설명
 		</div>
 	</div>
+	<div class="modal" id="AbWheel">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			AbWheel<br>
+			설명
+		</div>
+	</div>
+	
+	
 	
 	
 	<!-- Scripts -->
@@ -1063,6 +1071,9 @@
 		    			  $("div#AbWheel").fadeIn();
 		    			  
 		    		  });
+		    		  
+		    		  
+		    		  
 		    		  $(document).on("click","button#pistolsquat", function() {
 		    			  $("div#pistolsquat").fadeIn();
 		    			  
