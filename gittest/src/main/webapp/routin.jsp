@@ -188,7 +188,7 @@
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;">
 									<h3 id="font" style="margin : 0 0 0.5em;">추천운동부분입니다!!!!!</h3>
 										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;">팔굽혀펴기 max : <pre>운동 알아보기</pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;">턱걸이 max : </pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;">턱걸이 max : <pre>운동 알아보기</pre></pre>
 										<pre>이것저것 max : </pre>
 								</div>
 								<div id="btn-good">
