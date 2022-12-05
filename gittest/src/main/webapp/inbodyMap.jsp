@@ -290,7 +290,7 @@
 						//======== 여기서부터 장소 리스트 테이블 작성 부분 ======= 
 						
 						var addressTable = "<table border='1'>"
-						addressTable += "<table table-striped>"
+						addressTable += "<table table-striped>";
 						addressTable += "<tr>";
 						addressTable += "<th>측정장소</th>";
 						addressTable += "<th>주소</th>";
