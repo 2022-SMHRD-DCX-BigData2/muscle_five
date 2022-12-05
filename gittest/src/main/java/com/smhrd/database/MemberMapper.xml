@@ -61,5 +61,10 @@
 		select ffirst_exercise, fsecond_exercise, fthird_exercise, ffourth.exercise from exercise where type = #{type}
 	</select>
 	
+	<select id="bodyCompositionSelectAll" parameterType="_int" resultType="com.smhrd.domain.BodyComposition">
+		select id_num, weight, muscle, fat, insertdate from body_composition where id_num = #{id_num}
+	</select>
+	
+	
 	
 </mapper>
