@@ -84,12 +84,12 @@
 				<section id="main" class="container">
 					<section class="box special">
 						<header class="major">
-							<h2> What is Body Composition?</h2>
+							<h2 style="font-weight:400; font-size:45px;"> What is Body Composition?</h2>
 							<div class="content-wrap n-tech">
                 <div class="content">
                     <div class="n-tech-what">
                        <div class="inner wow fadeInDown delay-02s">
-                          <p align="left" > 체성분이란 인체를 구성하고 있는 성분을 말합니다. <br>인체의 구성성분을 분류하는 방법은 아래 이미지와 같이 여러 가지 방식이 있습니다.<br>인바디는 이 중 분자적개념(Molecular)을 이용하여<br> 체수분, 단백질, 무기질, 체지방의 네 가지 체성분을 정량적으로 제공합니다.<br>
+                          <p style="font-size:20px" align="left" > 체성분이란 인체를 구성하고 있는 성분을 말합니다. <br>인체의 구성성분을 분류하는 방법은 아래 이미지와 같이 여러 가지 방식이 있습니다.<br>인바디는 이 중 분자적개념(Molecular)을 이용하여<br> 체수분, 단백질, 무기질, 체지방의 네 가지 체성분을 정량적으로 제공합니다.<br>
 이러한 구성 성분의 비율은 성별과 나이, 개개인의 특성에 따라 차이를 보이며 건강과 밀접한 관련이 있습니다. <br>영양상태에 문제가 없는지, 몸이 부어 있지는 않은지, <br >신체가 균형있게 발달하고 있는지 등 체성분분석을 통해 몸의 상태를 정확하게 파악할 수 있습니다. </p>
                        </div>
                        	
@@ -102,24 +102,24 @@
 							<section >
 								<img src="images/체수분사진.png" class="inbodyimg" style="margin : 0 0 0.5em;" ></img>
 								<h3>체수분</h3>
-								<p align="left">체수분은 우리 몸에서 가장 많은 체성분으로 <br>우리 몸의 모든 세포와 체액에 분포돼 있습니다. 체수분은 영양소와 노폐물을 운반하고, 혈액의 주성분이 되어 인체 내 물질의 이동통로가 되고  <br>여러 화학반응의 매개가 되는 역할을 합니다.</p>
+								<p align="left" style="font-size:20px">체수분은 우리 몸에서 가장 많은 체성분으로 <br>우리 몸의 모든 세포와 체액에 분포돼 있습니다. 체수분은 영양소와 노폐물을 운반하고, 혈액의 주성분이 되어 인체 내 물질의 이동통로가 되고  <br>여러 화학반응의 매개가 되는 역할을 합니다.</p>
 							</section>
 							<section>
 								<img src="images/단백질사진.png" class="inbodyimg" style="margin : 0 0 0.5em;"></img>
 								<h3>골격근</h3>
-								<p align="left">단백질은 근육 뿐만 아니라 뼈, 피부, 머리카락 등 신체 조직의 주요 성분 성분입니다.<br> 단백질 결핍은 인체 기능이 원할히 수행되지 않아 건강이 위험할 수 있으며 소아의 경우 성장이  <br>저하될 수 있습니다.</p>
+								<p align="left" style="font-size:20px">단백질은 근육 뿐만 아니라 뼈, 피부, 머리카락 등 신체 조직의 주요 성분 성분입니다.<br> 단백질 결핍은 인체 기능이 원할히 수행되지 않아 건강이 위험할 수 있으며 소아의 경우 성장이  <br>저하될 수 있습니다.</p>
 							</section>
 						</div>
 						<div class="features-row">
 							<section>
 								<img src="images/미네랄사진.png" class="inbodyimg" style="margin : 0 0 0.5em;"></img>
 								<h3>무기질</h3>
-								<p align="left">무기질은 생명과 건강을 유지하는데 필수적인  <br>영양소 입니다. 무기질은 체내에서 여러 물질의 구성 요소가 되며 생리현상을 조절합니다.  <br>무기질의 부족은 성장부진, 골다공증 등의 위험이 나타날 수 있습니다. </p>
+								<p align="left" style="font-size:20px">무기질은 생명과 건강을 유지하는데 필수적인  <br>영양소 입니다. 무기질은 체내에서 여러 물질의 구성 요소가 되며 생리현상을 조절합니다.  <br>무기질의 부족은 성장부진, 골다공증 등의 위험이 나타날 수 있습니다. </p>
 							</section>
 							<section>
 								<img src="images/체지방.png" class="inbodyimg" style="margin : 0 0 0.5em;"></img>
 								<h3>체지방</h3>
-								<p align="left">체지방은 인체를 구성하고 있는 성분 중 하나로 에너지를 저장하는 창고입니다. 분포에 따라  <br>비만과 대사증후군의 원인이 됩니다.  <br>체지방의 지나친 부족은 면역력 저하, 호르몬  <br>불균형이 생길 수 있어 적당한 수준을 유지하는 것이 중요합니다.</p>
+								<p align="left" style="font-size:20px">체지방은 인체를 구성하고 있는 성분 중 하나로 에너지를 저장하는 창고입니다. 분포에 따라  <br>비만과 대사증후군의 원인이 됩니다.  <br>체지방의 지나친 부족은 면역력 저하, 호르몬  <br>불균형이 생길 수 있어 적당한 수준을 유지하는 것이 중요합니다.</p>
 							</section>
 						</div>
 					</section>
