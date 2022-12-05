@@ -173,7 +173,7 @@
 						                <tr>
 						                    <td id="title">아이디</td>
 						                    <td>
-						                        <input type="text" name="id" maxlength="50">
+						                        <input type="text" name="id" maxlength="50" placeholder="아이디를 입력 후 중복확인 하세요">
                        							<input type="button" value="중복확인" onclick="idCheck()">  
                        							<input type="hidden" name="reid" size="20" value="idUncheck">  
 						                    </td>
@@ -182,14 +182,14 @@
 						                <tr>
 						                    <td id="title">비밀번호</td>
 						                    <td>
-						                        <input type="password" name="pw" maxlength="20">
+						                        <input type="password" name="pw" maxlength="20" placeholder="비밀번호를 입력하세요">
 						                    </td>
 						                </tr>
 						                
 						                <tr>
 						                    <td id="title">비밀번호 확인</td>
 						                    <td>
-						                        <input type="password" name="pwcheck" maxlength="20">
+						                        <input type="password" name="pwcheck" maxlength="20" placeholder="비밀 번호를 한 번 더 입력하세요">
 						                    </td>
 						                </tr>
 						                    
@@ -229,7 +229,7 @@
 						                <tr>
 						                    <td id="title">이메일</td>
 						                    <td>
-						                        <input type="text" name="mail1" maxlength="30">@
+						                        <input type="text" name="mail1" maxlength="30"placeholder="이메일를 입력하세요">@
 						                        <select name="mail2">
 						                            <option value="naver.com">naver.com</option>
 						                            <option value="daum.net">daum.net</option>

@@ -102,8 +102,8 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2 style="color:white;">COMMUNITY</h2>
-						<p style="color:white;">헬창, 헬린이 소통의 공간</p>
+						<p style="color:white;"></p>
+						<h2 style="color:white;"><font size="6">인바디 측정 장소</font></h2>
 					</header>
 					<div class="row">
 						<div class="col-12">
@@ -288,8 +288,8 @@
 						
 						
 						//======== 여기서부터 장소 리스트 테이블 작성 부분 ======= 
+						
 						var addressTable = "<table border='1'>"
-						addressTable += "<table table-striped>"
 						addressTable += "<tr>";
 						addressTable += "<th>측정장소</th>";
 						addressTable += "<th>주소</th>";
@@ -324,8 +324,10 @@
 						});
 						addressTable += "</table>";
 						$("div#locationList").html(addressTable);
+						
 						//======== 여기서부터 장소 리스트 테이블 작성 끝 ======= 
-
+						
+						
 					});
 					
 				});
