@@ -325,7 +325,7 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;">추천 요일</h3>
+									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
