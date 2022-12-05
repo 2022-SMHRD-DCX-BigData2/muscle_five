@@ -28,11 +28,12 @@
 		<style>
 			/* 모달관련스타일 */
 			.modal {
-	        position: relative;
+	        position: absolute;
 	        left: 0;
-	
-	        width: 100%;
-	        height: 100%;
+			top: 210%;
+			left: 25%;
+	        width: 50%;
+	        height: 50%;
 	
 	        display: none;
 	        padding: 40px;
@@ -41,7 +42,7 @@
 	        background-color: rgb(255, 255, 255);
 		 	border-radius: 10px;
 			box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-	        transform: translate(65%,-350%);
+	        transform: 
 	      	}
 	      	
 	      	
@@ -253,7 +254,7 @@
 								</pre>
 								<!-- 모달관련 -->
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button>분석</button>
+								<button >분석</button>
 
 								<div class="modal">
 								  <div class="modal_content" 
