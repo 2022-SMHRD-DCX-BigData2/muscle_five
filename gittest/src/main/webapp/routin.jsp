@@ -78,7 +78,7 @@
 		    font-size : inherit;
 			}
 			.analysis button:hover{
-				background-color: skyblue!;
+				background-color: skyblue;
 				color : skyblue;
 			}
 			.analysis_add{
