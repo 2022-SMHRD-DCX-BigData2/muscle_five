@@ -75,7 +75,7 @@
     <script type="text/javascript">
     
     	// $('#myModal').modal(options)
-    	$(function grademodify(){}
+    	$(function grademodify(){
          	
          	$(".button small").click(function(){
          		
