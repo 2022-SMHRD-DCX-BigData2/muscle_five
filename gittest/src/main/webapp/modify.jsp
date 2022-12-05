@@ -94,7 +94,7 @@
 				                    <td id="title">비밀번호</td>
 				                    <td>
 				                        <input type="password" name="pw" maxlength="50" 
-				                            value="${loginMember.pw}">
+				                            value="${loginMember.pw}" placeholder="비밀번호를 입력하세요">
 				                    </td>
 				                </tr>
 				            </table>    
@@ -135,7 +135,7 @@
 				                <tr>
 				                    <td id="title">이메일</td>
 				                    <td>
-				                        <input type="text" name="mail1" maxlength="50">
+				                        <input type="text" name="mail1" maxlength="50" placeholder="이메일를 입력하세요">
 				                        @
 				                        <select name="mail2" id="mail2">
 				                            <option value="naver.com">naver.com</option>
