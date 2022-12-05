@@ -290,6 +290,7 @@
 						//======== 여기서부터 장소 리스트 테이블 작성 부분 ======= 
 						
 						var addressTable = "<table border='1'>"
+						addressTable += "<table table-striped>"
 						addressTable += "<tr>";
 						addressTable += "<th>측정장소</th>";
 						addressTable += "<th>주소</th>";
@@ -315,7 +316,6 @@
 								addressTable +=  "<td>" + address.loc_phone + "</td>";
 								// 장소 위치 부분
 								// 위치를 누르면 아래쪽 지도에 위치가 표시될 수 있도록 작성
-								
 								addressTable +=  "<td>";
 								addressTable +=  "<button onClick=\"mapDraw(\'" + locAddress + "\', \'" + address.loc_name + " \')\">위치</button>";
 								

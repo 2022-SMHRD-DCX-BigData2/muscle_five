@@ -397,7 +397,7 @@
 	<div class="modal" id="analysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			<p style="float:left">분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.</p><div class="close-area">X</div>
+			이미지여도 좋고 글이어도 좋습니다.</p>
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
@@ -414,7 +414,7 @@
 	</div>
 	<div class="modal" id="plank25s">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			plank25s<br>
+			plank<br>
 			설명
 		</div>
 	</div>
@@ -454,12 +454,225 @@
 			설명
 		</div>
 	</div>
-	<!--
-	plank 60s
-	squat -->
-	
+	<div class="modal" id="squat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			squat<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="widepushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			widepushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="jumppullup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			jump pullup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="crunch">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			crunch<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="widepushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			widepushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="stop squat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			stop squat<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="crunch">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			crunch<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="diamondpushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			diamond pushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="chinup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			chin up<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="legraise">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			leg raise<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="jumpsquat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			jump squat<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="halfburpee">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			half burpee<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="pikepushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			pike pushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="pullup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			pullup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="onelegPlank">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			oneleg Plank<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="lunge">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			lunge<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="boxhandpushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			box hand pushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="widepullup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			wide pullup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="onearm/onelegPlank">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			onearm/oneleg Plank<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="jumplunge">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			jump lunge<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="wallwalk">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			wall walk<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="chesttobar">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			chest to bar<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="toestobar">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			toes to bar<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="boxpistolsquat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			box pistol squat<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="burpee">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			burpee<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="wallhandstandpushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			wall hand stand pushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="KneelingAbWheel">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			Kneeling Ab Wheel<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="freestandpushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			free stand pushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="Ab Wheel">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			Ab Wheel<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="muscleup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			muscleup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="pistolsquat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			pistol squat<br>
+			설명
+		</div>
+	</div>
 	
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+	
+	
 	<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -674,44 +887,68 @@
 		    		    $("div#analysis").fadeIn();
 		    		  });
 		    		  
-		    		  $(document).on("click","#kneepushup", function() {
+		    		  $(document).on("click","button#kneepushup", function() {
 		    			  $("div#kneepushup").fadeIn();
 		    			  console.log("이상하다..")
 		    		  });
 		    		 
-		    		  $(document).on("click","#superman", function() {
+		    		  $(document).on("click","button#superman", function() {
 		    			  $("div#superman").fadeIn();
 		    			  
 		    		  });
 		    		 
-		    		  $(document).on("click","#plank25s", function() {
+		    		  $(document).on("click","button#plank25s", function() {
 		    			  $("div#plank25s").fadeIn();
 		    			  
 		    		  });
 		    		  
-		    		  $(document).on("click","#boxsquat", function() {
+		    		  $(document).on("click","button#boxsquat", function() {
 		    			  $("div#boxsquat").fadeIn();
 		    			  
 		    		  });
 		    		  
-		    		  $(document).on("click","#jogging1km", function() {
+		    		  $(document).on("click","button#jogging1km", function() {
 		    			  $("div#jogging1km").fadeIn();
 		    			  
 		    		  });
 		    		 
-		    		  $(document).on("click","#sprint25m", function() {
+		    		  $(document).on("click","button#sprint25m", function() {
 		    			  $("div#sprint25m").fadeIn();
 		    			  
 		    		  });
 		    		  
-		    		  $(document).on("click","#jumprope", function() {
+		    		  $(document).on("click","button#jumprope", function() {
 		    			  $("div#jumprope").fadeIn();
 		    			  
 		    		  });
 		    		  
-		    		  $(".close-area").click(function(){
+		    		  $(document).on("click","button#plank60s", function() {
+		    			  $("div#plank25s").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#pushup", function() {
+		    			  $("div#pushup").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#deadhang", function() {
+		    			  $("div#deadhang").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#squat", function() {
+		    			  $("div#squat").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  
+		    		  
+		    		  
+		    		  
+		    		  $(".modal_content").click(function(){
 		                    $(".modal").fadeOut();
-		               });
+		              });
 		    		  
 		    		  
 		    		  
