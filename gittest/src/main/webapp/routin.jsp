@@ -1,3 +1,6 @@
+<%@page import="org.apache.jasper.tagplugins.jstl.core.ForEach"%>
+<%@page import="com.smhrd.domain.BodyComposition"%>
+<%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.compositionMember"%>
 <%@page import="com.smhrd.domain.MemberDAO"%>
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
@@ -10,6 +13,11 @@
 
 	MemberDAO dao = new MemberDAO();
 	compositionMember lastComposition = dao.selectOneComposition(loginMember.getId_num());
+	
+	MemberDAO dao2 = new MemberDAO();
+	List<BodyComposition> bodyCompositionList = dao2.bodyCompositionselectAll(loginMember.getId_num());
+	
+	
 	
 %>
 <!DOCTYPE HTML>
@@ -24,6 +32,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" type="text/css" href="assets/css/c3.css">
+		
 
 		<style>
 			/* 모달관련스타일 */
@@ -242,6 +252,11 @@
 							</section>
 						</div>
 						<%}else{ %>
+						
+						<!-- 차트 표사 div  -->
+						<div id="chart"></div>
+						
+						
 						<div class="row" id="divmuscle" >
 						<div class="col-6 ">
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
@@ -651,6 +666,57 @@
 		    		});
 
 		    </script>
+		    
+		    <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
+		    <script src="assets/js/c3.js"></script>
+		    
+		    <script type="text/javascript">
+		      var chart = c3.generate({
+		        bindto: '#chart',
+		        data: {
+		          x : 'date',
+		          xFormat : '%Y-%m-%d',
+		          columns: [
+		        
+		            ['date' <% 
+		             			for (BodyComposition bodyComposition : bodyCompositionList) {
+		             				out.print(",'" + bodyComposition.getInsertdate().substring(0, 10)+"'");
+		             			}
+		            		%> 
+		            ],
+		            ['체성분' <% 
+             			for (BodyComposition bodyComposition : bodyCompositionList) {
+             				out.print(",'" + bodyComposition.getWeight()+"'");
+             			}
+             				%>
+		            ],
+		            ['골격근량'<% 
+             			for (BodyComposition bodyComposition : bodyCompositionList) {
+             				out.print(",'" + bodyComposition.getMuscle()+"'");
+             			}
+             				%>
+		            ],
+		            ['체지방량'<% 
+             			for (BodyComposition bodyComposition : bodyCompositionList) {
+             				out.print(",'" + bodyComposition.getFat()+"'");
+             			}
+             				%>
+		        	]
+		          ]
+		        },
+		        axis : {
+		          x : {
+		            type : 'timeseries',
+		            tick : {
+		              format : "%Y/%m/%d" // https://github.com/mbostock/d3/wiki/Time-Formatting#wiki-format
+		            }
+		          }
+		        }
+		      });
+		      
+		      </script>
+		      
+		    
 			
 
 	</body>
