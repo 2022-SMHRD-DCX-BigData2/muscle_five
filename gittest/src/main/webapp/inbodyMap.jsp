@@ -291,12 +291,14 @@
 						
 						var addressTable = "<table border='1'>"
 						addressTable += "<table table-striped>";
+						addressTable += "<thead>";
 						addressTable += "<tr>";
 						addressTable += "<th style='background-color: #eeeeee; text-align: center;'>측정장소</th>";
 						addressTable += "<th style='background-color: #eeeeee; text-align: center;'>주소</th>";
 						addressTable += "<th style='background-color: #eeeeee; text-align: center;'>전화번호</th>";
 						addressTable += "<th style='background-color: #eeeeee; text-align: center;'>위치</th>";
 						addressTable += "</tr>";
+						addressTable += "</thead>";
 						addressList.forEach(function(address) {
 								addressTable += "<tr>";
 								
