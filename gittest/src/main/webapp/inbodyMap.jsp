@@ -102,8 +102,7 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2 style="color:white;">COMMUNITY</h2>
-						<p style="color:white;">헬창, 헬린이 소통의 공간</p>
+						<h2 style="color:white;">인바디 측정 장소</h2>
 					</header>
 					<div class="row">
 						<div class="col-12">
