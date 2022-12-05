@@ -404,7 +404,7 @@
 			kneepushup<br>
 			설명
 		</div>
-	</div>
+	</div></p><button style="float:right">x</button>
 	<div class="modal" id="superman">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			superman<br>
