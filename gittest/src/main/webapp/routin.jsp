@@ -28,11 +28,12 @@
 		<style>
 			/* 모달관련스타일 */
 			.modal {
-	        position: relative;
+	        position: absolute;
 	        left: 0;
-	
-	        width: 100%;
-	        height: 100%;
+			top: 210%;
+			left: 25%;
+	        width: 50%;
+	        height: 50%;
 	
 	        display: none;
 	        padding: 40px;
@@ -41,7 +42,7 @@
 	        background-color: rgb(255, 255, 255);
 		 	border-radius: 10px;
 			box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-	        transform: translate(65%,-350%);
+	        transform: 
 	      	}
 			
 			.analysis {
@@ -269,12 +270,7 @@
 								<!-- 모달관련 -->
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
 								<button id="analysis">분석</button>
-								<div class="modal" id="analysis">
-									<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-										분석내용입니다.<br>
-								    	이미지여도 좋고 글이어도 좋습니다.
-									</div>
-								</div>
+								
 								
 							</section>
 								
@@ -329,13 +325,6 @@
 									<%} %>
 										<div id="recommendRoutin">
 										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button id="pushup">운동 더보기</button></pre></pre>
-										<div class="modal" id="pushup">
-									  		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-									    	여기에 모달창 내용을 적어줍니다.<br>
-									    	이미지여도 좋고 글이어도 좋습니다.
-									  		</div>
-										</div>
-								
 										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
 										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
 										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
@@ -392,6 +381,18 @@
 				
 
 		</div>
+								<div class="modal" id="analysis">
+									<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+										분석내용입니다.<br>
+								    	이미지여도 좋고 글이어도 좋습니다.
+									</div>
+								</div>
+								<div class="modal" id="pushup">
+									<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+									여기에 모달창 내용을 적어줍니다.<br>
+									이미지여도 좋고 글이어도 좋습니다.
+									</div>
+								</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -597,12 +598,6 @@
 			
 			<!-- 모달관련 -->
 			<script>
-		    	/* const modal = document.querySelector('.modal');
-		    	const btnOpenPopup = document.querySelector('.btn-open-popup');
-		
-		    	btnOpenPopup.addEventListener('click', () => {
-		      		modal.style.display = 'block';
-		     	}); */
 		    	
 		    	$(function(){ 
 
