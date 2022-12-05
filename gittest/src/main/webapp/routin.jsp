@@ -280,12 +280,13 @@
 								<pre>체중(kg)<input style="text-align:center;" type="text" name="weight" id="weight" value="<%=lastComposition.getWeight()%>"></pre>
 								<pre>골격근량(kg)<input style="text-align:center;" type="text" name="muscle" id="muscle" value="<%=lastComposition.getMuscle()%>"></pre>
 								<pre>체지방량(kg)<input style="text-align:center;" type="text" name="fat" id="fat" value="<%=lastComposition.getFat()%>"></pre>
-								<pre>원하는 주 운동 횟수
+								<input type="hidden" nane="weeks" value="3" id="weeks">
+								<%-- <pre>원하는 주 운동 횟수
 								<select name="weeks" id="weeks" value="<%=lastComposition.getWeeks()%>">
 						        	<option value="3"> 3 </option>
 						        	<option value="4"> 4 </option>
 						        </select>
-								</pre>
+								</pre> --%>
 								<pre>팔굽혀펴기(max)<input type="text" name="pushup" id="pushup" style="text-align:center;" value="<%=lastComposition.getPushup()%>">턱걸이(max)<input type="text" name="pullup" id="pullup" style="text-align:center;" value="<%=lastComposition.getPullup()%>">
 								</pre>
 								<!-- 모달관련 -->
@@ -339,7 +340,7 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;">추천 요일</h3>
+									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
@@ -577,9 +578,9 @@
 			설명
 		</div>
 	</div>
-	<div class="modal" id="onearm/onelegPlank">
+	<div class="modal" id="onearmonelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			onearm/oneleg Plank<br>
+			onearm oneleg Plank<br>
 			설명
 		</div>
 	</div>
@@ -655,37 +656,12 @@
 			설명
 		</div>
 	</div>
-	
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		
+	<div class="modal" id="deadhang">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			deadhang<br>
+			설명
+		</div>
+	</div>
 	
 	
 	<!-- Scripts -->
@@ -718,7 +694,7 @@
 				var weight = document.getElementById("weight").value
 				var muscle = document.getElementById("muscle").value
 				var fat = document.getElementById("fat").value
-				var weeks = $("#weeks option:selected").val()
+				var weeks = document.getElementById("weeks").value
 				var pushup = document.getElementById("pushup").value
 				var pullup = document.getElementById("pullup").value
 	            $.ajax({
@@ -957,13 +933,151 @@
 		    			  
 		    		  });
 		    		  
+		    		  $(document).on("click","button#widepushup", function() {
+		    			  $("div#widepushup").fadeIn();
+		    			  
+		    		  });
 		    		  
+		    		  $(document).on("click","button#jumppullup", function() {
+		    			  $("div#jumppullup").fadeIn();
+		    			  
+		    		  });
 		    		  
+		    		  $(document).on("click","button#crunch", function() {
+		    			  $("div#crunch").fadeIn();
+		    			  
+		    		  });
 		    		  
+		    		  $(document).on("click","button#stopsquat", function() {
+		    			  $("div#stopsquat").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#diamondpushup", function() {
+		    			  $("div#diamondpushup").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#chinup", function() {
+		    			  $("div#chinup").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#legraise", function() {
+		    			  $("div#legraise").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#jumpsquat", function() {
+		    			  $("div#jumpsquat").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#jogging2km", function() {
+		    			  $("div#jogging1km").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#sprint50m", function() {
+		    			  $("div#sprint25m").fadeIn();
+		    			  
+		    		  });
+		    		  
+		    		  $(document).on("click","button#halfburpee", function() {
+		    			  $("div#halfburpee").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#pikepushup", function() {
+		    			  $("div# pikepushup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#pullup", function() {
+		    			  $("div#pullup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#onelegPlank", function() {
+		    			  $("div#onelegPlank").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#lunge", function() {
+		    			  $("div#lunge").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#boxhandpushup", function() {
+		    			  $("div#boxhandpushup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#widepullup", function() {
+		    			  $("div#widepullup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#onearmonelegPlank", function() {
+		    			  $("div#onearmonelegPlank").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#jumplunge", function() {
+		    			  $("div#jumplunge").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#wallwalk", function() {
+		    			  $("div#wallwalk").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#chesttobar", function() {
+		    			  $("div#chesttobar").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#toestobar", function() {
+		    			  $("div#toestobar").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#boxpistolsquat", function() {
+		    			  $("div#boxpistolsquat").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#jogging3km", function() {
+		    			  $("div#jogging1km").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#uphillsprint", function() {
+		    			  $("div#uphillsprint").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#burpee", function() {
+		    			  $("div#burpee").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#KneelingAbWheel", function() {
+		    			  $("div#KneelingAbWheel").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#freestandpushup", function() {
+		    			  $("div#freestandpushup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#muscleup", function() {
+		    			  $("div#muscleup").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#AbWheel", function() {
+		    			  $("div#AbWheel").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#pistolsquat", function() {
+		    			  $("div#pistolsquat").fadeIn();
+		    			  
+		    		  });
+		    		  $(document).on("click","button#wallhandstandpushup", function() {
+		    			  $("div#wallhandstandpushup").fadeIn();
+		    			  
+		    		  });
 		    		  
 		    		  $(".modal_content").click(function(){
-		                    $(".modal").fadeOut();
+		                    $("div.modal").fadeOut();
+
 		              });
+
+		    		  
 		    		  
 		    		  
 		    		  
