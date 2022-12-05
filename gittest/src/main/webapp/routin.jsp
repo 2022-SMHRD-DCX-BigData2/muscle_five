@@ -65,6 +65,14 @@
 			
 			transform: translateX(-50%) translateY(-50%);
 			}
+			
+			.analysis{
+			border : none;
+			background-color: transparent;
+			box-shadow: unset;
+			color: #777;
+			bord
+			}
 			#insta{
 			width : 50px;
 			height : 50px;
@@ -254,7 +262,8 @@
 								</pre>
 								<!-- 모달관련 -->
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button >분석</button>
+								<button class="analysis">분석</button>
+								
 
 								<div class="modal">
 								  <div class="modal_content" 
@@ -316,10 +325,10 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button class="analysis_add">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="analysis_add">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="analysis_add">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="analysis_add">운동 더보기</button></pre></pre>
 										</div>
 								</div>
 								<div id="btn-good">
