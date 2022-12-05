@@ -102,7 +102,7 @@
 			<!-- Main -->
 				<section id="main" class="container">
 					<header>
-						<h2 style="color:white;">인바디 측정 장소</h2>
+						<h2 style="color:white;"><font size="6">인바디 측정 장소</font></h2>
 					</header>
 					<div class="row">
 						<div class="col-12">
