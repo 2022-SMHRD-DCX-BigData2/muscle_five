@@ -429,13 +429,13 @@
 	</div>
 	<div class="modal" id="pushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jumprope<br>
+			pushup<br>
 			설명
 		</div>
 	</div>
 	<div class="modal" id="pushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jumprope<br>
+			pushup<br>
 			설명
 		</div>
 	</div>
