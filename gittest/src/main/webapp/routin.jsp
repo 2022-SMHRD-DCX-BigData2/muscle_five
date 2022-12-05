@@ -250,11 +250,15 @@
 								</pre>
 								<!-- 모달관련 -->
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
+								<button>분석</button>
+
 								<div class="modal">
-      								<div class="modal_body">Modal</div>
-						    	</div>
-						    		<button class="btn-open-popup">분석내용</button>
-								
+								  <div class="modal_content" 
+								       title="클릭하면 창이 닫힙니다.">
+								    여기에 모달창 내용을 적어줍니다.<br>
+								    이미지여도 좋고 글이어도 좋습니다.
+								  </div>
+								</div>
 								
 							</section>
 								
@@ -308,10 +312,10 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre>운동 알아보기</pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre>운동 알아보기</pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre>운동 알아보기</pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre>운동 알아보기</pre></pre>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="btn-open-popup">운동 더보기</button></pre></pre>
 										</div>
 								</div>
 								<div id="btn-good">
@@ -570,12 +574,24 @@
 			
 			<!-- 모달관련 -->
 			<script>
-		    	const modal = document.querySelector('.modal');
+		    	/* const modal = document.querySelector('.modal');
 		    	const btnOpenPopup = document.querySelector('.btn-open-popup');
 		
 		    	btnOpenPopup.addEventListener('click', () => {
 		      		modal.style.display = 'block';
-		     	});
+		     	}); */
+		    	
+		    	$(function(){ 
+
+		    		  $("button").click(function(){
+		    		    $(".modal").fadeIn();
+		    		  });
+		    		  
+		    		  $(".modal_content").click(function(){
+		    		    $(".modal").fadeOut();
+		    		  });
+		    		  
+		    		});
 
 		    </script>
 			
