@@ -282,7 +282,7 @@
 							                    <div id="btn" style="text-align:center;" class="<%="btn" + i.getCom_num()%>">
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 							                    <%
-							                    if(i.getUserNum() == loginMember.getId_num()){%>
+							                    if(i.getId().equals(loginMember.getId())){%>
 							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;" class="button alt small" >수정</a>
 							                    	<br>    
 							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>"  class="button alt small">삭제</a>
