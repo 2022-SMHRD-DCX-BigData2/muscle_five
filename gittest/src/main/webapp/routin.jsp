@@ -35,11 +35,11 @@
 			border-radius: 10px;
 			border-color : #e5e5e5;
 			crusor:pointer;
+			padding : 0 3.5em 0 3.5em;
 			}
-			.routin_btn button:hover{
+			.routin_btn button:hover {
 			color : white;
 			background-color: skyblue;
-
 			}
 			/* 모달관련스타일 */
 			.modal {
@@ -78,7 +78,7 @@
 		    font-size : inherit;
 			}
 			.analysis button:hover{
-				background-color: skyblue;
+				background-color: skyblue!;
 				color : skyblue;
 			}
 			.analysis_add{
@@ -405,7 +405,7 @@
 			kneepushup<br>
 			설명
 		</div>
-	</div></p><button style="float:right">x</button>
+	</div>
 	<div class="modal" id="superman">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			superman<br>
