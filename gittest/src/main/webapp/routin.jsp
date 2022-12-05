@@ -254,7 +254,7 @@
       								<div class="modal_body">Modal</div>
 						    	</div>
 						    		<button class="btn-open-popup">분석내용</button>
-								
+										
 								
 							</section>
 								
