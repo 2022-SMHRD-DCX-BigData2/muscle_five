@@ -397,7 +397,7 @@
 	<div class="modal" id="analysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			<p style="float:left">분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.</p><button style="float:right">x</button>
+			이미지여도 좋고 글이어도 좋습니다.</p><div class="close-area">X</div>
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
@@ -448,13 +448,13 @@
 			설명
 		</div>
 	</div>
-	<div class="modal" id="pushup">
+	<div class="modal" id="dead hang">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			pushup<br>
+			dead hang<br>
 			설명
 		</div>
 	</div>
-	<!-- dead hang
+	<!--
 	plank 60s
 	squat -->
 	
@@ -666,7 +666,8 @@
 			
 			<!-- 모달관련 -->
 			<script>
-		    	
+			
+			
 		    	$(function(){ 
 		    		
 		    		  $("button#analysis").click(function(){
@@ -708,11 +709,11 @@
 		    			  
 		    		  });
 		    		  
-		    		  
-		    		  $(".modal_content").click(function(){
+		    		  $(".close-area").click(function(){
 		                    $(".modal").fadeOut();
-		                    
 		               });
+		    		  
+		    		  
 		    		  
 		    		 
 		    		  
