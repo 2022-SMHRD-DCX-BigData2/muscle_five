@@ -33,15 +33,14 @@ public class usergradeCon extends HttpServlet {
 		System.out.println(grade);
 		
 		// 받아온 데이터를 Member 객체에 담아주기
+
         Member joinMember = new Member(id,"admin",grade);
-        
 		
 		// DAO에 일할 메소드 만들기.
 		MemberDAO dao = new MemberDAO();
+
 		int cnt = dao.updateGrade(joinMember);
-		
 		// Member userMember = dao.selectMember(joinMember);
-		
 		
 		// DAO의 명령 후 처리
 		// 성공했으면(cnt>0) -> 성공페이지로 이동!
@@ -53,8 +52,8 @@ public class usergradeCon extends HttpServlet {
 			// session.setAttribute("selectMember", loginMember); 
 			// RequestDispatcher rd = request.getRequestDispatcher("userinfo.jsp"); 
 			// rd.forward(request, response);
-			
 			// 실패했으면 -> 이동X
+
 		} else {
 			System.out.println("usergradeCon : 회원등급 변경 실패..");
 			// 회원가입 실패하면 main.jsp로 이동.
