@@ -266,7 +266,6 @@
 							                <!-- 아이디, 작성날짜 -->
 							                <td width="150" >
 							                    <div>
-							                    	
 							                        <%=i.getId()%><br>
 							                        <font size="2" color="lightgray"></font>
 							                    </div>

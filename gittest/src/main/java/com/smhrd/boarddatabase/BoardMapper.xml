@@ -16,7 +16,7 @@
 	
 	<select id="selectBoard" parameterType="com.smhrd.boarddomain.Member_Board"
 	 resultType="com.smhrd.boarddomain.Member_Board">
-		select * from member_board, user_comment, member where member_board.board_num = user_comment.board_num(+) and user_comment.id_num = member.id_num(+) and member_board.board_num = #{board_num} order by com_num desc
+		select * from member_board, user_comment, user_info where member_board.board_num = user_comment.board_num(+) and user_comment.id_num = user_info.id_num(+) and member_board.board_num = #{board_num} order by com_num desc
 	</select>
 	
 	<select id="selectOneBoardByNum" parameterType="com.smhrd.boarddomain.Member_Board"
