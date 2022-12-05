@@ -128,6 +128,7 @@
 	            }
 	        }
 	    
+	        var i3 = document.getElementById("i3").style.visibility="visible";
 	        
     </script>
     
@@ -217,7 +218,7 @@
 							                    첨부파일
 							                </td>
 							                <td>
-							                    <img style="width:200; height:200;" src="/tomcatImg/<%=i.getBoard_file()%>">
+							                    <img id="i3" style="width:200; height:200;" src="/tomcatImg/<%=i.getBoard_file()%>" onError="this.style.visibility='hidden'">
 							         
 
 							                </td>    
@@ -409,7 +410,7 @@
 	                  
 	               },
 	               error : function(){
-	                  alert("Ajax 통신 실패했는데요")
+	                  alert("Ajax 통신 실패했어요..ㅠㅠ")
 	               }
 	            });
 	            
