@@ -137,6 +137,36 @@ public class MemberDAO {
 			
 			
 		}
+		
+		public List<BodyComposition> bodyCompositionselectAll(int id_num){
+			
+			System.out.println("bodyCompositionselectAll" + id_num);
+			List<BodyComposition> bodyCompositionmemberList = null;
+			
+			try {
+				bodyCompositionmemberList = sqlSession.selectList("bodyCompositionSelectAll", id_num);
+				
+				if (bodyCompositionmemberList != null) {
+					System.out.println("DAO : 회원전체검색 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+	
+			
+			
+			return bodyCompositionmemberList;
+			
+			
+		}
 	
 		public int deleteUser(String id) {
 			
