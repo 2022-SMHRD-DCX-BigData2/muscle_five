@@ -80,7 +80,7 @@
 		    text-align: center;
 		    text-decoration: none;
 		    white-space: nowrap;
-		    font-size : 21px;
+		    font-size : inherit;
 			}
 			.analysis button:hover{
 				backrtound-color: skyblue;
