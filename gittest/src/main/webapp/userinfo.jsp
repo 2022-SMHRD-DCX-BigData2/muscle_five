@@ -64,9 +64,14 @@
                 position: absolute;
                 top: 10px;
                 right: 10px;
-                
+             
                 
         }
+        
+        .selectwidth{
+			width : 200px;
+			
+		}
 		
     </style>
     
@@ -158,14 +163,30 @@
 								<td><%=m.getGender() %></td>
 								<td><%=m.getEmail()%></td>
 								<td><%=m.getGrade() %></td>														
-								<td class="grade"><button type="button" class="button small" 
-									data-toggle="modal" data-target="#myModal">변경</td>
+								<!-- <td class="grade"><button type="button" class="button small" 
+									data-toggle="modal" data-target="#myModal">변경</td> -->
+								<td>
+									<form action="usergradeCon" method="post">
+										<select name = "grade" onchange="this.form.submit()" class="form-select-sm" aria-label=".form-select-sm example">
+	  										<option selected>변경</option>
+	  										<option value="준회원">준회원</option>
+	  										<option value="정회원">정회원</option>
+	  										<option value="특별회원">특별회원</option>
+	  										<option value="관리자">관리자</option>
+										</select>
+										<input type="hidden" name="id" value="<%=m.getId()%>">
+									</form>
+								
+								</td>
+					
 								<td><a href="deleteCon?id=<%= m.getId() %>"><button class="button alt small" onclick="work()" >회원 삭제</button></a></td>
 							</tr>
 							<%} %>
 						</table>
 					</nav>		
 					<p align="center"><a href="main.jsp" class="button next scrolly">되돌아가기</a></p>
+					
+					
 			</div>
 				
 			<!-- Footer -->

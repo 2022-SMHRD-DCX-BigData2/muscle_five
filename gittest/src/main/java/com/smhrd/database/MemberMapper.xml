@@ -18,7 +18,7 @@
 	</update>
 	
 	<update id="updateGrade" parameterType="com.smhrd.domain.Member">
-		update member set grade=#{grade} where id=#{id}
+		update user_info set grade=#{grade} where id=#{id}
 	</update>
 	
 	<select id="selectAll" resultType="com.smhrd.domain.Member">
