@@ -15,9 +15,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <title>현재 회원정보 출력화면</title>
-	<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/main.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 
 	
@@ -130,10 +131,10 @@
 					<h2>MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="BoardList.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
 					</ul>
 				</section>
 				
@@ -157,7 +158,7 @@
 							<tr class="datarow" align="center">
 								<td class="id"><%=m.getId() %></td>
 								<td><%=m.getGender() %></td>
-								<td><%=m.getMail1() + '@' +  m.getMail2()%></td>
+								<td><%=m.getEmail()%></td>
 								<td><%=m.getGrade() %></td>														
 								<td class="grade"><button type="button" class="button small" 
 									data-toggle="modal" data-target="#myModal">변경</td>
@@ -173,7 +174,7 @@
 				<footer id="footer">
 					<ul class="icons">
 						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-	f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>

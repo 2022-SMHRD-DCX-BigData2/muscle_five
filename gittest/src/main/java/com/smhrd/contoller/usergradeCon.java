@@ -33,11 +33,11 @@ public class usergradeCon extends HttpServlet {
 		System.out.println(grade);
 		
 		// 받아온 데이터를 Member 객체에 담아주기
-        Member loginMember = new Member(id, grade);
+        Member joinMember = new Member(id, grade);
 		
 		// DAO에 일할 메소드 만들기.
 		MemberDAO dao = new MemberDAO();
-		int cnt = dao.updateGrade(loginMember);
+		int cnt = dao.updateGrade(joinMember);
 		//Member userMember = dao.selectMember(joinMember);
 		
 		
@@ -47,7 +47,7 @@ public class usergradeCon extends HttpServlet {
 			System.out.println("usergradeCon : 회원등급 변경 성공!");
 			// 세션에 저장되어있는 정보가 수정되기 이전의 로그인 정보이기 때믄에
 			// 같은 이름으로 덮어쓰기 해야한다.
-			request.setAttribute("selectMember", loginMember);
+			request.setAttribute("selectMember", joinMember);
 			//session.setAttribute("selectMember", loginMember); 
 			RequestDispatcher rd = request.getRequestDispatcher("userinfo.jsp"); 
 			rd.forward(request, response);

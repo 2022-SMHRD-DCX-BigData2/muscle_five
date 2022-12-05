@@ -4,86 +4,44 @@ public class Member {
 
 	// 필드명 = 속성(property)
 	
+	private int id_num;
 	private String id;
 	private String pw;
 	private String gender;
-	private String birth_yy;
-	private String birth_mm;
-	private String birth_dd;
-	private String mail;
-	private String mail1;
-	private String mail2;
+	private String birth;
+	private String email;
 	private String grade;
-	private int id_num;
-	//private String mag;
-	
 	
 
-
-//	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2, String grade) {
-			
-//		this.pw = pw;
-//		this.gender = gender;
-//		this.birth_yy = birth_yy;
-//		this.birth_mm = birth_mm;
-//		this.birth_dd = birth_dd;
-//		this.mail1 = mail1;
-//		this.mail2 = mail2;
-//		this.grade = grade;
-//	}
-
-	/*
-	 * public Member(String pw, String gender, String birth_yy, String birth_mm,
-	 * String birth_dd, String mail1, String mail2, String grade) {
-	 * 
-	 * this.pw = pw; this.gender = gender; this.birth_yy = birth_yy; this.birth_mm =
-	 * birth_mm; this.birth_dd = birth_dd; this.mail1 = mail1; this.mail2 = mail2;
-	 * this.grade = grade; }
-	 */
-
-
-	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1,
-			String mail2) {
-		
+	public Member(int id_num, String id, String pw, String gender, String birth, String email, String grade) {
+		this.id_num = id_num;
 		this.id = id;
 		this.pw = pw;
 		this.gender = gender;
-		this.birth_yy = birth_yy;
-		this.birth_mm = birth_mm;
-		this.birth_dd = birth_dd;
-		this.mail1 = mail1;
-		this.mail2 = mail2;
-	}
-
-	public Member(String id, String pw, String gender, String birth_yy, String birth_mm, String birth_dd,
-			String mail1, String mail2, String grade) {
-		
-		this.id = id;
-		this.pw = pw;
-		this.gender = gender;
-		this.birth_yy = birth_yy;
-		this.birth_mm = birth_mm;
-		this.birth_dd = birth_dd;
-		this.mail1 = mail1;
-		this.mail2 = mail2;
+		this.birth = birth;
+		this.email = email;
 		this.grade = grade;
 	}
-
+	
+	public Member(String id, String pw, String gender, String birth, String email, String grade) {
+		this.id = id;
+		this.pw = pw;
+		this.gender = gender;
+		this.birth = birth;
+		this.email = email;
+		this.grade = grade;
+	}
+	
+	public Member(String id, String pw, String gender, String birth, String email) {
+		this.id = id;
+		this.pw = pw;
+		this.gender = gender;
+		this.birth = birth;
+		this.email = email;
+	}
 
 	public Member() {
 		super();
-	}
-
-
-	public Member(String pw, String gender, String birth_yy, String birth_mm, String birth_dd, String mail1, String mail2) {
-			
-		this.pw = pw;
-		this.gender = gender;
-		this.birth_yy = birth_yy;
-		this.birth_mm = birth_mm;
-		this.birth_dd = birth_dd;
-		this.mail1 = mail1;
-		this.mail2 = mail2;
 	}
 
 
@@ -100,11 +58,16 @@ public class Member {
 	}
 
 
-	public Member(String id) {
-		this.id = id;
+	public int getId_num() {
+		return id_num;
 	}
-	
-	
+
+
+	public void setId_num(int id_num) {
+		this.id_num = id_num;
+	}
+
+
 	public String getId() {
 		return id;
 	}
@@ -135,92 +98,38 @@ public class Member {
 	}
 
 
-	public String getBirth_yy() {
-		return birth_yy;
+	public String getBirth() {
+		return birth;
 	}
 
 
-	public void setBirth_yy(String birth_yy) {
-		this.birth_yy = birth_yy;
+	public void setBirth(String birth) {
+		this.birth = birth;
 	}
 
 
-	public String getBirth_mm() {
-		return birth_mm;
+	public String getEmail() {
+		return email;
 	}
 
 
-	public void setBirth_mm(String birth_mm) {
-		this.birth_mm = birth_mm;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
-	public String getBirth_dd() {
-		return birth_dd;
-	}
-
-
-	public void setBirth_dd(String birth_dd) {
-		this.birth_dd = birth_dd;
-	}
-
-
-	public String getMail() {
-		return mail;
-	}
-
-
-	public void setMail(String mail) {
-		this.mail = mail;
-	}
-
-	public String getMail1() {
-		return mail1;
-	}
-
-
-	public void setMail1(String mail1) {
-		this.mail1 = mail1;
-	}
-
-
-	public String getMail2() {
-		return mail2;
-	}
-
-
-	public void setMail2(String mail2) {
-		this.mail2 = mail2;
-	}
-	
 	public String getGrade() {
 		return grade;
 	}
-	
-	
+
+
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
-	public int getId_num() {
-		return id_num;
-	}
-
-	public void setId_num(int id_num) {
-		this.id_num = id_num;
-	}
-	
 
 
 	
-	
-	
-	// 객체에 담김 정보를 출력해 볼 수 있는 메소드
-	// toString
-	//@Override
-	//public String toString() {
-	//	return "member [email=" + email + ", pw=" + pw + ", tel=" + tel + ", address=" + address + "]";
-	//}
 	
 
 }

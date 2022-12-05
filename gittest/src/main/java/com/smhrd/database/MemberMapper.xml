@@ -5,16 +5,16 @@
   
 <mapper namespace="com.smhrd.database.MemberMapper">
 	<insert id="insertMember" parameterType="com.smhrd.domain.Member">
-		insert into member values (#{id}, #{pw}, #{gender}, #{birth_yy}, #{birth_mm}, #{birth_dd}, #{mail1}, #{mail2}, NUM_SEQ.nextval, #{grade})
+		insert into user_info values (idnum_seq.nextval, #{id}, #{pw}, #{gender}, #{birth}, #{email}, #{grade})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.domain.Member"
 	 resultType="com.smhrd.domain.Member">
-		select * from member where id=#{id} and pw=#{pw}
+		select * from user_info where id=#{id} and pw=#{pw}
 	</select>
 	
 	<update id="updateMember" parameterType="com.smhrd.domain.Member">
-		update member set pw=#{pw}, gender=#{gender}, birth_yy=#{birth_yy}, birth_mm=#{birth_mm}, birth_dd=#{birth_dd}, mail1=#{mail1}, mail2=#{mail2} where id=#{id}
+		update user_info set pw=#{pw}, gender=#{gender}, birth=#{birth}, email=#{email} where id=#{id}
 	</update>
 	
 	<update id="updateGrade" parameterType="com.smhrd.domain.Member">
@@ -22,44 +22,44 @@
 	</update>
 	
 	<select id="selectAll" resultType="com.smhrd.domain.Member">
-		select * from member
+		select * from user_info
 	</select>
 	
-	<select id="selectOne" parameterType="com.smhrd.domain.Member"
-	 resultType="com.smhrd.domain.Member">
-		select * from member where id=#{id} and pw=#{pw}
-	</select>
-	
-	<delete id="deleteUser" parameterType="com.smhrd.domain.Member">
-		delete from member where id=#{id}
+	<delete id="deleteUser" parameterType="String">
+		delete from user_info where id=#{id}
 	</delete>
 	
-	<delete id="deleteMember" parameterType="String">
-		delete from member where id=#{id} and pw=#{pw}
+	<delete id="deleteUserMember" parameterType="String">
+		delete from user_info where id=#{id} and pw=#{pw}
 	</delete>
 	
 	
-	<select id="confirmid" parameterType="String" resultType="int">
-		select count(*) from member where id=#{id}
+	<select id="confirmId" parameterType="String" resultType="int">
+		select count(*) from user_info where id=#{id}
 	</select>
-
-	<select id="loginconfirm" parameterType="String" resultType="int">
-		select pw from member where id=#{id}
-	</select>
-	
-
 
 	<insert id="insertCom" parameterType="com.smhrd.domain.compositionMember">
-		insert into body_composition values (#{id}, #{weight}, #{muscle}, #{fat})
+		insert into body_composition(id_num, weight, muscle, fat, weeks, pushup, pullup, type) values (#{id_num}, #{weight}, #{muscle}, #{fat}, #{weeks}, #{pushup}, #{pullup}, #{type})
 	</insert>
 	
-
+	<select id="selectOneComposition" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select * from (select * from body_composition natural join exercise order by insertdate desc) where id_num = #{id_num} and rownum = 1
+	</select>
 	
+	<select id="selectExercise" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select * from exercise where type = #{type}
+	</select>
 	
-	<!-- <select id="loginCheck" parameterType="com.smhrd.domain.Member"
-
-	 resultType="com.smhrd.domain.Member">
-		select * from member where id=#{id}
-	</select> -->
+	<update id="updateType" parameterType="com.smhrd.domain.compositionMember">
+		update body_composition set type=#{type} where id_num = #{id_num}
+	</update>
+	
+	<select id="selectfridayExercise" parameterType="int"
+	 resultType="com.smhrd.domain.compositionMember">
+		select ffirst_exercise, fsecond_exercise, fthird_exercise, ffourth.exercise from exercise where type = #{type}
+	</select>
+	
 	
 </mapper>

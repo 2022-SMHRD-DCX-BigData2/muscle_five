@@ -2,7 +2,6 @@ package com.smhrd.boardcontroller;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Enumeration;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -48,12 +47,13 @@ public class BoardWriteCon extends HttpServlet {
         String board_id = multi.getParameter("board_id");
         String board_title = multi.getParameter("board_title");
         String board_content = multi.getParameter("board_content");    
-	        
+        int id_num = Integer.parseInt(multi.getParameter("id_num").toString());
         String board_file = multi.getFilesystemName("board_file");
         String original = multi.getOriginalFileName("board_file");
         String type = multi.getContentType("board_file");
         File f = multi.getFile("board_file");
         
+		System.out.println("number : " + id_num);
         System.out.println("저장된 파일 이름 : " + board_file + "<br/>");
         System.out.println("실제 파일 이름 : " + original + "<br/>");
         System.out.println("파일 타입 : " + type + "<br/>");
@@ -65,7 +65,7 @@ public class BoardWriteCon extends HttpServlet {
         }
              
         
-        Member_Board borderData = new Member_Board(board_id, board_title, board_content, board_file);
+        Member_Board borderData = new Member_Board(board_id, board_title, board_content, board_file, id_num);
             
         
         int result = dao.boardInsert(borderData);

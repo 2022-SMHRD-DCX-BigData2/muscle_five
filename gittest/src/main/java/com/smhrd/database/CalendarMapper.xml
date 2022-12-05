@@ -6,7 +6,6 @@
 <mapper namespace="com.smhrd.database.CalendarMapper">
  	<insert id="insertCalendar" parameterType="com.smhrd.calendardomain.Calendar">
  		insert into calendar values (
- 		 <!-- cal_seq.nextval, -->
  		 #{id},
  		 #{title},
  		 #{allDay},
@@ -17,12 +16,12 @@
  		 #{backgroundColor},
  		 #{borderColor},
  		 #{textColor},
- 		 'user1234'
+ 		 #{id_num}
  		 )
  	</insert>
 	
-	<select id="selectAllCalendar" resultType="com.smhrd.calendardomain.Calendar">
-		select * from calendar where member_id = 'user1234'
+	<select id="selectAllCalendar" parameterType="com.smhrd.domain.Member" resultType="com.smhrd.calendardomain.Calendar">
+		select calendar_id, calendar_title, calendar_allDay, calendar_start, calendar_end, calendar_backgroundColor, calendar_borderColor, calendar_textColor  from calendar where id_num=#{id_num}
 	</select>
 	
 	<delete id="deleteCalendar" parameterType="String">

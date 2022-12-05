@@ -21,6 +21,8 @@ public class commentWriteCon extends HttpServlet {
 		int id_num = Integer.parseInt(request.getParameter("userNum").toString());
 		int board_num = Integer.parseInt(request.getParameter("boardNum").toString());
 		String user_comment = request.getParameter("comment");
+		
+
 		System.out.println("id_num : " + id_num);
 		System.out.println("board_num : " + board_num);
 		System.out.println("user_comment : " + user_comment);

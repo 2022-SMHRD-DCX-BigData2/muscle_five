@@ -20,16 +20,13 @@ public class loginCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8"); 
         
-        // 로그인 화면에 입력된 아이디, 비밀번호 가져오기
         String id = request.getParameter("id");
         String pw = request.getParameter("pw");
-        System.out.println("id : "+id);
-        System.out.println("pw : "+pw);
+        System.out.println("id : "+ id);
+        System.out.println("pw : "+ pw);
         
-    	// Member 객체에 담아주기
         Member joinMember = new Member(id,pw);
         
-        // DB에서 아이디, 비밀번호 확인
         MemberDAO dao =  new MemberDAO();
         Member loginMember = dao.selectMember(joinMember);
         
@@ -39,8 +36,6 @@ public class loginCon extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("loginMember", loginMember);
             
-            // sendRedirect(String URL) : 해당 URL로 이동
-            // URL뒤에 get방식 처럼 데이터를 전달가능
             response.sendRedirect("main.jsp");
            
         } else {

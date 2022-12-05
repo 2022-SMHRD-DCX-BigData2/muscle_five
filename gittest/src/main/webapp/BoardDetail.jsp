@@ -141,12 +141,29 @@
 	<div id="page-wrapper">
 
 			<!-- Header -->
-				<header id="header">
+				<header id="header" class="alt">
 					<h1><a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul>
-							<li><a href="login.jsp" class="button">Login</a></li>
-							<li><a href="join.jsp" class="button">Sign Up</a></li>
+							<c:choose>
+				
+							<c:when test="${empty loginMember}">
+								<li><a href="login.jsp" class="button">Log in</a></li>
+								<li><a href="join.jsp" class="button">Sign up</a></li>
+							</c:when>
+							
+							<c:otherwise>
+							
+								<c:if test="${loginMember.id eq 'admin'}">
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
+								</c:if>
+								
+								<li><a href="logoutCon" class="button">Log out</a></li>
+								<li><a href="modify.jsp" class="button">개인정보수정</a></li>
+								
+							</c:otherwise>
+							
+						</c:choose>
 						</ul>
 					</nav>
 				</header>
@@ -212,12 +229,12 @@
 							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
 							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
 								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제" onclick="doAction(1)"></a>
-							                		<%} else{
-							                			%>
-							                	<% 
-							                			}
-							                		}
-							                	%>
+							                		<%} else{%>
+							                			
+							                <%		  }
+							                			
+							                  }  %>
+							                	
 							                	<a href="BoardList.jsp"><input type="button" value="목록" onclick="changeView(0)"></a>     
 								                   		             
 								            </td>
@@ -267,9 +284,9 @@
 							                    <!-- 댓글 작성자만 수정, 삭제 가능하도록 -->
 							                    <%
 							                    if(i.getUserNum() == loginMember.getId_num()){%>
-							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;"  >수정</a>
+							                    	<a onclick="modifyComment(<%=generalNum %>)" id="comment_modify" style="cursor:pointer;" class="button alt small" >수정</a>
 							                    	<br>    
-							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>">삭제</a>
+							                        <a href="commentDeleteCon?comment=<%=i.getUserComment()%>&com_num=<%=i.getCom_num()%>"  class="button alt small">삭제</a>
 							                    <%} %>    
 							                    </div>
 							                </td>

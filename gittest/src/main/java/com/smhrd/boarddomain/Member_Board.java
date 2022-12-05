@@ -94,12 +94,13 @@ public class Member_Board {
 		super();
 	}
 
-	public Member_Board(String board_id, String board_title, String board_content, String board_file) {
+	public Member_Board(String board_id, String board_title, String board_content, String board_file, int id_num) {
 		
 		this.board_id = board_id;
 		this.board_title = board_title;
 		this.board_content = board_content;
 		this.board_file = board_file;
+		this.id_num = id_num;
 	}
 
 	public Member_Board(int board_num, String board_id, String board_title, String board_content, String board_file) {

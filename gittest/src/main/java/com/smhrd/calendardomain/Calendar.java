@@ -12,58 +12,8 @@ public class Calendar {
 	private String backgroundColor; // 이벤트 배경색
 	private String borderColor; // 이벤트 박스 라인색
 	private String textColor; // 이벤트 글자색
-	private String member_id;
-	//private int groupId;
-	//private String url;
-	//private String[] classNames;
-	//private Boolean editable;
-	//private Boolean startEditable;
-	//private Boolean resourceEditable;
-	//private String display;
-	//private Boolean overlap;
-	//private String constraint;
-	//private String extendedProps;
-	//private String source;
+	private int id_num;
 	
-	public Calendar(String id, String title, String allDay, String start, String end, String startStr, String endStr,
-			String backgroundColor, String borderColor, String textColor, String member_id) {
-		super();
-		this.id = id;
-		this.title = title;
-		this.allDay = allDay;
-		this.start = start;
-		this.end = end;
-		this.startStr = startStr;
-		this.endStr = endStr;
-		this.backgroundColor = backgroundColor;
-		this.borderColor = borderColor;
-		this.textColor = textColor;
-		this.member_id = member_id;
-	}
-	
-	public Calendar(String title, String allDay, String start, String end, String startStr, String endStr,
-			String backgroundColor, String borderColor, String textColor, String member_id) {
-		super();
-		this.title = title;
-		this.allDay = allDay;
-		this.start = start;
-		this.end = end;
-		this.startStr = startStr;
-		this.endStr = endStr;
-		this.backgroundColor = backgroundColor;
-		this.borderColor = borderColor;
-		this.textColor = textColor;
-		this.member_id = member_id;
-	}
-	
-	public Calendar(String id, String start, String end, String startStr, String endStr) {
-		super();
-		this.id = id;
-		this.start = start;
-		this.end = end;
-		this.startStr = startStr;
-		this.endStr = endStr;
-	}
 	
 	public String getId() {
 		return id;
@@ -125,12 +75,63 @@ public class Calendar {
 	public void setTextColor(String textColor) {
 		this.textColor = textColor;
 	}
-	public String getMember_id() {
-		return member_id;
+	public int getId_num() {
+		return id_num;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setId_num(int id_num) {
+		this.id_num = id_num;
+	}
+	public Calendar(String id, String title, String allDay, String start, String end, String startStr, String endStr,
+			String backgroundColor, String borderColor, String textColor, int id_num) {
+		this.id = id;
+		this.title = title;
+		this.allDay = allDay;
+		this.start = start;
+		this.end = end;
+		this.startStr = startStr;
+		this.endStr = endStr;
+		this.backgroundColor = backgroundColor;
+		this.borderColor = borderColor;
+		this.textColor = textColor;
+		this.id_num = id_num;
+	}
+	
+	
+	
+	public Calendar(String title, String allDay, String start, String end, String startStr, String endStr,
+			String backgroundColor, String borderColor, String textColor, int id_num) {
+		super();
+		this.title = title;
+		this.allDay = allDay;
+		this.start = start;
+		this.end = end;
+		this.startStr = startStr;
+		this.endStr = endStr;
+		this.backgroundColor = backgroundColor;
+		this.borderColor = borderColor;
+		this.textColor = textColor;
+		this.id_num = id_num;
+	}
+	public Calendar(String id, String start, String end, String startStr, String endStr) {
+		this.id = id;
+		this.start = start;
+		this.end = end;
+		this.startStr = startStr;
+		this.endStr = endStr;
+	}
+	public Calendar(String id, String title, String allDay, String start, String end, String backgroundColor,
+			String borderColor, String textColor) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.allDay = allDay;
+		this.start = start;
+		this.end = end;
+		this.backgroundColor = backgroundColor;
+		this.borderColor = borderColor;
+		this.textColor = textColor;
 	}
 
+	
 	
 }

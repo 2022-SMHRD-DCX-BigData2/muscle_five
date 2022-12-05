@@ -23,30 +23,41 @@ public class searchCon extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		// 선택사항(제목 / 내용 / 작성자)
 		String wantContent = request.getParameter("opt");
 		System.out.println("선택 : " + wantContent);
+		
+		// 사용자가 입력한 내용
 		String searchContent = request.getParameter("condition");
 		System.out.println("내용 : " + searchContent);
+		
 		Member_Board memberBoardSearch = new Member_Board(searchContent);
 		BoardDAO dao = new BoardDAO();
-		List<Member_Board> wantList = new ArrayList<Member_Board>();
 		
+		// 가변길이리스트 생성
+		List<Member_Board> wantList = new ArrayList<Member_Board>();
+		HttpSession session = request.getSession();
+		
+		// 선택사항(제목)
 		if(wantContent.equals("title")) {
 			wantList = dao.searchTitle(memberBoardSearch);
-			HttpSession session = request.getSession();
 			session.setAttribute("titleList", wantList);
 			response.sendRedirect("boardSearchTitle.jsp");
+		
+		// 선택사항(내용)
 		}else if(wantContent.equals("content")) {
 			wantList = dao.searchContent(memberBoardSearch);
-			HttpSession session = request.getSession();
 			session.setAttribute("titleList", wantList);
 			response.sendRedirect("boardSearchContent.jsp");
+		
+		// 선택사항(작성자)
 		}else {
 			wantList = dao.searchWriter(memberBoardSearch);
-			HttpSession session = request.getSession();
 			session.setAttribute("titleList", wantList);
 			response.sendRedirect("boardSearchWriter.jsp");
+
 		}
+		
 		
 	}
 	

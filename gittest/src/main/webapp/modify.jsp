@@ -12,12 +12,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
-	<%-- <%
-        String id = session.getAttribute("sessionID").toString();
-    
-        MemberDAO dao = MemberDAO.getInstance();
-        Member member = dao.getUserInfo(id);
-    %> --%>
  
     <title>회원정보 수정화면</title>
     
@@ -31,20 +25,6 @@
     
     <script type="text/javascript">
     
-        /* function init(){
-            setComboValue("${loginMember.mail2}");
-        }
- 
-        function setComboValue(val) {
-            var selectMail = document.getElementById('mail2'); // select 아이디를 가져온다.
-            for (i = 0, j = selectMail.length; i < j; i++) { // select 하단 option 수만큼 반복문 돌린다.
-                if (selectMail.options[i].value == val) { // 입력된 값과 option의 value가 같은지 비교
-                	selectMail.options[i].selected = true; // 같은경우라면 체크되도록 한다.
-                    break;
-                }
-            }
-        }
-         */
          
         // 비밀번호 입력여부 체크
         function checkValue() {
@@ -61,7 +41,7 @@
 
 			<!-- Header -->
 				<header id="header" class="alt">
-					<h1><a href="main.jsp">MusleFive</a></h1>
+					<h1> <a href="main.jsp">MusleFive</a></h1>
 					<nav id="nav">
 						<ul class="links">
 						
@@ -73,18 +53,6 @@
 								<li><a href="logoutCon" class="button">Log out</a></li>
 								<li><a href="#" class="button">개인정보수정</a></li>
 							<%} %>
-								<!-- <c:if test="${loginMember.id ne 'admin'}">
-									<li><a href="logoutCon" class="button">Log out</a></li>
-									<li><a href="#" class="button">개인정보수정</a></li>
-								</c:if>
-								
-								<c:if test="${loginMember.id eq 'admin'}">
-							
-									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
-									<li><a href="logoutCon" class="button">Log out</a></li>
-									<li><a href="#" class="button">개인정보수정</a></li>
-								loginMember.getId() != "admin"
-								</c:if> --> 
 								
 						</ul>
 					</nav>
@@ -92,13 +60,13 @@
 
 			<!-- Banner -->
 				<section id="banner">
-					<h2>MusleFive</h2>
+					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<p>환영합니다.</p>
 					<ul class="actions special">
-						<li><a href="main.jsp" class="button ">main</a></li>
-						<li><a href="routin.jsp" class="button ">routin</a></li>
-						<li><a href="community.jsp" class="button ">community</a></li>
-						<li><a href="generic.jsp" class="button ">Map</a></li>
+						<li><a href="main.jsp" class="button">main</a></li>
+						<li><a href="routin.jsp" class="button">routin</a></li>
+						<li><a href="BoardList.jsp" class="button">community</a></li>
+						<li><a href="inbodyMap.jsp" class="button">Map</a></li>
 					</ul>
 				</section>
 				
@@ -145,9 +113,9 @@
 				                <tr>
 				                    <td id="title">생일</td>
 				                    <td>
-				                        <input type="text" name="birth_yy" maxlength="4" value="${loginMember.birth_yy}" placeholder="년(4자)" size="6" >
+				                        <input type="text" name="birth_yy" maxlength="4" placeholder="년(4자)" size="6" >
 				                        <select name="birth_mm">
-						                    <option value="${loginMember.birth_mm}">월</option>
+						                    <option>월</option>
 						                    <option value="01" >1</option>
 						                    <option value="02" >2</option>
 						                   	<option value="03" >3</option>
@@ -161,14 +129,13 @@
 						                    <option value="11" >11</option>
 						                    <option value="12" >12</option>
 						                </select>
-				                        <input type="text" name="birth_dd" maxlength="2" value="${loginMember.birth_dd}" placeholder="일" size="4" >
+				                        <input type="text" name="birth_dd" maxlength="2" placeholder="일" size="4" >
 				                    </td>
 				                </tr>
 				                <tr>
 				                    <td id="title">이메일</td>
 				                    <td>
-				                        <input type="text" name="mail1" maxlength="50" 
-				                            value="${loginMember.mail1}">
+				                        <input type="text" name="mail1" maxlength="50">
 				                        @
 				                        <select name="mail2" id="mail2">
 				                            <option value="naver.com">naver.com</option>

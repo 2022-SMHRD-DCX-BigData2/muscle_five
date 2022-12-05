@@ -1,4 +1,4 @@
- 
+		 
  		document.addEventListener('DOMContentLoaded', function() {
 	    	var calendarEl = document.getElementById('calendar');
 	    	// new FullCalendar.Calendar(대상 DOM객체, {속성:속성값, 속성2:속성값2..})
@@ -60,6 +60,7 @@
 	             			'backgroundColor': eventView.backgroundColor,
 	             			'textColor': eventView.textColor,
 	             			'borderColor': eventView.borderColor
+	             			  
 						}); // push 끝       
 						
 						// 데이터 저장 함수
