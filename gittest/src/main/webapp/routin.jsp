@@ -45,17 +45,7 @@
 	        transform: 
 	      	}
 			
-			.analysis {
-	        position: relative;
-	        left: 0;
-	
-	        width: 100%;
-	        height: 100%;
-	
-	        display: none;
-	
-	        background-color: rgba(0, 0, 0, 0.4);
-	      	}
+			
 	      	
 			.analysis{
 			background-color: #666;
@@ -331,10 +321,10 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise()%>">운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise()%>">>운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise()%>">>운동 더보기</button></pre></pre>
-										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise() %><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise()%>">>운동 더보기</button></pre></pre>
+										<pre><img src="images/푸쉬업4.png" style="width:150px; height:100px;"><%=lastComposition.getMfirst_exercise()%><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMsecond_exercise()%><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMthird_exercise()%><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/풀업3.png" style="width:150px; height:100px;"><%=lastComposition.getMfourth_exercise()%><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										</div>
 								</div>
 								<div id="btn-good">
@@ -388,20 +378,40 @@
 				
 
 		</div>
-								<div class="modal" id="analysis">
-									<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-										분석내용입니다.<br>
-								    	이미지여도 좋고 글이어도 좋습니다.
-									</div>
-								</div>
-								<div class="modal" id="pushup">
-									<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-									여기에 모달창 내용을 적어줍니다.<br>
-									이미지여도 좋고 글이어도 좋습니다.
-									</div>
-								</div>
+	<div class="modal" id="analysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			분석내용입니다.<br> 
+			이미지여도 좋고 글이어도 좋습니다.
+		</div>
+	</div>
+	<div class="modal" id="kneepushup">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			kneepushup<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="superman">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			superman<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="25sPlank">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			25sPlank<br>
+			설명
+		</div>
+	</div>
+	<div class="modal" id="boxsquat">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			boxsquat<br>
+			설명
+		</div>
+	</div>
+	
+	
 
-		<!-- Scripts -->
+	<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
@@ -612,13 +622,31 @@
 		    		    $("div#analysis").fadeIn();
 		    		  });
 		    		  
-		    		  $("button#운동3-1").click(function(){
-			    		    $("div#pushup").fadeIn();
-			    		  });
+		    		  $("button#kneepushup").click(function(){
+			    		    $("div#kneepushup").fadeIn();
+			    	  });
+		    		  
+		    		  $("button#superman").click(function(){
+			    		    $("div#superman").fadeIn();
+			    	  });
+		    		  
+		    		  $("button#25sPlank").click(function(){
+			    		    $("div#25sPlank").fadeIn();
+			    	  });
+		    		  
+		    		  $("button#boxsquat").click(function(){
+			    		    $("div#boxsquat").fadeIn();
+			    	  });
+		    		  
+		    		  
+		    		  
+		    		  
 		    		  
 		    		  $(".modal_content").click(function(){
 		    		    $(".modal").fadeOut();
-		    		  });
+		    		 	  });
+		    		  
+		    		  
 		    		  
 		    		});
 
