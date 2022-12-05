@@ -292,10 +292,10 @@
 						var addressTable = "<table border='1'>"
 						addressTable += "<table table-striped>";
 						addressTable += "<tr>";
-						addressTable += "<th>측정장소</th>";
-						addressTable += "<th>주소</th>";
-						addressTable += "<th>전화번호</th>";
-						addressTable += "<th>위치</th>";
+						addressTable += "<th style='background-color:#eeeeee; text-align:center;'>측정장소</th>";
+						addressTable += "<th style='background-color:#eeeeee; text-align:center;'>주소</th>";
+						addressTable += "<th style='background-color:#eeeeee; text-align:center;'>전화번호</th>";
+						addressTable += "<th style='background-color:#eeeeee; text-align:center;'>위치</th>";
 						addressTable += "</tr>";
 						addressList.forEach(function(address) {
 								addressTable += "<tr>";
