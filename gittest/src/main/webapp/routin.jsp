@@ -26,6 +26,21 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 
 		<style>
+			/*월수금 버튼  */
+			.routin_btn{
+			border:solid 0.1px;
+			font-size: 23px;
+			font-weight : 300;
+			background-color: rgba(0,0,0,0);
+			border-radius: 10px;
+			border-color : #e5e5e5;
+			crusor:pointer;
+			}
+			.routin_btn button:hover{
+			color : white;
+			background-color: skyblue;
+
+			}
 			/* 모달관련스타일 */
 			.modal {
 	        position: absolute;
@@ -42,7 +57,6 @@
 	        background-color: rgb(255, 255, 255);
 		 	border-radius: 10px;
 			box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
-	        transform: 
 	      	}
 			
 			
@@ -64,12 +78,13 @@
 		    font-size : inherit;
 			}
 			.analysis button:hover{
-				backrtound-color: skyblue;
-				
+				background-color: skyblue;
+				color : skyblue;
 			}
 			.analysis_add{
 			border:none;
 			background-color: #f8f8f8;
+			crusor : pointer;
 			}
 			#insta{
 			width : 50px;
@@ -188,7 +203,7 @@
 				<section id="banner">
 					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><font color="white"><%=loginMember.getId()%>님 환영합니다~~</font></h1>
+					<h1 style="margin : 0 0 1em;"><font color="white"><%=loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button">main</a></li>
 						<li><a href="routin.jsp" class="button">routin</a></li>
@@ -311,9 +326,9 @@
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
 									<h3 id="font" style="margin : 0 0 0.5em;">추천 요일</h3>
 									<%if(lastComposition.getWeeks() == 3){ %>
-									<button onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
-									<button onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
-									<button onclick="selectFriday(<%=lastComposition.getType()%>)">금</button>
+									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
+									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
+									<button class="routin_btn" onclick="selectFriday(<%=lastComposition.getType()%>)">금</button>
 									<%} else{%>
 									<a onclick="">월</a>
 									<a onclick="">화</a>
@@ -380,8 +395,8 @@
 		</div>
 	<div class="modal" id="analysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.
+			<p style="float:left">분석내용입니다.<br> 
+			이미지여도 좋고 글이어도 좋습니다.</p><button style="float:right">x</button>
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">

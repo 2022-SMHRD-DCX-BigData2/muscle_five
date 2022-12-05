@@ -62,7 +62,7 @@
 				<section id="banner">
 					<h2 style="font-family : JSArirang-Regular">MusleFive</h2>
 					<%if(loginMember != null){ %>
-					<h1><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
+					<h1 style="margin : 0 0 1em;"><font color="white"><%= loginMember.getId()%>님 환영합니다~~</font></h1>
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="routin.jsp" class="button ">routin</a></li>
