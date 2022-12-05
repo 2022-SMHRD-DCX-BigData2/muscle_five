@@ -58,11 +58,28 @@
 	      	}
 	      	
 			.analysis{
-			border : none;
-			background-color: transparent;
-			box-shadow: unset;
-			color: #777;
-			bord
+			background-color: #666;
+		    border-radius: 6px;
+		    border: 0;
+		    color: #ffffff;
+		    cursor: pointer;
+		    display: inline-block;
+		    font-weight: 400;
+		    height: 3em;
+		    line-height: 3em;
+		    padding: 0 2em;
+		    text-align: center;
+		    text-decoration: none;
+		    white-space: nowrap;
+		    font-size : 21px;
+			}
+			.analysis button:hover{
+				backrtound-color: skyblue;
+				
+			}
+			.analysis_add{
+			border:none;
+			background-color: #f8f8f8;
 			}
 			#insta{
 			width : 50px;
