@@ -315,7 +315,6 @@
 								addressTable +=  "<td>" + address.loc_phone + "</td>";
 								// 장소 위치 부분
 								// 위치를 누르면 아래쪽 지도에 위치가 표시될 수 있도록 작성
-								
 								addressTable +=  "<td>";
 								addressTable +=  "<button onClick=\"mapDraw(\'" + locAddress + "\', \'" + address.loc_name + " \')\">위치</button>";
 								
