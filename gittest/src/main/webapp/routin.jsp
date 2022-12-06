@@ -367,7 +367,7 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:120px; height:100px;">  <b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:120px; height:100px;">   <b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMsecond_exercise()%>.png" style="width:120px; height:100px;">  <b style="font-size:26px;"><%=lastComposition.getMsecond_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMthird_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMthird_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMfourth_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMfourth_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
@@ -707,7 +707,7 @@
 			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br><br><br>
 			<h3>동영상</h3>
-			<a href="https://www.youtube.com/watch?v=XtU2VQVuLYs"><img src="images/diamondyou.png"></a>
+			<a href="https://www.youtube.com/watch?v=XtU2VQVuLYs"><img src="images/diamondpushupyou.png"></a>
 				<br>
 		</div>
 	</div>
@@ -777,7 +777,7 @@
 	</div>
 	<div class="modal" id="pikepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pike pushup</h3><br>
+			<h3>pikepushup</h3><br>
 			1. 팔을 어깨너비보다 넓게 벌려 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -1465,7 +1465,7 @@
 		    			  
 		    		  });
 		    		  $(document).on("click","button#pikepushup", function() {
-		    			  $("div# pikepushup").fadeIn();
+		    			  $("div#pikepushup").fadeIn();
 		    			  
 		    		  });
 		    		  $(document).on("click","button#pullup", function() {
