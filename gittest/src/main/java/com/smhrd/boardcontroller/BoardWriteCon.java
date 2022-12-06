@@ -65,7 +65,7 @@ public class BoardWriteCon extends HttpServlet {
         	
         	// 파라메터 <HttpServletRequest>, <파일올라갈 위치>, <파일명>
         	//commonService.fileInsert(request, (String)result.get("TABLENAME"), (String)result.get("FLE_NAM"));
-        	String path = session.getServletContext().getRealPath("/");
+        	String path = session.getServletContext().getRealPath("/uploadimages");
         	
         	System.out.println("■path:::"+path);
         }else {
