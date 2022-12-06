@@ -367,10 +367,10 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:120px; height:100px;"><b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
-										<pre><img src="images/<%=lastComposition.getMsecond_exercise()%>.png" style="width:120px; height:100px;">  <b style="font-size:26px;"><%=lastComposition.getMsecond_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
-										<pre><img src="images/<%=lastComposition.getMthird_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMthird_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
-										<pre><img src="images/<%=lastComposition.getMfourth_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMfourth_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:100px; height:80px;"><b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMsecond_exercise()%>.png" style="width:100px; height:80px;">  <b style="font-size:26px;"><%=lastComposition.getMsecond_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMthird_exercise()%>.png" style="width:100px; height:80px;"> <b style="font-size:26px;"> <%=lastComposition.getMthird_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMfourth_exercise()%>.png" style="width:100px; height:80px;"> <b style="font-size:26px;"> <%=lastComposition.getMfourth_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										</div>
 										
 								</div>
