@@ -17,6 +17,10 @@
 	MemberDAO dao2 = new MemberDAO();
 	List<BodyComposition> bodyCompositionList = dao2.bodyCompositionselectAll(loginMember.getId_num());
 	
+	MemberDAO dao3 = new MemberDAO();
+	List<Member> likeExercise = dao3.selectLikeExercise(loginMember.getId_num());
+	
+	
 	
 	
 %>
@@ -268,7 +272,7 @@
 						<%}else{ %>
 						
 						<!-- 차트 표사 div  -->
-						
+
 						
 						
 						<div class="row" id="divmuscle" >
@@ -276,6 +280,7 @@
 						<div class="col-6 ">
 						
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+						<div id="chart"></div>
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<div id="chart"></div>
 								<input type="hidden" id="gender" value="<%=loginMember.getId()%>">
@@ -294,15 +299,15 @@
 								<!-- 모달관련 -->
 								<br>
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button class="analysis" id="analysis">분석</button>
+								<%if(lastComposition.getWeight() * 0.45 < lastComposition.getMuscle()){ %>
+									<button class="analysis" id="cAnalysis">분석</button>
+								<%}else if(lastComposition.getWeight() * 0.46 > lastComposition.getMuscle()){ %>
+									<button class="analysis" id="dAnalysis">분석</button>
+								<%}else{ %>
+									<button class="analysis" id="iAnalysis">분석</button>
+								<%} %>
 								<br><br>
-								<div class="modal">
-								  <div class="modal_content" 
-								       title="클릭하면 창이 닫힙니다."  >
-								    여기에 모달창 내용을 적어줍니다.<br>
-								    이미지여도 좋고 글이어도 좋습니다.
-								  </div>
-								</div>
+								
 								
 							</section>
 								
@@ -344,7 +349,13 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
+									<%if(lastComposition.getType() < 4){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else if(lastComposition.getType() < 7){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else{ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE <%=lastComposition.getType()%> LEVEL</h3>
+									<%} %>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
@@ -364,7 +375,27 @@
 										
 								</div>
 								<div id="btn-good">
-									<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+								int heart = 0;
+								if(likeExercise == null){ %>
+								<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%}else{
+									for(Member i : likeExercise){
+										if(i.getType() == lastComposition.getType()){
+											heart ++;
+										}
+									}
+									if(heart > 0){%>
+										<button id='like1' style="float:left;" onclick="unlikeCon(<%=lastComposition.getType()%>)">❤</button>
+								<%		
+									}else{%>
+										<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+									}
+								} 
+								%>	
+								
+									
 								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button onclick="prevType(<%=lastComposition.getType()%>)" id="prev">prev</button>
@@ -414,10 +445,19 @@
 				
 
 		</div>
-	<div class="modal" id="analysis">
+	<div class="modal" id="cAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<p style="float:left">분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.</p>
+			<img align="center" src="images/c형.png">
+		</div>
+	</div>
+	<div class="modal" id="iAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/i형.png">
+		</div>
+	</div>
+	<div class="modal" id="dAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/d형.png">
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
@@ -939,15 +979,15 @@
 					url : "likeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='unlikeCon(" + res + ")'>❤</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -963,15 +1003,14 @@
 					url : "unlikeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='likeCon(" + res + ")'>🤍</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -1170,9 +1209,17 @@
 			
 		    	$(function(){ 
 		    		
-		    		  $("button#analysis").click(function(){
-		    		    $("div#analysis").fadeIn();
+		    		  $("button#iAnalysis").click(function(){
+		    		    $("div#iAnalysis").fadeIn();
 		    		  });
+		    		  
+		    		  $("button#cAnalysis").click(function(){
+			    		    $("div#cAnalysis").fadeIn();
+			    		  });
+		    		  
+		    		  $("button#dAnalysis").click(function(){
+			    		    $("div#dAnalysis").fadeIn();
+			    		  });
 		    		  
 		    		  $(document).on("click","button#kneepushup", function() {
 		    			  $("div#kneepushup").fadeIn();

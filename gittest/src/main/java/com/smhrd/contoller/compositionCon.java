@@ -41,33 +41,28 @@ public class compositionCon extends HttpServlet {
 		int pullup = Integer.parseInt(request.getParameter("pullup"));
 		System.out.println("pullup : " + pullup);
 		
-		// if문 써서 c형 i형 d형 구분하고
-		// 여기서 또 팔굽이랑 턱걸이로 타입을 구분(1, 2, 3, 4, ...... 9)하고
-		// update문으로 user_info에 타입을 지정
-		// 옛날에 저장해둔 값을 계속 볼 수 있게 한다(prev next)누르면 type이 계속 바뀌도록한다.....
-		// 모달창으로 할 수도 있으니깐 c i d 변수 저장???
-		// sql 생각하기..
+		
 		int userType = 0;
-		if(weight * 0.4 > muscle) {
-			if(pushup < 5) {
+		if(weight * 0.42 > muscle) {
+			if(pushup < 10) {
 				userType = 1;
-			}else if(pushup < 10){
+			}else if(pushup < 15){
 				userType = 2;
 			}else {
 				userType = 3;
 			}
-		}else if(weight * 0.5 < muscle) {
-			if(pushup < 50) {
+		}else if(weight * 0.45 < muscle) {
+			if(pushup < 80) {
 				userType = 7;
-			}else if(pushup < 60) {
+			}else if(pushup < 90) {
 				userType = 8;
 			}else {
 				userType = 9;
 			}
 		}else {
-			if(pushup < 20) {
+			if(pushup < 30) {
 				userType = 4;
-			}else if(pushup < 30) {
+			}else if(pushup < 35) {
 				userType = 5;
 			}else {
 				userType = 6;

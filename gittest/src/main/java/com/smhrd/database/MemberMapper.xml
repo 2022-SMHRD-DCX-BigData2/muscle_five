@@ -73,5 +73,25 @@
 		update exerciselike set likecnt = likecnt - 1 where type = #{type}
 	</update>
 	
+	<insert id="userLikeExercise" parameterType="com.smhrd.domain.Member">
+		insert into userlikeexercise values(#{id_num}, #{type})
+	</insert>
+	
+	<delete id="UnLikeExercise" parameterType="com.smhrd.domain.Member">
+		delete from userlikeexercise where id_num = #{id_num} and type = #{type}
+	</delete>
+	
+	<select id="selectLikeExercise" parameterType="int" resultType="com.smhrd.domain.Member">
+		select * from userlikeexercise where id_num = #{id_num}
+	</select>
+	
+	
+	<select id="selectExerciseCnt" resultType="com.smhrd.domain.Member">
+		select * from exerciselike order by likecnt desc
+	</select>
+	
+	
+	
+	
 	
 </mapper>
