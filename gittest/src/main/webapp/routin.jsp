@@ -669,7 +669,7 @@
 				<br>
 		</div>
 	</div>
-	<div class="modal" id="stop squat">
+	<div class="modal" id="stopsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			<h3>stop squat</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
