@@ -303,7 +303,7 @@
 								addressTable += "<tr>";
 								
 								// 장소 이름
-								addressTable +=  "<td>" + address.loc_name + "</td>";
+								addressTable +=  "<td nowrap>" + address.loc_name + "</td>";
 								var end = address.loc_address.indexOf('(');
 								if (end > 0) {
 									var locAddress = address.loc_address.substr(0, end);
@@ -312,12 +312,12 @@
 								}
 								
 								// 장소 주소
-								addressTable +=  "<td>" + locAddress + "</td>";
+								addressTable +=  "<td nowrap>" + locAddress + "</td>";
 								// 장소 전화번호
-								addressTable +=  "<td>" + address.loc_phone + "</td>";
+								addressTable +=  "<td nowrap>" + address.loc_phone + "</td>";
 								// 장소 위치 부분
 								// 위치를 누르면 아래쪽 지도에 위치가 표시될 수 있도록 작성
-								addressTable +=  "<td>";
+								addressTable +=  "<td nowrap>";
 								addressTable +=  "<button onClick=\"mapDraw(\'" + locAddress + "\', \'" + address.loc_name + " \')\">위치</button>";
 								
 								
