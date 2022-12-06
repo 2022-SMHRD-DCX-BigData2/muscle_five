@@ -707,7 +707,7 @@
 			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br><br><br>
 			<h3>동영상</h3>
-			<a href="https://www.youtube.com/watch?v=XtU2VQVuLYs"><img src="images/diamondyou.png"></a>
+			<a href="https://www.youtube.com/watch?v=XtU2VQVuLYs"><img src="images/diamondpushupyou.png"></a>
 				<br>
 		</div>
 	</div>
@@ -777,7 +777,7 @@
 	</div>
 	<div class="modal" id="pikepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pike pushup</h3><br>
+			<h3>pikepushup</h3><br>
 			1. 팔을 어깨너비보다 넓게 벌려 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -1044,7 +1044,7 @@
 			4. 상체를 접으며 올라간 후 팔을 펴줍니다.
 			<br><br><br>
 			<h3>동영상</h3>
-			<a href="https://www.youtube.com/watch?v=RZLy2ZhMvHc"><img src="images/muscleupyou.png"></a>
+			<a href="https://www.youtube.com/watch?v=RZLy2ZhMvHc"><img src="images/musleupyou.png"></a>
 				<br>
 		</div>
 	</div>
@@ -1465,7 +1465,7 @@
 		    			  
 		    		  });
 		    		  $(document).on("click","button#pikepushup", function() {
-		    			  $("div# pikepushup").fadeIn();
+		    			  $("div#pikepushup").fadeIn();
 		    			  
 		    		  });
 		    		  $(document).on("click","button#pullup", function() {
