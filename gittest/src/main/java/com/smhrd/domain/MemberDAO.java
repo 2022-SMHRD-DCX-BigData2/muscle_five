@@ -364,7 +364,55 @@ public class MemberDAO {
 			return loginMember;
 		}
 		
+		public int likeCnt(int type) {
+			
+			int cnt = 0;
+			
+			
+			try {
+				cnt = sqlSession.update("likeCnt", type);
+				
+				if (cnt > 0) {
+					System.out.println("DAO : 좋아요 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return cnt;
+		}
 		
+		public int unlikeCnt(int type) {
+			
+			int cnt = 0;
+			
+			
+			try {
+				cnt = sqlSession.update("unlikeCnt", type);
+				
+				if (cnt > 0) {
+					System.out.println("DAO : 좋아요 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return cnt;
+		}
 		
 	
 	

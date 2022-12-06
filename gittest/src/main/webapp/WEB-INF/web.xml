@@ -250,6 +250,20 @@
    	<servlet-name>selelctDay</servlet-name>
    	<servlet-class>com.smhrd.contoller.selelctDay</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>likeCon</display-name>
+   	<servlet-name>likeCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.likeCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>unlikeCon</display-name>
+   	<servlet-name>unlikeCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.unlikeCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -390,6 +404,14 @@
    	<servlet-mapping>
    		<servlet-name>selelctDay</servlet-name>
    		<url-pattern>/selelctDay</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>likeCon</servlet-name>
+   		<url-pattern>/likeCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>unlikeCon</servlet-name>
+   		<url-pattern>/unlikeCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>
