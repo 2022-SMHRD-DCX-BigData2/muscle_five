@@ -312,7 +312,7 @@
 								}
 								
 								// 장소 주소
-								addressTable +=  "<td>" + locAddress + "</td>";
+								addressTable +=  "<td nowrap>" + locAddress + "</td>";
 								// 장소 전화번호
 								addressTable +=  "<td>" + address.loc_phone + "</td>";
 								// 장소 위치 부분
