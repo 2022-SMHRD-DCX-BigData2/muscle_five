@@ -194,7 +194,7 @@
 							<c:otherwise>
 							
 								<c:if test="${loginMember.id eq 'admin'}">
-									<li><a href="#" class="button">회원관리</a></li>
+									<li><a href="userinfo.jsp" class="button">회원관리</a></li>
 								</c:if>
 								
 
@@ -418,44 +418,79 @@
 	</div>
 	<div class="modal" id="kneepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			kneepushup<br>
-			설명
+			kneepushup<br><br>
+			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 무릎을 바닥에 고정합니다.
+			<br>
+			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			3. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			4. 근력이 증가하여 무릎을 대지 않고 할 수 있다면 일반적인 푸시업으로 하는 게 좋습니다.
+			<br>
+			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			<br>
+			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
 		</div>
 	</div>
 	<div class="modal" id="superman">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			superman<br>
-			설명
+			superman<br><br>
+			1. 바닥에 엎드려 양팔을 앞으로 뻗는다.
+			<br>
+			2. 양팔과 양다리를 벌려 몸을 X자로 만든다.
+			<br>
+			3) 배를 제외한 상체 윗부분과 양쪽 다리를 지면에서 힘차고 빠르게 들어올린다.
+			<br>
+			4) 들어올린 상태에서 10~30초간 자세를 유지한 뒤 상체와 하체를 천천히 내린다. 3번 반복한다.
 		</div>
 	</div>
 	<div class="modal" id="plank25s">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			plank<br>
-			설명
+			plank<br><br>
+			<br>
+			1. 팔꿈치를 굽히고, 무게 중심을 팔 대신에 팔뚝에 싣는 것이 중요합니다. 
+			그리고 몸은 어깨에서부터 발목에 이르기까지 일직선을 이루고 있어야 하며, 
+			복부에 힘을 주고 있는 것이 좋습니다. 
+			<br>
+			2. 자세를 유지하며 30초 이상 버티고, 호흡이 멈추지 않도록 크게 내쉬 마십니다.
 		</div>
 	</div>
 	<div class="modal" id="boxsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			boxsquat<br>
-			설명
+			1. 벤치 혹은 박스 앞에 어깨너비로 선다.
+			<br>
+			2. 팔을 앞으로 뻗고 힙을 뒤로 빼주며 앉는다.
+			<br>
+			3. 힙을 벤치 혹은 박스 터치 후 다시 일어난다.
+			<br>
+			4. 앉으며 호흡 들여마시고, 일어서며 내쉰다.
+			<br>
+			5. 위의 동작를 하나로 반복 실시.
 		</div>
 	</div>
 	<div class="modal" id="jogging1km">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jogging1km<br>
+			jogging1km<br><br>
 			설명
 		</div>
 	</div>
 	<div class="modal" id="sprint25m">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			sprint25m<br>
+			sprint25m<br><br>
 			설명
 		</div>
 	</div>
 	<div class="modal" id="jumprope">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jumprope<br>
-			설명
+			jumprope<br><br>
+			1. 바른자세로 정면으로 바라보고 선다.
+			<br>
+			2. 양 팔꿈치는 구부려준다.
+			<br>
+			3. 점프를 하면서 팔을 돌려준다.
+			<br>
+			4. 운동하는 동안 편안하게 호흡을 한다.
 		</div>
 	</div>
 	<div class="modal" id="pushup">
@@ -664,8 +699,13 @@
 	</div>
 	<div class="modal" id="AbWheel">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			AbWheel<br>
-			설명
+			AbWheel<br><br>
+			1. 바닥에 무릎을 꿇고 오버핸드그립으로 앱휠을 잡아준다.(매트 위에서 진행하는 것을 추천)
+			<br>
+			2. 팔을 쭉 펴주면서 휠을 앞으로 굴려주는데, 무릎은 고정시키도 팔과 함께 상체를 앞으로 이동시킨다.
+			<br>
+			3. 최대한 팔을 뻗은 다음 잠시 멈추었다가 천천히 들어올리면서 시작자세로 돌아온다.			
+			<br>
 		</div>
 	</div>
 	
