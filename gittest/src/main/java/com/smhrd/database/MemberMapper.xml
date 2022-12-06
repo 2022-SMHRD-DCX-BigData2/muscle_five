@@ -18,7 +18,7 @@
 	</update>
 	
 	<update id="updateGrade" parameterType="com.smhrd.domain.Member">
-		update member set grade=#{grade} where id=#{id}
+		update user_info set grade=#{grade} where id=#{id}
 	</update>
 	
 	<select id="selectAll" resultType="com.smhrd.domain.Member">
@@ -65,6 +65,13 @@
 		select id_num, weight, muscle, fat, insertdate from body_composition where id_num = #{id_num}
 	</select>
 	
+	<update id="likeCnt" parameterType="int">
+		update exerciselike set likecnt = likecnt + 1 where type = #{type}
+	</update>
+	
+	<update id="unlikeCnt" parameterType="int">
+		update exerciselike set likecnt = likecnt - 1 where type = #{type}
+	</update>
 	
 	
 </mapper>
