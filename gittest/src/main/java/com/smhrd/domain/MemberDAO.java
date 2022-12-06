@@ -398,7 +398,7 @@ public class MemberDAO {
 				cnt = sqlSession.update("unlikeCnt", type);
 				
 				if (cnt > 0) {
-					System.out.println("DAO : 좋아요 성공!!");
+					System.out.println("DAO : 좋아요 차감성공!!");
 					sqlSession.commit();
 					
 				} else {
@@ -414,6 +414,105 @@ public class MemberDAO {
 			return cnt;
 		}
 		
+		public int userLikeExercise(Member likeExercise) {
+			
+			int cnt = 0;
+			
+			try {
+				cnt = sqlSession.insert("userLikeExercise", likeExercise);
+				
+				if (cnt > 0) {
+					System.out.println("DAO : 좋아요 성공!!");
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return cnt;
+			
+		}
+		
+		public int UnLikeExercise(Member unlikeExercise) {
+			
+			int cnt = 0;
+			System.out.println("dao : 접근성공");
+			
+			try {
+				cnt = sqlSession.delete("UnLikeExercise", unlikeExercise);
+				
+				if (cnt > 0) {
+					System.out.println("DAO : 좋아요 리스트삭제!!");
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return cnt;
+			
+		}
+		
+		public List<Member> selectLikeExercise(int id_num) {
+			
+			List<Member> loginMember = null;
+			
+			
+			try {
+				loginMember = sqlSession.selectList("selectLikeExercise", id_num);
+				
+				if (loginMember != null) {
+					System.out.println("DAO : 찾기 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return loginMember;
+		}
+		
+		
+		public List<Member> selectExerciseCnt() {
+			
+			List<Member> loginMember = null;
+			
+			
+			try {
+				loginMember = sqlSession.selectList("selectExerciseCnt");
+				
+				if (loginMember != null) {
+					System.out.println("DAO : 찾기 성공!!");
+					sqlSession.commit();
+					
+				} else {
+					sqlSession.rollback();
+				}
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				sqlSession.close();
+			}
+			
+			return loginMember;
+		}
 	
 	
 }

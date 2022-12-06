@@ -17,6 +17,10 @@
 	MemberDAO dao2 = new MemberDAO();
 	List<BodyComposition> bodyCompositionList = dao2.bodyCompositionselectAll(loginMember.getId_num());
 	
+	MemberDAO dao3 = new MemberDAO();
+	List<Member> likeExercise = dao3.selectLikeExercise(loginMember.getId_num());
+	
+	
 	
 	
 %>
@@ -340,7 +344,13 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
+									<%if(lastComposition.getType() < 4){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS LEVEL<%= lastComposition.getType() %></h3>
+									<%} else if(lastComposition.getType() < 7){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL LEVEL<%= lastComposition.getType() %></h3>
+									<%} else{ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE LEVEL<%= lastComposition.getType() %></h3>
+									<%} %>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
@@ -360,7 +370,27 @@
 										
 								</div>
 								<div id="btn-good">
-									<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+								int heart = 0;
+								if(likeExercise == null){ %>
+								<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%}else{
+									for(Member i : likeExercise){
+										if(i.getType() == lastComposition.getType()){
+											heart ++;
+										}
+									}
+									if(heart > 0){%>
+										<button id='like1' style="float:left;" onclick="unlikeCon(<%=lastComposition.getType()%>)">❤</button>
+								<%		
+									}else{%>
+										<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+									}
+								} 
+								%>	
+								
+									
 								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button onclick="prevType(<%=lastComposition.getType()%>)" id="prev">prev</button>
@@ -731,15 +761,15 @@
 					url : "likeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='unlikeCon(" + res + ")'>❤</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -755,15 +785,14 @@
 					url : "unlikeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='likeCon(" + res + ")'>🤍</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },

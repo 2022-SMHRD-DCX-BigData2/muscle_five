@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.MemberDAO"%>
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
@@ -6,6 +8,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%
 	Member loginMember = (Member)session.getAttribute("loginMember");
+
+	MemberDAO dao = new MemberDAO();
+	
+	List<Member> likeCnt = dao.selectExerciseCnt();
+	
 %>
 <html>
 <head>
@@ -143,9 +150,21 @@
 					<div class="col-12" >
 							<section class="box special "  alt="">
 								<h3>추천 운동 랭킹</h3>
-								<pre>운동루틴1  :  </pre>
-								<pre>운동루틴2  :  </pre>
-								<pre>운동루틴3  : </pre>							
+								<%
+								int cnt = 0;
+								for(Member i : likeCnt){
+									cnt ++;
+									if(cnt < 4){
+										if(i.getType() < 4){
+								%>
+											<pre>NOVICE <%=i.getType()%> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+								<%} else if(i.getType() < 7){ %>
+											<pre>NORMAL <%= i.getType() %> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+									
+								<%}else{ %>	
+											<pre>ADVANCE <%= i.getType() %> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+								<%}}} %>
+								
 							</section>
 					</div>
 				</section>
