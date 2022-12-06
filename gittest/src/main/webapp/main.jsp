@@ -81,7 +81,7 @@
 					<ul class="actions special">
 						<li><a href="main.jsp" class="button ">main</a></li>
 						<li><a href="login.jsp" class="button " onclick="gologin()">routin</a></li>
-						<li><a href="BoardList.jsp" class="button ">community</a></li>
+						<li><a href="login.jsp" class="button " onclick="gologin()">community</a></li>
 						<li><a href="inbodyMap.jsp" class="button ">Map</a></li>
 					<ul>
 						<%} %>

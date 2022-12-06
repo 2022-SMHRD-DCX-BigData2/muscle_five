@@ -272,7 +272,7 @@
 						<%}else{ %>
 						
 						<!-- 차트 표사 div  -->
-						
+
 						
 						
 						<div class="row" id="divmuscle" >
@@ -280,6 +280,7 @@
 						<div class="col-6 ">
 						
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+						<div id="chart"></div>
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<div id="chart"></div>
 								<input type="hidden" id="gender" value="<%=loginMember.getId()%>">
