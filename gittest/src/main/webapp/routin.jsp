@@ -462,7 +462,7 @@
 	</div>
 	<div class="modal" id="kneepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>kneepushup</h3><br><br>
+			<h3>kneepushup : max 15rep</h3><br>
 			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 무릎을 바닥에 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -482,14 +482,14 @@
 	</div>
 	<div class="modal" id="superman">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>superman</h3><br><br>
+			<h3>superman : max 15rep</h3><br>
 			1. 바닥에 엎드려 양팔을 앞으로 뻗는다.
 			<br>
 			2. 양팔과 양다리를 벌려 몸을 X자로 만든다.
 			<br>
 			3. 배를 제외한 상체 윗부분과 양쪽 다리를 지면에서 힘차고 빠르게 들어올린다.
 			<br>
-			4. 들어올린 상태에서 10~30초간 자세를 유지한 뒤 상체와 하체를 천천히 내린다. 3번 반복한다.
+			4. 들어올린 상태에서 10~30초간 자세를 유지한 뒤 상체와 하체를 천천히 내린다.
 			<br><br><br>
 			<h3>동영상</h3>
 			<a href="https://www.youtube.com/watch?v=z6PJMT2y8GQ"><img src="images/supermanyou.png"></a>
@@ -498,8 +498,7 @@
 	</div>
 	<div class="modal" id="plank25s">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>plank</h3><br><br>
-			<br>
+			<h3>plank : max 25s</h3><br>
 			1. 팔꿈치를 굽히고, 무게 중심을 팔 대신에 팔뚝에 싣는 것이 중요합니다. 
 			그리고 몸은 어깨에서부터 발목에 이르기까지 일직선을 이루고 있어야 하며, 
 			복부에 힘을 주고 있는 것이 좋습니다. 
@@ -513,7 +512,7 @@
 	</div>
 	<div class="modal" id="boxsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>boxsquat</h3><br>
+			<h3>boxsquat : max 15rep</h3><br>
 			1. 벤치 혹은 박스 앞에 어깨너비로 선다.
 			<br>
 			2. 팔을 앞으로 뻗고 힙을 뒤로 빼주며 앉는다.
@@ -531,7 +530,7 @@
 	</div>
 	<div class="modal" id="jogging1km">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>jogging1km</h3><br><br>
+			<h3>jogging1km</h3><br>
 			건강을 유지하는 수단으로서 자기의 몸에 알맞은 속도로 천천히 달리는 운동
 			<br><br><br>
 			<h3>동영상</h3>
@@ -541,7 +540,7 @@
 	</div>
 	<div class="modal" id="sprint25m">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>sprint25m</h3><br><br>
+			<h3>sprint25m</h3><br>
 			1.본인이 낼 수 있는 출력의 70%로 달립니다.
 			<br><br><br>
 			<h3>동영상</h3>
@@ -550,7 +549,7 @@
 	</div>
 	<div class="modal" id="jumprope">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>jumprope</h3><br><br>
+			<h3>jumprope : max 50rep</h3><br>
 			1. 바른자세로 정면으로 바라보고 선다.
 			<br>
 			2. 양 팔꿈치는 구부려준다.
@@ -562,7 +561,7 @@
 	</div>
 	<div class="modal" id="pushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pushup</h3><br>
+			<h3>pushup : max 20rep</h3><br>
 			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -581,7 +580,7 @@
 
 	<div class="modal" id="squat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>squat</h3><br>
+			<h3>squat : max 20rep</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -597,7 +596,7 @@
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>widepushup</h3><br>
+			<h3>widepushup : max 20rep</h3><br>
 			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -615,7 +614,7 @@
 	</div>
 	<div class="modal" id="jumppullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>jump pullup</h3><br>
+			<h3>jump pullup : max 20rep</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 무릎이 살짝 구부러지는 높이를 만들어 줍니다.
@@ -631,7 +630,7 @@
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>crunch</h3><br>
+			<h3>crunch : max 20rep</h3><br>
 			1. 편안하게 누워 무릎을 접어 줍니다.
 			<br>
 			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
@@ -645,7 +644,7 @@
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>widepushup</h3><br>
+			<h3>widepushup : max 20rep</h3><br>
 			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -663,7 +662,7 @@
 	</div>
 	<div class="modal" id="stopsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>stop squat</h3><br>
+			<h3>stop squat : max 20rep</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -681,7 +680,7 @@
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>crunch</h3><br>
+			<h3>crunch : max 20rep</h3><br>
 			1. 편안하게 누워 무릎을 접어 줍니다.
 			<br>
 			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
@@ -695,7 +694,7 @@
 	</div>
 	<div class="modal" id="diamondpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>diamond pushup</h3><br>
+			<h3>diamond pushup : max 20rep</h3><br>
 			1. 엄지와 검지를 만나게 하여 다이아몬드 모양을 만들어 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -713,7 +712,7 @@
 	</div>
 	<div class="modal" id="chinup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>chin up</h3><br>
+			<h3>chin up : max 15rep</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손바닥이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 당겨줍니다.
@@ -727,7 +726,7 @@
 	</div>
 	<div class="modal" id="legraise">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>leg raise</h3><br>
+			<h3>leg raise : max 20rep</h3><br>
 			1. 철봉을 양손으로 잡아줍니다.
 			<br>
 			2. 몸이 흔들리지 않도록 단단히 고정합니다.
@@ -743,7 +742,7 @@
 	</div>
 	<div class="modal" id="jumpsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>jump squat</h3><br>
+			<h3>jump squat : max 20rep</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -761,7 +760,7 @@
 	</div>
 	<div class="modal" id="halfburpee">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>half burpee</h3><br>
+			<h3>half burpee : : max 20rep</h3><br>
 			1. 편안하게 서줍니다.
 			<br>
 			2. 바닥에 양손을 펴주고 다리를 피며 엎드려 줍니다.
@@ -777,7 +776,7 @@
 	</div>
 	<div class="modal" id="pikepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pikepushup</h3><br>
+			<h3>pikepushup : max 20rep</h3><br>
 			1. 팔을 어깨너비보다 넓게 벌려 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -797,7 +796,7 @@
 	</div>
 	<div class="modal" id="pullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pullup</h3><br>
+			<h3>pullup : max 15rep</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 당겨줍니다.
@@ -811,7 +810,7 @@
 	</div>
 	<div class="modal" id="onelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>oneleg Plank</h3><br>
+			<h3>oneleg Plank : max 25s</h3><br>
 			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 둡니다.
 			<br>
 			2. 그 상태에서 한 다리를 들어줍니다.
@@ -825,7 +824,7 @@
 	</div>
 	<div class="modal" id="lunge">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>lunge</h3><br>
+			<h3>lunge : max 20rep</h3><br>
 			1. 편안한 자세로 서 줍니다.
 			<br>
 			2.정면을 바라보며 상체는 곧게 세워줍니다.
@@ -843,7 +842,7 @@
 	</div>
 	<div class="modal" id="boxhandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>box hand pushup</h3><br>
+			<h3>box hand pushup : max 15rep</h3><br>
 			1. 양손은 어깨너비보다 넓게 벌려지면을 지지해 줍니다.
 			<br>
 			2. 다리를 박스에 올려줍니다. 이때 몸은 ㄱ 과 같은 모양이 되게 합니다.
@@ -861,7 +860,7 @@
 	</div>
 	<div class="modal" id="widepullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>wide pullup</h3><br>
+			<h3>wide pullup : max 20rep</h3><br>
 			1. 철봉을 어깨 너비보다 넓게 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 견갑과 광배근을 이용하여 당겨줍니다.
@@ -875,7 +874,7 @@
 	</div>
 	<div class="modal" id="onearmonelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>onearm oneleg Plank</h3><br>
+			<h3>onearm oneleg Plank : max 25s</h3><br>
 			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 엎드립니다.
 			<br>
 			2. 그 상태에서 한 다리를 들어줍니다.
@@ -893,7 +892,7 @@
 	</div>
 	<div class="modal" id="jumplunge">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>jump lunge</h3><br>
+			<h3>jump lunge : max 20rep</h3><br>
 			1. 편안한 자세로 서 줍니다.
 			<br>
 			2.정면을 바라보며 상체는 곧게 세워줍니다.
@@ -911,7 +910,7 @@
 	</div>
 	<div class="modal" id="wallwalk">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>wall walk</h3><br>
+			<h3>wall walk : max 15rep</h3><br>
 			1. 벽에 발바닥이 닿도록 하여 엎드려 누워줍니다.
 			<br>
 			2. 팔을 펴주고 다리를 한다리씩 벽에 댑니다.
@@ -925,7 +924,7 @@
 	</div>
 	<div class="modal" id="chesttobar">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>chest to bar</h3><br>
+			<h3>chest to bar : max 15rep</h3><br>
 			1. 철봉을 어깨 너비보다 넓게 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 견갑과 광배근을 이용하여 당겨줍니다.
@@ -941,7 +940,7 @@
 	</div>
 	<div class="modal" id="toestobar">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>toes to bar</h3><br>
+			<h3>toes to bar : max 20rep</h3><br>
 			1. 철봉을 양손으로 잡아줍니다.
 			<br>
 			2. 몸이 흔들리지 않도록 단단히 고정합니다.
@@ -957,7 +956,7 @@
 	</div>
 	<div class="modal" id="boxpistolsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>box pistol squat</h3><br>
+			<h3>box pistol squat : max 20rep</h3><br>
 			1. 박스를 준비 해 줍니다.
 			<br>
 			2. 한다리를 들고 천천히 앉아 줍니다. 앉았을 때 몸이 총모양이 됩니다.
@@ -971,7 +970,7 @@
 	</div>
 	<div class="modal" id="burpee">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>burpee</h3><br>
+			<h3>burpee : max 30rep</h3><br>
 			1. 편안하게 서줍니다.
 			<br>
 			2. 바닥에 양손을 펴주고 다리를 피며 엎드려 줍니다.
@@ -991,7 +990,7 @@
 	</div>
 	<div class="modal" id="wallhandstandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>wall hand stand pushup</h3><br>
+			<h3>wall hand stand pushup : max 15rep</h3><br>
 			1. 벽에 발뒤꿈치가 닿도록 물구나무를 서줍니다. 
 			<br>
 			2. 벽에 엉덩이는 닿고 등과 머리는 떨이지도록 해줍니다.
@@ -1007,7 +1006,7 @@
 	</div>
 	<div class="modal" id="KneelingAbWheel">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>Kneeling Ab Wheel</h3><br>
+			<h3>Kneeling Ab Wheel : max 10rep</h3><br>
 			1. 지면에 무릎을 대고 ab휠을 잡아 줍니다.
 			<br>
 			2. 코어에 긴장을 유지하며 천천히 내려갑니다.
@@ -1021,7 +1020,7 @@
 	</div>
 	<div class="modal" id="freestandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>free stand pushup</h3><br>
+			<h3>free stand pushup : max 5rep</h3><br>
 			1. 지지 할 수 있는 구조물 없이 물구나무를 서줍니다.
 			<br>
 			2. 코어에 긴장을 유지하며 삼각근과 승모근을 이요하여 팔을 구부렸다 펴줍니다.
@@ -1034,7 +1033,7 @@
 	
 	<div class="modal" id="muscleup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>muscleup</h3><br>
+			<h3>muscleup : max 5rep</h3><br>
 			1. 양손을 어깨너비만큼 하여 철봉을 잡아 줍니다.
 			<br>
 			2. 코어와 광배에 힘을 주고 몸을 앞뒤로 흔들어 반동을 만들어 줍니다.
@@ -1050,7 +1049,7 @@
 	</div>
 	<div class="modal" id="pistolsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>pistol squat</h3><br>
+			<h3>pistol squat : max 5rep</h3><br>
 			1. 편안한 자세로 무릎너비 만큼 다리를 벌리고 서줍니다.
 			<br>
 			2. 한다리를 들고 천천히 앉아 줍니다. 앉았을 때 몸이 총모양이 됩니다.
@@ -1064,7 +1063,7 @@
 	</div>
 	<div class="modal" id="deadhang">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>deadhang</h3><br>
+			<h3>deadhang : max 20rep</h3><br>
 			1. 턱걸이 전의 기본 자세입니다.
 			<br>
 			2. 축 매달리며 팔을 완전히 펴줍니다.
@@ -1078,7 +1077,7 @@
 	</div>
 	<div class="modal" id="AbWheel">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<h3>AbWheel</h3><br><br>
+			<h3>AbWheel : max 5rep</h3><br>
 			1. 바닥에 무릎을 꿇고 오버핸드그립으로 앱휠을 잡아준다.(매트 위에서 진행하는 것을 추천)
 			<br>
 			2. 팔을 쭉 펴주면서 휠을 앞으로 굴려주는데, 무릎은 고정시키도 팔과 함께 상체를 앞으로 이동시킨다.
