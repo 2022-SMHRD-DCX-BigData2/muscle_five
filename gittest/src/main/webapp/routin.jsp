@@ -299,9 +299,9 @@
 								<!-- 모달관련 -->
 								<br>
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<%if(lastComposition.getWeight() * 0.45 < lastComposition.getMuscle()){ %>
+								<%if(lastComposition.getWeight() * 0.45 > lastComposition.getMuscle()){ %>
 									<button class="analysis" id="cAnalysis">분석</button>
-								<%}else if(lastComposition.getWeight() * 0.46 > lastComposition.getMuscle()){ %>
+								<%}else if(lastComposition.getWeight() * 0.46 < lastComposition.getMuscle()){ %>
 									<button class="analysis" id="dAnalysis">분석</button>
 								<%}else{ %>
 									<button class="analysis" id="iAnalysis">분석</button>
