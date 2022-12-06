@@ -21,7 +21,7 @@ public class updataCon extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		System.out.println("여기출력??");
 		request.setCharacterEncoding("UTF-8");
 		
 		String encType = "UTF-8";
@@ -31,7 +31,9 @@ public class updataCon extends HttpServlet {
         MultipartRequest multi = new MultipartRequest(request, uploadPath, fileSize, encType, new DefaultFileRenamePolicy());
         
         HttpSession session = request.getSession();
-        int board_num =  Integer.parseInt(session.getAttribute("updateBoardNum").toString()); 	
+        Member_Board board_num = (Member_Board) session.getAttribute("updateBoardNum");
+        int boardNum = board_num.getBoard_num();
+        System.out.println("udateCon board_num : " + boardNum);
         BoardDAO dao = new BoardDAO();
         
         String board_id = multi.getParameter("board_id");
@@ -54,7 +56,7 @@ public class updataCon extends HttpServlet {
         }
              
         
-        Member_Board borderData = new Member_Board(board_num, board_title, board_content, board_file);
+        Member_Board borderData = new Member_Board(boardNum, board_title, board_content, board_file);
             
         
         int result = dao.updateBoard(borderData);

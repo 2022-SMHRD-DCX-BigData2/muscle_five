@@ -8,7 +8,11 @@
 <%
 	Member loginMember = (Member)session.getAttribute("loginMember");
 	
-	Member_Board updateBoardNum = (Member_Board)session.getAttribute("updateBoardNum");	
+	Member_Board updateBoardNum = null;
+	if(session.getAttribute("updateBoardNum") != null){
+		updateBoardNum = (Member_Board)session.getAttribute("updateBoardNum");
+	}
+		
 %>
 <html>
 <head>
@@ -149,6 +153,7 @@
 								                제 목
 								            </td>
 								            <td>
+								            	<input type="hidden" name="boardNum" value="<%=updateBoardNum.getBoard_num()%>">
 								                <input name="board_title" type="text" size="70" maxlength="100" value="<%=updateBoardNum.getBoard_title()%>">
 								            </td>        
 								        </tr>
@@ -182,7 +187,7 @@
 							
 							<%
 							} 
-						    session.removeAttribute("updateBoardNum");
+						    /* session.removeAttribute("updateBoardNum"); */
 							%>							
 						<!-- 게시판 끝!  -->
 						
