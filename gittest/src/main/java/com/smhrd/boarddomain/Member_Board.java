@@ -21,6 +21,14 @@ public class Member_Board {
 	private String searchContent;
 	
 	
+	public Member_Board(int board_num, String board_title, String board_content) {
+		this.board_num = board_num;
+		this.board_title = board_title;
+		this.board_content = board_content;
+	}
+
+
+
 	public Member_Board(String searchContent) {
 		this.searchContent = searchContent;
 	}

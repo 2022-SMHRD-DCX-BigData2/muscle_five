@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.boarddomain.Member_Board"%>
 <%@page import="oracle.jdbc.proxy.annotation.Pre"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
@@ -7,7 +8,7 @@
 <%
 	Member loginMember = (Member)session.getAttribute("loginMember");
 	
-	String updateBoardNum = (String)session.getAttribute("updateBoardNum");	
+	Member_Board updateBoardNum = (Member_Board)session.getAttribute("updateBoardNum");	
 %>
 <html>
 <head>
@@ -148,7 +149,7 @@
 								                제 목
 								            </td>
 								            <td>
-								                <input name="board_title" type="text" size="70" maxlength="100" value=""/>
+								                <input name="board_title" type="text" size="70" maxlength="100" value="<%=updateBoardNum.getBoard_title()%>">
 								            </td>        
 								        </tr>
 								        <tr>
@@ -156,7 +157,7 @@
 								                내 용
 								            </td>
 								            <td>
-								                <textarea name="board_content" cols="72" rows="20"></textarea>            
+								                <textarea name="board_content" cols="72" rows="20"><%=updateBoardNum.getBoard_content()%></textarea>            
 								            </td>        
 								        </tr>
 								        <tr>

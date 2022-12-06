@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.boarddomain.Member_Board;
+
 
 public class BoardUpdateCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -14,9 +16,13 @@ public class BoardUpdateCon extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String board_num = request.getParameter("num");
+		int board_num = Integer.parseInt(request.getParameter("num").toString());
+		String board_title = request.getParameter("title");
+		String board_content = request.getParameter("content");
+		
+		Member_Board updateMember = new Member_Board(board_num, board_title, board_content);
 		HttpSession session = request.getSession();
-		session.setAttribute("updateBoardNum", board_num);
+		session.setAttribute("updateBoardNum", updateMember);
 		
 		response.sendRedirect("BoardWrite.jsp");
 		

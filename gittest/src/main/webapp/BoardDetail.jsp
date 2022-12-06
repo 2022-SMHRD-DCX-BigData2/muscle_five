@@ -228,7 +228,7 @@
 							                <td colspan="5">
 							                <%if(loginMember.getId() != null){%>
 							                		<%if(loginMember.getId().equals(i.getBoard_id())){%>
-							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>"><input type="button" value="수정"></a> 
+							                			<a href="BoardUpdateCon?num=<%=i.getBoard_num()%>&title=<%=i.getBoard_title()%>&content=<%=i.getBoard_content()%>"><input type="button" value="수정"></a> 
 								                        <a href="boardDeleteCon?num=<%=i.getBoard_num()%>"><input type="button" value="삭제" onclick="doAction(1)"></a>
 							                		<%} else{%>
 							                			
