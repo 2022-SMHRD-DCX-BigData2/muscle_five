@@ -264,6 +264,27 @@
    	<servlet-name>unlikeCon</servlet-name>
    	<servlet-class>com.smhrd.contoller.unlikeCon</servlet-class>
    </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>likeExerciseCon</display-name>
+   	<servlet-name>likeExerciseCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.likeExerciseCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>unLikeExerciseCon</display-name>
+   	<servlet-name>unLikeExerciseCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.unLikeExerciseCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>UnLikeExerciseCon</display-name>
+   	<servlet-name>UnLikeExerciseCon</servlet-name>
+   	<servlet-class>com.smhrd.contoller.unLikeExerciseCon</servlet-class>
+   </servlet>
    
    <servlet-mapping>
    	<servlet-name>modyfyCon</servlet-name>
@@ -412,6 +433,18 @@
    	<servlet-mapping>
    		<servlet-name>unlikeCon</servlet-name>
    		<url-pattern>/unlikeCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>likeExerciseCon</servlet-name>
+   		<url-pattern>/likeExerciseCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>unLikeExerciseCon</servlet-name>
+   		<url-pattern>/unLikeExerciseCon</url-pattern>
+   	</servlet-mapping>
+   	<servlet-mapping>
+   		<servlet-name>UnLikeExerciseCon</servlet-name>
+   		<url-pattern>/UnLikeExerciseCon</url-pattern>
    	</servlet-mapping>
    <welcome-file-list>
       <welcome-file>index.html</welcome-file>

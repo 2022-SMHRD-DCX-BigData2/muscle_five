@@ -17,6 +17,10 @@
 	MemberDAO dao2 = new MemberDAO();
 	List<BodyComposition> bodyCompositionList = dao2.bodyCompositionselectAll(loginMember.getId_num());
 	
+	MemberDAO dao3 = new MemberDAO();
+	List<Member> likeExercise = dao3.selectLikeExercise(loginMember.getId_num());
+	
+	
 	
 	
 %>
@@ -45,20 +49,19 @@
 			border-radius: 10px;
 			border-color : #e5e5e5;
 			crusor:pointer;
+			padding : 0 2.5em 0 2.5em;
 			}
-			.routin_btn button:hover{
+			.routin_btn button:hover {
 			color : white;
 			background-color: skyblue;
-
 			}
 			/* 모달관련스타일 */
 			.modal {
 	        position: absolute;
-	        left: 0;
-			top: 210%;
+			top: 160%;
 			left: 25%;
-	        width: 50%;
-	        height: 50%;
+	        width: 60%;
+	        height: 100%;
 	
 	        display: none;
 	        padding: 40px;
@@ -269,13 +272,17 @@
 						<%}else{ %>
 						
 						<!-- 차트 표사 div  -->
+
 						
 						
 						<div class="row" id="divmuscle" >
+						
 						<div class="col-6 ">
+						
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
 						<div id="chart"></div>
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
+								<div id="chart"></div>
 								<input type="hidden" id="gender" value="<%=loginMember.getId()%>">
 								<pre>체중(kg)<input style="text-align:center;" type="text" name="weight" id="weight" value="<%=lastComposition.getWeight()%>"></pre>
 								<pre>골격근량(kg)<input style="text-align:center;" type="text" name="muscle" id="muscle" value="<%=lastComposition.getMuscle()%>"></pre>
@@ -290,8 +297,10 @@
 								<pre>팔굽혀펴기(max)<input type="text" name="pushup" id="pushup" style="text-align:center;" value="<%=lastComposition.getPushup()%>">턱걸이(max)<input type="text" name="pullup" id="pullup" style="text-align:center;" value="<%=lastComposition.getPullup()%>">
 								</pre>
 								<!-- 모달관련 -->
+								<br>
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
 								<button class="analysis" id="analysis">분석</button>
+								<br><br>
 								<div class="modal">
 								  <div class="modal_content" 
 								       title="클릭하면 창이 닫힙니다."  >
@@ -340,7 +349,13 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
+									<%if(lastComposition.getType() < 4){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else if(lastComposition.getType() < 7){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else{ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE <%=lastComposition.getType()%> LEVEL</h3>
+									<%} %>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
@@ -360,7 +375,27 @@
 										
 								</div>
 								<div id="btn-good">
-									<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+								int heart = 0;
+								if(likeExercise == null){ %>
+								<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%}else{
+									for(Member i : likeExercise){
+										if(i.getType() == lastComposition.getType()){
+											heart ++;
+										}
+									}
+									if(heart > 0){%>
+										<button id='like1' style="float:left;" onclick="unlikeCon(<%=lastComposition.getType()%>)">❤</button>
+								<%		
+									}else{%>
+										<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+									}
+								} 
+								%>	
+								
+									
 								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button onclick="prevType(<%=lastComposition.getType()%>)" id="prev">prev</button>
@@ -731,15 +766,15 @@
 					url : "likeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='unlikeCon(" + res + ")'>❤</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -755,15 +790,14 @@
 					url : "unlikeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='likeCon(" + res + ")'>🤍</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -876,6 +910,7 @@
 	               success : function(res){	
 	            	   
 	            	   var input = "";
+
 	            	   input += "<pre><img src='images/" + res.mfirst_exercise + ".png' style='width:150px; height:100px;'>" + res.mfirst_exercise +"<pre><button class='analysis_add' id=" + res.mfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.msecond_exercise + ".png' style='width:150px; height:100px;'>" + res.msecond_exercise +"<pre><button class='analysis_add' id=" + res.msecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.mthird_exercise + ".png' style='width:150px; height:100px;'>" + res.mthird_exercise +"<pre><button class='analysis_add' id=" + res.mthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
@@ -904,6 +939,7 @@
 	               success : function(res){
 	            	   
 	            	   var input = "";
+
 	            	   input += "<pre><img src='images/" + res.wfirst_exercise + ".png' style='width:150px; height:100px;'>" + res.wfirst_exercise +"<pre><button class='analysis_add' id=" + res.wfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.wsecond_exercise + ".png' style='width:150px; height:100px;'>" + res.wsecond_exercise +"<pre><button class='analysis_add' id=" + res.wsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.wthird_exercise + ".png' style='width:150px; height:100px;'>" + res.wthird_exercise +"<pre><button class='analysis_add' id=" + res.wthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
@@ -934,6 +970,7 @@
 	            	   
 	            	   
 	            	   var input = "";
+
 	            	   input += "<pre><img src='images/" + res.ffirst_exercise + ".png' style='width:150px; height:100px;'>" + res.ffirst_exercise +"<pre><button class='analysis_add' id=" + res.ffirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.fsecond_exercise + ".png' style='width:150px; height:100px;'>" + res.fsecond_exercise +"<pre><button class='analysis_add' id=" + res.fsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.fthird_exercise + ".png' style='width:150px; height:100px;'>" + res.fthird_exercise +"<pre><button class='analysis_add' id=" + res.fthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
@@ -1164,15 +1201,6 @@
 		                    $("div.modal").fadeOut();
 
 		              });
-
-		    		  
-		    		  
-		    		  
-		    		  
-		    		 
-		    		  
-		    		  
-		    		  
 		    		});
 
 		    </script>

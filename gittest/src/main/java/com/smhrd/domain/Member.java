@@ -11,7 +11,8 @@ public class Member {
 	private String birth;
 	private String email;
 	private String grade;
-	
+	private int type;
+	private int likeCnt;
 
 	public Member(int id_num, String id, String pw, String gender, String birth, String email, String grade) {
 		this.id_num = id_num;
@@ -43,7 +44,12 @@ public class Member {
 	public Member() {
 		super();
 	}
+	
 
+	public Member(int type, int id_num) {
+		this.id_num = id_num;
+		this.type = type;
+	}
 
 	public Member(String id, String pw) {
 		this.id = id;
@@ -127,8 +133,24 @@ public class Member {
 		this.grade = grade;
 	}
 
+	public int getType() {
+		return type;
+	}
 
+	public void setType(int type) {
+		this.type = type;
+	}
 
+	public int getLikeCnt() {
+		return likeCnt;
+	}
+
+	public void setLikeCnt(int likeCnt) {
+		this.likeCnt = likeCnt;
+	}
+
+	
+	
 	
 	
 
