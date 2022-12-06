@@ -107,7 +107,7 @@
 							<section>
 								<img src="images/단백질사진.png" class="inbodyimg" style="margin : 0 0 0.5em;"></img>
 								<h3>골격근</h3>
-								<p align="left" style="font-size:20px">단백질은 근육 뿐만 아니라 뼈, 피부, 머리카락 등 신체 조직의 주요 성분 성분입니다. 단백질 결핍은 인체 기능이<br> 원할히 수행되지 않아 건강이 위험할 수 있으며 소아의 경우 성장이 저하될 수 있습니다.</p>
+								<p align="left" style="font-size:20px">단백질은 근육 뿐만 아니라 뼈, 피부, 머리카락 등 신체 <br>조직의 주요 성분 성분입니다. 단백질 결핍은 인체 기능이<br> 원할히 수행되지 않아 건강이 위험할 수 있으며 소아의<br> 경우 성장이 저하될 수 있습니다.</p>
 							</section>
 						</div>
 						<div class="features-row">
