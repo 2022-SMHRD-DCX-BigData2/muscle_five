@@ -312,9 +312,9 @@
 								}
 								
 								// 장소 주소
-								addressTable +=  "<td nowrap>" + locAddress + "</td>";
+								addressTable +=  "<td>" + locAddress + "</td>";
 								// 장소 전화번호
-								addressTable +=  "<td nowrap>" + address.loc_phone + "</td>";
+								addressTable +=  "<td>" + address.loc_phone + "</td>";
 								// 장소 위치 부분
 								// 위치를 누르면 아래쪽 지도에 위치가 표시될 수 있도록 작성
 								addressTable +=  "<td nowrap>";
