@@ -298,15 +298,15 @@
 								<!-- 모달관련 -->
 								<br>
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button class="analysis" id="analysis">분석</button>
+								<%if(lastComposition.getWeight() * 0.45 < lastComposition.getMuscle()){ %>
+									<button class="analysis" id="cAnalysis">분석</button>
+								<%}else if(lastComposition.getWeight() * 0.46 > lastComposition.getMuscle()){ %>
+									<button class="analysis" id="dAnalysis">분석</button>
+								<%}else{ %>
+									<button class="analysis" id="iAnalysis">분석</button>
+								<%} %>
 								<br><br>
-								<div class="modal">
-								  <div class="modal_content" 
-								       title="클릭하면 창이 닫힙니다."  >
-								    여기에 모달창 내용을 적어줍니다.<br>
-								    이미지여도 좋고 글이어도 좋습니다.
-								  </div>
-								</div>
+								
 								
 							</section>
 								
@@ -444,10 +444,19 @@
 				
 
 		</div>
-	<div class="modal" id="analysis">
+	<div class="modal" id="cAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<p style="float:left">분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.</p>
+			<img align="center" src="images/c형.png">
+		</div>
+	</div>
+	<div class="modal" id="iAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/i형.png">
+		</div>
+	</div>
+	<div class="modal" id="dAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/d형.png">
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
@@ -995,9 +1004,17 @@
 			
 		    	$(function(){ 
 		    		
-		    		  $("button#analysis").click(function(){
-		    		    $("div#analysis").fadeIn();
+		    		  $("button#iAnalysis").click(function(){
+		    		    $("div#iAnalysis").fadeIn();
 		    		  });
+		    		  
+		    		  $("button#cAnalysis").click(function(){
+			    		    $("div#cAnalysis").fadeIn();
+			    		  });
+		    		  
+		    		  $("button#dAnalysis").click(function(){
+			    		    $("div#dAnalysis").fadeIn();
+			    		  });
 		    		  
 		    		  $(document).on("click","button#kneepushup", function() {
 		    			  $("div#kneepushup").fadeIn();
