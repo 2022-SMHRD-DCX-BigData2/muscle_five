@@ -498,18 +498,22 @@
 	</div>
 	<div class="modal" id="plank25s">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			plank<br><br>
+			<h3>plank</h3><br><br>
 			<br>
 			1. 팔꿈치를 굽히고, 무게 중심을 팔 대신에 팔뚝에 싣는 것이 중요합니다. 
 			그리고 몸은 어깨에서부터 발목에 이르기까지 일직선을 이루고 있어야 하며, 
 			복부에 힘을 주고 있는 것이 좋습니다. 
 			<br>
 			2. 자세를 유지하며 30초 이상 버티고, 호흡이 멈추지 않도록 크게 내쉬 마십니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=L4oFJRDAU4Q"><img src="images/plankyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="boxsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			boxsquat<br>
+			<h3>boxsquat</h3><br>
 			1. 벤치 혹은 박스 앞에 어깨너비로 선다.
 			<br>
 			2. 팔을 앞으로 뻗고 힙을 뒤로 빼주며 앉는다.
@@ -519,23 +523,34 @@
 			4. 앉으며 호흡 들여마시고, 일어서며 내쉰다.
 			<br>
 			5. 위의 동작를 하나로 반복 실시.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=7iw2gLZKZ0w"><img src="images/boxsquatyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="jogging1km">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jogging1km<br><br>
+			<h3>jogging1km</h3><br><br>
 			건강을 유지하는 수단으로서 자기의 몸에 알맞은 속도로 천천히 달리는 운동
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?time_continue=5&v=hGZbetOam4Q&embeds_euri=https%3A%2F%2Fnamu.wiki%2F&source_ve_path=MTM5MTE3&feature=emb_logo"><img src="images/joggingyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="sprint25m">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			sprint25m<br><br>
+			<h3>sprint25m</h3><br><br>
 			1.본인이 낼 수 있는 출력의 70%로 달립니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?time_continue=5&v=hGZbetOam4Q&embeds_euri=https%3A%2F%2Fnamu.wiki%2F&source_ve_path=MTM5MTE3&feature=emb_logo"><img src="images/joggingyou.png"></a>
 		</div>
 	</div>
 	<div class="modal" id="jumprope">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jumprope<br><br>
+			<h3>jumprope</h3><br><br>
 			1. 바른자세로 정면으로 바라보고 선다.
 			<br>
 			2. 양 팔꿈치는 구부려준다.
@@ -547,7 +562,7 @@
 	</div>
 	<div class="modal" id="pushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			pushup<br>
+			<h3>pushup</h3><br>
 			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -557,17 +572,24 @@
 			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br>
 			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=IODxDxX7oi4"><img src="images/pushupyou2.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="dead hang">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			dead hang<br>
-			s
+			<h3>dead hang</h3><br>
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=0r6xaOpKwuE"><img src="images/pushupyou2.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="squat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			squat<br>
+			<h3>squat</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -576,10 +598,14 @@
 			<br>
 			4. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
 		</div>
+		<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=xqvCmoLULNY"><img src="images/squatyou.png"></a>
+				<br>
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			widepushup<br>
+			<h3>widepushup</h3><br>
 			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -589,11 +615,15 @@
 			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br>
 			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=m3FTgWtJsFE"><img src="images/widepushupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="jumppullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jump pullup<br>
+			<h3>jump pullup</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 무릎이 살짝 구부러지는 높이를 만들어 줍니다.
@@ -601,21 +631,29 @@
 			3. 점프를 하며 당겨줍니다.
 			<br>
 			4. 천천히 내려옵니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=HbUa7Q0PUTA"><img src="images/jump pullupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			crunch<br>
+			<h3>crunch</h3><br>
 			1. 편안하게 누워 무릎을 접어 줍니다.
 			<br>
 			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
 			<br>
 			3. 천천히 펴주며 반복합니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=Xyd_fa5zoEU"><img src="images/crunchyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			widepushup<br>
+			<h3>widepushup</h3><br>
 			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -625,11 +663,15 @@
 			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br>
 			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=m3FTgWtJsFE"><img src="images/widepushupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="stop squat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			stop squat<br>
+			<h3>stop squat</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -639,21 +681,29 @@
 			4. 지면을 미는 느낌과 복압을 준 상태 그대로 2초 멈춰줍니다.
 			<br>
 			5. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=xqvCmoLULNY"><img src="images/squatyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			crunch<br>
+			<h3>crunch</h3><br>
 			1. 편안하게 누워 무릎을 접어 줍니다.
 			<br>
 			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
 			<br>
 			3. 천천히 펴주며 반복합니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=Xyd_fa5zoEU"><img src="images/crunchyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="diamondpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			diamond pushup<br>
+			<h3>diamond pushup</h3><br>
 			1. 엄지와 검지를 만나게 하여 다이아몬드 모양을 만들어 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -663,22 +713,29 @@
 			4. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
 			<br>
 			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=XtU2VQVuLYs"><img src="images/diamondyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="chinup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			chin up<br>
+			<h3>chin up</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손바닥이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 당겨줍니다.
 			<br>
 			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
-			
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=mRy9m2Q9_1I"><img src="images/chinupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="legraise">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			leg raise<br>
+			<h3>leg raise</h3><br>
 			1. 철봉을 양손으로 잡아줍니다.
 			<br>
 			2. 몸이 흔들리지 않도록 단단히 고정합니다.
@@ -686,11 +743,15 @@
 			3. 복근에 힘을 주며 몸이 니은이 되도록 올려줍니다.
 			<br>
 			4. 천천히 내려줍니다. 이 때 몸이 흔들리지 않도록 주의합니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=JB2oyawG9KI"><img src="images/legraiseyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="jumpsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			jump squat<br>
+			<h3>jump squat</h3><br>
 			1. 다리를 어깨너비로 벌리고 섭니다.
 			<br>
 			2. 가슴을 들고 허리를 곧게 펴줍니다.
@@ -700,11 +761,15 @@
 			4. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
 			<br>
 			5. 4번동작 시 폭발적으로 뛰어 줍니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=J6Y520KkwOA"><img src="images/jumpsquatyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="halfburpee">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			half burpee<br>
+			<h3>half burpee</h3><br>
 			1. 편안하게 서줍니다.
 			<br>
 			2. 바닥에 양손을 펴주고 다리를 피며 엎드려 줍니다.
@@ -712,11 +777,15 @@
 			3. 다리를 접어줍니다.
 			<br>
 			4. 일어나며 뛰어 줍니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=rl2ZrRsmQ18"><img src="images/halfburpeeyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="pikepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			pike pushup<br>
+			<h3>pike pushup</h3><br>
 			1. 팔을 어깨너비보다 넓게 벌려 줍니다.
 			<br>
 			2. 다리는 넓게 벌려 줍니다.
@@ -728,32 +797,43 @@
 			5. 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
 			<br>
 			6. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
-			
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=XckEEwa1BPI"><img src="images/pikepushupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="pullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			pullup<br>
+			<h3>pullup</h3><br>
 			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 당겨줍니다.
 			<br>
 			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=eGo4IYlbE5g"><img src="images/pullupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="onelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			oneleg Plank<br>
+			<h3>oneleg Plank</h3><br>
 			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 둡니다.
 			<br>
 			2. 그 상태에서 한 다리를 들어줍니다.
 			<br>
 			3. 복근에 힘을 주며 한 쪽으로 기울어 지지 않도록 버텨 줍니다. 
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=OgkpItr9DOY"><img src="images/onelegplankyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="lunge">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			lunge<br>
+			<h3>lunge</h3><br>
 			1. 편안한 자세로 서 줍니다.
 			<br>
 			2.정면을 바라보며 상체는 곧게 세워줍니다.
@@ -763,11 +843,15 @@
 			4. 뒤에 다리가 바닥에 닿기 직전까지 내려갑니다.
 			<br>
 			5. 둔근에 힘을 주며 일어나 줍니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=wrwwXE_x-pQ"><img src="images/lungeyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="boxhandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			box hand pushup<br>
+			<h3>box hand pushup</h3><br>
 			1. 양손은 어깨너비보다 넓게 벌려지면을 지지해 줍니다.
 			<br>
 			2. 다리를 박스에 올려줍니다. 이때 몸은 ㄱ 과 같은 모양이 되게 합니다.
@@ -777,21 +861,29 @@
 			4. 내려갔을때 팔꿈치가 지면과 수직이 되도록 합니다.
 			<br>
 			5. 시작자세로 돌아옵니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=iEn2EdmP4V4"><img src="images/boxhandpushupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="widepullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			wide pullup<br>
+			<h3>wide pullup</h3><br>
 			1. 철봉을 어깨 너비보다 넓게 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
 			<br>
 			2. 어깨를 그대로 두고 견갑과 광배근을 이용하여 당겨줍니다.
 			<br>
 			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=IaeS1qoa-QA"><img src="images/widepullupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="onearmonelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			onearm oneleg Plank<br>
+			<h3>onearm oneleg Plank</h3><br>
 			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 엎드립니다.
 			<br>
 			2. 그 상태에서 한 다리를 들어줍니다.
@@ -801,6 +893,10 @@
 			4. 다리를 든 곳의 반대쪽 손을 들어 줍니다.
 			<br>
 			5. 복근에 힘을 주며 한 쪽으로 기울어 지지 않도록 버텨 줍니다. 
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=laiOnwFdxJ0"><img src="images/onearmonelegplankyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="jumplunge">
@@ -815,6 +911,7 @@
 			4. 뒤에 다리가 바닥에 닿기 직전까지 내려갑니다.
 			<br>
 			5. 팔을 위로 저으며 둔근에 폭발적으로 힘을 주며 뛰어 줍니다.
+			
 		</div>
 	</div>
 	<div class="modal" id="wallwalk">
