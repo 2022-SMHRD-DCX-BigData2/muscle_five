@@ -269,12 +269,12 @@
 						<%}else{ %>
 						
 						<!-- 차트 표사 div  -->
-						<div id="chart"></div>
 						
 						
 						<div class="row" id="divmuscle" >
 						<div class="col-6 ">
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+						<div id="chart"></div>
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<input type="hidden" id="gender" value="<%=loginMember.getId()%>">
 								<pre>체중(kg)<input style="text-align:center;" type="text" name="weight" id="weight" value="<%=lastComposition.getWeight()%>"></pre>
