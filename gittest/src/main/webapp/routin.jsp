@@ -880,17 +880,11 @@
 	               success : function(res){	
 	            	   
 	            	   var input = "";
-<<<<<<< HEAD
-	            	   input += "<pre><img src='images/" + res.mfirst_exercise +".png' style='width:150px; height:100px;'>" + res.mfirst_exercise +"<pre><button class='analysis_add' id=" + res.mfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.msecond_exercise +".png' style='width:150px; height:100px;'>" + res.msecond_exercise +"<pre><button class='analysis_add' id=" + res.msecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.mthird_exercise +".png' style='width:150px; height:100px;'>" + res.mthird_exercise +"<pre><button class='analysis_add' id=" + res.mthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.mfourth_exercise +".png' style='width:150px; height:100px;'>" + res.mfourth_exercise +"<pre><button class='analysis_add' id=" + res.mfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-=======
+
 	            	   input += "<pre><img src='images/" + res.mfirst_exercise + ".png' style='width:150px; height:100px;'>" + res.mfirst_exercise +"<pre><button class='analysis_add' id=" + res.mfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.msecond_exercise + ".png' style='width:150px; height:100px;'>" + res.msecond_exercise +"<pre><button class='analysis_add' id=" + res.msecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.mthird_exercise + ".png' style='width:150px; height:100px;'>" + res.mthird_exercise +"<pre><button class='analysis_add' id=" + res.mthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.mfourth_exercise + ".png' style='width:150px; height:100px;'>" + res.mfourth_exercise +"<pre><button class='analysis_add' id=" + res.mfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 	            	   
 	            	   $("#recommendRoutin").html(input);
 						
@@ -915,17 +909,11 @@
 	               success : function(res){
 	            	   
 	            	   var input = "";
-<<<<<<< HEAD
-	            	   input += "<pre><img src='images/" + res.wfirst_exercise +".png' style='width:150px; height:100px;'>" + res.wfirst_exercise +"<pre><button class='analysis_add' id=" + res.wfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wsecond_exercise +".png' style='width:150px; height:100px;'>" + res.wsecond_exercise +"<pre><button class='analysis_add' id=" + res.wsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wthird_exercise +".png' style='width:150px; height:100px;'>" + res.wthird_exercise +"<pre><button class='analysis_add' id=" + res.wthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wfourth_exercise +".png' style='width:150px; height:100px;'>" + res.wfourth_exercise +"<pre><button class='analysis_add' id=" + res.wfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-=======
+
 	            	   input += "<pre><img src='images/" + res.wfirst_exercise + ".png' style='width:150px; height:100px;'>" + res.wfirst_exercise +"<pre><button class='analysis_add' id=" + res.wfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.wsecond_exercise + ".png' style='width:150px; height:100px;'>" + res.wsecond_exercise +"<pre><button class='analysis_add' id=" + res.wsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.wthird_exercise + ".png' style='width:150px; height:100px;'>" + res.wthird_exercise +"<pre><button class='analysis_add' id=" + res.wthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.wfourth_exercise + ".png' style='width:150px; height:100px;'>" + res.wfourth_exercise +"<pre><button class='analysis_add' id=" + res.wfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 	            	   
 	            	   $("#recommendRoutin").html(input);
 
@@ -952,17 +940,11 @@
 	            	   
 	            	   
 	            	   var input = "";
-<<<<<<< HEAD
-	            	   input += "<pre><img src='images/" + res.ffirst_exercise +".png' style='width:150px; height:100px;'>" + res.ffirst_exercise +"<pre><button class='analysis_add' id=" + res.ffirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.fsecond_exercise +".png' style='width:150px; height:100px;'>" + res.fsecond_exercise +"<pre><button class='analysis_add' id=" + res.fsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.fthird_exercise +".png' style='width:150px; height:100px;'>" + res.fthird_exercise +"<pre><button class='analysis_add' id=" + res.fthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.ffourth_exercise +".png' style='width:150px; height:100px;'>" + res.ffourth_exercise +"<pre><button class='analysis_add' id=" + res.ffourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-=======
+
 	            	   input += "<pre><img src='images/" + res.ffirst_exercise + ".png' style='width:150px; height:100px;'>" + res.ffirst_exercise +"<pre><button class='analysis_add' id=" + res.ffirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.fsecond_exercise + ".png' style='width:150px; height:100px;'>" + res.fsecond_exercise +"<pre><button class='analysis_add' id=" + res.fsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.fthird_exercise + ".png' style='width:150px; height:100px;'>" + res.fthird_exercise +"<pre><button class='analysis_add' id=" + res.fthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
 	            	   input += "<pre><img src='images/" + res.ffourth_exercise + ".png' style='width:150px; height:100px;'>" + res.ffourth_exercise +"<pre><button class='analysis_add' id=" + res.ffourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
->>>>>>> branch 'master' of https://github.com/2022-SMHRD-DCX-BigData2/muscle_five.git
 	            	   
 	            	   
 	            	   $("#recommendRoutin").html(input);
