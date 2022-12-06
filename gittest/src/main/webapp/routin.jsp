@@ -349,11 +349,11 @@
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
 									<%if(lastComposition.getType() < 4){ %>
-										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS LEVEL<%= lastComposition.getType() %></h3>
+										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS <%=lastComposition.getType()%> LEVEL</h3>
 									<%} else if(lastComposition.getType() < 7){ %>
-										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL LEVEL<%= lastComposition.getType() %></h3>
+										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL <%=lastComposition.getType()%> LEVEL</h3>
 									<%} else{ %>
-										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE LEVEL<%= lastComposition.getType() %></h3>
+										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE <%=lastComposition.getType()%> LEVEL</h3>
 									<%} %>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
