@@ -171,7 +171,7 @@
 								        <tr align="center" valign="middle">
 								            <td colspan="5">
 								            <%if(loginMember != null){ %>
-ㅌ								                <input type="submit" value="수정" >
+								                <input type="submit" value="수정" >
 											<%} %>
 								                <a href="BoardList.jsp"><input type="button" value="목록" ></a>           
 								            </td>

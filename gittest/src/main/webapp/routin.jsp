@@ -17,6 +17,10 @@
 	MemberDAO dao2 = new MemberDAO();
 	List<BodyComposition> bodyCompositionList = dao2.bodyCompositionselectAll(loginMember.getId_num());
 	
+	MemberDAO dao3 = new MemberDAO();
+	List<Member> likeExercise = dao3.selectLikeExercise(loginMember.getId_num());
+	
+	
 	
 	
 %>
@@ -88,7 +92,7 @@
 			}
 			.analysis button:hover{
 				background-color: skyblue;
-				color : skyblue;
+				color : skyblue ;
 			}
 			.analysis_add{
 			border:none;
@@ -268,7 +272,7 @@
 						<%}else{ %>
 						
 						<!-- 차트 표사 div  -->
-						
+
 						
 						
 						<div class="row" id="divmuscle" >
@@ -276,6 +280,7 @@
 						<div class="col-6 ">
 						
 							<section class="box special"  style="padding : 2.5em 2em; font-family : S-CoreDream-3Light;">
+						<div id="chart"></div>
 								<h5 id="font" style="margin:0 0 0.8em;">체성분 입력</h5>
 								<div id="chart"></div>
 								<input type="hidden" id="gender" value="<%=loginMember.getId()%>">
@@ -294,15 +299,15 @@
 								<!-- 모달관련 -->
 								<br>
 								<input type="submit" value="업데이트" onclick="insertCom(<%=userNum%>)">
-								<button class="analysis" id="analysis">분석</button>
+								<%if(lastComposition.getWeight() * 0.42 > lastComposition.getMuscle()){ %>
+									<button class="analysis" id="cAnalysis">분석</button>
+								<%}else if(lastComposition.getWeight() * 0.46 < lastComposition.getMuscle()){ %>
+									<button class="analysis" id="dAnalysis">분석</button>
+								<%}else{ %>
+									<button class="analysis" id="iAnalysis">분석</button>
+								<%} %>
 								<br><br>
-								<div class="modal">
-								  <div class="modal_content" 
-								       title="클릭하면 창이 닫힙니다."  >
-								    여기에 모달창 내용을 적어줍니다.<br>
-								    이미지여도 좋고 글이어도 좋습니다.
-								  </div>
-								</div>
+								
 								
 							</section>
 								
@@ -344,7 +349,13 @@
 									<img id="insta" src="인스타사진2.png"> <span   id="user-name" style="color : black;"> <%=loginMember.getId() %></span>
 								</div><br>
 								<div class="box"  style ="background-color:whitesmoke; box-shadow:inherit;" id="commendRoutin">
-									<h3 id="font" style="margin : 0 0 0.5em;"><%=lastComposition.getType() %>단계</h3>
+									<%if(lastComposition.getType() < 4){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NOVIS <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else if(lastComposition.getType() < 7){ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">NORMAL <%=lastComposition.getType()%> LEVEL</h3>
+									<%} else{ %>
+										<h3 id="font" style="margin : 0 0 0.5em;">ADVANCE <%=lastComposition.getType()%> LEVEL</h3>
+									<%} %>
 									<%if(lastComposition.getWeeks() == 3){ %>
 									<button class="routin_btn" onclick="selectMonday(<%=lastComposition.getType()%>)">월</button>
 									<button class="routin_btn" onclick="selectWednesday(<%=lastComposition.getType()%>)">수</button>
@@ -364,7 +375,27 @@
 										
 								</div>
 								<div id="btn-good">
-									<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+								int heart = 0;
+								if(likeExercise == null){ %>
+								<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%}else{
+									for(Member i : likeExercise){
+										if(i.getType() == lastComposition.getType()){
+											heart ++;
+										}
+									}
+									if(heart > 0){%>
+										<button id='like1' style="float:left;" onclick="unlikeCon(<%=lastComposition.getType()%>)">❤</button>
+								<%		
+									}else{%>
+										<button id='like1' style="float:left;" onclick="likeCon(<%=lastComposition.getType()%>)">🤍</button>
+								<%
+									}
+								} 
+								%>	
+								
+									
 								</div>
 								<div id="btn_group" style="display:flex; margin : 2.4em 0 0;">
 									<button onclick="prevType(<%=lastComposition.getType()%>)" id="prev">prev</button>
@@ -414,10 +445,19 @@
 				
 
 		</div>
-	<div class="modal" id="analysis">
+	<div class="modal" id="cAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<p style="float:left">분석내용입니다.<br> 
-			이미지여도 좋고 글이어도 좋습니다.</p>
+			<img align="center" src="images/c형.png">
+		</div>
+	</div>
+	<div class="modal" id="iAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/i형.png">
+		</div>
+	</div>
+	<div class="modal" id="dAnalysis">
+		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
+			<img align="center" src="images/d형.png">
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
@@ -476,13 +516,13 @@
 	<div class="modal" id="jogging1km">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			jogging1km<br><br>
-			설명
+			건강을 유지하는 수단으로서 자기의 몸에 알맞은 속도로 천천히 달리는 운동
 		</div>
 	</div>
 	<div class="modal" id="sprint25m">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			sprint25m<br><br>
-			설명
+			1.본인이 낼 수 있는 출력의 70%로 달립니다.
 		</div>
 	</div>
 	<div class="modal" id="jumprope">
@@ -500,205 +540,409 @@
 	<div class="modal" id="pushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			pushup<br>
-			설명
+			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 고정합니다.
+			<br>
+			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			3. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			<br>
+			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
 		</div>
 	</div>
 	<div class="modal" id="dead hang">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			dead hang<br>
-			설명
+			s
 		</div>
 	</div>
 	<div class="modal" id="squat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			squat<br>
-			설명
+			1. 다리를 어깨너비로 벌리고 섭니다.
+			<br>
+			2. 가슴을 들고 허리를 곧게 펴줍니다.
+			<br>
+			3. 고관절을 접으면서 몸이 다리 사이로 들어가는 느낌으로 앉아 줍니다.
+			<br>
+			4. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
 		</div>
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			widepushup<br>
-			설명
+			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
+			<br>
+			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			3. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			<br>
+			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
 		</div>
 	</div>
 	<div class="modal" id="jumppullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			jump pullup<br>
-			설명
+			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
+			<br>
+			2. 무릎이 살짝 구부러지는 높이를 만들어 줍니다.
+			<br>
+			3. 점프를 하며 당겨줍니다.
+			<br>
+			4. 천천히 내려옵니다.
 		</div>
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			crunch<br>
-			설명
+			1. 편안하게 누워 무릎을 접어 줍니다.
+			<br>
+			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
+			<br>
+			3. 천천히 펴주며 반복합니다.
 		</div>
 	</div>
 	<div class="modal" id="widepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			widepushup<br>
-			설명
+			1. 어깨넓이보다 넓게 손을 위치시 시켜 상체를 지지하고 허리를 곧게하여 고정합니다.
+			<br>
+			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			3. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			4. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			<br>
+			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
 		</div>
 	</div>
 	<div class="modal" id="stop squat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			stop squat<br>
-			설명
+			1. 다리를 어깨너비로 벌리고 섭니다.
+			<br>
+			2. 가슴을 들고 허리를 곧게 펴줍니다.
+			<br>
+			3. 고관절을 접으면서 몸이 다리 사이로 들어가는 느낌으로 앉아 줍니다.
+			<br>
+			4. 지면을 미는 느낌과 복압을 준 상태 그대로 2초 멈춰줍니다.
+			<br>
+			5. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
 		</div>
 	</div>
 	<div class="modal" id="crunch">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			crunch<br>
-			설명
+			1. 편안하게 누워 무릎을 접어 줍니다.
+			<br>
+			2. 몸이 공이 된다고 생각하며 상복부만 말아줍니다.
+			<br>
+			3. 천천히 펴주며 반복합니다.
 		</div>
 	</div>
 	<div class="modal" id="diamondpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			diamond pushup<br>
-			설명
+			1. 엄지와 검지를 만나게 하여 다이아몬드 모양을 만들어 줍니다.
+			<br>
+			2. 다리는 넓게 벌려 줍니다.
+			<br>
+			3. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			4. 가슴(대흉근)과 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 		</div>
 	</div>
 	<div class="modal" id="chinup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			chin up<br>
-			설명
+			1. 철봉을 양손으로 잡아 줍니다. 이 때 손바닥이 나를 향하도록 잡습니다.
+			<br>
+			2. 어깨를 그대로 두고 당겨줍니다.
+			<br>
+			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
+			
 		</div>
 	</div>
 	<div class="modal" id="legraise">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			leg raise<br>
-			설명
+			1. 철봉을 양손으로 잡아줍니다.
+			<br>
+			2. 몸이 흔들리지 않도록 단단히 고정합니다.
+			<br>
+			3. 복근에 힘을 주며 몸이 니은이 되도록 올려줍니다.
+			<br>
+			4. 천천히 내려줍니다. 이 때 몸이 흔들리지 않도록 주의합니다.
 		</div>
 	</div>
 	<div class="modal" id="jumpsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			jump squat<br>
-			설명
+			1. 다리를 어깨너비로 벌리고 섭니다.
+			<br>
+			2. 가슴을 들고 허리를 곧게 펴줍니다.
+			<br>
+			3. 고관절을 접으면서 몸이 다리 사이로 들어가는 느낌으로 앉아 줍니다.
+			<br>
+			4. 무릎과 지면을 바깥으로 밀어 내는 느낌으로 밀어주며 일어납니다.
+			<br>
+			5. 4번동작 시 폭발적으로 뛰어 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="halfburpee">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			half burpee<br>
-			설명
+			1. 편안하게 서줍니다.
+			<br>
+			2. 바닥에 양손을 펴주고 다리를 피며 엎드려 줍니다.
+			<br>
+			3. 다리를 접어줍니다.
+			<br>
+			4. 일어나며 뛰어 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="pikepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			pike pushup<br>
-			설명
+			1. 팔을 어깨너비보다 넓게 벌려 줍니다.
+			<br>
+			2. 다리는 넓게 벌려 줍니다.
+			<br>
+			3. 정수리가 땅을 보도록 합니다.
+			<br>
+			4. 머리가 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
+			<br>
+			5. 어깨(삼각근)근육으로 상체를 시작지점으로 밀어줍니다.
+			<br>
+			6. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
+			
 		</div>
 	</div>
 	<div class="modal" id="pullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			pullup<br>
-			설명
+			1. 철봉을 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
+			<br>
+			2. 어깨를 그대로 두고 당겨줍니다.
+			<br>
+			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
 		</div>
 	</div>
 	<div class="modal" id="onelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			oneleg Plank<br>
-			설명
+			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 둡니다.
+			<br>
+			2. 그 상태에서 한 다리를 들어줍니다.
+			<br>
+			3. 복근에 힘을 주며 한 쪽으로 기울어 지지 않도록 버텨 줍니다. 
 		</div>
 	</div>
 	<div class="modal" id="lunge">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			lunge<br>
-			설명
+			1. 편안한 자세로 서 줍니다.
+			<br>
+			2.정면을 바라보며 상체는 곧게 세워줍니다.
+			<br>
+			3. 한쪽 다리를 앞으로 내밀며 굽혀 줍니다. 굽힌 다리가 무릎이 너무 앞으로 나가지 않도록 주의합니다.
+			<br>
+			4. 뒤에 다리가 바닥에 닿기 직전까지 내려갑니다.
+			<br>
+			5. 둔근에 힘을 주며 일어나 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="boxhandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			box hand pushup<br>
-			설명
+			1. 양손은 어깨너비보다 넓게 벌려지면을 지지해 줍니다.
+			<br>
+			2. 다리를 박스에 올려줍니다. 이때 몸은 ㄱ 과 같은 모양이 되게 합니다.
+			<br>
+			3. 삼각근을 이용하며 정수리가 땅에 닿는 느낌으로 내려갑니다.
+			<br>
+			4. 내려갔을때 팔꿈치가 지면과 수직이 되도록 합니다.
+			<br>
+			5. 시작자세로 돌아옵니다.
 		</div>
 	</div>
 	<div class="modal" id="widepullup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			wide pullup<br>
-			설명
+			1. 철봉을 어깨 너비보다 넓게 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
+			<br>
+			2. 어깨를 그대로 두고 견갑과 광배근을 이용하여 당겨줍니다.
+			<br>
+			3. 턱이 봉에 닿을때까지 갔다면 천천히 내려옵니다.
 		</div>
 	</div>
 	<div class="modal" id="onearmonelegPlank">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			onearm oneleg Plank<br>
-			설명
+			1. 팔꿈치를 11자로 두고 몸은 곧게 핀 상태로 엎드립니다.
+			<br>
+			2. 그 상태에서 한 다리를 들어줍니다.
+			<br>
+			3. 복근에 힘을 주며 한 쪽으로 기울어 지지 않도록 버텨 줍니다. 
+			<br>
+			4. 다리를 든 곳의 반대쪽 손을 들어 줍니다.
+			<br>
+			5. 복근에 힘을 주며 한 쪽으로 기울어 지지 않도록 버텨 줍니다. 
 		</div>
 	</div>
 	<div class="modal" id="jumplunge">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			jump lunge<br>
-			설명
+			1. 편안한 자세로 서 줍니다.
+			<br>
+			2.정면을 바라보며 상체는 곧게 세워줍니다.
+			<br>
+			3. 한쪽 다리를 앞으로 내밀며 굽혀 줍니다. 굽힌 다리가 무릎이 너무 앞으로 나가지 않도록 주의합니다.
+			<br>
+			4. 뒤에 다리가 바닥에 닿기 직전까지 내려갑니다.
+			<br>
+			5. 팔을 위로 저으며 둔근에 폭발적으로 힘을 주며 뛰어 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="wallwalk">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			wall walk<br>
-			설명
+			1. 벽에 발바닥이 닿도록 하여 엎드려 누워줍니다.
+			<br>
+			2. 팔을 펴주고 다리를 한다리씩 벽에 댑니다.
+			<br>
+			3. 삼각근에 힘을주어 버티며 손바닥이 바닥과 10cm거리가 될때까지 벽쪽으로 가줍니다.
+			
 		</div>
 	</div>
 	<div class="modal" id="chesttobar">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			chest to bar<br>
-			설명
+			1. 철봉을 어깨 너비보다 넓게 양손으로 잡아 줍니다. 이 때 손등이 나를 향하도록 잡습니다.
+			<br>
+			2. 어깨를 그대로 두고 견갑과 광배근을 이용하여 당겨줍니다.
+			<br>
+			3. 가슴이 봉에 닿을때까지 당겨줍니다.
+			<br>
+			4. 천천히 내려옵니다.
 		</div>
 	</div>
 	<div class="modal" id="toestobar">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			toes to bar<br>
-			설명
+			1. 철봉을 양손으로 잡아줍니다.
+			<br>
+			2. 몸이 흔들리지 않도록 단단히 고정합니다.
+			<br>
+			3. 복근에 힘을 주며 발이 봉이 닿도록 올려줍니다.
+			<br>
+			4. 천천히 내려줍니다. 이 때 몸이 흔들리지 않도록 주의합니다.
 		</div>
 	</div>
 	<div class="modal" id="boxpistolsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			box pistol squat<br>
-			설명
+			1. 박스를 준비 해 줍니다.
+			<br>
+			2. 한다리를 들고 천천히 앉아 줍니다. 앉았을 때 몸이 총모양이 됩니다.
+			<br>
+			3. 박스에 닿았다면 둔근과 대퇴사두에 힘을 주며 일어나 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="burpee">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			burpee<br>
-			설명
+			1. 편안하게 서줍니다.
+			<br>
+			2. 바닥에 양손을 펴주고 다리를 피며 엎드려 줍니다.
+			<br>
+			3. 팔을 구부려 가슴이 바닥에 닿도록 합니다.
+			<br>
+			4. 팔을 펴줍니다.
+			<br>
+			5. 다리를 무릎쪽으로 당기며 쪼그려 앉습니다.
+			<br>
+			6. 일어나며 뛰어 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="wallhandstandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			wall hand stand pushup<br>
-			설명
+			1. 벽에 발뒤꿈치가 닿도록 물구나무를 서줍니다. 
+			<br>
+			2. 벽에 엉덩이는 닿고 등과 머리는 떨이지도록 해줍니다.
+			<br>
+			3. 손끝을 대각선 방향으로 보도록 하고 삼각근과 승모근에 힘을 주어 버티며 내려갑니다.
+			<br>
+			4. 전완이 지면과 수직이 되도록 주의하고 삼각근과 승모근에 긴장 상태를 유지하며 원래 자세로 돌아옵니다.
+			
 		</div>
 	</div>
 	<div class="modal" id="KneelingAbWheel">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			Kneeling Ab Wheel<br>
-			설명
+			1. 지면에 무릎을 대고 ab휠을 잡아 줍니다.
+			<br>
+			2. 코어에 긴장을 유지하며 천천히 내려갑니다.
+			<br>
+			3. 팔꿈치가 펴져 있는 상태 그대로 복근의 수축을 이용하여 원래 자세로 돌아갑니다.
 		</div>
 	</div>
 	<div class="modal" id="freestandpushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			free stand pushup<br>
-			설명
+			1. 지지 할 수 있는 구조물 없이 물구나무를 서줍니다.
+			<br>
+			2. 코어에 긴장을 유지하며 삼각근과 승모근을 이요하여 팔을 구부렸다 펴줍니다.
 		</div>
 	</div>
 	<div class="modal" id="Ab Wheel">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			Ab Wheel<br>
-			설명
+			1. 지면에 발을 대고 ab휠을 잡아 줍니다.
+			<br>
+			2. 코어에 긴장을 유지하며 천천히 내려갑니다.
+			<br>
+			3. 코어의 긴장이 풀리지 않는 부분까지 내려가 줍니다.
+			<br>
+			4. 팔꿈치가 펴져 있는 상태 그대로 복근의 수축을 이용하여 원래 자세로 돌아갑니다.
 		</div>
 	</div>
 	<div class="modal" id="muscleup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			muscleup<br>
-			설명
+			1. 양손을 어깨너비만큼 하여 철봉을 잡아 줍니다.
+			<br>
+			2. 코어와 광배에 힘을 주고 몸을 앞뒤로 흔들어 반동을 만들어 줍니다.
+			<br>
+			3. 다리를 차주며 몸이 지면과 수평이 되는 느낌으로 배꼽이 최대한 봉과 가깝게 해줍니다.
+			<br>
+			4. 상체를 접으며 올라간 후 팔을 펴줍니다.
 		</div>
 	</div>
 	<div class="modal" id="pistolsquat">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			pistol squat<br>
-			설명
+			1. 편안한 자세로 무릎너비 만큼 다리를 벌리고 서줍니다.
+			<br>
+			2. 한다리를 들고 천천히 앉아 줍니다. 앉았을 때 몸이 총모양이 됩니다.
+			<br>
+			3. 둔근과 대퇴사두 복근 전신의 힘을 이용하여 일어나 줍니다.
 		</div>
 	</div>
 	<div class="modal" id="deadhang">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
 			deadhang<br>
-			설명
+			1. 턱걸이 전의 기본 자세입니다.
+			<br>
+			2. 축 매달리며 팔을 완전히 펴줍니다.
+			<br>
+			3. 견갑을 끌어 당겨 으쓱 해줍니다.
 		</div>
 	</div>
 	<div class="modal" id="AbWheel">
@@ -735,15 +979,15 @@
 					url : "likeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='unlikeCon(" + res + ")'>❤</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -759,15 +1003,14 @@
 					url : "unlikeCon",
 					type : "get",
 					data : {
-						"type" : type 
+						"type" : type,
+						"id_num" : $("#idNumber").val()
 					},
 					success : function(res){
 						console.log(res)
-		            	var input = "";
-		            	input += "<button id='like1' style='float:left;' onclick='likeCon(" + res + ")'>🤍</button>"
-		            		
-		            	$("#btn-good").html(input);
-		            		
+		            	location.reload();
+		            	location.replace(location.href);
+		            	location.href = location.href;
 		            			
 		            		
 		               },
@@ -966,9 +1209,17 @@
 			
 		    	$(function(){ 
 		    		
-		    		  $("button#analysis").click(function(){
-		    		    $("div#analysis").fadeIn();
+		    		  $("button#iAnalysis").click(function(){
+		    		    $("div#iAnalysis").fadeIn();
 		    		  });
+		    		  
+		    		  $("button#cAnalysis").click(function(){
+			    		    $("div#cAnalysis").fadeIn();
+			    		  });
+		    		  
+		    		  $("button#dAnalysis").click(function(){
+			    		    $("div#dAnalysis").fadeIn();
+			    		  });
 		    		  
 		    		  $(document).on("click","button#kneepushup", function() {
 		    			  $("div#kneepushup").fadeIn();
