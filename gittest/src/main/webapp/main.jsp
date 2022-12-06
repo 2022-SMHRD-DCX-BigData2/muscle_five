@@ -157,12 +157,12 @@
 									if(cnt < 4){
 										if(i.getType() < 4){
 								%>
-											<pre>NOVICE <%=i.getType()%> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+											<pre>NOVICE <%=i.getType()%> LEVEL <b style="color:red">❤</b> : <%=i.getLikeCnt() %></pre> 
 								<%} else if(i.getType() < 7){ %>
-											<pre>NORMAL <%= i.getType() %> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+											<pre>NORMAL <%= i.getType() %> LEVEL <b style="color:red">❤</b> : <%=i.getLikeCnt() %></pre> 
 									
 								<%}else{ %>	
-											<pre>ADVANCE <%= i.getType() %> LEVEL ❤ : <%=i.getLikeCnt() %></pre> 
+											<pre>ADVANCE <%= i.getType() %> LEVEL <b style="color:red">❤</b> : <%=i.getLikeCnt() %></pre> 
 								<%}}} %>
 								
 							</section>

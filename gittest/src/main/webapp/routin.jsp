@@ -59,7 +59,7 @@
 			.modal {
 	        position: absolute;
 			top: 160%;
-			left: 25%;
+			left: 20%;
 	        width: 60%;
 	        height: 100%;
 	
@@ -447,22 +447,22 @@
 		</div>
 	<div class="modal" id="cAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<img align="center" src="images/c형.png">
+			<img style="margin : 0 0 0 8em;" src="images/c형.png">
 		</div>
 	</div>
 	<div class="modal" id="iAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<img align="center" src="images/i형.png">
+			<img style="margin : 0 0 0 8em;" src="images/i형.png">
 		</div>
 	</div>
 	<div class="modal" id="dAnalysis">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			<img align="center" src="images/d형.png">
+			<img style="margin : 0 0 0 8em;" src="images/d형.png">
 		</div>
 	</div>
 	<div class="modal" id="kneepushup">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			kneepushup<br><br>
+			<h3>kneepushup</h3><br><br>
 			1. 어깨넓이 정도로 손으로 상체를 지지하고 허리를 곧게하여 무릎을 바닥에 고정합니다.
 			<br>
 			2. 가슴(대흉근)이 바닥에 닿을때까지 저항하며 내려가며 운동중에는 항상 허리는 곧게 유지합니다.
@@ -474,18 +474,26 @@
 			5. 호흡은 상체가 내려갈 때 들어마시고 올릴 때 내쉽니다.
 			<br>
 			※ 주동근: 대흉근(Pectoralis major) / 협력근, 상완삼두근(Triceps), 삼각근(Deltoids)
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=WcHtt6zT3Go"><img src="images/pushupyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="superman">
 		<div class="modal_content" title="클릭하면 창이 닫힙니다.">
-			superman<br><br>
+			<h3>superman</h3><br><br>
 			1. 바닥에 엎드려 양팔을 앞으로 뻗는다.
 			<br>
 			2. 양팔과 양다리를 벌려 몸을 X자로 만든다.
 			<br>
-			3) 배를 제외한 상체 윗부분과 양쪽 다리를 지면에서 힘차고 빠르게 들어올린다.
+			3. 배를 제외한 상체 윗부분과 양쪽 다리를 지면에서 힘차고 빠르게 들어올린다.
 			<br>
-			4) 들어올린 상태에서 10~30초간 자세를 유지한 뒤 상체와 하체를 천천히 내린다. 3번 반복한다.
+			4. 들어올린 상태에서 10~30초간 자세를 유지한 뒤 상체와 하체를 천천히 내린다. 3번 반복한다.
+			<br><br><br>
+			<h3>동영상</h3>
+			<a href="https://www.youtube.com/watch?v=z6PJMT2y8GQ"><img src="images/supermanyou.png"></a>
+				<br>
 		</div>
 	</div>
 	<div class="modal" id="plank25s">
