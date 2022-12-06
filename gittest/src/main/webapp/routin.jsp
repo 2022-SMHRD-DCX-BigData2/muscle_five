@@ -367,7 +367,7 @@
 									<a onclick="">금</a>
 									<%} %>
 										<div id="recommendRoutin">
-										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:120px; height:100px;">  <b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
+										<pre><img src="images/<%=lastComposition.getMfirst_exercise()%>.png" style="width:120px; height:100px;"><b style="font-size:26px;"><%=lastComposition.getMfirst_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfirst_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMsecond_exercise()%>.png" style="width:120px; height:100px;">  <b style="font-size:26px;"><%=lastComposition.getMsecond_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMsecond_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMthird_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMthird_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMthird_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
 										<pre><img src="images/<%=lastComposition.getMfourth_exercise()%>.png" style="width:120px; height:100px;"> <b style="font-size:26px;"> <%=lastComposition.getMfourth_exercise()%></b><pre><button class="analysis_add" id="<%=lastComposition.getMfourth_exercise().replace(" ", "")%>">운동 더보기</button></pre></pre>
@@ -1258,10 +1258,10 @@
 	            	   
 	            	   var input = "";
 
-	            	   input += "<pre><img src='images/" + res.mfirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mfirst_exercise +"</b><pre><button class='analysis_add' id=" + res.mfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.msecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;''>" + res.msecond_exercise +"</b><pre><button class='analysis_add' id=" + res.msecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.mthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mthird_exercise +"</b><pre><button class='analysis_add' id=" + res.mthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.mfourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mfourth_exercise +"</b><pre><button class='analysis_add' id=" + res.mfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.mfirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mfirst_exercise +"</b><pre><button class='analysis_add' id='" + res.mfirst_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.msecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;''>" + res.msecond_exercise +"</b><pre><button class='analysis_add' id='" + res.msecond_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.mthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mthird_exercise +"</b><pre><button class='analysis_add' id='" + res.mthird_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.mfourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.mfourth_exercise +"</b><pre><button class='analysis_add' id='" + res.mfourth_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
 	            	   
 	            	   $("#recommendRoutin").html(input);
 						
@@ -1287,10 +1287,10 @@
 	            	   
 	            	   var input = "";
 
-	            	   input += "<pre><img src='images/" + res.wfirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wfirst_exercise +"</b><pre><button class='analysis_add' id=" + res.wfirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wsecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wsecond_exercise +"</b><pre><button class='analysis_add' id=" + res.wsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wthird_exercise +"</b><pre><button class='analysis_add' id=" + res.wthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.wfourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wfourth_exercise +"</b><pre><button class='analysis_add' id=" + res.wfourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.wfirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wfirst_exercise +"</b><pre><button class='analysis_add' id='" + res.wfirst_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.wsecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wsecond_exercise +"</b><pre><button class='analysis_add' id='" + res.wsecond_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.wthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wthird_exercise +"</b><pre><button class='analysis_add' id='" + res.wthird_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.wfourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.wfourth_exercise +"</b><pre><button class='analysis_add' id='" + res.wfourth_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
 	            	   
 	            	   $("#recommendRoutin").html(input);
 
@@ -1318,10 +1318,10 @@
 	            	   
 	            	   var input = "";
 
-	            	   input += "<pre><img src='images/" + res.ffirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.ffirst_exercise +"</b><pre><button class='analysis_add' id=" + res.ffirst_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.fsecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.fsecond_exercise +"</b><pre><button class='analysis_add' id=" + res.fsecond_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.fthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.fthird_exercise +"</b><pre><button class='analysis_add' id=" + res.fthird_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
-	            	   input += "<pre><img src='images/" + res.ffourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.ffourth_exercise +"</b><pre><button class='analysis_add' id=" + res.ffourth_exercise.replace(' ', '') + ">운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.ffirst_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.ffirst_exercise +"</b><pre><button class='analysis_add' id='" + res.ffirst_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.fsecond_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.fsecond_exercise +"</b><pre><button class='analysis_add' id='" + res.fsecond_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.fthird_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.fthird_exercise +"</b><pre><button class='analysis_add' id='" + res.fthird_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
+	            	   input += "<pre><img src='images/" + res.ffourth_exercise + ".png' style='width:100px; height:80px;'><b style='font-size:26px;'>" + res.ffourth_exercise +"</b><pre><button class='analysis_add' id='" + res.ffourth_exercise.replaceAll(' ', '') + "'>운동 더보기</button></pre></pre>";
 	            	   
 	            	   
 	            	   $("#recommendRoutin").html(input);
