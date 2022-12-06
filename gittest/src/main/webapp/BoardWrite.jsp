@@ -164,7 +164,7 @@
 								                파일첨부
 								            </td>
 								            <td>
-								                <input type="file" name="board_file">
+								                <input type="file" name="board_file" accept=".gif, .jpg, .png">
 								            </td>    
 								        </tr>
 								 
