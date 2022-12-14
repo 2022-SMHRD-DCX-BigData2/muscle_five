@@ -116,7 +116,7 @@
 										<input type="submit" value="변경하기" class="button special small">
 									</td>
 								</tr> -->
-							</table>
+							</table>32
 						</form>
 						
 					</nav>		
